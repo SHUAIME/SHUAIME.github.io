@@ -551,19 +551,19 @@
                 </a>
                 
                 
-                <a href="/categories/Spring-Cloud/" title="Spring Cloud: 1">
+                <a href="/categories/Docker/" title="Docker: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F8F9F9;">Spring Cloud
+                            style="background-color: #F8F9F9;">Docker
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/Docker/" title="Docker: 1">
+                <a href="/categories/Spring-Cloud/" title="Spring Cloud: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #82E0AA;">Docker
+                            style="background-color: #82E0AA;">Spring Cloud
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -587,19 +587,10 @@
                 </a>
                 
                 
-                <a href="/categories/Spring-Data-JPA/" title="Spring Data JPA: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #85C1E9;">Spring Data JPA
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/categories/Spring-Security/" title="Spring Security: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F8C471;">Spring Security
+                            style="background-color: #85C1E9;">Spring Security
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -608,7 +599,16 @@
                 <a href="/categories/Hexo/" title="Hexo: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F9E79F;">Hexo
+                            style="background-color: #F8C471;">Hexo
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/Spring-Data-JPA/" title="Spring Data JPA: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F9E79F;">Spring Data JPA
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -637,15 +637,17 @@
         height: 360px;
     }
 </style>
- 
+ <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/wallleap/cdn/css/jqcloud.css">
 <div class="container" data-aos="fade-up">
     <div class="card">
         <div id="category-radar" class="card-content"></div>
     </div>
 </div>
- 
+ <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN@2.4.5/js/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/jqcloud-1.0.4.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/echarts.min.js"></script>
 <script type="text/javascript">
+
     let radarChart = echarts.init(document.getElementById('category-radar'));
  
     
@@ -666,7 +668,7 @@
                     color: '#3C4858'
                 }
             },
-            indicator: [{"name":"前端","max":9},{"name":"技术","max":9},{"name":"Java","max":9},{"name":"IDEA","max":9},{"name":"Spring","max":9},{"name":"Spring Cloud","max":9},{"name":"Docker","max":9},{"name":"BLOG","max":9},{"name":"MySQL","max":9},{"name":"Spring Data JPA","max":9},{"name":"Spring Security","max":9},{"name":"Hexo","max":9},{"name":"GitHub","max":9}],
+            indicator: [{"name":"前端","max":9},{"name":"技术","max":9},{"name":"Java","max":9},{"name":"IDEA","max":9},{"name":"Spring","max":9},{"name":"Docker","max":9},{"name":"Spring Cloud","max":9},{"name":"BLOG","max":9},{"name":"MySQL","max":9},{"name":"Spring Security","max":9},{"name":"Hexo","max":9},{"name":"Spring Data JPA","max":9},{"name":"GitHub","max":9}],
             nameGap: 5,
             center: ['50%','55%'],
             radius: '66%'
