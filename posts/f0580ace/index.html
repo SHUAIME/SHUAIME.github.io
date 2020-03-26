@@ -345,7 +345,7 @@
           <span class="post-meta-item-icon">
             <i class="fa fa-calendar"></i>
             <span class="post-meta-item-text"></span>
-            <span class="post-count">2020-3-26</span>
+            <span class="post-count">2019-11-17</span>
           </span>
         </span>
 	<span class="bull">·</span>
@@ -362,7 +362,7 @@
           <span class="post-meta-item-icon">
             <i class="fa fa-keyboard-o"></i>
             <span class="post-meta-item-text">  字数统计: </span>
-            <span class="post-count">0字</span>
+            <span class="post-count">1.9k字</span>
           </span>
         </span>
 	<span class="bull">·</span>
@@ -370,7 +370,7 @@
           <span class="post-meta-item-icon">
             <i class="fa fa-hourglass-half"></i>
             <span class="post-meta-item-text">  阅读时长≈ </span>
-            <span class="post-count">1分钟</span>
+            <span class="post-count">10分钟</span>
           </span>
         </span>
 	</p>
@@ -385,7 +385,311 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          
+          <blockquote>
+<p>写作时间：2019-11-17<br>实现目标：Spring Boot项目接入QQ登录<br>涉及知识：QQ OAuth2.0接入</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="【创建项目】"><a href="#【创建项目】" class="headerlink" title="【创建项目】"></a>【创建项目】</h2><p>使用IDEA创建一个Spring Boot项目，依赖下面会给出</p>
+<h3 id="pom-xml"><a href="#pom-xml" class="headerlink" title="pom.xml"></a>pom.xml</h3><pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
+         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+    &lt;parent&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
+        &lt;version&gt;2.2.2.RELEASE&lt;/version&gt;
+        &lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt;
+    &lt;/parent&gt;
+
+    &lt;groupId&gt;com.yan&lt;/groupId&gt;
+    &lt;artifactId&gt;qqconnection&lt;/artifactId&gt;
+    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+
+    &lt;properties&gt;
+        &lt;java.version&gt;1.8&lt;/java.version&gt;
+    &lt;/properties&gt;
+
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
+            &lt;artifactId&gt;lombok&lt;/artifactId&gt;
+            &lt;optional&gt;true&lt;/optional&gt;
+        &lt;/dependency&gt;
+        &lt;!--        okhttp依赖--&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;com.squareup.okhttp3&lt;/groupId&gt;
+            &lt;artifactId&gt;okhttp&lt;/artifactId&gt;
+            &lt;version&gt;3.14.1&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;com.alibaba&lt;/groupId&gt;
+            &lt;artifactId&gt;fastjson&lt;/artifactId&gt;
+            &lt;version&gt;1.2.58&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
+            &lt;scope&gt;test&lt;/scope&gt;
+            &lt;exclusions&gt;
+                &lt;exclusion&gt;
+                    &lt;groupId&gt;org.junit.vintage&lt;/groupId&gt;
+                    &lt;artifactId&gt;junit-vintage-engine&lt;/artifactId&gt;
+                &lt;/exclusion&gt;
+            &lt;/exclusions&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+
+    &lt;build&gt;
+        &lt;plugins&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+
+&lt;/project&gt;
+
+</code></pre>
+<h3 id="application-properties-配置信息"><a href="#application-properties-配置信息" class="headerlink" title="application.properties 配置信息"></a>application.properties 配置信息</h3><pre><code>#QQ互联申请的应用id
+QQAPPID=101813698
+#QQ互联申请的应用key
+QQAPPKEY=7265da646c6cf33f6326f6844c1c4ef3
+#应用回调地址 &#39;:&#39; 和 &#39;/&#39;等特殊字符需要转义 原本的url是 http://127.0.0.1:8080/login
+redirect_uri=http%3A%2F%2F127.0.0.1%3A8080%2Flogin
+</code></pre><h2 id="【Controller】"><a href="#【Controller】" class="headerlink" title="【Controller】"></a>【Controller】</h2><pre><code class="java">package com.yan.controller;
+
+import com.alibaba.fastjson.JSONObject;
+import com.yan.entity.User;
+import com.yan.util.QQConnection;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
+public class IndexController {
+    @Autowired
+    private QQConnection qqConnection;
+    @RequestMapping(&quot;/&quot;)
+    public String index(){
+        // 第一步 获取QQ登录按钮url 自己拼接，这是只是演示步骤，无实际意义
+        qqConnection.getUrl();
+        return &quot;index.html&quot;;
+    }
+
+    @RequestMapping(&quot;/login&quot;)
+    public Object qqLogin(@RequestParam(&quot;code&quot;)String code , @RequestParam(&quot;state&quot;) String state , Model model){
+        User user = new User();
+        System.out.println(&quot;第二步：获取QQ互联返回的code=&quot;+code);
+//        第三步 获取access token
+        String accessToken = qqConnection.getAccessToken(code);
+//        第四步 获取登陆后返回的 openid、appid 以JSON对象形式返回
+        JSONObject userInfo = qqConnection.getUserOpenID(accessToken);
+//        第五步获取用户有效(昵称、头像等）信息  以JSON对象形式返回
+        String oauth_consumer_key = userInfo.getString(&quot;client_id&quot;);
+        String openid = userInfo.getString(&quot;openid&quot;);
+        JSONObject userRealInfo = qqConnection.getUserInfo(accessToken,oauth_consumer_key,openid);
+        user.setOpenid(openid);
+        user.setNickName(userRealInfo.getString(&quot;nickname&quot;));
+        user.setAvatar(userRealInfo.getString(&quot;figureurl_qq&quot;));
+        model.addAttribute(&quot;User&quot;,user);
+        return &quot;index.html&quot;;
+    }
+}
+
+</code></pre>
+<h2 id="【工具类】"><a href="#【工具类】" class="headerlink" title="【工具类】"></a>【工具类】</h2><p>编写工具类QQConnection 配合controller 完成整个登录认证流程，具体我觉得博客上没必要再写了。请配合<a href="https://wiki.connect.qq.com/使用authorization_code获取access_token" target="_blank" rel="noopener">QQ互联给的文档</a> </p>
+<pre><code class="java">package com.yan.util;
+
+import com.alibaba.fastjson.JSONObject;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+import java.io.IOException;
+
+@Component
+public class QQConnection {
+    //    读取appid
+    @Value(&quot;${QQAPPID}&quot;)
+    private String QQAppID;
+    @Value(&quot;${QQAPPKEY}&quot;)
+//    读取appkey
+    private String QQAppKEY;
+    //读取redirect_uri
+    @Value(&quot;${redirect_uri}&quot;)
+    private String redirect_uri;
+
+//    第一步：获取 QQ登录按钮url 几乎等于手动拼接 无太大意义
+
+    public String getUrl(){
+        String url = &quot;https://graph.qq.com/oauth2.0/authorize?display=pc&amp;response_type=code&amp;client_id=&quot; + QQAppID+&quot;&amp;redirect_uri=&quot;+redirect_uri+&quot;&amp;state=200&quot;;
+        System.out.println(&quot;第一步：获取QQ登录按钮的url=&quot;+url);
+        return null;
+    }
+    /*
+    第三步：根据前一步得到的 Authorization Code 获取access token
+     */
+    public String getAccessToken(String code){
+        String accessTaken=&quot;&quot;;
+        String url = &quot;https://graph.qq.com/oauth2.0/token?display=pc&amp;grant_type=authorization_code&amp;client_id=&quot;+QQAppID+&quot;&amp;client_secret=&quot;+QQAppKEY+&quot;&amp;redirect_uri=&quot;+redirect_uri+&quot;&amp;code=&quot;+code;
+        OkHttpClient client = new OkHttpClient();
+        Request request = new Request.Builder()
+                .url(url)
+                .build();
+        try (Response response = client.newCall(request).execute()) {
+            assert response.body() != null;
+            String responseString = response.body().string();
+            accessTaken = responseString.split(&quot;=&quot;)[1].split(&quot;&amp;&quot;)[0];
+            System.out.println(&quot;第三步：获取QQ互联返回的accessTaken=&quot;+accessTaken);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return accessTaken;
+    }
+
+    /*
+    第四步：根据得到的access token 获取用户的 openID 和 oauth_consumer_key：申请QQ登录成功后，分配给应用的openid(对当前网站应用唯一，可用于检测是否为同一用户的凭证）
+     */
+    public JSONObject getUserOpenID(String accessToken){
+        JSONObject userInfo = new JSONObject();
+        String urlProvideByQQConnection = &quot;https://graph.qq.com/oauth2.0/me&quot;;
+        String requestUrl =urlProvideByQQConnection+&quot;?access_token=&quot;+accessToken;
+        OkHttpClient client = new OkHttpClient();
+        Request request = new Request.Builder()
+                .url(requestUrl)
+                .build();
+        try (Response response = client.newCall(request).execute()) {
+            assert response.body() != null;
+            String UserInfoString = response.body().string().split(&quot; &quot;)[1];
+            userInfo = JSONObject.parseObject(UserInfoString);
+            System.out.println(&quot;第四步：获取QQ互联返回的openid和分配给应用的appid：&quot;+userInfo);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return userInfo;
+    }
+
+    /*
+    第五步：根据 access_token、oauth_consumer_key(上一步返回的client_id）、openid 获取用户有效信息 (昵称、头像等） 返回json对象
+     */
+    public JSONObject getUserInfo(String access_token , String oauth_consumer_key , String openid ){
+        JSONObject userRealInfo = new JSONObject();
+        String urlProvideByQQConnection= &quot;https://graph.qq.com/user/get_user_info?&quot;;
+        String requestUrl = urlProvideByQQConnection+&quot;access_token=&quot;+access_token+&quot;&amp;oauth_consumer_key=&quot;+oauth_consumer_key+&quot;&amp;openid=&quot;+openid;
+        OkHttpClient client = new OkHttpClient();
+        Request request = new Request.Builder()
+                .url(requestUrl)
+                .build();
+        try (Response response = client.newCall(request).execute()) {
+            assert response.body() != null;
+            String UserRealInfoString = response.body().string();
+            userRealInfo = JSONObject.parseObject(UserRealInfoString);
+            System.out.println(&quot;第五步：获取QQ互联返回的用户有效信息：&quot;+userRealInfo);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return userRealInfo;
+    }
+}
+
+
+</code></pre>
+<h2 id="【User类】"><a href="#【User类】" class="headerlink" title="【User类】"></a>【User类】</h2><pre><code class="java">package com.yan.entity;
+
+import lombok.Data;
+
+@Data
+public class User {
+    private String nickName;
+    private String avatar;
+    private String openid;
+}
+</code></pre>
+<h2 id="【前端】"><a href="#【前端】" class="headerlink" title="【前端】"></a>【前端】</h2><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html xmlns:th=&quot;http://www.thymeleaf.org&quot; &gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Spring Boot接入QQ登录&lt;/title&gt;
+    &lt;link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/layui/css/layui.css&quot;&gt;
+    &lt;style&gt;
+        #box-success{
+            margin-top: 200px;
+            box-shadow: 0px 5px 40px -1px rgba(96, 118, 243, 0.31);
+            text-align: center;
+            height: 400px;
+        }
+        #box-fail{
+            margin-top: 200px;
+            box-shadow: 0px 5px 40px -1px rgba(209, 134, 148, 0.31);
+            text-align: center;
+            height: 400px;
+        }
+        #qqicon{
+            margin-top: 0px;
+            width: 200px;
+            height: 200px;
+        }
+        #login{
+            width: 40%;
+            text-decoration: none;
+            margin-top: 50px;
+
+        }
+    &lt;/style&gt;
+    &lt;script src=&quot;https://cdn.bootcss.com/jquery/3.4.1/jquery.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;/layer/layer.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;/layui/layui.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-md-3&quot;&gt;
+
+        &lt;/div&gt;
+        &lt;div class=&quot;col-md-6&quot; id=&quot;container&quot;&gt;
+            &lt;div id=&quot;box-fail&quot; th:if=&quot;${User == null}&quot;&gt;
+                &lt;div class=&quot;alert alert-danger&quot; role=&quot;alert&quot;&gt;当前未登录&lt;/div&gt;
+                    &lt;img id=&quot;qqicon&quot; src=&quot;/img/user.png&quot;&gt;
+                &lt;br&gt;
+                &lt;a  id=&quot;login&quot; class=&quot;layui-btn layui-btn-normal&quot;  href=&quot;https://graph.qq.com/oauth2.0/show?which=Login&amp;display=pc&amp;display=pc&amp;response_type=code&amp;client_id=101813698&amp;redirect_uri=http%3A%2F%2F127.0.0.1%3A8080%2Flogin&amp;state=200&quot;&gt;
+                    QQ登录
+                &lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div id=&quot;box-success&quot; th:if=&quot;${User != null}&quot;&gt;
+                &lt;div class=&quot;alert alert-success&quot; role=&quot;alert&quot; th:text=&quot;&#39;登陆成功，欢迎：&#39;+${User.nickName}+&#39;！&#39;&quot;&gt;&lt;/div&gt;
+                &lt;img id=&quot;qqicon&quot; class=&quot;img-circle&quot; th:src=&quot;${User.avatar}&quot;&gt;
+                &lt;br&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;col-md-3&quot;&gt;
+
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h2 id="【演示效果】"><a href="#【演示效果】" class="headerlink" title="【演示效果】"></a>【演示效果】</h2><h3 id="未登录"><a href="#未登录" class="headerlink" title="未登录"></a>未登录</h3><p><img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/11/032601.png" alt="img"></p>
+<h3 id="跳转登录"><a href="#跳转登录" class="headerlink" title="跳转登录"></a>跳转登录</h3><p><img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/11/032602.png" alt="img"></p>
+<h3 id="登录之后返回"><a href="#登录之后返回" class="headerlink" title="登录之后返回"></a>登录之后返回</h3><p><img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/11/032603.png" alt="img">登录之后显示头像和昵称</p>
+<h1 id="【项目地址】"><a href="#【项目地址】" class="headerlink" title="【项目地址】"></a>【项目地址】</h1><p>Github地址： <a href="https://github.com/yremp/qq-connection" target="_blank" rel="noopener">https://github.com/yremp/qq-connection</a></p>
+
         </div>
         <!-- .entry-content -->
         <!--<div class="single-reward">
@@ -488,15 +792,15 @@
           
             <div class="post-nepre half previous">
           
-            <a href="/posts/186f70d4/" rel="prev">
+            <a href="/posts/4decbe97/" rel="prev">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="http://47.107.231.6/wordpress/wp-content/uploads/2020/02/8BE1BC16-9159-45EC-AE4D-9C88CB96DB6E.jpeg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="http://47.107.231.6/wordpress/wp-content/uploads/2020/02/8BE1BC16-9159-45EC-AE4D-9C88CB96DB6E.jpeg">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/005.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/005.jpg">
               </div>
               <span class="label">
               Previous Post</span>
               <div class="info">
                 <h3>
-                Hexo-Theme-Sakura</h3>
+                Interview</h3>
                 <hr>
               </div>
             </a>
@@ -506,15 +810,15 @@
           
             <div class="post-nepre half next">
           
-            <a href="/posts/4decbe97/" rel="next">
+            <a href="/posts/33f411d/" rel="next">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/005.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/005.jpg">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/011.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/011.jpg">
               </div>
               <span class="label">
               Next Post</span>
               <div class="info">
                 <h3>
-                Interview</h3>
+                Spring Cloud Netflix</h3>
                 <hr>
               </div>
             </a>
