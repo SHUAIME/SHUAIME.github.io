@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  
+  <title itemprop="name">Interview | YANSHUAI&#39;S BLOG</title>
+  
+    <link rel="shortcut icon" href="/images/favicon/favicon.ico">
+  
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="stylesheet" id="saukra_css-css" href="/css/style.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/lib.min.css" media="all">
+  <link rel="stylesheet" href="/css/font.css" media="all">
+  <link rel="stylesheet" href="/css/insight.css" media="all">
+  <link rel="stylesheet" href="/css/jquery.fancybox.min.css" media="all">
+  <link rel="stylesheet" href="/css/zoom.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<!--   <link rel="stylesheet" id="saukra_css-css" href="https://2heng.xin/wp-content/cache/autoptimize/css/autoptimize_ad42a61f4c7d4bdd9f91afcff6b5dda5.css
+" type="text/css" media="all"> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yremp/yremp-css@1.3/gitalk.css">
+  <script>
+  /*Initial Variables*/
+  var mashiro_option = new Object();
+  var mashiro_global = new Object();
+  mashiro_option.NProgressON = true;
+  /* 
+   * 邮箱信息之类的东西可以填在这里，这些js变量基本都作用于sakura-app.js
+   * 这样的设置仅是为了方便在基于PHP开发的主题中设置js变量，既然移植到了Node上，我想或许可以精简这一逻辑吧
+   */
+  mashiro_option.email_domain = "";
+  mashiro_option.email_name = "";
+  mashiro_option.cookie_version_control = "";
+  mashiro_option.qzone_autocomplete = false;
+  mashiro_option.site_name = "さくら荘の帅me";
+  mashiro_option.author_name = "帅me";
+  mashiro_option.site_url = "https://sakura.hojun.cn";
+  mashiro_option.v_appId = "leKM5d4BTjwfxIlxxIAAr6Kx-gzGzoHsz";
+  mashiro_option.v_appKey = "5Hgi9oGzFSSLedb5C46Bk3mM";
+  mashiro_option.mathjax = "0";
+  mashiro_option.qq_api_url = "https://api.mashiro.top/qqinfo/"; 
+  mashiro_option.qq_avatar_api_url = "https://api.mashiro.top/qqinfo/";
+
+  // mashiro_option.jsdelivr_css_src = "https://cdn.jsdelivr.net/gh/moezx/cdn@3.4.5/css/lib.min.css";
+  // mashiro_option.float_player_on = true;
+
+  /*End of Initial Variables*/
+  </script>
+  <script type="text/javascript">
+  var bg = "https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/img/cover/webp/AK-01.jpg.webp,https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/img/cover/webp/AK-02.jpg.webp,https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/img/cover/webp/AK-03.jpg.webp,https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/img/cover/webp/AK-04.jpg.webp,https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/img/cover/webp/AK-05.jpg.webp".split(",");
+  var bgindex = Math.floor(Math.random()*bg.length);
+  if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+    alert('朋友，IE浏览器未适配哦~');
+  }
+  </script>
+  <style type="text/css">
+  .hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}
+  </style>
+  <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
+  </style>
+</head>
+</html>
+<body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
+  <div class="scrollbar" id="bar">
+  </div>
+  <a href="#" class="cd-top faa-float animated"></a>
+  <section id="main-container">
+    <div class="headertop filter-grid">
+  <div id="banner_wave_1"></div>
+  <div id="banner_wave_2"></div>
+  <figure id="centerbg" class="centerbg">
+    <div class="focusinfo no-select">
+      <div class="header-tou">
+        <a href="https://sakura.hojun.cn">
+          <img src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN//images/background/avatar.jpg">
+        </a>
+      </div>
+      <div class="header-info">
+        <p>帅me随笔</p>
+        <div class="top-social_v2">
+          <li id="bg-pre">
+            <img class="flipx" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+          
+            
+              
+                <li>
+                  <a href="http://github.com/shuaime" target="_blank" class="social-github" title="github">
+                    <img src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN//img/social/github.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=soOGgIWHh4KFgIfyw8Oc0d3f" target="_blank" class="social-github" title="email">
+                    <img src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN//img/social/email.svg">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="https://blog.csdn.net/shuaime" target="_blank" class="social-github" title="csdn">
+                    <img src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN//img/social/csdn.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li class="wechat">
+                  <a href="/#">
+                    <img src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN//img/social/wechat.png">
+                  </a>
+                  <div class="wechatInner">
+                    <img src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN//img/custom/wechat.jpg">
+                  </div>
+                </li>
+              
+            
+          
+          <li id="bg-next">
+            <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+        </div>
+      </div>
+    </div>
+  </figure>
+  <div id="video-container" style="">
+    <video style="object-fit: fill" id="bgvideo" class="video" video-name="" src="" width="auto" preload="auto">
+    </video>
+    <div id="video-btn" class="loadvideo videolive">
+    </div>
+    <div id="video-add">
+    </div>
+    <div class="video-stu">
+    </div>
+  </div>
+  <div class="headertop-down faa-float animated" onclick="headertop_down()">
+    <span>
+      <i class="fa fa-chevron-down" aria-hidden="true">
+      </i>
+    </span>
+  </div>
+</div>
+    <div id="page" class="site wrapper">
+      <header class="site-header no-select gizle sabit" role="banner">
+  <div class="site-top">
+    <div class="site-branding">
+      <span class="site-title">
+        <span class="logolink moe-mashiro">
+          <a href="/">
+            <span class="sakurasono">さくら荘の</span>
+            <span class="shironeko">帅me</span>
+          </a>
+        </span>
+      </span>
+    </div>
+    <div class="searchbox search-form-submit">
+      <i class="iconfont js-toggle-search iconsearch icon-search">
+      </i>
+    </div>
+    <div id="show-nav" class="showNav mobile-fit">
+      <div class="line line1">
+      </div>
+      <div class="line line2">
+      </div>
+      <div class="line line3">
+      </div>
+    </div>
+    <div class="lower-cantiner">
+      <div class="lower">
+        <nav class="mobile-fit-control hide">
+          <ul id="menu-new" class="menu">
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+                    首页
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+                    归档
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/categories/技术/">
+                          <i class="fa fa-code" aria-hidden="true"></i>
+                          技术
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/生活/">
+                          <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                          生活
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/资源/">
+                          <i class="fa fa-cloud-download" aria-hidden="true"></i>
+                          资源
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/随想/">
+                          <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                          随想
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/转载/">
+                          <i class="fa fa-book" aria-hidden="true"></i>
+                          转载
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/tags/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-tag" aria-hidden="true"></i>
+                    标签
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/categories/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-bookmark" aria-hidden="true"></i>
+                    分类
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/comment/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+                    留言板
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/donate/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-heart faa-pulse" aria-hidden="true"></i>
+                    赞赏
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+                    关于
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/about/">
+                          <i class="fa fa-meetup" aria-hidden="true"></i>
+                          我？
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/theme-sakura/">
+                          <i class="fa iconfont icon-sakura" aria-hidden="true"></i>
+                          主题
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/atom.xml">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-rss faa-pulse" aria-hidden="true"></i>
+                    RSS
+                  </span>
+                </a>
+                
+              </li>
+            
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+          <header class="entry-header">
+            <h1 class="entry-title">Interview</h1>
+            <p class="entry-census">[object Object]&nbsp;·&nbsp;2020-3-1&nbsp;·&nbsp;<span id="busuanzi_value_page_pv"></span>次阅读</p></p>
+
+            <hr>
+          </header>
+        
+        <div class="entry-content">
+          <fancybox><br><br><img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/11/logo.jpg" style="zoom: 150%;"><br><br></fancybox>
+
+<a id="more"></a>
+<h1 id="【基础】"><a href="#【基础】" class="headerlink" title="【基础】"></a>【基础】</h1><ul>
+<li>int float short double long char 占字节数？</li>
+</ul>
+<pre><code class="java">int 占 4 字节
+short 占 2 字节
+long 占 8 字节 
+float 占 4 字节
+double 占 8 字节
+char 占 2 字节
+</code></pre>
+<ul>
+<li>int 范围？float 范围？</li>
+</ul>
+<pre><code class="java">int 范围 -2^31~2^31-1
+float 范围 -3.4E+38~3.4E+38
+</code></pre>
+<ul>
+<li>hashcode 和 equals 的关系</li>
+</ul>
+<pre><code class="java">两个对象equals方法相等时hashCode方法一定相等,但hashCode方法相等时equals方法不一定相等
+因为如果没有重写hashCode方法,无法保证两个对象equals时hashCode比逊相等的条件
+</code></pre>
+<ul>
+<li>深拷贝、浅拷贝区别</li>
+</ul>
+<pre><code class="java">浅拷贝: 值类型字段进行复制 引用类型字段复制引用不复制引用的对象
+深拷贝: 不管值类型还是引用类型都复制独一份
+</code></pre>
+<ul>
+<li>java 异常体系？RuntimeException Exception Error 的区别，举常见的例子</li>
+</ul>
+<pre><code class="java">异常的超类为Throwable 之下有error和Exception两个子类
+erro: 错误程序不能运行本身没办法解决
+Exception: 程序可以运行可以捕捉到的异常本身可以解决
+RuntimeException: 运行时异常程序在运行时发生的异常可以捕获也可以不捕获
+
+</code></pre>
+<h1 id="【集合】"><a href="#【集合】" class="headerlink" title="【集合】"></a>【集合】</h1><p>集合这块关注一下 1.8 的实现吧，和 1.7 相比变化了很多</p>
+<ul>
+<li>Collection 有什么子接口、有哪些具体的实现</li>
+</ul>
+<pre><code class="java">Collection主要包括两个子接口Set和List
+List: ArrayList LinkedList Vector 
+Set: HashSet TreeSet 
+</code></pre>
+<ul>
+<li>讲一下 hashMap 原理。hashMap 可以并发读么？并发写会有什么问题？</li>
+</ul>
+<pre><code class="java">HashMap基于hashing原理 通过put和get方法来存取值,使用put方法传递键和值时,先调用键的hashCode方法计算hashCode,然后找到桶位置(当系统开始初始化 HashMap 时，系统会创建一个Entry 数组，这个数组里可以存储元素的位置被称为桶（bucket）)存值对象,获取对象时通过键值对的equals方法来找到正确的键值对,然后返回对象
+</code></pre>
+<ul>
+<li>集合在迭代的过程中，插入或删除数据会怎样？</li>
+</ul>
+<pre><code class="java">会抛出java.util.ConcurrentModificationException的异常
+</code></pre>
+<h1 id="【并发】"><a href="#【并发】" class="headerlink" title="【并发】"></a>【并发】</h1><h2 id="【线程】"><a href="#【线程】" class="headerlink" title="【线程】"></a>【线程】</h2><ul>
+<li>进程和线程的区别？并行和并发的区别？了解协程么？</li>
+</ul>
+<pre><code class="java">进程: 通俗理解一个运行起来的程序或者软件叫做进程
+线程：进程中独立、可调配的执行单位，最小的执行单位
+
+普通解释：
+
+　　并发：交替做不同事情的能力
+
+　　并行：同时做不同事情的能力
+
+专业术语：
+
+　　并发：不同的代码块交替执行
+
+　　并行：不同的代码块同时执行
+</code></pre>
+<ul>
+<li>线程的生命周期有哪些状态？怎么转换？</li>
+</ul>
+<pre><code class="java">New（初始化状态）
+Runnable（可运行 / 运行状态）
+Blocked（阻塞状态）
+Waiting（无限时等待）
+Timed_Waiting（有限时等待）
+Terminated（终止状态）
+</code></pre>
+<ul>
+<li>wait 和 sleep 有什么区别？什么情况下会用到 sleep？</li>
+</ul>
+<pre><code class="java">sleep是thread类的静态方法 wait是Object的动态方法 
+sleep让出CPU资源,不释放锁 wait让出CPU资源,也释放锁
+wait需要结合同步锁使用,sleep不需要
+sleep必须传入时间参数,wait可以传也可以不传
+</code></pre>
+<ul>
+<li>怎么停止线程？</li>
+</ul>
+<pre><code class="java">interrupt()方法
+
+volatile关键字
+public class Demo1 {
+    private static volatile boolean stop = false;
+    public static void main(String[] args) throws InterruptedException{
+        Thread thread = new Thread(()-&gt;{
+            inti=0;
+            while(!stop) {
+                i++;
+            }
+        }) ;
+        thread.start();
+        System.out.println(&quot;线程开始”) ;
+        Thread.sleep( millis: 1000) ;
+        stop = true 
+    }
+}
+</code></pre>
+<ul>
+<li>怎么控制多个线程按序执行？</li>
+</ul>
+<pre><code class="java">使用join()方法
+利用Executors线程池
+</code></pre>
+<ul>
+<li>volatile 关键字有什么用？怎么理解可见性，一般什么场景去用可见性</li>
+</ul>
+<pre><code class="java">Volatile关键字的主要作用是使变量在多个线程之间可见,使得多线程之间可以进行变量的变更
+</code></pre>
+<ul>
+<li>讲一下 threadLocal 原理，threadLocal 是存在 jvm 内存哪一块的</li>
+</ul>
+<pre><code class="java">每个线程内部都有一个Map，我们每当定义一个ThreadLocal变量，就相当于往这个Map里放了一个key，并定义一个对应的value。每当使用ThreadLocal，就相当于get(key)，寻找其对应的value
+</code></pre>
+<h2 id="【线程池】"><a href="#【线程池】" class="headerlink" title="【线程池】"></a>【线程池】</h2><ul>
+<li>常用的线程池有哪些？用的哪个线程池？什么情况下怎么选择？</li>
+</ul>
+<pre><code class="java">newFixedThreadPool:创建固定大小的线程池
+newCaChedTheadPool:创建可缓存的线程池
+newScheduleThreadPool:创建大小无限的线程池
+newSingleTreadExecutor:创建单线程的线程池
+</code></pre>
+<ul>
+<li>什么是线程池？ 为什么要使用它？  </li>
+</ul>
+<pre><code class="java">创建线程需要花费昂贵的时间,如果任务来了才创建线程那么响应时间会变长,而且一个进程创建的线程数是有限的,为了避免这些问题,在启动程序的时候就创建若干线程来处理响应,他们被称为线程池
+</code></pre>
+<h1 id="【JVM】"><a href="#【JVM】" class="headerlink" title="【JVM】"></a>【JVM】</h1><h2 id="【内存与-GC】"><a href="#【内存与-GC】" class="headerlink" title="【内存与 GC】"></a>【内存与 GC】</h2><ul>
+<li>jvm 内存区域分布？gc 发生在哪些部分？</li>
+</ul>
+<pre><code class="java">程序计数器
+栈
+本地方法栈
+堆
+方法区
+gc 发生在堆中
+</code></pre>
+<ul>
+<li>垃圾回收算法的了解。现在用的什么回收算法？</li>
+</ul>
+<pre><code class="java">标记-清除算法
+复制算法
+标记整理算法
+分代收集算法
+</code></pre>
+<h2 id="【异常与调优】"><a href="#【异常与调优】" class="headerlink" title="【异常与调优】"></a>【异常与调优】</h2><ul>
+<li>oom</li>
+</ul>
+<pre><code class="java">OOM，全称“Out Of Memory”，翻译成中文就是“内存用完了”，来源于java.lang.OutOfMemoryError。
+当JVM因为没有足够的内存来为对象分配空间并且垃圾回收器也已经没有空间可回收时，就会抛出这个error
+
+最常见的OOM情况有以下三种：
+    java.lang.OutOfMemoryError: Java heap space ------&gt;java堆内存溢出，此种情况最常见，一般由于内存泄露或者堆的大小设置不当引起。对于内存泄露，需要通过内存监控软件查找程序中的泄露代码，而堆大小可以通过虚拟机参数-Xms,-Xmx等修改。
+    java.lang.OutOfMemoryError: PermGen space ------&gt;java永久代溢出，即方法区溢出了，一般出现于大量Class或者jsp页面，或者采用cglib等反射机制的情况，因为上述情况会产生大量的Class信息存储于方法区。此种情况可以通过更改方法区的大小来解决，使用类似-XX:PermSize=64m -XX:MaxPermSize=256m的形式修改。另外，过多的常量尤其是字符串也会导致方法区溢出。
+    java.lang.StackOverflowError ------&gt; 不会抛OOM error，但也是比较常见的Java内存溢出。JAVA虚拟机栈溢出，一般是由于程序中存在死循环或者深度递归调用造成的，栈大小设置太小也会出现此种溢出。可以通过虚拟机参数-Xss来设置栈的大小。
+</code></pre>
+<h2 id="【类加载器】"><a href="#【类加载器】" class="headerlink" title="【类加载器】"></a>【类加载器】</h2><ul>
+<li>类加载过程？</li>
+</ul>
+<pre><code class="java">1.加载是将class文件加载到虚拟机中,在jvm的方法区中生成该类的类信息.在jvm的堆中生成java.lang.class对象.
+2.连接分为: 验证,准备,解析.
+   验证-&gt; class文件格式,元数据验证,字节码验证,符号引用验证.
+   准备-&gt; 为类变量分配内存并设置类变量初始值(赋0)的阶段.
+   解析-&gt; 符号引用转为直接引用
+3.初始化
+   执行类构造器 
+</code></pre>
+<h1 id="【Spring】"><a href="#【Spring】" class="headerlink" title="【Spring】"></a>【Spring】</h1><ul>
+<li>spring 介绍一下</li>
+</ul>
+<pre><code class="java">Spring是一个轻量级的控制反转(IOC)和面向切面(AOP)的容器框架
+</code></pre>
+<ul>
+<li>讲一下 IOC、AOP</li>
+</ul>
+<pre><code class="java">IOC(控制反转):Inverse of Control 
+    将对象的创建权反转到Spring容器主要目的是用来解耦
+AOP(面向切面):
+    AOP是一种编程思想,是基于OOP基础之上更高级的一种编程思想,可以说是OOP的一种补充和完善
+    AOP利用一种横切技术,将一些公共行为封装到一个可以重用的模块,并将其成为切面(Aspect)
+AOP相关概念:     
+    连接点joinpoint
+    切入点pointcut
+    通知advice
+    目标对象target
+    代理对象proxy
+    织入weaving
+    切面aspect
+</code></pre>
+<ul>
+<li>IOC怎么防止循环依赖</li>
+</ul>
+<pre><code class="java">SpringIOC解决循环依赖的思路就是依靠缓存,当我们创建实例与属性注入实例这俩个步骤之间的时候，我们引入缓存，将这些已经创建好但是并没有注入属性的实例放到缓存里，而这些放在缓存里但是没有被注入属性的实例对象，就是解决循环依赖的方法，打个比方：A对象的创建需要引用到B对象，而B对象的创建也需要A对象，而此时当B对象创建的时候直接从缓存里引用A对象（虽然不是完全体A对象，毕竟没有赋值处理），当B对象完成创建以后再被A对象引用进去，则A对象也完成了创建。
+</code></pre>
+<ul>
+<li>AOP的实现原理、动态代理过程\</li>
+</ul>
+<pre><code class="java">JDK动态代理 Cglib动态代理
+</code></pre>
+<ul>
+<li>Spring MVC处理请求的过程？</li>
+</ul>
+<pre><code class="java">浏览器发送请求
+前端控制器(DIspatcherServlet)拦截客户请求，根据指定的处理器映射器找到对应的处理器
+根据不同的处理器，使用不同的处理器适配器转化后，执行处理器
+处理器处理完请求后返回ModelAndView
+前端控制器根据ModelAndView找到视图解析器对返回结果进行解析，解析完成后找到对应的view做出响应
+
+</code></pre>
+<h1 id="【-MySQL】"><a href="#【-MySQL】" class="headerlink" title="【 MySQL】"></a>【 MySQL】</h1><ul>
+<li>数据仓库与 mysql 区别？hive 和 mysql 有什么区别？spark 和 hadoop 区别？mapreduce 互相等待，怎么解决？</li>
+<li>acid 含义？事务隔离级别？幻读怎么解决的？</li>
+<li>用过 mysql 的锁么？有哪些锁？</li>
+<li>MyISAM、InnoDB 区别？为什么不用 MyISAM？</li>
+<li>mvcc 原理？多版本数据存放在哪？</li>
+<li>mysql 脏页？</li>
+<li>redo log，undo log？</li>
+<li>索引<ul>
+<li>innodb 的索引结构是什么？什么是聚簇索引？</li>
+<li>b+ 树与 b 树的区别？</li>
+<li>b+ 树与二叉树区别，优点？为什么不用红黑树？</li>
+<li>多列索引的结构</li>
+<li>字符串类型和数字类型索引的效率？数据类型隐式转换</li>
+<li>主键与普通索引的联系？存储上的区别？</li>
+</ul>
+</li>
+<li>sql<ul>
+<li>join 和 in 怎么选择？有什么区别？</li>
+<li>union 和 union all 有什么区别？怎么选择？</li>
+<li>怎么处理 sql 慢查询？</li>
+<li>索引用得不太正常怎么处理？同时有（a，b）和（a，c）的索引，查询 a 的时候，会选哪个索引？</li>
+</ul>
+</li>
+<li>跨库分页的实现？</li>
+<li>分库分表有哪些策略？怎么保证 id 唯一？</li>
+<li>对 uuid 的理解？知道哪些 GUID、Random 算法？</li>
+<li>主键选随机 id、uuid 还是自增 id？为什么？主键有序无序对数据库的影响？</li>
+<li>主从复制的过程？复制原理？怎么保证强一致性？</li>
+</ul>
+<h1 id="【设计模式】"><a href="#【设计模式】" class="headerlink" title="【设计模式】"></a>【设计模式】</h1><ul>
+<li>工厂方法和抽象工厂的区别</li>
+<li>装饰器和代理区别</li>
+<li>单例<ul>
+<li>对于单例，你知道哪些实现方法？</li>
+<li>实现一个懒加载单例</li>
+<li>双重校验锁为什么需要双重校验？</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        <!-- .entry-content -->
+        <!--<div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN//img/custom/donate/AliPayQR.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN//img/custom/donate/WeChanQR.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>-->
+
+	<!-- 写后感言与打赏 -->	
+	<div id="reward">
+  
+  <div>您的喜欢是作者写作最大的动力！❤️</div>
+  
+  <div class="reward">
+    <a href="https://github.com/SHUAIME" target="_blank" class=" tr3" title="Github"><span
+        id="github"></span></a>
+    <ul id="RewardBox" class="list pos-f tr3">
+      
+      <li id="PayPal" title="PayPal打赏"><a href="https://paypal.me/SHUAIME" target="_blank">PayPal</a></li>
+      
+      
+      <li id="AliPayOR" title="支付宝打赏">AliPay</li>
+      
+      
+      <li id="WeChatPayOR" title="微信打赏">WeChatPay</li>
+      
+      
+      <li id="QQPayOR" title="QQ打赏">QQPay</li>
+      
+    </ul>
+    <div id="RewardText" class="tr3">YAN</div>
+    <div id="QRBox" class="pos-f left-100">
+      <div id="MainBox"></div>
+    </div>
+  </div>
+</div>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+<script>
+  jQuery(document).ready(function () {
+    var QRBox = $('#QRBox');
+    var MainBox = $('#MainBox');
+    var AliPayOR = 'https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/YAN-PIC/AliPayQR.png';
+    var WeChatPayOR = 'https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/YAN-PIC/WeChatQR.png';
+    var QQPayOR = 'https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/YAN-PIC/QQPayQR.png';
+
+    function showQR(QR) {
+      if (QR) {
+        MainBox.css('background-image', 'url(' + QR + ')');
+      }
+      $('#RewardText,#RewardBox,#github').addClass('blur');
+      QRBox.fadeIn(300, function (argument) {
+        MainBox.addClass('showQR');
+      });
+    }
+
+    $('#RewardBox>li').click(function (event) {
+      var thisID = $(this).attr('id');
+      if (thisID === 'AliPayOR') {
+        showQR(AliPayOR);
+      } else if (thisID === 'WeChatPayOR') {
+        showQR(WeChatPayOR);
+      } else if (thisID === 'QQPayOR') {
+        showQR(QQPayOR);
+      }
+    });
+
+    MainBox.click(function (event) {
+      MainBox.removeClass('showQR').addClass('hideQR');
+      setTimeout(function (a) {
+        QRBox.fadeOut(300, function (argument) {
+          MainBox.removeClass('hideQR');
+        });
+        $('#RewardText,#RewardBox,#github').removeClass('blur');
+      }, 600);
+
+    });
+  });
+</script>
+
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+        
+          
+            <div class="post-nepre full next">
+          
+            <a href="/posts/33f411d/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                SpringCloudNetflix</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+
+  <script src="https://cdn.jsdelivr.net/gh/yremp/yremp-js@1.1/gitalk.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yremp/yremp-css@1.3/gitalk.css">
+  <div id="gitalk-container"></div>
+  
+  <script type="text/javascript">
+      var gitalk = new Gitalk({
+          clientID: 'a0b1fd1a8f289cb82280',
+          clientSecret: 'e740e2de5477da76dafea57903a04fd58f672398',
+          id: window.location.pathname,
+          repo: 'Comment',
+          owner: 'SHUAIME',
+          admin: 'SHUAIME'
+      })
+      gitalk.render('gitalk-container')
+    </script>
+
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+          <a href="" class="profile gravatar"><img src="" itemprop="image" alt="[object Object]" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="" itemprop="url" rel="author">[object Object]</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i></p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
+</div>
+
+
+
+    </div>    
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            // PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+    <div id="gitalk-container"></div>
+<script src="https://cdn.jsdelivr.net/gh/yremp/yremp-js@1.1/gitalk.js"></script>
+<footer id="colophon" class="site-footer" role="contentinfo">
+  <div class="site-info">
+    <div class="footertext">
+      <div class="img-preload">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/wordpress-rotating-ball-o.svg">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/disqus-preloader.svg">
+      </div>
+      <p style="color: #666666;"></p>
+    </div>
+    <div class="footer-device">
+		
+		<p style="font-family: 'Ubuntu', sans-serif;">
+			<span style="color: rgba(0,0,0,.4);font-size:16px">
+		<!-- 备案信息 -->
+				Copyright© 2019-2020 YANSHUAI 
+		</span></p>
+		<!-- 底部图标 -->
+		<a href="https://www.aliyun.com/" target="_blank" alt="ALiYun" rel="nofollow">
+		<img src="https://yremp.live/wp-content/uploads/2019/07/aliyun.png" alt="aliyun" style="height: 1.7em; max-height: 1.8em;padding-bottom: 0px;">
+		</a>&nbsp;&nbsp;&nbsp;
+
+		<a href="https://www.jsdelivr.com/" target="_blank" alt="Free CDN" rel="nofollow">
+		<img src="https://www.yremp.live/images/2019/08/17/JsDelivr_Logo0bd9a.png" alt="jsDelivr" style="height: 2em; max-height: 2em;padding-bottom: 0px;">
+		</a>&nbsp;&nbsp;
+
+		<a href="https://github.com/" target="_blank" alt="Github" rel="nofollow">
+		<img src="https://yremp.live/wp-content/uploads/2019/07/Github.png" alt="github" style="height: 2.2em; max-height: 2.5em;padding-bottom: 0px;">
+		</a>&nbsp;&nbsp;
+
+		<a href="https://2heng.xin" target="_blank" alt="Mashiro" rel="nofollow">
+		<img src="https://cdn.jsdelivr.net/gh/moezx/cdn@3.0.8/img/logo/mashiro-logo.png" alt="Mashiro" style="height: 2.5em; max-height: 2em;padding-bottom: 0px; margin-bottom:0.2em">
+		</a>
+	</div>
+  </div><!-- .site-info -->
+</footer>
+
+
+
+<!-- <script src="/js/tocbot.js"></script> -->
+<script type="text/javascript" src="/js/lib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/InsightSearch.js"></script>
+<script type="text/javascript" src="/js/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="/js/zoom.min.js"></script>
+<script type="text/javascript" src="/js/sakura-app.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine@1.3.4/dist/Valine.min.js'></script>
+<script src="/js/botui.js"></script>
+<!-- 不蒜子 网页计数器 -->
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script> -->
+<script type="text/javascript">
+/* <![CDATA[ */
+if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"close"},"windowheight":"fixed","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+} else {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"open"},"windowheight":"auto","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+}
+/* ]]> */
+
+</script>
+<script>
+$(document).ready(function() {
+  if ($(".toc").length > 0 && document.body.clientWidth > 1200) {
+    if ($(".pattern-center").length > 0) { //有图的情况
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -400,
+          scrollSmoothOffset: -85
+      });
+    } else {
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -85,
+          scrollSmoothOffset: -85
+      });
+    }
+    var offsetTop = $('.toc').offset().top - 95;
+    window.onscroll = function() {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+      if (scrollTop >= offsetTop) {
+        $('.toc').addClass('toc-fixed');
+      } else {
+        $('.toc').removeClass('toc-fixed');
+      }
+    }
+  }
+});
+</script>
+<script src="https://cdn.jsdelivr.net/gh/wallleap/cdn@latest/js/hititle.js"></script>
+
+    <div class="openNav no-select" style="height: 50px;">
+      <div class="iconflat no-select" style="width: 50px; height: 50px;">
+        <div class="icon"></div>
+      </div>
+      <div class="site-branding search-form-submit">
+        <i class="iconfont js-toggle-search iconsearch icon-search"></i>
+      </div>
+    </div>
+  </section>
+  <!-- 实现换肤功能 -->
+  <div class="skin-menu no-select" id="mainskin" style="position: fixed">
+ <div class="theme-controls row-container">
+  <ul class="menu-list">
+   <li id="white-bg"> <i class="fa fa-television" aria-hidden="true"></i></li>
+   <li id="sakura-bg"> <i class="iconfont icon-sakura"></i></li>
+   <li id="gribs-bg"> <i class="fa fa-slack" aria-hidden="true"></i></li>
+   <li id="KAdots-bg"> <i class="iconfont icon-dots"></i></li>
+   <li id="totem-bg"> <i class="fa fa-optin-monster" aria-hidden="true"></i></li>
+   <li id="pixiv-bg"> <i class="iconfont icon-pixiv"></i></li>
+   <li id="bing-bg"> <i class="iconfont icon-bing"></i></li>
+   <li id="dark-bg"> <i class="fa fa-moon-o" aria-hidden="true"></i></li>
+  </ul>
+ </div>
+</div>
+<canvas id="night-mode-cover"></canvas>
+ 
+  <div class="changeSkin-gear no-select">
+  <div class="keys" id="setbtn"> 
+   <span id="open-skinMenu"> 切换主题 | SCHEME TOOL  
+     <i class="iconfont icon-gear inline-block rotating"></i> 
+   </span>
+  </div>
+</div>
+
+  <div id="mo-nav" class="">
+  <div class="m-avatar">
+    <img src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN//images/background/avatar.jpg">
+  </div>
+  <p style="text-align: center; color: #333; font-weight: 900; font-family: 'Ubuntu', sans-serif; letter-spacing: 1.5px">さくら荘の帅me</p>
+  <p style="text-align: center; word-spacing: 20px;">
+    
+      
+        <a href="http://github.com/honjun" class="fa fa-github" target="_blank" style="color: #333; margin-left:20px"></a>
+      
+        <a href="http://weibo.com/mashirozx?is_all=1" class="fa fa-weibo" target="_blank" style="color: #dd4b39; margin-left:20px"></a>
+      
+        <a href="https://wpa.qq.com/msgrd?v=3&uin=954655431&site=qq&menu=yes" class="fa fa-qq" target="_blank" style="color: #25c6fe; margin-left:20px"></a>
+      
+    
+  </p>
+  <ul id="menu-new-1" class="menu">
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+            首页
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/archives">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+            归档
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/categories/技术/">
+                  <i class="fa fa-code" aria-hidden="true"></i>
+                  技术
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/生活/">
+                  <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                  生活
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/资源/">
+                  <i class="fa fa-cloud-download" aria-hidden="true"></i>
+                  资源
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/随想/">
+                  <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                  随想
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/转载/">
+                  <i class="fa fa-book" aria-hidden="true"></i>
+                  转载
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="/tags/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-tag" aria-hidden="true"></i>
+            标签
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/categories/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-bookmark" aria-hidden="true"></i>
+            分类
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/comment/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+            留言板
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/donate/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-heart faa-pulse" aria-hidden="true"></i>
+            赞赏
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+            关于
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/about/">
+                  <i class="fa fa-meetup" aria-hidden="true"></i>
+                  我？
+                </a>
+              </li>
+            
+              <li>
+                <a href="/theme-sakura/">
+                  <i class="fa iconfont icon-sakura" aria-hidden="true"></i>
+                  主题
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="/atom.xml">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-rss faa-pulse" aria-hidden="true"></i>
+            RSS
+          </span>
+        </a>
+        
+      </li>
+    
+  </ul>
+  <p style="text-align: center; font-size: 13px; color: #b9b9b9;">&copy 2019 hexo-sakura</p>
+</div>
+<button onclick="topFunction()" class="mobile-cd-top" id="moblieGoTop" title="Go to top" style="display: none;"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<!-- require MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+<style>
+  .aplayer .aplayer-lrc {
+    height: 35px;
+  }
+  .aplayer .aplayer-lrc p{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px !important;
+  }
+  .aplayer .aplayer-lrc p.aplayer-lrc-current{
+    color: #FF1493;
+  }
+  .aplayer.aplayer-narrow .aplayer-body{
+    left: -66px !important;
+  }
+  .aplayer.aplayer-fixed .aplayer-lrc {
+    display: none;
+  }
+  .aplayer .aplayer-lrc.aplayer-lrc-hide {
+      display:none !important;
+  }
+  .aplayer.aplayer-fixed .lrc-show {
+    display: block;
+    background: rgba(255, 255, 255, 0.8);
+  }
+</style>
+<meting-js
+
+    id="762797776"
+
+    server="netease"
+
+    type="playlist"
+
+    fixed="true"
+
+    autoplay="false"
+
+    loop="all"
+
+    order="random"
+
+    preload="none"
+
+    volume="0.7"
+
+    mutex="true"
+
+</meting-js>
+<script>
+  $(function(){
+    $('body').on('click', '.aplayer', function(){
+      if($('.aplayer-button').hasClass('aplayer-play')) {
+        $('.aplayer-lrc').removeClass('lrc-show');
+      } else {
+        $('.aplayer-lrc').addClass('lrc-show');
+      }
+    })
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/sakura.js"></script>
+<!--单击显示文字-->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/js/click_show_text.js"></script>
+<!--爆炸效果-->
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/js/fireworks.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"> <!-- 这条在sakura中已有，可不添加 --><script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+<script src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+</body>
+</html>

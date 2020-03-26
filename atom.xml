@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>YANSHUAI&#39;S BLOG</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://www.shuaime.top/"/>
+  <updated>2020-03-25T02:34:18.168Z</updated>
+  <id>https://www.shuaime.top/</id>
+  
+  <author>
+    <name>帅me</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Interview</title>
+    <link href="https://www.shuaime.top/posts/4decbe97/"/>
+    <id>https://www.shuaime.top/posts/4decbe97/</id>
+    <published>2020-03-01T07:47:28.000Z</published>
+    <updated>2020-03-25T02:34:18.168Z</updated>
+    
+    <summary type="html">
+    
+      &lt;fancybox&gt;&lt;br&gt;&lt;br&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/11/logo.jpg&quot; style=&quot;zoom: 150%;&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;/fancybox&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="https://www.shuaime.top/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="https://www.shuaime.top/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringCloudNetflix</title>
+    <link href="https://www.shuaime.top/posts/33f411d/"/>
+    <id>https://www.shuaime.top/posts/33f411d/</id>
+    <published>2019-11-15T06:00:15.000Z</published>
+    <updated>2020-03-18T14:56:20.458Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;写作时间：2019-11-15&lt;br&gt;实现目标：Spring Cloud Netflix&lt;br&gt;涉及知识：微服务架构解决方案&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;【概述】&quot;&gt;&lt;a href=&quot;#【概述】&quot; class=&quot;headerlink&quot; title=&quot;【概述】&quot;&gt;&lt;/a&gt;&lt;font color=&quot;#ff000&quot;&gt;【概述】&lt;/font&gt;&lt;/h1&gt;&lt;p&gt;&lt;code&gt;Spring Cloud&lt;/code&gt; 是一个相对比较新的微服务框架，2016 才推出 1.0 的 Release 版本. 但是其更新特别快，几乎每 1-2 个月就有一次更新，虽然 Spring Cloud 时间最短, 但是相比 Dubbo 等 RPC 框架, Spring Cloud 提供的全套的分布式系统解决方案。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Spring Cloud&lt;/code&gt; 为开发者提供了在分布式系统（配置管理，服务发现，熔断，路由，微代理，控制总线，一次性 Token，全居琐，Leader 选举，分布式 Session，集群状态）中快速构建的工具，使用 Spring Cloud 的开发者可以快速的启动服务或构建应用、同时能够快速和云平台资源进行对接。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="https://www.shuaime.top/categories/Java/"/>
+    
+      <category term="Spring Cloud" scheme="https://www.shuaime.top/categories/Spring-Cloud/"/>
+    
+    
+      <category term="Spring Cloud" scheme="https://www.shuaime.top/tags/Spring-Cloud/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spring Data JPA</title>
+    <link href="https://www.shuaime.top/posts/accb903d/"/>
+    <id>https://www.shuaime.top/posts/accb903d/</id>
+    <published>2019-11-06T06:17:09.000Z</published>
+    <updated>2020-03-18T15:07:30.311Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;写作时间：2019-11-06&lt;br&gt;实现目标：Spring Data JPA入门&lt;br&gt;涉及知识：持久层框架&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;【思维导图】&quot;&gt;&lt;a href=&quot;#【思维导图】&quot; class=&quot;headerlink&quot; title=&quot;【思维导图】&quot;&gt;&lt;/a&gt;&lt;font color=&quot;#ff000&quot;&gt;【思维导图】&lt;/font&gt;&lt;/h1&gt;&lt;fancybox&gt;&lt;br&gt;&lt;br&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/11/jpa.jfif&quot; alt&gt;&lt;br&gt;&lt;br&gt;&lt;/fancybox&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="https://www.shuaime.top/categories/Java/"/>
+    
+      <category term="Spring" scheme="https://www.shuaime.top/categories/Spring/"/>
+    
+      <category term="Spring Data JPA" scheme="https://www.shuaime.top/categories/Spring-Data-JPA/"/>
+    
+    
+      <category term="Spring" scheme="https://www.shuaime.top/tags/Spring/"/>
+    
+      <category term="Spring Data JPA" scheme="https://www.shuaime.top/tags/Spring-Data-JPA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Intellij IDEA破解</title>
+    <link href="https://www.shuaime.top/posts/db30a45/"/>
+    <id>https://www.shuaime.top/posts/db30a45/</id>
+    <published>2019-11-01T04:56:14.000Z</published>
+    <updated>2020-03-06T09:07:48.200Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;下载地址：&lt;a href=&quot;http://www.ddooo.com/softdown/127550.htm&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.ddooo.com/softdown/127550.htm&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="IDEA" scheme="https://www.shuaime.top/categories/IDEA/"/>
+    
+    
+      <category term="IDEA" scheme="https://www.shuaime.top/tags/IDEA/"/>
+    
+      <category term="工具" scheme="https://www.shuaime.top/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL保存emoji表情</title>
+    <link href="https://www.shuaime.top/posts/4bb9769b/"/>
+    <id>https://www.shuaime.top/posts/4bb9769b/</id>
+    <published>2019-10-30T01:38:18.000Z</published>
+    <updated>2020-03-06T01:57:22.547Z</updated>
+    
+    <summary type="html">
+    
+      &lt;fancybox&gt;&lt;br&gt;&lt;br&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/11/ii.jpg&quot; alt&gt;&lt;br&gt;&lt;br&gt;&lt;/fancybox&gt;
+    
+    </summary>
+    
+      <category term="MySQL" scheme="https://www.shuaime.top/categories/MySQL/"/>
+    
+    
+      <category term="MySQL" scheme="https://www.shuaime.top/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JDK8新特性</title>
+    <link href="https://www.shuaime.top/posts/bcab918b/"/>
+    <id>https://www.shuaime.top/posts/bcab918b/</id>
+    <published>2019-10-28T02:00:10.000Z</published>
+    <updated>2020-03-09T02:10:22.625Z</updated>
+    
+    <summary type="html">
+    
+      &lt;fancybox&gt;&lt;br&gt;&lt;br&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/11/jdk.jpg&quot; alt&gt;&lt;br&gt;&lt;br&gt;&lt;/fancybox&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="https://www.shuaime.top/categories/Java/"/>
+    
+    
+      <category term="JDK8" scheme="https://www.shuaime.top/tags/JDK8/"/>
+    
+      <category term="Lambda" scheme="https://www.shuaime.top/tags/Lambda/"/>
+    
+      <category term="函数式接口" scheme="https://www.shuaime.top/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spring Security</title>
+    <link href="https://www.shuaime.top/posts/27ace9d5/"/>
+    <id>https://www.shuaime.top/posts/27ace9d5/</id>
+    <published>2019-10-25T12:14:39.000Z</published>
+    <updated>2020-03-18T05:48:36.228Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;写作时间：2019-10-25&lt;br&gt;实现目标：Spring Security的使用&lt;br&gt;涉及知识：安全管理框架&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;【思维导图】&quot;&gt;&lt;a href=&quot;#【思维导图】&quot; class=&quot;headerlink&quot; title=&quot;【思维导图】&quot;&gt;&lt;/a&gt;&lt;font color=&quot;#ff000&quot;&gt;【思维导图】&lt;/font&gt;&lt;/h1&gt;&lt;fancybox&gt;&lt;br&gt;&lt;br&gt;&lt;img src=&quot;https://img-blog.csdnimg.cn/20190116102342618.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIyMTcyMTMz,size_16,color_FFFFFF,t_70&quot; alt=&quot;img&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;/fancybox&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="https://www.shuaime.top/categories/Java/"/>
+    
+      <category term="Spring" scheme="https://www.shuaime.top/categories/Spring/"/>
+    
+      <category term="Spring Security" scheme="https://www.shuaime.top/categories/Spring-Security/"/>
+    
+    
+      <category term="Spring" scheme="https://www.shuaime.top/tags/Spring/"/>
+    
+      <category term="Spring Security" scheme="https://www.shuaime.top/tags/Spring-Security/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AngularJS</title>
+    <link href="https://www.shuaime.top/posts/8fa64eaf/"/>
+    <id>https://www.shuaime.top/posts/8fa64eaf/</id>
+    <published>2019-10-23T09:40:56.000Z</published>
+    <updated>2020-03-18T05:50:11.992Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;写作时间：2019-10-23&lt;br&gt;实现目标：AngularJS基础入门&lt;br&gt;涉及知识：AngularJS&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;【AngularJS简介】&quot;&gt;&lt;a href=&quot;#【AngularJS简介】&quot; class=&quot;headerlink&quot; title=&quot;【AngularJS简介】&quot;&gt;&lt;/a&gt;&lt;font color=&quot;#ff000&quot;&gt;【AngularJS简介】&lt;/font&gt;&lt;/h1&gt;&lt;p&gt;&lt;code&gt;AngularJS&lt;/code&gt;是一个创建富客户端应用的&lt;code&gt;JavaScript MVC&lt;/code&gt;框架。你仍然需要具有服务端后台，但大多数的用户交互逻辑将放到客户端上处理。它可以创建单页的应用程序，一个页面的应用仅仅需要HTML,CSS和JavaScript在客户端。它的目标是增强页面的模型-视图-控制（MVC）的功能，为简化开发和测试。单页Web应用（single page web application，SPA），就是只有一张Web页面的应用。浏览器一开始会加载必需的HTML、CSS和JavaScript，所有的操作都在这张页面上完成，由JavaScript来控制不同view在这个页面上的呈现。&lt;/p&gt;
+&lt;p&gt;&lt;img src alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="https://www.shuaime.top/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="AngularJS" scheme="https://www.shuaime.top/tags/AngularJS/"/>
+    
+      <category term="前端" scheme="https://www.shuaime.top/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker容器化</title>
+    <link href="https://www.shuaime.top/posts/3d6301c1/"/>
+    <id>https://www.shuaime.top/posts/3d6301c1/</id>
+    <published>2019-10-20T10:38:36.000Z</published>
+    <updated>2020-03-06T09:10:55.858Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/YAN-PIC/docker.png&quot; alt&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Docker" scheme="https://www.shuaime.top/categories/Docker/"/>
+    
+    
+      <category term="Docker" scheme="https://www.shuaime.top/tags/Docker/"/>
+    
+      <category term="Linux" scheme="https://www.shuaime.top/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用 Github Pages 和 Hexo 搭建自己的独立博客</title>
+    <link href="https://www.shuaime.top/posts/531cd44d/"/>
+    <id>https://www.shuaime.top/posts/531cd44d/</id>
+    <published>2019-10-19T09:00:00.000Z</published>
+    <updated>2020-03-18T05:49:57.854Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/YAN-PIC/01.png&quot; alt&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="BLOG" scheme="https://www.shuaime.top/categories/BLOG/"/>
+    
+      <category term="Hexo" scheme="https://www.shuaime.top/categories/Hexo/"/>
+    
+      <category term="GitHub" scheme="https://www.shuaime.top/categories/GitHub/"/>
+    
+    
+      <category term="hexo" scheme="https://www.shuaime.top/tags/hexo/"/>
+    
+      <category term="blog" scheme="https://www.shuaime.top/tags/blog/"/>
+    
+      <category term="GitHub" scheme="https://www.shuaime.top/tags/GitHub/"/>
+    
+      <category term="Node" scheme="https://www.shuaime.top/tags/Node/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java学习篇之IO流</title>
+    <link href="https://www.shuaime.top/posts/ac21c0cc/"/>
+    <id>https://www.shuaime.top/posts/ac21c0cc/</id>
+    <published>2019-10-12T06:47:09.000Z</published>
+    <updated>2020-03-18T05:49:47.151Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;写作时间：2019-10-12&lt;br&gt;实现目标：总结Java IO流各方面知识点&lt;br&gt;涉及知识：Java IO流&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;【思维导图】&quot;&gt;&lt;a href=&quot;#【思维导图】&quot; class=&quot;headerlink&quot; title=&quot;【思维导图】&quot;&gt;&lt;/a&gt;&lt;font color=&quot;#ff000&quot;&gt;【思维导图】&lt;/font&gt;&lt;/h1&gt;&lt;fancybox&gt;&lt;br&gt;&lt;br&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/YAN-PIC/IO.png&quot; alt&gt;&lt;br&gt;&lt;br&gt;&lt;/fancybox&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="https://www.shuaime.top/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="https://www.shuaime.top/tags/Java/"/>
+    
+      <category term="IO流" scheme="https://www.shuaime.top/tags/IO%E6%B5%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java学习篇之多线程</title>
+    <link href="https://www.shuaime.top/posts/4ad2c499/"/>
+    <id>https://www.shuaime.top/posts/4ad2c499/</id>
+    <published>2019-10-11T06:46:52.000Z</published>
+    <updated>2020-03-18T05:49:24.497Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;写作时间：2019-10-11&lt;br&gt;实现目标：总结Java线程概念，线程并发情况与解决方案&lt;br&gt;涉及知识：Java多线程&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;【思维导图】&quot;&gt;&lt;a href=&quot;#【思维导图】&quot; class=&quot;headerlink&quot; title=&quot;【思维导图】&quot;&gt;&lt;/a&gt;&lt;font color=&quot;#ff000&quot;&gt;【思维导图】&lt;/font&gt;&lt;/h1&gt;&lt;fancybox&gt;&lt;br&gt;&lt;br&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/YAN-PIC/thread.jfif&quot; alt&gt;&lt;br&gt;&lt;br&gt;&lt;/fancybox&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="https://www.shuaime.top/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="https://www.shuaime.top/tags/Java/"/>
+    
+      <category term="多线程" scheme="https://www.shuaime.top/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java学习篇之集合篇</title>
+    <link href="https://www.shuaime.top/posts/e937c3c0/"/>
+    <id>https://www.shuaime.top/posts/e937c3c0/</id>
+    <published>2019-10-10T06:40:07.000Z</published>
+    <updated>2020-03-18T05:49:37.836Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;写作时间：2019-10-10&lt;br&gt;实现目标：总结Java集合概念，攻克集合难点&lt;br&gt;涉及知识：Java集合&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;【思维导图】&quot;&gt;&lt;a href=&quot;#【思维导图】&quot; class=&quot;headerlink&quot; title=&quot;【思维导图】&quot;&gt;&lt;/a&gt;&lt;font color=&quot;#ff000&quot;&gt;【思维导图】&lt;/font&gt;&lt;/h1&gt;&lt;fancybox&gt;&lt;br&gt;&lt;br&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/yanshuai-git/imgHome/YAN-PIC/20200118145736.png&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;/fancybox&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="https://www.shuaime.top/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="https://www.shuaime.top/tags/Java/"/>
+    
+      <category term="集合" scheme="https://www.shuaime.top/tags/%E9%9B%86%E5%90%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://www.shuaime.top/posts/4a17b156/"/>
+    <id>https://www.shuaime.top/posts/4a17b156/</id>
+    <published>2019-10-01T04:40:07.000Z</published>
+    <updated>2020-03-25T09:29:22.156Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;如果你能做梦，你就能实现它。——吉格·金克拉&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;真正的人生，只有在经过艰难卓绝的斗争之后才能实现。——塞涅卡&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;iframe
+        
+      
+    
+    </summary>
+    
+      <category term="BLOG" scheme="https://www.shuaime.top/categories/BLOG/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo-Theme-Sakura</title>
+    <link href="https://www.shuaime.top/posts/undefined/"/>
+    <id>https://www.shuaime.top/posts/undefined/</id>
+    <published>2018-12-12T14:16:01.000Z</published>
+    <updated>2020-03-25T10:15:59.620Z</updated>
+    
+    <summary type="html">
+    
+      hexo-sakura主题使用教程
+    
+    </summary>
+    
+      <category term="技术" scheme="https://www.shuaime.top/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="web" scheme="https://www.shuaime.top/tags/web/"/>
+    
+      <category term="悦读" scheme="https://www.shuaime.top/tags/%E6%82%A6%E8%AF%BB/"/>
+    
+  </entry>
+  
+</feed>

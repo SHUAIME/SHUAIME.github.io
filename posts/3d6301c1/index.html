@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  
+  <title itemprop="name">Docker容器化 | YANSHUAI&#39;S BLOG</title>
+  
+    <link rel="shortcut icon" href="/images/favicon/favicon.ico">
+  
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="stylesheet" id="saukra_css-css" href="/css/style.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/lib.min.css" media="all">
+  <link rel="stylesheet" href="/css/font.css" media="all">
+  <link rel="stylesheet" href="/css/insight.css" media="all">
+  <link rel="stylesheet" href="/css/jquery.fancybox.min.css" media="all">
+  <link rel="stylesheet" href="/css/zoom.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<!--   <link rel="stylesheet" id="saukra_css-css" href="https://2heng.xin/wp-content/cache/autoptimize/css/autoptimize_ad42a61f4c7d4bdd9f91afcff6b5dda5.css
+" type="text/css" media="all"> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yremp/yremp-css@1.3/gitalk.css">
+  <script>
+  /*Initial Variables*/
+  var mashiro_option = new Object();
+  var mashiro_global = new Object();
+  mashiro_option.NProgressON = true;
+  /* 
+   * 邮箱信息之类的东西可以填在这里，这些js变量基本都作用于sakura-app.js
+   * 这样的设置仅是为了方便在基于PHP开发的主题中设置js变量，既然移植到了Node上，我想或许可以精简这一逻辑吧
+   */
+  mashiro_option.email_domain = "";
+  mashiro_option.email_name = "";
+  mashiro_option.cookie_version_control = "";
+  mashiro_option.qzone_autocomplete = false;
+  mashiro_option.site_name = "さくら荘の帅me";
+  mashiro_option.author_name = "帅me";
+  mashiro_option.site_url = "https://sakura.hojun.cn";
+  mashiro_option.v_appId = "leKM5d4BTjwfxIlxxIAAr6Kx-gzGzoHsz";
+  mashiro_option.v_appKey = "5Hgi9oGzFSSLedb5C46Bk3mM";
+  mashiro_option.mathjax = "0";
+  mashiro_option.qq_api_url = "https://api.mashiro.top/qqinfo/"; 
+  mashiro_option.qq_avatar_api_url = "https://api.mashiro.top/qqinfo/";
+
+  // mashiro_option.jsdelivr_css_src = "https://cdn.jsdelivr.net/gh/moezx/cdn@3.4.5/css/lib.min.css";
+  // mashiro_option.float_player_on = true;
+
+  /*End of Initial Variables*/
+  </script>
+  <script type="text/javascript">
+  var bg = "https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/img/cover/webp/AK-01.jpg.webp,https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/img/cover/webp/AK-02.jpg.webp,https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/img/cover/webp/AK-03.jpg.webp,https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/img/cover/webp/AK-04.jpg.webp,https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/img/cover/webp/AK-05.jpg.webp".split(",");
+  var bgindex = Math.floor(Math.random()*bg.length);
+  if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+    alert('朋友，IE浏览器未适配哦~');
+  }
+  </script>
+  <style type="text/css">
+  .hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}
+  </style>
+  <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
+  </style>
+</head>
+</html>
+<body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
+  <div class="scrollbar" id="bar">
+  </div>
+  <a href="#" class="cd-top faa-float animated"></a>
+  <section id="main-container">
+    <div class="headertop filter-grid">
+  <div id="banner_wave_1"></div>
+  <div id="banner_wave_2"></div>
+  <figure id="centerbg" class="centerbg">
+    <div class="focusinfo no-select">
+      <div class="header-tou">
+        <a href="https://sakura.hojun.cn">
+          <img src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN//images/background/avatar.jpg">
+        </a>
+      </div>
+      <div class="header-info">
+        <p>帅me随笔</p>
+        <div class="top-social_v2">
+          <li id="bg-pre">
+            <img class="flipx" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+          
+            
+              
+                <li>
+                  <a href="http://github.com/shuaime" target="_blank" class="social-github" title="github">
+                    <img src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN//img/social/github.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=soOGgIWHh4KFgIfyw8Oc0d3f" target="_blank" class="social-github" title="email">
+                    <img src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN//img/social/email.svg">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="https://blog.csdn.net/shuaime" target="_blank" class="social-github" title="csdn">
+                    <img src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN//img/social/csdn.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li class="wechat">
+                  <a href="/#">
+                    <img src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN//img/social/wechat.png">
+                  </a>
+                  <div class="wechatInner">
+                    <img src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN//img/custom/wechat.jpg">
+                  </div>
+                </li>
+              
+            
+          
+          <li id="bg-next">
+            <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+        </div>
+      </div>
+    </div>
+  </figure>
+  <div id="video-container" style="">
+    <video style="object-fit: fill" id="bgvideo" class="video" video-name="" src="" width="auto" preload="auto">
+    </video>
+    <div id="video-btn" class="loadvideo videolive">
+    </div>
+    <div id="video-add">
+    </div>
+    <div class="video-stu">
+    </div>
+  </div>
+  <div class="headertop-down faa-float animated" onclick="headertop_down()">
+    <span>
+      <i class="fa fa-chevron-down" aria-hidden="true">
+      </i>
+    </span>
+  </div>
+</div>
+    <div id="page" class="site wrapper">
+      <header class="site-header no-select gizle sabit" role="banner">
+  <div class="site-top">
+    <div class="site-branding">
+      <span class="site-title">
+        <span class="logolink moe-mashiro">
+          <a href="/">
+            <span class="sakurasono">さくら荘の</span>
+            <span class="shironeko">帅me</span>
+          </a>
+        </span>
+      </span>
+    </div>
+    <div class="searchbox search-form-submit">
+      <i class="iconfont js-toggle-search iconsearch icon-search">
+      </i>
+    </div>
+    <div id="show-nav" class="showNav mobile-fit">
+      <div class="line line1">
+      </div>
+      <div class="line line2">
+      </div>
+      <div class="line line3">
+      </div>
+    </div>
+    <div class="lower-cantiner">
+      <div class="lower">
+        <nav class="mobile-fit-control hide">
+          <ul id="menu-new" class="menu">
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+                    首页
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+                    归档
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/categories/技术/">
+                          <i class="fa fa-code" aria-hidden="true"></i>
+                          技术
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/生活/">
+                          <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                          生活
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/资源/">
+                          <i class="fa fa-cloud-download" aria-hidden="true"></i>
+                          资源
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/随想/">
+                          <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                          随想
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/转载/">
+                          <i class="fa fa-book" aria-hidden="true"></i>
+                          转载
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/tags/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-tag" aria-hidden="true"></i>
+                    标签
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/categories/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-bookmark" aria-hidden="true"></i>
+                    分类
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/comment/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+                    留言板
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/donate/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-heart faa-pulse" aria-hidden="true"></i>
+                    赞赏
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+                    关于
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/about/">
+                          <i class="fa fa-meetup" aria-hidden="true"></i>
+                          我？
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/theme-sakura/">
+                          <i class="fa iconfont icon-sakura" aria-hidden="true"></i>
+                          主题
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/atom.xml">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-rss faa-pulse" aria-hidden="true"></i>
+                    RSS
+                  </span>
+                </a>
+                
+              </li>
+            
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
+
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+          <header class="entry-header">
+            <h1 class="entry-title">Docker容器化</h1>
+            <p class="entry-census">[object Object]&nbsp;·&nbsp;2019-10-20&nbsp;·&nbsp;<span id="busuanzi_value_page_pv"></span>次阅读</p></p>
+
+            <hr>
+          </header>
+        
+        <div class="entry-content">
+          <p><img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/YAN-PIC/docker.png" alt></p>
+<a id="more"></a>
+<h1 id="1-Docker简介"><a href="#1-Docker简介" class="headerlink" title="1 Docker简介"></a>1 Docker简介</h1><h2 id="1-1-什么是虚拟化"><a href="#1-1-什么是虚拟化" class="headerlink" title="1.1 什么是虚拟化"></a>1.1 什么是虚拟化</h2><p>​    在计算机中，虚拟化（英语：Virtualization）是一种资源管理技术，是将计算机的各种实体资源，如服务器、网络、内存及存储等，予以抽象、转换后呈现出来，打破实体结构间的不可切割的障碍，使用户可以比原本的组态更好的方式来应用这些资源。这些资源的新虚拟部份是不受现有资源的架设方式，地域或物理组态所限制。一般所指的虚拟化资源包括计算能力和资料存储。</p>
+<p>​    在实际的生产环境中，虚拟化技术主要用来解决高性能的物理硬件产能过剩和老的旧的硬件产能过低的重组重用，透明化底层物理硬件，从而最大化的利用物理硬件   对资源充分利用</p>
+<p>​    虚拟化技术种类很多，例如：软件虚拟化、硬件虚拟化、内存虚拟化、网络虚拟化(vip)、桌面虚拟化、服务虚拟化、虚拟机等等。</p>
+<h2 id="1-2-什么是Docker"><a href="#1-2-什么是Docker" class="headerlink" title="1.2 什么是Docker"></a>1.2 什么是Docker</h2><p>​    Docker 是一个开源项目，诞生于 2013 年初，最初是 dotCloud 公司内部的一个业余项目。它基于 Google 公司推出的 Go 语言实现。 项目后来加入了 Linux 基金会，遵从了 Apache 2.0 协议，项目代码在 <a href="https://github.com/docker/docker" target="_blank" rel="noopener">GitHub</a> 上进行维护。</p>
+<p>​    Docker 自开源后受到广泛的关注和讨论，以至于 dotCloud 公司后来都改名为 Docker Inc。Redhat 已经在其 RHEL6.5 中集中支持 Docker；Google 也在其 PaaS 产品中广泛应用。</p>
+<p>​    Docker 项目的目标是实现轻量级的操作系统虚拟化解决方案。 Docker 的基础是 Linux 容器（LXC）等技术。</p>
+<p>​    在 LXC 的基础上 Docker 进行了进一步的封装，让用户不需要去关心容器的管理，使得操作更为简便。用户操作 Docker 的容器就像操作一个快速轻量级的虚拟机一样简单。</p>
+<p>为什么选择Docker?</p>
+<p>（1）上手快。</p>
+<p>​    用户只需要几分钟，就可以把自己的程序“Docker化”。Docker依赖于“写时复制”（copy-on-write）模型，使修改应用程序也非常迅速，可以说达到“随心所致，代码即改”的境界。<br>   随后，就可以创建容器来运行应用程序了。大多数Docker容器只需要不到1秒中即可启动。由于去除了管理程序的开销，Docker容器拥有很高的性能，同时同一台宿主机中也可以运行更多的容器，使用户尽可能的充分利用系统资源。</p>
+<p>（2）职责的逻辑分类</p>
+<p>​    使用Docker，开发人员只需要关心容器中运行的应用程序，而运维人员只需要关心如何管理容器。Docker设计的目的就是要加强开发人员写代码的开发环境与应用程序要部署的生产环境一致性。从而降低那种“开发时一切正常，肯定是运维的问题（测试环境都是正常的，上线后出了问题就归结为肯定是运维的问题）”</p>
+<p>（3）快速高效的开发生命周期</p>
+<p>​    Docker的目标之一就是缩短代码从开发、测试到部署、上线运行的周期，让你的应用程序具备可移植性，易于构建，并易于协作。（通俗一点说，Docker就像一个盒子，里面可以装很多物件，如果需要这些物件的可以直接将该大盒子拿走，而不需要从该盒子中一件件的取。）</p>
+<p>（4）鼓励使用面向服务的架构</p>
+<p>​    Docker还鼓励面向服务的体系结构和微服务架构。Docker推荐单个容器只运行一个应用程序或进程，这样就形成了一个分布式的应用程序模型，在这种模型下，应用程序或者服务都可以表示为一系列内部互联的容器，从而使分布式部署应用程序，扩展或调试应用程序都变得非常简单，同时也提高了程序的内省性。（当然，可以在一个容器中运行多个应用程序）</p>
+<h2 id="1-3-容器与虚拟机比较"><a href="#1-3-容器与虚拟机比较" class="headerlink" title="1.3 容器与虚拟机比较"></a>1.3 容器与虚拟机比较</h2><p>​    下面的图片比较了 Docker 和传统虚拟化方式的不同之处，可见容器是在操作系统层面上实现虚拟化，直接复用本地主机的操作系统，而传统方式则是在硬件层面实现。</p>
+<p><img src="E:/视频/image/1-1.png" alt></p>
+<p>与传统的虚拟机相比，Docker优势体现为启动速度快、占用体积小。</p>
+<h2 id="1-4-Docker-组件"><a href="#1-4-Docker-组件" class="headerlink" title="1.4 Docker 组件"></a>1.4 Docker 组件</h2><h3 id="1-4-1-Docker服务器与客户端"><a href="#1-4-1-Docker服务器与客户端" class="headerlink" title="1.4.1 Docker服务器与客户端"></a>1.4.1 Docker服务器与客户端</h3><p>​    Docker是一个客户端-服务器（C/S）架构程序。Docker客户端只需要向Docker服务器或者守护进程发出请求，服务器或者守护进程将完成所有工作并返回结果。Docker提供了一个命令行工具Docker以及一整套RESTful API。你可以在同一台宿主机上运行Docker守护进程和客户端，也可以从本地的Docker客户端连接到运行在另一台宿主机上的远程Docker守护进程。</p>
+<p><img src="E:/视频/image/1-2.png" alt></p>
+<h3 id="1-4-2-Docker镜像与容器"><a href="#1-4-2-Docker镜像与容器" class="headerlink" title="1.4.2 Docker镜像与容器"></a>1.4.2 Docker镜像与容器</h3><p>​    镜像是构建Docker的基石。用户基于镜像来运行自己的容器。镜像也是Docker生命周期中的“构建”部分。镜像是基于联合文件系统的一种层式结构，由一系列指令一步一步构建出来。例如：</p>
+<p>添加一个文件；</p>
+<p>执行一个命令；</p>
+<p>打开一个窗口。</p>
+<p>也可以将镜像当作容器的“源代码”。镜像体积很小，非常“便携”，易于分享、存储和更新。</p>
+<p>​    Docker可以帮助你构建和部署容器，你只需要把自己的应用程序或者服务打包放进容器即可。容器是基于镜像启动起来的，容器中可以运行一个或多个进程。我们可以认为，镜像是Docker生命周期中的构建或者打包阶段，而容器则是启动或者执行阶段。  容器基于镜像启动，一旦容器启动完成后，我们就可以登录到容器中安装自己需要的软件或者服务。</p>
+<p>所以Docker容器就是：</p>
+<p>​    一个镜像格式；</p>
+<p>​    一些列标准操作；</p>
+<p>​    一个执行环境。</p>
+<p>​    Docker借鉴了标准集装箱的概念。标准集装箱将货物运往世界各地，Docker将这个模型运用到自己的设计中，唯一不同的是：集装箱运输货物，而Docker运输软件。</p>
+<p>   和集装箱一样，Docker在执行上述操作时，并不关心容器中到底装了什么，它不管是web服务器，还是数据库，或者是应用程序服务器什么的。所有的容器都按照相同的方式将内容“装载”进去。</p>
+<p>   Docker也不关心你要把容器运到何方：我们可以在自己的笔记本中构建容器，上传到Registry，然后下载到一个物理的或者虚拟的服务器来测试，在把容器部署到具体的主机中。像标准集装箱一样，Docker容器方便替换，可以叠加，易于分发，并且尽量通用。</p>
+<h3 id="1-4-3-Registry（注册中心）"><a href="#1-4-3-Registry（注册中心）" class="headerlink" title="1.4.3 Registry（注册中心）"></a>1.4.3 Registry（注册中心）</h3><p>​    Docker用Registry来保存用户构建的镜像。Registry分为公共和私有两种。Docker公司运营公共的Registry叫做Docker Hub。用户可以在Docker Hub注册账号，分享并保存自己的镜像（说明：在Docker Hub下载镜像巨慢，可以自己构建私有的Registry）。</p>
+<p>​    <a href="https://hub.docker.com/" target="_blank" rel="noopener">https://hub.docker.com/</a></p>
+<h1 id="2-Docker安装与启动"><a href="#2-Docker安装与启动" class="headerlink" title="2 Docker安装与启动"></a>2 Docker安装与启动</h1><h2 id="2-1-安装Docker"><a href="#2-1-安装Docker" class="headerlink" title="2.1 安装Docker"></a>2.1 安装Docker</h2><p>​    Docker官方建议在Ubuntu中安装，因为Docker是基于Ubuntu发布的，而且一般Docker出现的问题Ubuntu是最先更新或者打补丁的。在很多版本的CentOS中是不支持更新最新的一些补丁包的。</p>
+<p>​    由于我们学习的环境都使用的是CentOS，因此这里我们将Docker安装到CentOS上。注意：这里建议安装在CentOS7.x以上的版本，在CentOS6.x的版本中，安装前需要安装其他很多的环境而且Docker很多补丁不支持更新。</p>
+<p>​    请直接挂载课程配套的Centos7.x镜像    </p>
+<p>（1）yum 包更新到最新</p>
+<pre><code>sudo yum update
+</code></pre><p>（2）安装需要的软件包， yum-util 提供yum-config-manager功能，另外两个是devicemapper驱动依赖的</p>
+<pre><code>sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+</code></pre><p>（3）设置yum源为阿里云</p>
+<pre><code>sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+</code></pre><p>（4）安装docker</p>
+<pre><code>sudo yum install docker-ce
+</code></pre><p>（5）安装后查看docker版本</p>
+<pre><code>docker -v
+</code></pre><h2 id="2-2-设置ustc的镜像"><a href="#2-2-设置ustc的镜像" class="headerlink" title="2.2 设置ustc的镜像"></a>2.2 设置ustc的镜像</h2><p>ustc是老牌的linux镜像服务提供者了，还在遥远的ubuntu 5.04版本的时候就在用。ustc的docker镜像加速器速度很快。ustc docker mirror的优势之一就是不需要注册，是真正的公共服务。</p>
+<p><a href="https://lug.ustc.edu.cn/wiki/mirrors/help/docker" target="_blank" rel="noopener">https://lug.ustc.edu.cn/wiki/mirrors/help/docker</a></p>
+<p>编辑该文件：</p>
+<pre><code>vi /etc/docker/daemon.json  
+</code></pre><p>在该文件中输入如下内容：</p>
+<pre><code>{
+&quot;registry-mirrors&quot;: [&quot;https://docker.mirrors.ustc.edu.cn&quot;]
+}
+</code></pre><h2 id="2-3-Docker的启动与停止"><a href="#2-3-Docker的启动与停止" class="headerlink" title="2.3 Docker的启动与停止"></a>2.3 Docker的启动与停止</h2><p><strong>systemctl</strong>命令是系统服务管理器指令</p>
+<p>启动docker：</p>
+<pre><code>systemctl start docker
+</code></pre><p>停止docker：</p>
+<pre><code>systemctl stop docker
+</code></pre><p>重启docker：</p>
+<pre><code>systemctl restart docker
+</code></pre><p>查看docker状态：</p>
+<pre><code>systemctl status docker
+</code></pre><p>开机启动：</p>
+<pre><code>systemctl enable docker
+</code></pre><p>查看docker概要信息</p>
+<pre><code>docker info
+</code></pre><p>查看docker帮助文档</p>
+<pre><code>docker --help
+</code></pre><h1 id="3-常用命令"><a href="#3-常用命令" class="headerlink" title="3 常用命令"></a>3 常用命令</h1><h2 id="3-1-镜像相关命令"><a href="#3-1-镜像相关命令" class="headerlink" title="3.1 镜像相关命令"></a>3.1 镜像相关命令</h2><h3 id="3-1-1-查看镜像"><a href="#3-1-1-查看镜像" class="headerlink" title="3.1.1 查看镜像"></a>3.1.1 查看镜像</h3><pre><code>docker images
+</code></pre><p>REPOSITORY：镜像名称</p>
+<p>TAG：镜像标签</p>
+<p>IMAGE ID：镜像ID</p>
+<p>CREATED：镜像的创建日期（不是获取该镜像的日期）</p>
+<p>SIZE：镜像大小</p>
+<p>这些镜像都是存储在Docker宿主机的/var/lib/docker目录下</p>
+<h3 id="3-1-2-搜索镜像"><a href="#3-1-2-搜索镜像" class="headerlink" title="3.1.2 搜索镜像"></a>3.1.2 搜索镜像</h3><p>如果你需要从网络中查找需要的镜像，可以通过以下命令搜索</p>
+<pre><code>docker search 镜像名称
+</code></pre><p>NAME：仓库名称</p>
+<p>DESCRIPTION：镜像描述</p>
+<p>STARS：用户评价，反应一个镜像的受欢迎程度</p>
+<p>OFFICIAL：是否官方</p>
+<p>AUTOMATED：自动构建，表示该镜像由Docker Hub自动构建流程创建的</p>
+<h3 id="3-1-3-拉取镜像"><a href="#3-1-3-拉取镜像" class="headerlink" title="3.1.3 拉取镜像"></a>3.1.3 拉取镜像</h3><p>拉取镜像就是从中央仓库中下载镜像到本地</p>
+<pre><code>docker pull 镜像名称
+</code></pre><p>例如，我要下载centos7镜像</p>
+<pre><code>docker pull centos:7
+</code></pre><h3 id="3-1-4-删除镜像"><a href="#3-1-4-删除镜像" class="headerlink" title="3.1.4 删除镜像"></a>3.1.4 删除镜像</h3><p>按镜像ID删除镜像</p>
+<pre><code>docker rmi 镜像ID
+</code></pre><p>删除所有镜像</p>
+<pre><code>docker rmi `docker images -q`
+</code></pre><h2 id="3-2-容器相关命令"><a href="#3-2-容器相关命令" class="headerlink" title="3.2 容器相关命令"></a>3.2 容器相关命令</h2><h3 id="3-2-1-查看容器"><a href="#3-2-1-查看容器" class="headerlink" title="3.2.1 查看容器"></a>3.2.1 查看容器</h3><p>查看正在运行的容器</p>
+<pre><code>docker ps
+</code></pre><p>查看所有容器</p>
+<pre><code>docker ps –a
+</code></pre><p>查看最后一次运行的容器</p>
+<pre><code>docker ps –l
+</code></pre><p>查看停止的容器</p>
+<pre><code>docker ps -f status=exited
+</code></pre><h3 id="3-2-2-创建与启动容器"><a href="#3-2-2-创建与启动容器" class="headerlink" title="3.2.2 创建与启动容器"></a>3.2.2 创建与启动容器</h3><p>创建容器常用的参数说明：</p>
+<p>创建容器命令：docker run</p>
+<p> -i：表示运行容器</p>
+<p> -t：表示容器启动后会进入其命令行。加入这两个参数后，容器创建就能登录进去。即分配一个伪终端。</p>
+<p> –name :为创建的容器命名。</p>
+<p> -v：表示目录映射关系（前者是宿主机目录，后者是映射到宿主机上的目录），可以使用多个－v做多个目录或文件映射。注意：最好做目录映射，在宿主机上做修改，然后共享到容器上。</p>
+<p> -d：在run后面加上-d参数,则会创建一个守护式容器在后台运行（这样创建容器后不会自动登录容器，如果只加-i -t两个参数，创建后就会自动进去容器）。</p>
+<p> -p：表示端口映射，前者是宿主机端口，后者是容器内的映射端口。可以使用多个-p做多个端口映射</p>
+<p>（1）交互式方式创建容器</p>
+<pre><code>docker run -it --name=容器名称 镜像名称:标签 /bin/bash
+</code></pre><p>这时我们通过ps命令查看，发现可以看到启动的容器，状态为启动状态  </p>
+<p>退出当前容器</p>
+<pre><code>exit
+</code></pre><p>（2）守护式方式创建容器：</p>
+<pre><code>docker run -di --name=容器名称 镜像名称:标签
+</code></pre><p>登录守护式容器方式：</p>
+<pre><code>docker exec -it 容器名称 (或者容器ID)  /bin/bash
+</code></pre><h3 id="3-2-3-停止与启动容器"><a href="#3-2-3-停止与启动容器" class="headerlink" title="3.2.3 停止与启动容器"></a>3.2.3 停止与启动容器</h3><p>停止容器：</p>
+<pre><code>docker stop 容器名称（或者容器ID）
+</code></pre><p>启动容器：</p>
+<pre><code>docker start 容器名称（或者容器ID）
+</code></pre><h3 id="3-2-4-文件拷贝"><a href="#3-2-4-文件拷贝" class="headerlink" title="3.2.4 文件拷贝"></a>3.2.4 文件拷贝</h3><p>如果我们需要将文件拷贝到容器内可以使用cp命令</p>
+<pre><code>docker cp 需要拷贝的文件或目录 容器名称:容器目录
+</code></pre><p>也可以将文件从容器内拷贝出来</p>
+<pre><code>docker cp 容器名称:容器目录 需要拷贝的文件或目录
+</code></pre><h3 id="3-2-5-目录挂载"><a href="#3-2-5-目录挂载" class="headerlink" title="3.2.5 目录挂载"></a>3.2.5 目录挂载</h3><p>我们可以在创建容器的时候，将宿主机的目录与容器内的目录进行映射，这样我们就可以通过修改宿主机某个目录的文件从而去影响容器。<br>创建容器 添加-v参数 后边为   宿主机目录:容器目录，例如：</p>
+<pre><code>docker run -di -v /usr/local/myhtml:/usr/local/myhtml --name=mycentos3 centos:7
+</code></pre><p>如果你共享的是多级的目录，可能会出现权限不足的提示。</p>
+<p>这是因为CentOS7中的安全模块selinux把权限禁掉了，我们需要添加参数  –privileged=true  来解决挂载的目录没有权限的问题</p>
+<h3 id="3-2-6-查看容器IP地址"><a href="#3-2-6-查看容器IP地址" class="headerlink" title="3.2.6 查看容器IP地址"></a>3.2.6 查看容器IP地址</h3><p>我们可以通过以下命令查看容器运行的各种数据</p>
+<pre><code>docker inspect 容器名称（容器ID） 
+</code></pre><p>也可以直接执行下面的命令直接输出IP地址</p>
+<pre><code>docker inspect --format=&#39;{{.NetworkSettings.IPAddress}}&#39; 容器名称（容器ID）
+</code></pre><h3 id="3-2-7-删除容器"><a href="#3-2-7-删除容器" class="headerlink" title="3.2.7 删除容器"></a>3.2.7 删除容器</h3><p>删除指定的容器：</p>
+<pre><code>docker rm 容器名称（容器ID）
+</code></pre><h1 id="4-应用部署"><a href="#4-应用部署" class="headerlink" title="4 应用部署"></a>4 应用部署</h1><h2 id="4-1-MySQL部署"><a href="#4-1-MySQL部署" class="headerlink" title="4.1 MySQL部署"></a>4.1 MySQL部署</h2><p>（1）拉取mysql镜像</p>
+<pre><code>docker pull centos/mysql-57-centos7
+</code></pre><p>（2）创建容器</p>
+<pre><code>docker run -di --name=tensquare_mysql -p 33306:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql
+</code></pre><p>-p 代表端口映射，格式为  宿主机映射端口:容器运行端口</p>
+<p>-e 代表添加环境变量  MYSQL_ROOT_PASSWORD  是root用户的登陆密码</p>
+<p>（3）远程登录mysql</p>
+<p>连接宿主机的IP  ,指定端口为33306 </p>
+<h2 id="4-2-tomcat部署"><a href="#4-2-tomcat部署" class="headerlink" title="4.2 tomcat部署"></a>4.2 tomcat部署</h2><p>（1）拉取镜像</p>
+<pre><code>docker pull tomcat:7-jre7
+</code></pre><p>（2）创建容器</p>
+<p>创建容器  -p表示地址映射</p>
+<pre><code>docker run -di --name=mytomcat -p 9000:8080 
+-v /usr/local/webapps:/usr/local/tomcat/webapps tomcat:7-jre7
+</code></pre><h2 id="4-3-Nginx部署"><a href="#4-3-Nginx部署" class="headerlink" title="4.3 Nginx部署"></a>4.3 Nginx部署</h2><p>（1）拉取镜像    </p>
+<pre><code>docker pull nginx
+</code></pre><p>（2）创建Nginx容器</p>
+<pre><code>docker run -di --name=mynginx -p 80:80 nginx
+</code></pre><h2 id="4-4-Redis部署"><a href="#4-4-Redis部署" class="headerlink" title="4.4 Redis部署"></a>4.4 Redis部署</h2><p>（1）拉取镜像</p>
+<pre><code>docker pull redis
+</code></pre><p>（2）创建容器</p>
+<pre><code>docker run -di --name=myredis -p 6379:6379 redis
+</code></pre><h1 id="5-迁移与备份"><a href="#5-迁移与备份" class="headerlink" title="5 迁移与备份"></a>5 迁移与备份</h1><h2 id="5-1-容器保存为镜像"><a href="#5-1-容器保存为镜像" class="headerlink" title="5.1 容器保存为镜像"></a>5.1 容器保存为镜像</h2><p>我们可以通过以下命令将容器保存为镜像</p>
+<pre><code>docker commit mynginx mynginx_i
+</code></pre><h2 id="5-2-镜像备份"><a href="#5-2-镜像备份" class="headerlink" title="5.2 镜像备份"></a>5.2 镜像备份</h2><p>我们可以通过以下命令将镜像保存为tar 文件</p>
+<pre><code>docker  save -o mynginx.tar mynginx_i
+</code></pre><h2 id="5-3-镜像恢复与迁移"><a href="#5-3-镜像恢复与迁移" class="headerlink" title="5.3 镜像恢复与迁移"></a>5.3 镜像恢复与迁移</h2><p>首先我们先删除掉mynginx_img镜像  然后执行此命令进行恢复</p>
+<pre><code>docker load -i mynginx.tar
+</code></pre><p>-i 输入的文件</p>
+<p>执行后再次查看镜像，可以看到镜像已经恢复</p>
+<h1 id="6-Dockerfile"><a href="#6-Dockerfile" class="headerlink" title="6 Dockerfile"></a>6 Dockerfile</h1><h2 id="6-1-什么是Dockerfile"><a href="#6-1-什么是Dockerfile" class="headerlink" title="6.1 什么是Dockerfile"></a>6.1 什么是Dockerfile</h2><p>Dockerfile是由一系列命令和参数构成的脚本，这些命令应用于基础镜像并最终创建一个新的镜像。</p>
+<p>1、对于开发人员：可以为开发团队提供一个完全一致的开发环境；<br>2、对于测试人员：可以直接拿开发时所构建的镜像或者通过Dockerfile文件构建一个新的镜像开始工作了；<br>3、对于运维人员：在部署时，可以实现应用的无缝移植。</p>
+<h2 id="6-2-常用命令"><a href="#6-2-常用命令" class="headerlink" title="6.2 常用命令"></a>6.2 常用命令</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FROM image_name:tag</td>
+<td>定义了使用哪个基础镜像启动构建流程</td>
+</tr>
+<tr>
+<td>MAINTAINER user_name</td>
+<td>声明镜像的创建者</td>
+</tr>
+<tr>
+<td>ENV key value</td>
+<td>设置环境变量 (可以写多条)</td>
+</tr>
+<tr>
+<td>RUN command</td>
+<td>是Dockerfile的核心部分(可以写多条)</td>
+</tr>
+<tr>
+<td>ADD source_dir/file dest_dir/file</td>
+<td>将宿主机的文件复制到容器内，如果是一个压缩文件，将会在复制后自动解压</td>
+</tr>
+<tr>
+<td>COPY source_dir/file dest_dir/file</td>
+<td>和ADD相似，但是如果有压缩文件并不能解压</td>
+</tr>
+<tr>
+<td>WORKDIR path_dir</td>
+<td>设置工作目录</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-3-使用脚本创建镜像"><a href="#6-3-使用脚本创建镜像" class="headerlink" title="6.3 使用脚本创建镜像"></a>6.3 使用脚本创建镜像</h2><p>步骤：</p>
+<p>（1）创建目录</p>
+<pre><code>mkdir –p /usr/local/dockerjdk8
+</code></pre><p>（2）下载jdk-8u171-linux-x64.tar.gz并上传到服务器（虚拟机）中的/usr/local/dockerjdk8目录</p>
+<p>（3）创建文件Dockerfile  <code>vi Dockerfile</code></p>
+<pre><code>#依赖镜像名称和ID
+FROM centos:7
+#指定镜像创建者信息
+MAINTAINER ITCAST
+#切换工作目录
+WORKDIR /usr
+RUN mkdir  /usr/local/java
+#ADD 是相对路径jar,把java添加到容器中
+ADD jdk-8u171-linux-x64.tar.gz /usr/local/java/
+
+#配置java环境变量
+ENV JAVA_HOME /usr/local/java/jdk1.8.0_171
+ENV JRE_HOME $JAVA_HOME/jre
+ENV CLASSPATH $JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib:$CLASSPATH
+ENV PATH $JAVA_HOME/bin:$PATH
+</code></pre><p>（4）执行命令构建镜像</p>
+<pre><code>docker build -t=&#39;jdk1.8&#39; .
+</code></pre><p>注意后边的空格和点，不要省略</p>
+<p>（5）查看镜像是否建立完成</p>
+<pre><code>docker images
+</code></pre><h1 id="7-Docker私有仓库"><a href="#7-Docker私有仓库" class="headerlink" title="7 Docker私有仓库"></a>7 Docker私有仓库</h1><h2 id="7-1-私有仓库搭建与配置"><a href="#7-1-私有仓库搭建与配置" class="headerlink" title="7.1 私有仓库搭建与配置"></a>7.1 私有仓库搭建与配置</h2><p>（1）拉取私有仓库镜像（此步省略）</p>
+<pre><code>docker pull registry
+</code></pre><p>（2）启动私有仓库容器</p>
+<pre><code>docker run -di --name=registry -p 5000:5000 registry
+</code></pre><p>（3）打开浏览器 输入地址<a href="http://192.168.184.141:5000/v2/_catalog看到`{&quot;repositories&quot;:[]}`" target="_blank" rel="noopener">http://192.168.184.141:5000/v2/_catalog看到`{&quot;repositories&quot;:[]}`</a> 表示私有仓库搭建成功并且内容为空</p>
+<p>（4）修改daemon.json</p>
+<pre><code>vi /etc/docker/daemon.json
+</code></pre><p>添加以下内容，保存退出。</p>
+<pre><code class="json">{&quot;insecure-registries&quot;:[&quot;192.168.184.141:5000&quot;]} 
+</code></pre>
+<p>此步用于让 docker信任私有仓库地址</p>
+<p>（5）重启docker 服务</p>
+<pre><code>systemctl restart docker
+</code></pre><h2 id="7-2-镜像上传至私有仓库"><a href="#7-2-镜像上传至私有仓库" class="headerlink" title="7.2 镜像上传至私有仓库"></a>7.2 镜像上传至私有仓库</h2><p>（1）标记此镜像为私有仓库的镜像</p>
+<pre><code>docker tag jdk1.8 192.168.184.141:5000/jdk1.8
+</code></pre><p>（2）再次启动私服容器</p>
+<pre><code>docker start registry
+</code></pre><p>（3）上传标记的镜像</p>
+<pre><code>docker push 192.168.184.141:5000/jdk1.8
+</code></pre>
+        </div>
+        <!-- .entry-content -->
+        <!--<div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN//img/custom/donate/AliPayQR.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN//img/custom/donate/WeChanQR.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>-->
+
+	<!-- 写后感言与打赏 -->	
+	<div id="reward">
+  
+  <div>您的喜欢是作者写作最大的动力！❤️</div>
+  
+  <div class="reward">
+    <a href="https://github.com/SHUAIME" target="_blank" class=" tr3" title="Github"><span
+        id="github"></span></a>
+    <ul id="RewardBox" class="list pos-f tr3">
+      
+      <li id="PayPal" title="PayPal打赏"><a href="https://paypal.me/SHUAIME" target="_blank">PayPal</a></li>
+      
+      
+      <li id="AliPayOR" title="支付宝打赏">AliPay</li>
+      
+      
+      <li id="WeChatPayOR" title="微信打赏">WeChatPay</li>
+      
+      
+      <li id="QQPayOR" title="QQ打赏">QQPay</li>
+      
+    </ul>
+    <div id="RewardText" class="tr3">YAN</div>
+    <div id="QRBox" class="pos-f left-100">
+      <div id="MainBox"></div>
+    </div>
+  </div>
+</div>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+<script>
+  jQuery(document).ready(function () {
+    var QRBox = $('#QRBox');
+    var MainBox = $('#MainBox');
+    var AliPayOR = 'https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/YAN-PIC/AliPayQR.png';
+    var WeChatPayOR = 'https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/YAN-PIC/WeChatQR.png';
+    var QQPayOR = 'https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/YAN-PIC/QQPayQR.png';
+
+    function showQR(QR) {
+      if (QR) {
+        MainBox.css('background-image', 'url(' + QR + ')');
+      }
+      $('#RewardText,#RewardBox,#github').addClass('blur');
+      QRBox.fadeIn(300, function (argument) {
+        MainBox.addClass('showQR');
+      });
+    }
+
+    $('#RewardBox>li').click(function (event) {
+      var thisID = $(this).attr('id');
+      if (thisID === 'AliPayOR') {
+        showQR(AliPayOR);
+      } else if (thisID === 'WeChatPayOR') {
+        showQR(WeChatPayOR);
+      } else if (thisID === 'QQPayOR') {
+        showQR(QQPayOR);
+      }
+    });
+
+    MainBox.click(function (event) {
+      MainBox.removeClass('showQR').addClass('hideQR');
+      setTimeout(function (a) {
+        QRBox.fadeOut(300, function (argument) {
+          MainBox.removeClass('hideQR');
+        });
+        $('#RewardText,#RewardBox,#github').removeClass('blur');
+      }, 600);
+
+    });
+  });
+</script>
+
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/posts/8fa64eaf/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                AngularJS</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/posts/531cd44d/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                使用 Github Pages 和 Hexo 搭建自己的独立博客</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+
+  <script src="https://cdn.jsdelivr.net/gh/yremp/yremp-js@1.1/gitalk.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yremp/yremp-css@1.3/gitalk.css">
+  <div id="gitalk-container"></div>
+  
+  <script type="text/javascript">
+      var gitalk = new Gitalk({
+          clientID: 'a0b1fd1a8f289cb82280',
+          clientSecret: 'e740e2de5477da76dafea57903a04fd58f672398',
+          id: window.location.pathname,
+          repo: 'Comment',
+          owner: 'SHUAIME',
+          admin: 'SHUAIME'
+      })
+      gitalk.render('gitalk-container')
+    </script>
+
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+          <a href="" class="profile gravatar"><img src="" itemprop="image" alt="[object Object]" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="" itemprop="url" rel="author">[object Object]</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i></p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
+</div>
+
+
+
+    </div>    
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            // PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+    <div id="gitalk-container"></div>
+<script src="https://cdn.jsdelivr.net/gh/yremp/yremp-js@1.1/gitalk.js"></script>
+<footer id="colophon" class="site-footer" role="contentinfo">
+  <div class="site-info">
+    <div class="footertext">
+      <div class="img-preload">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/wordpress-rotating-ball-o.svg">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/disqus-preloader.svg">
+      </div>
+      <p style="color: #666666;"></p>
+    </div>
+    <div class="footer-device">
+		
+		<p style="font-family: 'Ubuntu', sans-serif;">
+			<span style="color: rgba(0,0,0,.4);font-size:16px">
+		<!-- 备案信息 -->
+				Copyright© 2019-2020 YANSHUAI 
+		</span></p>
+		<!-- 底部图标 -->
+		<a href="https://www.aliyun.com/" target="_blank" alt="ALiYun" rel="nofollow">
+		<img src="https://yremp.live/wp-content/uploads/2019/07/aliyun.png" alt="aliyun" style="height: 1.7em; max-height: 1.8em;padding-bottom: 0px;">
+		</a>&nbsp;&nbsp;&nbsp;
+
+		<a href="https://www.jsdelivr.com/" target="_blank" alt="Free CDN" rel="nofollow">
+		<img src="https://www.yremp.live/images/2019/08/17/JsDelivr_Logo0bd9a.png" alt="jsDelivr" style="height: 2em; max-height: 2em;padding-bottom: 0px;">
+		</a>&nbsp;&nbsp;
+
+		<a href="https://github.com/" target="_blank" alt="Github" rel="nofollow">
+		<img src="https://yremp.live/wp-content/uploads/2019/07/Github.png" alt="github" style="height: 2.2em; max-height: 2.5em;padding-bottom: 0px;">
+		</a>&nbsp;&nbsp;
+
+		<a href="https://2heng.xin" target="_blank" alt="Mashiro" rel="nofollow">
+		<img src="https://cdn.jsdelivr.net/gh/moezx/cdn@3.0.8/img/logo/mashiro-logo.png" alt="Mashiro" style="height: 2.5em; max-height: 2em;padding-bottom: 0px; margin-bottom:0.2em">
+		</a>
+	</div>
+  </div><!-- .site-info -->
+</footer>
+
+
+
+<!-- <script src="/js/tocbot.js"></script> -->
+<script type="text/javascript" src="/js/lib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/InsightSearch.js"></script>
+<script type="text/javascript" src="/js/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="/js/zoom.min.js"></script>
+<script type="text/javascript" src="/js/sakura-app.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine@1.3.4/dist/Valine.min.js'></script>
+<script src="/js/botui.js"></script>
+<!-- 不蒜子 网页计数器 -->
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script> -->
+<script type="text/javascript">
+/* <![CDATA[ */
+if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"close"},"windowheight":"fixed","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+} else {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"open"},"windowheight":"auto","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+}
+/* ]]> */
+
+</script>
+<script>
+$(document).ready(function() {
+  if ($(".toc").length > 0 && document.body.clientWidth > 1200) {
+    if ($(".pattern-center").length > 0) { //有图的情况
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -400,
+          scrollSmoothOffset: -85
+      });
+    } else {
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -85,
+          scrollSmoothOffset: -85
+      });
+    }
+    var offsetTop = $('.toc').offset().top - 95;
+    window.onscroll = function() {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+      if (scrollTop >= offsetTop) {
+        $('.toc').addClass('toc-fixed');
+      } else {
+        $('.toc').removeClass('toc-fixed');
+      }
+    }
+  }
+});
+</script>
+<script src="https://cdn.jsdelivr.net/gh/wallleap/cdn@latest/js/hititle.js"></script>
+
+    <div class="openNav no-select" style="height: 50px;">
+      <div class="iconflat no-select" style="width: 50px; height: 50px;">
+        <div class="icon"></div>
+      </div>
+      <div class="site-branding search-form-submit">
+        <i class="iconfont js-toggle-search iconsearch icon-search"></i>
+      </div>
+    </div>
+  </section>
+  <!-- 实现换肤功能 -->
+  <div class="skin-menu no-select" id="mainskin" style="position: fixed">
+ <div class="theme-controls row-container">
+  <ul class="menu-list">
+   <li id="white-bg"> <i class="fa fa-television" aria-hidden="true"></i></li>
+   <li id="sakura-bg"> <i class="iconfont icon-sakura"></i></li>
+   <li id="gribs-bg"> <i class="fa fa-slack" aria-hidden="true"></i></li>
+   <li id="KAdots-bg"> <i class="iconfont icon-dots"></i></li>
+   <li id="totem-bg"> <i class="fa fa-optin-monster" aria-hidden="true"></i></li>
+   <li id="pixiv-bg"> <i class="iconfont icon-pixiv"></i></li>
+   <li id="bing-bg"> <i class="iconfont icon-bing"></i></li>
+   <li id="dark-bg"> <i class="fa fa-moon-o" aria-hidden="true"></i></li>
+  </ul>
+ </div>
+</div>
+<canvas id="night-mode-cover"></canvas>
+ 
+  <div class="changeSkin-gear no-select">
+  <div class="keys" id="setbtn"> 
+   <span id="open-skinMenu"> 切换主题 | SCHEME TOOL  
+     <i class="iconfont icon-gear inline-block rotating"></i> 
+   </span>
+  </div>
+</div>
+
+  <div id="mo-nav" class="">
+  <div class="m-avatar">
+    <img src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN//images/background/avatar.jpg">
+  </div>
+  <p style="text-align: center; color: #333; font-weight: 900; font-family: 'Ubuntu', sans-serif; letter-spacing: 1.5px">さくら荘の帅me</p>
+  <p style="text-align: center; word-spacing: 20px;">
+    
+      
+        <a href="http://github.com/honjun" class="fa fa-github" target="_blank" style="color: #333; margin-left:20px"></a>
+      
+        <a href="http://weibo.com/mashirozx?is_all=1" class="fa fa-weibo" target="_blank" style="color: #dd4b39; margin-left:20px"></a>
+      
+        <a href="https://wpa.qq.com/msgrd?v=3&uin=954655431&site=qq&menu=yes" class="fa fa-qq" target="_blank" style="color: #25c6fe; margin-left:20px"></a>
+      
+    
+  </p>
+  <ul id="menu-new-1" class="menu">
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+            首页
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/archives">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+            归档
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/categories/技术/">
+                  <i class="fa fa-code" aria-hidden="true"></i>
+                  技术
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/生活/">
+                  <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                  生活
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/资源/">
+                  <i class="fa fa-cloud-download" aria-hidden="true"></i>
+                  资源
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/随想/">
+                  <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                  随想
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/转载/">
+                  <i class="fa fa-book" aria-hidden="true"></i>
+                  转载
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="/tags/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-tag" aria-hidden="true"></i>
+            标签
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/categories/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-bookmark" aria-hidden="true"></i>
+            分类
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/comment/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+            留言板
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/donate/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-heart faa-pulse" aria-hidden="true"></i>
+            赞赏
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+            关于
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/about/">
+                  <i class="fa fa-meetup" aria-hidden="true"></i>
+                  我？
+                </a>
+              </li>
+            
+              <li>
+                <a href="/theme-sakura/">
+                  <i class="fa iconfont icon-sakura" aria-hidden="true"></i>
+                  主题
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="/atom.xml">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-rss faa-pulse" aria-hidden="true"></i>
+            RSS
+          </span>
+        </a>
+        
+      </li>
+    
+  </ul>
+  <p style="text-align: center; font-size: 13px; color: #b9b9b9;">&copy 2019 hexo-sakura</p>
+</div>
+<button onclick="topFunction()" class="mobile-cd-top" id="moblieGoTop" title="Go to top" style="display: none;"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<!-- require MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+<style>
+  .aplayer .aplayer-lrc {
+    height: 35px;
+  }
+  .aplayer .aplayer-lrc p{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px !important;
+  }
+  .aplayer .aplayer-lrc p.aplayer-lrc-current{
+    color: #FF1493;
+  }
+  .aplayer.aplayer-narrow .aplayer-body{
+    left: -66px !important;
+  }
+  .aplayer.aplayer-fixed .aplayer-lrc {
+    display: none;
+  }
+  .aplayer .aplayer-lrc.aplayer-lrc-hide {
+      display:none !important;
+  }
+  .aplayer.aplayer-fixed .lrc-show {
+    display: block;
+    background: rgba(255, 255, 255, 0.8);
+  }
+</style>
+<meting-js
+
+    id="762797776"
+
+    server="netease"
+
+    type="playlist"
+
+    fixed="true"
+
+    autoplay="false"
+
+    loop="all"
+
+    order="random"
+
+    preload="none"
+
+    volume="0.7"
+
+    mutex="true"
+
+</meting-js>
+<script>
+  $(function(){
+    $('body').on('click', '.aplayer', function(){
+      if($('.aplayer-button').hasClass('aplayer-play')) {
+        $('.aplayer-lrc').removeClass('lrc-show');
+      } else {
+        $('.aplayer-lrc').addClass('lrc-show');
+      }
+    })
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/sakura.js"></script>
+<!--单击显示文字-->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/js/click_show_text.js"></script>
+<!--爆炸效果-->
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/js/fireworks.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"> <!-- 这条在sakura中已有，可不添加 --><script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+<script src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+</body>
+</html>
