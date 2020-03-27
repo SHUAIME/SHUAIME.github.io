@@ -8119,14 +8119,6 @@ td.hljs-ln-numbers {
 		transform: rotateZ(40deg) scale(0.6, 0.6);
 	}
 }
-
-# 商业转载请联系作者获得授权，非商业转载请注明出处。
-# For commercial use, please contact the author for authorization. For non-commercial use, please indicate the source.
-# 协议(License)：署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)
-# 作者(Author)：阿才
-# 链接(URL)：https://hyacm.com/acai/ui/143/sakura-logo/
-# 来源(Source)：阿才的部落阁
-
 /*  logo  */
 .logolink a {
     color: #464646;
@@ -8153,7 +8145,6 @@ td.hljs-ln-numbers {
     text-size-adjust: 100%;
     width: auto
 }
- 
 .logolink a:hover .sakuraso {
     background-color: orange;
     color: #fff;
@@ -8164,7 +8155,6 @@ td.hljs-ln-numbers {
 .logolink a:hover rt {
     color: orange;
 }
- 
 .logolink.moe-mashiro a {
     color: #464646;
     float: left;
@@ -8183,8 +8173,7 @@ td.hljs-ln-numbers {
     padding-bottom: 2px;
     padding-top: 5px;
 }
- 
-.logolink.moe-mashiro .no {
+ .logolink.moe-mashiro .no {
     font-size: 20px;
     display: inline-block;
     margin-left: 5px;
@@ -8199,7 +8188,6 @@ td.hljs-ln-numbers {
     ruby-position: under;
     -webkit-ruby-position: after;
 }
- 
 .logolink ruby rt {
     font-size: 10px;
     letter-spacing:2px;
@@ -8212,10 +8200,6 @@ td.hljs-ln-numbers {
 .logolink a:hover ruby rt {
     opacity: 1
 }
- 
 .moe-mashiro {
-    font-family: 'wenyihei-subfont', 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;;
-}
-.chinese-font {
-    font-family: 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;
+    font-family: 'wenyihei-subfont', 'Merriweather Sans', Helvetica, Tahoma, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;
 }
