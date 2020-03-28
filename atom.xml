@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.shuaime.top/"/>
-  <updated>2020-03-26T13:52:15.274Z</updated>
+  <updated>2020-03-28T13:22:59.962Z</updated>
   <id>https://www.shuaime.top/</id>
   
   <author>
@@ -21,11 +21,12 @@
     <link href="https://www.shuaime.top/posts/4decbe97/"/>
     <id>https://www.shuaime.top/posts/4decbe97/</id>
     <published>2020-03-01T07:47:28.000Z</published>
-    <updated>2020-03-26T13:52:15.274Z</updated>
+    <updated>2020-03-28T13:22:59.962Z</updated>
     
     <summary type="html">
     
-      &lt;fancybox&gt;&lt;br&gt;&lt;br&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/11/logo.jpg&quot; style=&quot;zoom: 150%;&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;/fancybox&gt;
+      &lt;img class=&quot;emoji-coda&quot; src=&quot;https://cdn.jsdelivr.net/gh/TomoriCoda/hexo-tag-emojis-bycoda/emojis/2233/heshui.png&quot;&gt;
+&lt;fancybox&gt;&lt;br&gt;&lt;br&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/11/logo.jpg&quot; style=&quot;zoom: 150%;&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;/fancybox&gt;
     
     </summary>
     
@@ -215,7 +216,7 @@
     <link href="https://www.shuaime.top/posts/8fa64eaf/"/>
     <id>https://www.shuaime.top/posts/8fa64eaf/</id>
     <published>2019-10-23T09:40:56.000Z</published>
-    <updated>2020-03-26T13:51:42.161Z</updated>
+    <updated>2020-03-28T12:46:48.890Z</updated>
     
     <summary type="html">
     
@@ -223,8 +224,6 @@
 &lt;p&gt;写作时间：2019-10-23&lt;br&gt;实现目标：AngularJS基础入门&lt;br&gt;涉及知识：AngularJS&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h1 id=&quot;【AngularJS简介】&quot;&gt;&lt;a href=&quot;#【AngularJS简介】&quot; class=&quot;headerlink&quot; title=&quot;【AngularJS简介】&quot;&gt;&lt;/a&gt;&lt;font color=&quot;#ff000&quot;&gt;【AngularJS简介】&lt;/font&gt;&lt;/h1&gt;&lt;p&gt;&lt;code&gt;AngularJS&lt;/code&gt;是一个创建富客户端应用的&lt;code&gt;JavaScript MVC&lt;/code&gt;框架。你仍然需要具有服务端后台，但大多数的用户交互逻辑将放到客户端上处理。它可以创建单页的应用程序，一个页面的应用仅仅需要HTML,CSS和JavaScript在客户端。它的目标是增强页面的模型-视图-控制（MVC）的功能，为简化开发和测试。单页Web应用（single page web application，SPA），就是只有一张Web页面的应用。浏览器一开始会加载必需的HTML、CSS和JavaScript，所有的操作都在这张页面上完成，由JavaScript来控制不同view在这个页面上的呈现。&lt;/p&gt;
-&lt;p&gt;&lt;img src alt&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
     
     </summary>
     
@@ -264,7 +263,7 @@
     <link href="https://www.shuaime.top/posts/531cd44d/"/>
     <id>https://www.shuaime.top/posts/531cd44d/</id>
     <published>2019-10-19T09:00:00.000Z</published>
-    <updated>2020-03-26T13:52:00.061Z</updated>
+    <updated>2020-03-28T12:57:39.725Z</updated>
     
     <summary type="html">
     

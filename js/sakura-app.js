@@ -231,13 +231,16 @@ mashiro_global.font_control = new function () {
       }
     }
   }
-  this.ini = function () {
+    this.ini = function () {
+    var font = getCookie('font_family')
     if (document.body.clientWidth > 860) {
-      if (!getCookie('font_family') || getCookie('font_family') == 'serif') { $('body').addClass('serif') }
+      if (! font || font == 'serif') { 
+        $('body').addClass('serif') 
+        $('.control-btn-serif').addClass('selected')
+      }
     }
-    if (getCookie('font_family') == 'sans-serif') {
-      $('body').removeClass('sans-serif')
-      $('.control-btn-serif').removeClass('selected')
+    if (font == 'sans-serif') {
+      $('body').addClass('sans-serif').removeClass('serif')
       $('.control-btn-sans-serif').addClass('selected')
     }
   }
@@ -412,7 +415,7 @@ function scrollBar () {
           $('#bar').css('background', '#5aaadb')
         }
       } else {
-        $('#bar').css('background', 'orange')
+        $('#bar').css('background', '#3ca0ff')
       }
       $('.toc-container').css('height', $('.site-content').outerHeight())
       $('.skin-menu').removeClass('show')
@@ -440,7 +443,7 @@ function checkBgImgCookie () {
       $('.blank').css('background-color', 'rgba(255,255,255,1)')
       $('.pattern-center').removeClass('pattern-center').addClass('pattern-center-sakura')
       $('.headertop-bar').removeClass('headertop-bar').addClass('headertop-bar-sakura')
-    } else if (bgurl == 'https://api.shino.cc/bing/') {
+    } else if (bgurl == 'https://acg.yanwz.cn/api.php') {
       mashiro_global.variables.skinSecter = true
       mashiro_global.variables.isNight = true
       $('#night-mode-cover').css('visibility', 'hidden')
@@ -453,9 +456,62 @@ function checkBgImgCookie () {
     return false
   }
 }
+function checkEffectsCookie() {
+  var efurl = getCookie('sakuraEffectCookie')
+  if(efurl) {
+    var effect = document.createElement("script")
+    effect.setAttribute("src","https://cdn.jsdelivr.net/gh/yremp/yremp-js@1.5/sakura.js")
+    effect.setAttribute("id","sakura-effect")
+    document.getElementsByTagName("body").item(0).appendChild(effect)
+  }
+  efurl = getCookie('snowyEffectCookie')
+  if(efurl) {
+    var effect = document.createElement("script")        
+    effect.setAttribute("src","https://cdn.jsdelivr.net/gh/ctz45562/cdn@1.3.3/js/snow.js")
+    effect.setAttribute("id","snow-effect")
+    document.getElementsByTagName("body").item(0).appendChild(effect)
+  }
+  efurl = getCookie('linesEffectCookie')
+  if(efurl) {
+    var effect = document.createElement("script")        
+    effect.setAttribute("src","https://cdn.jsdelivr.net/gh/ctz45562/cdn@1.3.3/js/line.js")
+    effect.setAttribute("id","line-effect")
+    document.getElementsByTagName("body").item(0).appendChild(effect)
+  }
+  efurl = getCookie('beltsEffectCookie')
+  if(efurl){
+    var effect = document.createElement("script")        
+    effect.setAttribute("src","https://cdn.jsdelivr.net/gh/ctz45562/cdn@1.4.0/js/piao.js")
+    effect.setAttribute("id","belt-effect")
+    document.getElementsByTagName("body").item(0).appendChild(effect)
+  }
+  efurl = getCookie('wordsEffectCookie')
+  if(efurl){
+    var effect = document.createElement("script")        
+    effect.setAttribute("src","https://cdn.jsdelivr.net/gh/ctz45562/cdn@1.4.0/js/coderain.js")
+    effect.setAttribute("id","words-effect")
+    document.getElementsByTagName("body").item(0).appendChild(effect)
+  }  
+  efurl = getCookie('pointEffectCookie')
+  if(efurl){
+    var effect = document.createElement("script")        
+    effect.setAttribute("src","https://cdn.jsdelivr.net/gh/ctz45562/cdn@1.4.3/js/pointrain.js")
+    effect.setAttribute("id","point-effect")
+    document.getElementsByTagName("body").item(0).appendChild(effect)
+  }
+  efurl = getCookie('rainEffectCookie')
+  if(efurl){
+    var effect = document.createElement("script")
+    effect.setAttribute("src","https://cdn.jsdelivr.net/gh/ctz45562/cdn@1.4.5/js/raindrop.js")
+    effect.setAttribute("id","raindrop-effect")
+    document.getElementsByTagName("body").item(0).appendChild(effect)
+  }
+}
 if (document.body.clientWidth > 860) {
   checkBgImgCookie()
+  checkEffectsCookie()
 }
+
 
 function no_right_click () {
   $('.post-thumb img').bind('contextmenu', function (e) {
@@ -504,7 +560,7 @@ $(document).ready(function () {
   changeBG('#pixiv-bg', 'https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/themebg/star.png')
   changeBG('#KAdots-bg', 'https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/themebg/point.png')
   changeBG('#totem-bg', 'https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/themebg/little-monster.png')
-  changeBGnoTrans('#bing-bg', 'https://api.shino.cc/bing/')
+  changeBGnoTrans('#bing-bg', 'https://acg.yanwz.cn/api.php')
   $('.skin-menu #white-bg').click(function () {
     mashiro_global.variables.skinSecter = false
     mashiro_global.variables.isNight = false
@@ -529,7 +585,171 @@ $(document).ready(function () {
     $('#banner_wave_1').addClass('banner_wave_hide_fit_skin')
     $('#banner_wave_2').addClass('banner_wave_hide_fit_skin')
     closeSkinMenu()
+	setCookie('bgImgSetting','https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/starry_sky.png',30);
   })
+
+  $('.skin-menu #empty-effect').click(function(){
+    sakuraEffectClear()
+    snowEffectClear()
+    lineEffectClear()    
+    beltEffectClear()
+    wordEffectClear()    
+    pointEffectClear()
+    rainEffectClear()
+    closeSkinMenu()
+  })
+ 
+  $('.skin-menu #sakura-rain-effect').click(function(){
+    var effect = sakuraEffectClear()
+    if(!effect) {
+        effect = document.createElement("script")
+        effect.setAttribute("src","https://cdn.jsdelivr.net/gh/yremp/yremp-js@1.5/sakura.js")
+        effect.setAttribute("id","sakura-effect")
+        document.getElementsByTagName("body").item(0).appendChild(effect)
+        setCookie('sakuraEffectCookie','use',30)
+    }
+    closeSkinMenu()
+  })
+  $('.skin-menu #snowy-effect').click(function(){
+    var effect = snowEffectClear()
+    if(!effect){
+        effect = document.createElement("script")        
+        effect.setAttribute("src","https://cdn.jsdelivr.net/gh/ctz45562/cdn@1.3.3/js/snow.js")
+        effect.setAttribute("id","snow-effect")
+        document.getElementsByTagName("body").item(0).appendChild(effect)
+        setCookie('snowyEffectCookie','use',30)
+    }
+    closeSkinMenu()
+  })
+  $('.skin-menu #lines-effect').click(function(){
+    var effect = lineEffectClear()
+    if(!effect){
+        effect = document.createElement("script")        
+        effect.setAttribute("src","https://cdn.jsdelivr.net/gh/ctz45562/cdn@1.3.3/js/line.js")
+        effect.setAttribute("id","line-effect")
+        document.getElementsByTagName("body").item(0).appendChild(effect)
+        setCookie('linesEffectCookie','use',30)
+    }    
+    closeSkinMenu()
+  })
+  $('.skin-menu #colorful-belts-effect').click(function(){
+    var effect = beltEffectClear()
+    if(!effect){
+        effect = document.createElement("script")        
+        effect.setAttribute("src","https://cdn.jsdelivr.net/gh/ctz45562/cdn@1.4.0/js/piao.js")
+        effect.setAttribute("id","belt-effect")
+        document.getElementsByTagName("body").item(0).appendChild(effect)
+        setCookie('beltsEffectCookie','use',30)
+    }
+    closeSkinMenu()
+  })
+  $('.skin-menu #words-rain-effect').click(function(){
+    var effect = wordEffectClear()
+    if(!effect){
+        effect = document.createElement("script")        
+        effect.setAttribute("src","https://cdn.jsdelivr.net/gh/ctz45562/cdn@1.4.0/js/coderain.js")
+        effect.setAttribute("id","words-effect")
+        document.getElementsByTagName("body").item(0).appendChild(effect)
+        setCookie('wordsEffectCookie','use',30)
+    }
+    closeSkinMenu()
+  })
+  $('.skin-menu #point-rain-effect').click(function(){
+      var effect = pointEffectClear()
+      if(!effect){        
+        effect = document.createElement("script")        
+        effect.setAttribute("src","https://cdn.jsdelivr.net/gh/ctz45562/cdn@1.4.3/js/pointrain.js")
+        effect.setAttribute("id","point-effect")
+        document.getElementsByTagName("body").item(0).appendChild(effect)
+        setCookie('pointEffectCookie','use',30)
+      }
+      closeSkinMenu()
+  })
+  $('.skin-menu #rain-drop-effect').click(function(){
+      var effect = rainEffectClear()
+      if(!effect){        
+        effect = document.createElement("script")
+        effect.setAttribute("src","https://cdn.jsdelivr.net/gh/ctz45562/cdn@1.4.5/js/raindrop.js")
+        effect.setAttribute("id","raindrop-effect")
+        document.getElementsByTagName("body").item(0).appendChild(effect)
+        setCookie('rainEffectCookie','use',30)
+      }
+      closeSkinMenu()
+  })
+  function sakuraEffectClear(){
+    var effect = document.getElementById("sakura-effect")
+    if(effect){
+        effect.parentNode.removeChild(effect)
+        effect = document.getElementById("canvas_sakura")
+        effect.parentNode.removeChild(effect)
+        setCookie('sakuraEffectCookie','',30)
+    }
+    return effect;
+  }
+  function snowEffectClear(){
+      var effect = document.getElementById("snow-effect")
+      if(effect){
+        effect.parentNode.removeChild(effect)
+        clearInterval(CIYANG)
+        var snow = document.getElementById("snowbox")
+        while(snow){
+            snow.parentNode.removeChild(snow)
+            snow = document.getElementById("snowbox")
+        }
+        setCookie('snowyEffectCookie','',30)
+      }
+      return effect
+  }
+  function lineEffectClear(){
+      var effect = document.getElementById("line-effect")
+      if(effect){
+          effect.parentNode.removeChild(effect)
+          var lines = document.getElementById("lines")
+          lines.parentNode.removeChild(lines)
+          setCookie('linesEffectCookie','',30)
+      }
+      return effect
+  }
+  function beltEffectClear(){
+      var effect = document.getElementById("belt-effect")
+      if(effect){
+          effect.parentNode.removeChild(effect)
+          effect = document.getElementById("belts1")
+          effect.parentNode.removeChild(effect)
+          setCookie('beltsEffectCookie','',30)
+      }
+      return effect
+  }
+  function wordEffectClear(){
+      var effect = document.getElementById("words-effect")
+      if(effect){
+          effect.parentNode.removeChild(effect)
+          effect = document.getElementById("coderain")
+          effect.parentNode.removeChild(effect)
+          setCookie('wordsEffectCookie','',30)
+      }
+      return effect
+  }
+  function pointEffectClear(){
+      var effect = document.getElementById("point-effect")
+      if(effect){
+          effect.parentNode.removeChild(effect)
+          effect = document.getElementById("point")
+          effect.parentNode.removeChild(effect)
+          setCookie('pointEffectCookie','',30)
+      }
+      return effect
+  }
+  function rainEffectClear(){
+      var effect = document.getElementById("raindrop-effect")
+      if(effect){
+          effect.parentNode.removeChild(effect)
+          document.body.removeChild(document.getElementById('rain'))
+          setCookie('rainEffectCookie','',30)
+      }
+      return effect
+  }
+
 
   function closeSkinMenu () {
     $('.skin-menu').removeClass('show')

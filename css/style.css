@@ -769,10 +769,7 @@ svg:not(:root) {
 figure {
     margin:1em 40px
 }
-hr {
-    box-sizing:content-box;
-    height:0
-}
+
 pre {
     overflow:auto
 }
@@ -853,26 +850,34 @@ dfn,cite,em,i {
     font-style:italic
 }
 blockquote {
+    width:fit-content;
+    width:-webkit-fit-content;
+    width:-moz-fit-content;
+    width:-ms-fit-content;
+    width:-o-fit-content;
     margin:0;
-    padding:30px 60px;
-    position:relative
+    margin-bottom: 20px;
+    padding:12px 45px;
+    position:relative;
+    border-radius: 1.5rem;
+    background: rgba(225, 225, 225, .43);
 }
 blockquote:before {
     content:"\f10d" !important;
-    font-size:3rem;
+    font-size:2rem;
     position:absolute;
     top:-25px;
-    left:12px;
-    color:orange;
+    left:2px;
+    color:#50bdff;
     font-family:FontAwesome
 }
 blockquote:after {
     content:'\f10e' !important;
-    font-size:3rem;
+    font-size:2rem;
     position:absolute;
     bottom:-25px;
-    right:-5px;
-    color:orange;
+    right:0px;
+    color:#50bdff;
     font-family:FontAwesome
 }
 blockquote p {
@@ -941,12 +946,7 @@ blockquote:before,blockquote:after,q:before,q:after {
 blockquote,q {
     quotes:"" ""
 }
-hr {
-    background-color:#ccc;
-    border:0;
-    height:1px;
-    margin-bottom:1.5em
-}
+
 ul,ol {
     margin:0 0 1.5em 3em
 }
@@ -1021,14 +1021,14 @@ a {
     transition:color .2s ease-out,border .2s ease-out,opacity .2s ease-out
 }
 a:hover,a:focus,a:active {
-    color:orange
+    color:#3ca0ff
 }
 a:focus {
     outline:0
 }
 a:hover,a:active {
     outline:0;
-    color:orange
+    color:#3ca0ff
 }
 .site-top {
     width:100%;
@@ -1383,7 +1383,7 @@ a:hover,a:active {
     font-weight:400
 }
 .site-title a:hover {
-    color:orange
+    color:#3ca0ff
 }
 .site-title img {
     height:40px;
@@ -1479,7 +1479,7 @@ a:hover,a:active {
     color:#666
 }
 .site-top ul li a:hover {
-    color:orange
+    color:#3ca0ff
 }
 .site-top ul li a:after {
     content:"";
@@ -1487,7 +1487,7 @@ a:hover,a:active {
     position:absolute;
     bottom:-16px;
     height:6px;
-    background-color:#fe9600;
+    background-color:#3ca0ff;
     width:100%;
     max-width:0;
     transition:max-width .25s ease-in-out
@@ -1498,7 +1498,7 @@ a:hover,a:active {
     position:absolute;
     bottom:-21px;
     height:6px;
-    background-color:#fe9600;
+    background-color:#3ca0ff;
     width:100%;
     max-width:0;
     transition:max-width .25s ease-in-out
@@ -1670,7 +1670,7 @@ a:hover,a:active {
     color:#504e4e
 }
 .entry-title a:hover {
-    color:orange
+    color:#3ca0ff
 }
 .p-time {
     position:absolute;
@@ -2006,8 +2006,8 @@ i.iconfont.hotpost {
 }
 .navigator i:hover {
     color:#fff;
-    background:orange;
-    border:2px solid orange;
+    background:#3ca0ff;
+    border:2px solid #3ca0ff;
     -webkit-transition:all .2s ease-in-out;
     -moz-transition:all .2s ease-in-out;
     -o-transition:all .2s ease-in-out;
@@ -2029,7 +2029,7 @@ i.iconfont.hotpost {
     color:#b9b9b9
 }
 .site-info a:hover {
-    color:orange
+    color:#3ca0ff
 }
 .footertext p {
     margin-bottom:8px
@@ -2138,8 +2138,8 @@ i.iconfont.hotpost {
     text-decoration:underline dotted rgba(0,0,0,.1)
 }
 .entry-content a:hover {
-    color:orange;
-    text-decoration:underline orange
+    color:#3ca0ff;
+    text-decoration:underline #3ca0ff
 }
 h1.entry-title {
     font-size:24px;
@@ -2180,7 +2180,6 @@ h1.entry-title {
     background:none
 }
 .entry-content hr:before {
-    content:'...';
     display:inline-block;
     margin-left:.6em;
     color:rgba(0,0,0,.8);
@@ -2319,7 +2318,7 @@ h1.page-title.mb- {
     margin-right:5px
 }
 .post-tags a:hover {
-    color:orange
+    color:#3ca0ff
 }
 .post-tags i {
     margin-right:5px
@@ -2379,7 +2378,7 @@ h1.page-title.mb- {
     margin-right:10px
 }
 .post-share ul li a:hover {
-    color:orange
+    color:#3ca0ff
 }
 .post-share .show-share {
     margin-left:10px;
@@ -2845,7 +2844,7 @@ h3#comments-list-title {
     margin:auto
 }
 .butterBar-message {
-    background:#fe9600;
+    background:#3ca0ff;
     color:#fff;
     border-bottom-left-radius:4px;
     border-bottom-right-radius:4px;
@@ -3018,7 +3017,7 @@ h1.works-title {
     font-style:italic;
     font-size:20px;
     font-weight:400;
-    color:orange;
+    color:#3ca0ff;
     margin-left:30px;
     margin-top:50px
 }
@@ -3044,7 +3043,7 @@ span.time {
 .ar-time i {
     padding:10px;
     border-radius:100px;
-    background:orange;
+    background:#3ca0ff;
     color:#fff
 }
 .ar-time {
@@ -3070,7 +3069,7 @@ span.time {
 span.ar-circle {
     height:10px;
     width:10px;
-    background:orange;
+    background:#3ca0ff;
     display:inline-block;
     position:absolute;
     left:-5px;
@@ -3152,7 +3151,7 @@ header.page-header {
     -ms-transform:rotate(360deg)
 }
 span.sitename {
-    color:orange;
+    color:#3ca0ff;
     padding-bottom:10px;
     display:block;
     -webkit-transition:all .3s;
@@ -3183,11 +3182,11 @@ span.sitename {
 }
 .link-title span.fake-title {
     padding-left:10px;
-    border-left:3px solid orange
+    border-left:3px solid #3ca0ff
 }
 .links ul li:before {
     content:"";
-    background-color:orange;
+    background-color:#3ca0ff;
     -webkit-transform:skew(45deg,0);
     transform:skew(45deg,0);
     width:0;
@@ -3201,7 +3200,7 @@ span.sitename {
 }
 .links ul li:hover {
     color:#27323a;
-    border:1px solid orange
+    border:1px solid #3ca0ff
 }
 .links ul li:hover:before {
     width:180%
@@ -3478,7 +3477,7 @@ a.page-numbers {
     font-weight:600
 }
 .comment h4 a:hover {
-    color:orange
+    color:#3ca0ff
 }
 .comment hr {
     clear:both;
@@ -3631,9 +3630,9 @@ a.page-numbers {
     text-shadow:none
 }
 .comment-respond input[type='submit']:hover {
-    border:1px solid #fe9600;
+    border:1px solid #3ca0ff;
     background:none !important;
-    color:#fe9600
+    color:#3ca0ff
 }
 .comment-respond input[type='submit']:hover {
     background:#5aa738
@@ -3727,7 +3726,7 @@ a.page-numbers {
     line-height:1
 }
 .siren-checkbox-radio:checked+.siren-checkbox-radioInput:after {
-    background-color:#fe9600;
+    background-color:#3ca0ff;
     border-radius:100%;
     content:"";
     display:block;
@@ -4357,7 +4356,7 @@ i.iconfont.js-toggle-search.iconsearch {
     padding:10px 0
 }
 .sorry li a:hover {
-    color:orange
+    color:#3ca0ff
 }
 .sorry-inner {
     padding:20px;
@@ -4372,14 +4371,14 @@ i.iconfont.js-toggle-search.iconsearch {
 .err-button.back a {
     padding:10px 30px;
     margin:0 10px;
-    border:1px solid orange;
-    color:orange;
+    border:1px solid #3ca0ff;
+    color:#3ca0ff;
     -webkit-border-radius:50px;
     -moz-border-radius:50px;
     border-radius:50px
 }
 #gohome {
-    background:orange;
+    background:#3ca0ff;
     color:#fff
 }
 .err-button.back a:hover {
@@ -4492,7 +4491,7 @@ embed,iframe,object {
     position:absolute
 }
 #nprogress .bar {
-    background:orange;
+    background:#3ca0ff;
     position:fixed;
     z-index:1031;
     top:0;
@@ -4506,7 +4505,7 @@ embed,iframe,object {
     right:0;
     width:100px;
     height:100%;
-    box-shadow:0 0 10px orange,0 0 5px orange;
+    box-shadow:0 0 10px #3ca0ff,0 0 5px #3ca0ff;
     opacity:1;
     -webkit-transform:rotate(3deg) translate(0px,-4px);
     -ms-transform:rotate(3deg) translate(0px,-4px);
@@ -4528,8 +4527,8 @@ embed,iframe,object {
     height:20px;
     box-sizing:border-box;
     border:solid 3px transparent;
-    border-top-color:orange;
-    border-left-color:orange;
+    border-top-color:#3ca0ff;
+    border-left-color:#3ca0ff;
     border-radius:50%;
     -webkit-animation:nprogress-spinner 400ms linear infinite;
     animation:nprogress-spinner 400ms linear infinite
@@ -4633,8 +4632,8 @@ i.iconfont.down {
     font-size:15px
 }
 #pagination a:hover {
-    border:1px solid orange;
-    color:orange
+    border:1px solid #3ca0ff;
+    color:#3ca0ff
 }
 #pagination .loading {
     background:url("https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/wordpress-rotating-ball-o.svg");
@@ -4797,7 +4796,7 @@ i.iconfont.down {
         display:none
     }
     .links ul li:hover .sitename {
-        color:orange
+        color:#3ca0ff
     }
     .links ul li:hover .linkdes {
         color:#949494;
@@ -5010,7 +5009,7 @@ i.iconfont.js-toggle-search.iconsearch {
 }
 #mo-nav ul li a:hover {
     cursor:pointer;
-    color:orange
+    color:#3ca0ff
 }
 .we-content li {
     height:250px
@@ -5805,11 +5804,11 @@ button.botui-actions-buttons-button {
     width:auto
 }
 .logolink a:hover .sakurasono {
-    background-color:orange;
+    background-color:#3ca0ff;
     color:#fff
 }
 .logolink a:hover .shironeko,.logolink a:hover rt {
-    color:orange
+    color:#3ca0ff
 }
 .logolink.moe-mashiro a {
     color:#464646;
@@ -6192,7 +6191,7 @@ button.botui-actions-buttons-button {
 }
 @media(min-width:861px) {
     .hide-live2d {
-    background-color:orange;
+    background-color:#3ca0ff;
     bottom:156px;
     visibility:visible;
     min-height:38.75px
@@ -6600,7 +6599,7 @@ progress {
     color:#000
 }
 .art .art-content #archives a:hover {
-    color:orange
+    color:#3ca0ff
 }
 .art .art-content #archives .al_year {
     padding-left:100px
@@ -6751,7 +6750,7 @@ a.toc-link {
     width:2px
 }
 .is-active-link::before {
-    background-color:orange !important
+    background-color:#3ca0ff !important
 }
 .flipx {
     -moz-transform:scaleX(-1);
@@ -6885,10 +6884,10 @@ to {
 }
 .motion-switcher-table th:hover {
     background-color:rgba(245,245,245,.5);
-    color:orange
+    color:#3ca0ff
 }
 .motion-switcher-table .on-hover {
-    color:orange
+    color:#3ca0ff
 }
 .motion-container {
     height:110px;
@@ -7120,8 +7119,8 @@ to {
     cursor:pointer
 }
 .insert-image-tips:hover {
-    color:orange;
-    border:1px solid orange
+    color:#3ca0ff;
+    border:1px solid #3ca0ff
 }
 .insert-image-button {
     opacity:0;
@@ -7134,8 +7133,8 @@ to {
     cursor:pointer
 }
 .insert-image-tips-hover {
-    color:orange;
-    border:1px solid orange
+    color:#3ca0ff;
+    border:1px solid #3ca0ff
 }
 .upload-image-preview {
     display:inline-block;
@@ -7466,8 +7465,9 @@ to {
     font-family:'Ubuntu',sans-serif
 }
 .serif {
-    font-family:'Source Han Serif SC','Source Han Serif','source-han-serif-sc','PT Serif','SongTi SC','MicroSoft Yahei',Georgia,serif
+    font-family:'Noto Serif SC', 'Source Han Serif SC', 'Source Han Serif', source-han-serif-sc, 'PT Serif', 'SongTi SC', 'MicroSoft Yahei', Georgia, serif
 }
+
 @media(max-width:860px) {
     .serif {
     font-family:'Merriweather Sans',Helvetica,Tahoma,Arial,'PingFang SC','Hiragino Sans GB','Microsoft Yahei','WenQuanYi Micro Hei',sans-serif
@@ -7546,7 +7546,8 @@ to {
     margin:0 4px;
     box-shadow:none;
     background-color:#f5f5f5;
-    cursor:pointer
+    cursor:pointer;
+	outline: none;;
 }
 .font-family-controls button.selected {
     background-color:#fc3;
@@ -8146,14 +8147,14 @@ td.hljs-ln-numbers {
     width: auto
 }
 .logolink a:hover .sakuraso {
-    background-color: orange;
+    background-color: #3ca0ff;
     color: #fff;
 }
  
 .logolink a:hover .shironeko,
 .logolink a:hover .no,
 .logolink a:hover rt {
-    color: orange;
+    color: #3ca0ff;
 }
 .logolink.moe-mashiro a {
     color: #464646;
@@ -8233,7 +8234,7 @@ margin-bottom: 5px;
 .github-badge .bg-brightgreen {
   background-color: #4DC820 !important;
 }
-.github-badge .bg-orange {
+.github-badge .bg-#3ca0ff {
   background-color: #FFA500 !important;
 }
 .github-badge .bg-yellow {
@@ -8263,3 +8264,121 @@ margin-bottom: 5px;
   background-color: #9f9f9f !important;
 }
 
+
+.butterfly-tags{
+    display: inline-block;
+    margin: 0.4rem 1rem 0.4rem 0;
+    padding: 0rem 0.45rem;
+    border: 1px solid transparent;
+    border-radius: 1px 6px 6px 1px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    text-shadow: none;
+    position: relative;
+    transition: all 0.1s linear;
+    height:22px;
+}
+.spfk-li:hover{
+    transition: all 0.1s linear;
+    opacity: 0.85;
+    color: inherit;
+}
+.butterfly-tags:hover{color: inherit;}
+.butterfly-tags:focus{color: #fff;}
+.butterfly-tags:after{
+    content: " ";
+    width: 4px;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 4px;
+    -webkit-box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.3);
+    position: absolute;
+    left: -2px;
+    top: 8px;
+}
+.spfk-ul{
+    float: left;
+    padding: 0;
+    margin: 0;
+}
+.triangle{
+    border:11px solid transparent;
+    display:inline-block;
+    position:relative;
+    top:6px;
+}
+.spfk-li{
+    display: inline-block;
+    margin-right:-17px;
+    margin-left:-2px;
+}
+.spfk-color1 a{
+    background: #39b3d7;
+    border-color: #39b3d7;
+}
+.spfk-color1 span{border-right-color: #39b3d7;}
+.spfk-color2 a{
+    background: #4cae4c;
+    border-color: #4cae4c;
+}
+.spfk-color2 span{border-right-color: #4cae4c;}
+.spfk-color3 a{
+    background: #f4a83c;
+    border-color: #f4a83c;
+}
+.spfk-color3 span{border-right-color: #f4a83c;}
+.spfk-color4 a{
+    background: #ee6252;
+    border-color: #ee6252;
+}
+.spfk-color4 span{border-right-color: #ee6252;}
+.spfk-color5 a{
+    background: #e23794;
+    border-color: #e23794;
+}
+.spfk-color5 span{border-right-color: #e23794;}
+.spfk-color6 a{
+    background: #9537ff;
+    border-color: #9537ff;
+}
+.spfk-color6 span{border-right-color: #9537ff;}
+.spfk-color7 a{
+    background: #0a5dff;
+    border-color: #0a5dff;
+}
+.spfk-color7 span{border-right-color: #0a5dff;}
+.spfk-color8 a{
+    background: #cb3800;
+    border-color: #cb3800;
+}
+.spfk-color8 span{border-right-color: #cb3800;}
+
+hr {
+    height: 3px !important;
+    border: none !important;
+    background-color: #bfbfbf !important;
+    background-image: repeating-linear-gradient(-45deg, #fff, #fff 4px, transparent 4px, transparent 8px) !important;
+}
+.article-category{
+    display: inline-block;
+    line-height: 0 !important;
+    margin: 0;
+    padding: 0.55rem 0.2rem;
+    border: 1px solid #0a87ff;
+    background: rgba(255, 255, 255, 0.93);
+    color: #0a87ff !important;
+    text-decoration: none;
+    font-size: 13px;
+    text-shadow: none;
+    box-shadow: 0 0 6px #111;
+    transition: all 0.1s linear;
+    border-radius:10%;
+}
+.article-category:hover{
+    transition: all 0.1s linear;
+    color: #fff !important;
+    background: #0a89ffec;
+}
+.article-category a{color:inherit !important;}
