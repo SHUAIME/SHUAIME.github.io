@@ -147,8 +147,8 @@
   <div id="video-container" style="">
     <video style="object-fit: fill" id="bgvideo" class="video" video-name="" src="" width="auto" preload="auto">
     </video>
-    <div id="video-btn" class="loadvideo videolive">
-    </div>
+   <!-- <div id="video-btn" class="loadvideo videolive">
+    </div> -->
     <div id="video-add">
     </div>
     <div class="video-stu">
@@ -720,6 +720,15 @@
                 </a>
                 
                 
+                <a href="/tags/集合/" title="集合: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="集合" style="background-color: #D5F5E3;">集合
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
                 <a href="/tags/hexo/" title="hexo: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
@@ -751,15 +760,6 @@
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             data-tagname="Node" style="background-color: #85C1E9;">Node
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/集合/" title="集合: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="集合" style="background-color: #D5F5E3;">集合
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -816,7 +816,7 @@
 
     
  
-    $('#tag-wordcloud').jQCloud([{"text":"AngularJS","weight":1,"link":"https://www.shuaime.top/tags/AngularJS/"},{"text":"前端","weight":1,"link":"https://www.shuaime.top/tags/前端/"},{"text":"web","weight":1,"link":"https://www.shuaime.top/tags/web/"},{"text":"悦读","weight":1,"link":"https://www.shuaime.top/tags/悦读/"},{"text":"Java","weight":5,"link":"https://www.shuaime.top/tags/Java/"},{"text":"IO流","weight":1,"link":"https://www.shuaime.top/tags/IO流/"},{"text":"IDEA","weight":1,"link":"https://www.shuaime.top/tags/IDEA/"},{"text":"工具","weight":1,"link":"https://www.shuaime.top/tags/工具/"},{"text":"JDK8","weight":1,"link":"https://www.shuaime.top/tags/JDK8/"},{"text":"Lambda","weight":1,"link":"https://www.shuaime.top/tags/Lambda/"},{"text":"函数式接口","weight":1,"link":"https://www.shuaime.top/tags/函数式接口/"},{"text":"Spring","weight":2,"link":"https://www.shuaime.top/tags/Spring/"},{"text":"Spring Security","weight":1,"link":"https://www.shuaime.top/tags/Spring-Security/"},{"text":"Spring Cloud","weight":1,"link":"https://www.shuaime.top/tags/Spring-Cloud/"},{"text":"Docker","weight":1,"link":"https://www.shuaime.top/tags/Docker/"},{"text":"Linux","weight":1,"link":"https://www.shuaime.top/tags/Linux/"},{"text":"hexo","weight":1,"link":"https://www.shuaime.top/tags/hexo/"},{"text":"blog","weight":1,"link":"https://www.shuaime.top/tags/blog/"},{"text":"GitHub","weight":1,"link":"https://www.shuaime.top/tags/GitHub/"},{"text":"Node","weight":1,"link":"https://www.shuaime.top/tags/Node/"},{"text":"集合","weight":1,"link":"https://www.shuaime.top/tags/集合/"},{"text":"MySQL","weight":1,"link":"https://www.shuaime.top/tags/MySQL/"},{"text":"Spring Data JPA","weight":1,"link":"https://www.shuaime.top/tags/Spring-Data-JPA/"},{"text":"多线程","weight":1,"link":"https://www.shuaime.top/tags/多线程/"}], {
+    $('#tag-wordcloud').jQCloud([{"text":"AngularJS","weight":1,"link":"https://www.shuaime.top/tags/AngularJS/"},{"text":"前端","weight":1,"link":"https://www.shuaime.top/tags/前端/"},{"text":"web","weight":1,"link":"https://www.shuaime.top/tags/web/"},{"text":"悦读","weight":1,"link":"https://www.shuaime.top/tags/悦读/"},{"text":"Java","weight":5,"link":"https://www.shuaime.top/tags/Java/"},{"text":"IO流","weight":1,"link":"https://www.shuaime.top/tags/IO流/"},{"text":"IDEA","weight":1,"link":"https://www.shuaime.top/tags/IDEA/"},{"text":"工具","weight":1,"link":"https://www.shuaime.top/tags/工具/"},{"text":"JDK8","weight":1,"link":"https://www.shuaime.top/tags/JDK8/"},{"text":"Lambda","weight":1,"link":"https://www.shuaime.top/tags/Lambda/"},{"text":"函数式接口","weight":1,"link":"https://www.shuaime.top/tags/函数式接口/"},{"text":"Spring","weight":2,"link":"https://www.shuaime.top/tags/Spring/"},{"text":"Spring Security","weight":1,"link":"https://www.shuaime.top/tags/Spring-Security/"},{"text":"Spring Cloud","weight":1,"link":"https://www.shuaime.top/tags/Spring-Cloud/"},{"text":"Docker","weight":1,"link":"https://www.shuaime.top/tags/Docker/"},{"text":"Linux","weight":1,"link":"https://www.shuaime.top/tags/Linux/"},{"text":"集合","weight":1,"link":"https://www.shuaime.top/tags/集合/"},{"text":"hexo","weight":1,"link":"https://www.shuaime.top/tags/hexo/"},{"text":"blog","weight":1,"link":"https://www.shuaime.top/tags/blog/"},{"text":"GitHub","weight":1,"link":"https://www.shuaime.top/tags/GitHub/"},{"text":"Node","weight":1,"link":"https://www.shuaime.top/tags/Node/"},{"text":"MySQL","weight":1,"link":"https://www.shuaime.top/tags/MySQL/"},{"text":"Spring Data JPA","weight":1,"link":"https://www.shuaime.top/tags/Spring-Data-JPA/"},{"text":"多线程","weight":1,"link":"https://www.shuaime.top/tags/多线程/"}], {
         autoResize: true
     });
 </script>
@@ -1102,7 +1102,7 @@ $(document).ready(function() {
 </div>
 
 
-  <div id="mo-nav" class="">
+ <!-- <div id="mo-nav" class="">
   <div class="m-avatar">
     <img src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN//images/background/avatar.jpg">
   </div>
@@ -1348,7 +1348,7 @@ $(document).ready(function() {
       }
     })
   });
-</script>
+</script> -->
 
 <script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/sakura.js"></script>
 <!--单击显示文字-->
