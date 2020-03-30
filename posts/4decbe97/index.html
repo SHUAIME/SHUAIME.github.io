@@ -468,7 +468,7 @@
           <span class="post-meta-item-icon">
             <i class="fa fa-keyboard-o"></i>
             <span class="post-meta-item-text">  字数统计: </span>
-            <span class="post-count">2.7k字</span>
+            <span class="post-count">3k字</span>
           </span>
         </span>
 	<!--<span class="bull">·</span>
@@ -476,7 +476,7 @@
           <span class="post-meta-item-icon">
             <i class="fa fa-hourglass-half"></i>
             <span class="post-meta-item-text">  阅读时长≈ </span>
-            <span class="post-count">9</span>
+            <span class="post-count">11</span>
           </span>
         </span>-->
 	</p>
@@ -570,7 +570,23 @@ Set: HashSet TreeSet
 <ul>
 <li>讲一下 hashMap 原理。hashMap 可以并发读么？并发写会有什么问题？</li>
 </ul>
-<pre><code class="java">HashMap基于hashing原理 通过put和get方法来存取值,使用put方法传递键和值时,先调用键的hashCode方法计算hashCode,然后找到桶位置(当系统开始初始化 HashMap 时，系统会创建一个Entry 数组，这个数组里可以存储元素的位置被称为桶（bucket）)存值对象,获取对象时通过键值对的equals方法来找到正确的键值对,然后返回对象
+<pre><code class="java">jdk7在实例化以后，底层创建了长度是16的一维数组Entry[] table。
+...可能已经执行过多次put...
+map. put(key1, value1):
+首先，调用key1所在类的hashCode() 计算key1哈希值,此哈希值经过某种算法计算以后，得到在Entry数组 中的存放位置。
+如果此位置上的数据为空，此时的key1-value1添加成功。---- 情况1
+如果此位置上的数据不为空，(意味着此位置上存在一个或多个数据(以链表形式存在)),比较key1和已经存在的一个或多数据的哈希值:
+    如果key1的哈希值与已经存在的数据的哈希值都不相同，此时key1-value1 添加成功。----情况2
+    如果key1的哈希值和已经存在的某一个数据(key2-value2)的哈希值相同，继续比较:调用key1 所在类的equals(key2)
+        如果equals()返回false:此时key1-value1添加成功。---- 情况3
+        如果equaLs()返回true:使用value1替换value2。
+补充:关于情况2和情况3:此时key1 -value1和原来的数据以链表的方式存储。
+jdk8相较于jdk7在底层实现方面的不同:
+    1. new HashMap(): 底层没有创建-一个长度为16的数组
+    2. jdk 8底层的数组是: Node[], 而非Entry[]
+    3.首次调用put()方法时，底层创建长度为16的数组
+    4. jdk7底层结构只有:数组+链表。jdk8 中底层结构:数组+链表+红黑树。
+    当数组的某一个索引位置上的元素以链表形式存在的数据个数&gt; 8且当前数组的长度&gt; 64时,此时此索引位置上的所有        数据改为使用红黑树存储。
 </code></pre>
 <ul>
 <li>集合在迭代的过程中，插入或删除数据会怎样？</li>
