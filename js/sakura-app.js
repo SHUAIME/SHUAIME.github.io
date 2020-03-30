@@ -186,6 +186,36 @@ function imgError (ele, type) {
       ele.src = 'https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/image-404.png'
   }
 }
+//mashiro_global.post_list_show_animation = new function () {
+//  this.ini = function (ajax) {
+//    $('article.post-list-thumb').each(function (i) {
+//      if (ajax) {
+//        var window_height = $(window).height()
+ //     } else {
+//        if ($('.headertop').hasClass('headertop-bar')) {
+//          var window_height = 0
+//        } else {
+//          var window_height = $(window).height() - 300
+ //       }
+//      }
+ //     if (!mashiro_global.landing_at_home) {
+ //       window_height += 300
+//      }
+ //     var article_height = $('article.post-list-thumb').eq(i).offset().top
+ //     if ($(window).height() + $(window).scrollTop() >= article_height) {
+ //       $('article.post-list-thumb').eq(i).addClass('post-list-show')
+ //     }
+ //     $(window).scroll(function () {
+ //       var scrolltop = $(window).scrollTop()
+ //       if (scrolltop + window_height >= article_height && scrolltop) {
+ //         $('article.post-list-thumb').eq(i).addClass('post-list-show')
+ //       }
+//      })
+//    })
+ // }
+//}()
+//more支持
+var previousFlag=false;
 mashiro_global.post_list_show_animation = new function () {
   this.ini = function (ajax) {
     $('article.post-list-thumb').each(function (i) {
@@ -204,16 +234,28 @@ mashiro_global.post_list_show_animation = new function () {
       var article_height = $('article.post-list-thumb').eq(i).offset().top
       if ($(window).height() + $(window).scrollTop() >= article_height) {
         $('article.post-list-thumb').eq(i).addClass('post-list-show')
+        previousFlag=true;
       }
       $(window).scroll(function () {
         var scrolltop = $(window).scrollTop()
         if (scrolltop + window_height >= article_height && scrolltop) {
-          $('article.post-list-thumb').eq(i).addClass('post-list-show')
+          $('article.post-list-thumb').eq(i).addClass('post-list-show')        
+          previousFlag=true;
         }
       })
     })
   }
 }()
+setInterval(function(){
+if(previousFlag && MathJax){
+    previousFlag=false;
+    if(MathJax)MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+}
+},1000);
+
+
+
+
 mashiro_global.font_control = new function () {
   this.change_font = function () {
     if ($('body').hasClass('serif')) {

@@ -468,7 +468,7 @@
           <span class="post-meta-item-icon">
             <i class="fa fa-keyboard-o"></i>
             <span class="post-meta-item-text">  字数统计: </span>
-            <span class="post-count">193字</span>
+            <span class="post-count">201字</span>
           </span>
         </span>
 	<!--<span class="bull">·</span>
@@ -516,9 +516,12 @@
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <fancybox><br><br><img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/11/ii.jpg" alt><br><br></fancybox>
-
+          <p>MySQL也可以保存 <img class="emoji-coda" src="https://cdn.jsdelivr.net/gh/TomoriCoda/hexo-tag-emojis-bycoda/emojis/quyin/witty.png">表情</p>
 <a id="more"></a>
+<fancybox><br><br><img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/11/ii.jpg" alt><br><br></fancybox>
+
+
+
 <p>在MySQL中的 utf8 最多支持的是3个字节，而我们要保存的emoji表情是4个字节，所以就保存不到数据库里面</p>
 <p>所以只要更改字符编码即可</p>
 <h2 id="认识-utf8md4"><a href="#认识-utf8md4" class="headerlink" title="认识 utf8md4"></a>认识 utf8md4</h2><p>MySQL在5.5.3之后增加了这个utf8mb4的编码，mb4就是most bytes 4的意思，它专门用来兼容四字节的unicode</p>
@@ -984,6 +987,8 @@ $(document).ready(function() {
     </button>
   </div> 
 </div>
+
+
 
 
 <!-- 樱花特效

@@ -4,3 +4,68 @@
 .hljs-ln-line.hljs-ln-n:hover{
     background-color: rgba(0,0,0,0) !important;
 }
+
+
+/*添加more支持*/
+.readmore{
+    text-align:left;
+    position:relative;
+    margin-top:10px;
+}
+.readmore a {
+    color:#08f;
+    text-decoration:underline dotted rgba(0,0,0,.1)
+}
+.readmore a:hover {
+    color:#05f !important;
+    text-decoration:underline #05f
+}
+.readmore p {
+    color:#5c5c5c;
+    line-height:27px;
+    margin: 0;
+}
+.readmore hr {
+    margin-top:40px;
+    margin-bottom:40px;
+    display:block;
+    border:0;
+    text-align:center;
+    background:none
+}
+.readmore hr:before {
+    display:inline-block;
+    margin-left:.6em;
+    color:rgba(0,0,0,.8);
+    position:relative;
+    top:-30px;
+    font-size:28px;
+    letter-spacing:.6em
+}
+.readmore img{transform:none!important;}
+.readmore blockquote {
+    margin-bottom: 10px;
+    padding:10px 15px;
+    border-radius: 1.3rem;
+}
+.readmore blockquote:before {
+    font-size:1.2rem;
+    top:-5px;
+    left:-2px;
+}
+.readmore blockquote:after {
+    font-size:1.2rem;
+    bottom:-15px;
+    right:0px;
+}
+
+.category-meta,.category-meta a {
+    color:#888;
+    font-size:13px
+}
+.category-meta em {
+    margin: 0 5px;
+    color: #666;
+}
+
+/*more支持结束*/
