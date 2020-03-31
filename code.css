@@ -68,4 +68,9 @@
     color: #666;
 }
 
+#more blockquote{
+	margin: auto;
+	text-align: left;
+}
+
 /*more支持结束*/

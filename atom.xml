@@ -111,7 +111,7 @@
     <link href="https://www.shuaime.top/posts/accb903d/"/>
     <id>https://www.shuaime.top/posts/accb903d/</id>
     <published>2019-11-06T06:17:09.000Z</published>
-    <updated>2020-03-30T12:31:54.263Z</updated>
+    <updated>2020-03-31T10:03:12.000Z</updated>
     
     <summary type="html">
     
@@ -123,9 +123,7 @@
     
       <category term="Java" scheme="https://www.shuaime.top/categories/Java/"/>
     
-      <category term="Spring" scheme="https://www.shuaime.top/categories/Spring/"/>
-    
-      <category term="Spring Data JPA" scheme="https://www.shuaime.top/categories/Spring-Data-JPA/"/>
+      <category term="Spring Boot" scheme="https://www.shuaime.top/categories/Spring-Boot/"/>
     
     
       <category term="Spring" scheme="https://www.shuaime.top/tags/Spring/"/>
@@ -184,7 +182,7 @@
     <link href="https://www.shuaime.top/posts/27ace9d5/"/>
     <id>https://www.shuaime.top/posts/27ace9d5/</id>
     <published>2019-10-25T12:14:39.000Z</published>
-    <updated>2020-03-30T12:55:53.326Z</updated>
+    <updated>2020-03-31T10:02:54.761Z</updated>
     
     <summary type="html">
     
@@ -196,9 +194,7 @@
     
       <category term="Java" scheme="https://www.shuaime.top/categories/Java/"/>
     
-      <category term="Spring" scheme="https://www.shuaime.top/categories/Spring/"/>
-    
-      <category term="Spring Security" scheme="https://www.shuaime.top/categories/Spring-Security/"/>
+      <category term="Spring Boot" scheme="https://www.shuaime.top/categories/Spring-Boot/"/>
     
     
       <category term="Spring" scheme="https://www.shuaime.top/tags/Spring/"/>
@@ -266,9 +262,9 @@
     
     </summary>
     
-      <category term="BLOG" scheme="https://www.shuaime.top/categories/BLOG/"/>
-    
       <category term="Hexo" scheme="https://www.shuaime.top/categories/Hexo/"/>
+    
+      <category term="BLOG" scheme="https://www.shuaime.top/categories/BLOG/"/>
     
       <category term="GitHub" scheme="https://www.shuaime.top/categories/GitHub/"/>
     
@@ -380,7 +376,7 @@
     <link href="https://www.shuaime.top/posts/186f70d4/"/>
     <id>https://www.shuaime.top/posts/186f70d4/</id>
     <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2020-03-26T14:17:39.354Z</updated>
+    <updated>2020-03-31T10:06:53.855Z</updated>
     
     <summary type="html">
     
@@ -388,7 +384,7 @@
     
     </summary>
     
-      <category term="技术" scheme="https://www.shuaime.top/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="Hexo" scheme="https://www.shuaime.top/categories/Hexo/"/>
     
     
       <category term="web" scheme="https://www.shuaime.top/tags/web/"/>
