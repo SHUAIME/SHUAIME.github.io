@@ -441,7 +441,7 @@
           <span class="post-meta-item-icon">
             <i class="fa fa-calendar"></i>
             <span class="post-meta-item-text"></span>
-            <span class="post-count">2019-10-28</span>
+            <span class="post-count">2019-12-28</span>
           </span>
         </span>
 	<span class="bull">·</span>
@@ -468,7 +468,7 @@
           <span class="post-meta-item-icon">
             <i class="fa fa-keyboard-o"></i>
             <span class="post-meta-item-text">  字数统计: </span>
-            <span class="post-count">467字</span>
+            <span class="post-count">7k字</span>
           </span>
         </span>
 	<!--<span class="bull">·</span>
@@ -476,7 +476,7 @@
           <span class="post-meta-item-icon">
             <i class="fa fa-hourglass-half"></i>
             <span class="post-meta-item-text">  阅读时长≈ </span>
-            <span class="post-count">1</span>
+            <span class="post-count">35</span>
           </span>
         </span>-->
 	</p>
@@ -522,40 +522,1072 @@
 
 
 
-<h2 id="【Lambda表达式】"><a href="#【Lambda表达式】" class="headerlink" title="【Lambda表达式】"></a>【Lambda表达式】</h2><p><code>Lambda表达式</code>:带有参数变量的表达式，是一段可以传递的代码，可以被一次或多次执行,是一种精简的字面写法，其实就是把匿名内部类中“一定”要做的工作省略掉,然后由JVM通过推导把简化的表达式还原</p>
+<h1 id="【Lambda表达式】"><a href="#【Lambda表达式】" class="headerlink" title="【Lambda表达式】"></a>【Lambda表达式】</h1><p><code>Lambda表达式</code>:带有参数变量的表达式，是一段可以传递的代码，可以被一次或多次执行,是一种精简的字面写法，其实就是把匿名内部类中“一定”要做的工作省略掉,然后由JVM通过推导把简化的表达式还原</p>
 <p>格式：<code>-&gt;</code>可理解为“被用于”的意思</p>
 <pre><code class="java">(参数) -&gt; 表达式或方法体
 </code></pre>
-<p>列如:遍历Map</p>
-<pre><code class="java"> public static void main(String[] args) {
-        Map&lt;String, String&gt; map = new HashMap&lt;String, String&gt;() {{
-            put("a", "haha");
-            put("b", "hahaha");
-            put("d", "hahe");
-            put("c", "haheeee");
-        }};
+<p>示例</p>
+<pre><code class="java">(int a, int b) -&gt; {  return a + b; }
 
-        map.forEach((k, v) -&gt; {System.out.print(k+&quot; &quot;+v);});
+() -&gt; System.out.println(&quot;Hello World&quot;);
 
-}
+(String s) -&gt; { System.out.println(s); }
+
+() -&gt; 42
+
+() -&gt; { return 3.1415 };
 </code></pre>
-<h2 id="【接口的增强】"><a href="#【接口的增强】" class="headerlink" title="【接口的增强】"></a>【接口的增强】</h2><p>Java 8 对接口做了进一步的增强。在接口中可以添加使用 default 关键字修饰的非抽象方法。还可以在接口中定义静态方法。如今，接口看上去与抽象类的功能越来越类似了</p>
-<pre><code class="java">public interface DefaultFunInterface {
-    default int count(){
-        return 1;
-    }
-    public static int find(){
-        return 1;
-    }
-}
+<h2 id="Lambda-表达式的结构"><a href="#Lambda-表达式的结构" class="headerlink" title="Lambda 表达式的结构"></a>Lambda 表达式的结构</h2><pre><code class="text">- Lambda 表达式可以具有零个，一个或多个参数。
+
+- 可以显式声明参数的类型，也可以由编译器自动从上下文推断参数的类型。例如`(int a)` 与刚才相同 `(a)`。
+
+- 参数用小括号括起来，用逗号分隔。例如 `(a, b)` 或 `(int a, int b)` 或 `(String a, int b, float c)`。
+
+- 空括号用于表示一组空的参数。例如 `() -&gt; 42`。
+
+- 当有且仅有一个参数时，如果不显式指明类型，则不必使用小括号。例如 `a -&gt; return a*a`。
+
+- Lambda 表达式的正文可以包含零条，一条或多条语句。
+
+- 如果 Lambda 表达式的正文只有一条语句，则大括号可不用写，且表达式的返回值类型要与匿名函数的返回类型相同。
+
+- 如果 Lambda 表达式的正文有一条以上的语句必须包含在大括号（代码块）中，且表达式的返回值类型要与匿名函数的返回类型相同。
 </code></pre>
-<h2 id="【函数式接口】"><a href="#【函数式接口】" class="headerlink" title="【函数式接口】"></a>【函数式接口】</h2><p>Java 8 引入的一个核心概念是函数式接口（Functional Interfaces）。通过在接口里面添加一个抽象方法，这些方法可以直接从接口中运行。如果一个接口定义个唯一一个抽象方法，那么这个接口就成为函数式接口。同时，引入了一个新的注解：@FunctionalInterface。可以把他它放在一个接口前，表示这个接口是一个函数式接口。这个注解是非必须的，只要接口只包含一个方法的接口，虚拟机会自动判断，不过最好在接口上使用注解 @FunctionalInterface 进行声明。在接口中添加了 @FunctionalInterface 的接口，只允许有一个抽象方法，否则编译器也会报错。</p>
-<pre><code class="java">@FunctionalInterface
+<h2 id="方法引用"><a href="#方法引用" class="headerlink" title="方法引用"></a>方法引用</h2><p>使用 Lambda 表达式，我们已经看到代码可以变得非常简洁。</p>
+<p>例如，要创建一个比较器，以下语法就足够了</p>
+<pre><code>Comparator c = (Person p1, Person p2) -&gt; p1.getAge().compareTo(p2.getAge());
+</code></pre><p>然后，使用类型推断：</p>
+<pre><code>Comparator c = (p1, p2) -&gt; p1.getAge().compareTo(p2.getAge());
+</code></pre><p>但是，我们可以使上面的代码更具表现力和可读性吗？我们来看一下：</p>
+<pre><code>Comparator c = Comparator.comparing(Person::getAge);
+</code></pre><p>使用 :: 运算符作为 Lambda 调用特定方法的缩写，并且拥有更好的可读性。</p>
+<h2 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h2><p>双冒号（<code>::</code>）操作符是 Java 中的<code>方法引用</code>。当们使用一个方法的引用时，目标引用放在<code>::</code>之前，目标引用提供的方法名称放在<code>::</code>之后，即 <code>目标引用::方法</code>。比如：</p>
+<pre><code>Person::getAge;
+</code></pre><p>在 <code>Person</code> 类中定义的方法 <code>getAge</code> 的方法引用。</p>
+<p>然后我们可以使用 <code>Function</code> 对象进行操作：</p>
+<pre><code>// 获取 getAge 方法的 Function 对象
+Function&lt;Person, Integer&gt; getAge = Person::getAge;
+// 传参数调用 getAge 方法
+Integer age = getAge.apply(p);
+</code></pre><p>我们引用 <code>getAge</code>，然后将其应用于正确的参数。</p>
+<p>目标引用的参数类型是 <code>Function，T</code> 表示传入类型，R 表示返回类型。比如，表达式<code>person -&gt; person.getAge();</code>，传入参数是<code>person</code>，返回值是 <code>person.getAge()</code>，那么方法引用 <code>Person::getAge</code> 就对应着 <code>Function</code> 类型</p>
+<h1 id="【函数式接口】"><a href="#【函数式接口】" class="headerlink" title="【函数式接口】"></a>【函数式接口】</h1><h2 id="函数式接口定义"><a href="#函数式接口定义" class="headerlink" title="函数式接口定义"></a>函数式接口定义</h2><ul>
+<li>带有@FunctionInterface注解的接口是函数式接口，编译器会对其做编译检查，不符合条件会报错</li>
+<li>函数式接口允许默认方法存在 default-method</li>
+<li>函数式接口允许静态方法存在 static-method</li>
+<li>函数式接口允许对Object方法的重写例如 toString() equals()</li>
+</ul>
+<blockquote>
+<p>线程接口Runnable就是一个典型的函数式接口</p>
+</blockquote>
+<pre><code>package java.lang;
+/**
+ * The &lt;code&gt;Runnable&lt;/code&gt; interface should be implemented by any
+ * class whose instances are intended to be executed by a thread. The
+ * class must define a method of no arguments called &lt;code&gt;run&lt;/code&gt;.
+ * &lt;p&gt;
+ * This interface is designed to provide a common protocol for objects that
+ * wish to execute code while they are active. For example,
+ * &lt;code&gt;Runnable&lt;/code&gt; is implemented by class &lt;code&gt;Thread&lt;/code&gt;.
+ * Being active simply means that a thread has been started and has not
+ * yet been stopped.
+ * &lt;p&gt;
+ * In addition, &lt;code&gt;Runnable&lt;/code&gt; provides the means for a class to be
+ * active while not subclassing &lt;code&gt;Thread&lt;/code&gt;. A class that implements
+ * &lt;code&gt;Runnable&lt;/code&gt; can run without subclassing &lt;code&gt;Thread&lt;/code&gt;
+ * by instantiating a &lt;code&gt;Thread&lt;/code&gt; instance and passing itself in
+ * as the target.  In most cases, the &lt;code&gt;Runnable&lt;/code&gt; interface should
+ * be used if you are only planning to override the &lt;code&gt;run()&lt;/code&gt;
+ * method and no other &lt;code&gt;Thread&lt;/code&gt; methods.
+ * This is important because classes should not be subclassed
+ * unless the programmer intends on modifying or enhancing the fundamental
+ * behavior of the class.
+ *
+ * @author  Arthur van Hoff
+ * @see     java.lang.Thread
+ * @see     java.util.concurrent.Callable
+ * @since   JDK1.0
+ */
+@FunctionalInterface
 public interface Runnable {
-public abstract void run();
+    /**
+     * When an object implementing interface &lt;code&gt;Runnable&lt;/code&gt; is used
+     * to create a thread, starting the thread causes the object&#39;s
+     * &lt;code&gt;run&lt;/code&gt; method to be called in that separately executing
+     * thread.
+     * &lt;p&gt;
+     * The general contract of the method &lt;code&gt;run&lt;/code&gt; is that it may
+     * take any action whatsoever.
+     *
+     * @see     java.lang.Thread#run()
+     */
+    public abstract void run();
 }
+</code></pre><blockquote>
+<p>我们也可以自己定义函数式接口,定义一个接口，使用lambda表达式传递接口并且调用</p>
+</blockquote>
+<pre><code>/**
+ * 函数式接口
+ */
+@FunctionalInterface //只是为了编译器检查 可以不写
+public interface MyInterface {
+    // 有且只有一个抽象方法
+    void sayHello(String name);
+    //1.可以重写 Object的toString方法
+    @Override
+    String toString();
+    // 也可以重写 Object的equals方法，还可以重写其他方法，这里只举个例子
+    @Override
+    boolean equals(Object object);
+    //2 可以有默认方法
+    default void sayHi(String name) {
+        System.out.println(&quot;hi :&quot; + name);
+    }
+    //3 可以有静态方法
+    static boolean isEqual(Object obj) {
+    return (null == obj)
+            ? true
+            : false;
+    }
+}
+
+--------------------------------------
+
+@Test
+public void test() {
+    // 调用 需要一个String参数 然后打印输出
+    say(&quot;black猫&quot;, (name) -&gt; System.out.println(name + &quot;: hello&quot;));
+}
+/**
+  * 声明一个 接口传递方法
+  * @param name 接口需要的参数
+  * @param myInterface 是函数式类型接口 
+  */
+public void say(String name, MyInterface&lt;String&gt; myInterface) {
+    myInterface.sayHello(name);
+}
+</code></pre><blockquote>
+<p>其实我们不用自己定义这些函数式接口，java8给我们内置好了一些接口如下：</p>
+</blockquote>
+<ul>
+<li>消费型接口 Consumer<t>:void accept(T t);</t></li>
+<li>供给型接口 Supplier<t>:T get();</t></li>
+<li>函数型接口 Function&lt;T,R&gt;:R apply(T t);</li>
+<li>断言型接口 Predicate<t>:boolean test(T t);</t></li>
+</ul>
+<h2 id="消费型接口Consumer"><a href="#消费型接口Consumer" class="headerlink" title="消费型接口Consumer"></a>消费型接口Consumer</h2><blockquote>
+<p>Consumer接口除了一个抽象方法accept(T t)还有一个默认实现的andThen(Consumer consumer),用来在前一个消费接口调用完accept()后使用,可以理解为一个连续性操作。</p>
+</blockquote>
+<pre><code>package java.util.function;
+import java.util.Objects;
+/**
+ * Represents an operation that accepts a single input argument and returns no
+ * result. Unlike most other functional interfaces, {@code Consumer} is expected
+ * to operate via side-effects.
+ *
+ * &lt;p&gt;This is a &lt;a href=&quot;package-summary.html&quot;&gt;functional interface&lt;/a&gt;
+ * whose functional method is {@link #accept(Object)}.
+ *
+ * @param &lt;T&gt; the type of the input to the operation
+ *
+ * @since 1.8
+ */
+@FunctionalInterface
+public interface Consumer&lt;T&gt; {
+    /**
+     * Performs this operation on the given argument.
+     *
+     * @param t the input argument
+     */
+    void accept(T t);
+    /**
+     * Returns a composed {@code Consumer} that performs, in sequence, this
+     * operation followed by the {@code after} operation. If performing either
+     * operation throws an exception, it is relayed to the caller of the
+     * composed operation.  If performing this operation throws an exception,
+     * the {@code after} operation will not be performed.
+     *
+     * @param after the operation to perform after this operation
+     * @return a composed {@code Consumer} that performs in sequence this
+     * operation followed by the {@code after} operation
+     * @throws NullPointerException if {@code after} is null
+     */
+    default Consumer&lt;T&gt; andThen(Consumer&lt;? super T&gt; after) {
+        Objects.requireNonNull(after);
+        return (T t) -&gt; { accept(t); 
+        after.accept(t);
+         };
+    }
+}
+</code></pre><h2 id="消费型接口Consumer的三个例子"><a href="#消费型接口Consumer的三个例子" class="headerlink" title="消费型接口Consumer的三个例子"></a>消费型接口Consumer的三个例子</h2><p>1.Consumer接口的accept消费一个参数(反转字符串)</p>
+<pre><code>@Test
+public void  test01(){
+  testConsumer01(&quot;hello&quot;,(msg)-&gt;System.out.println(new StringBuffer(msg).reverse().toString());
+}
+
+//调用 accept
+public void testConsumer01(String str,Consumer&lt;String&gt; consumer){
+    consumer.accept(str);
+}
+</code></pre><p>2.两个消费接口 调用accept，实现一个输出字符串大写，一个输出字符串输出小写</p>
+<pre><code>@Test
+public void test02(){
+    testConsumer02(&quot;Hello Lambda&quot;,(str)-&gt;{
+        System.out.println(str.toUpperCase());
+    },(str)-&gt;{
+        System.out.println(str.toLowerCase());
+    }
+    );
+}
+//两个消费接口 调用 accept
+public void testConsumer02(String str,Consumer&lt;String&gt; consumer1,Consumer&lt;String&gt; consumer2){
+    consumer1.accept(str);
+    consumer2.accept(str);
+}
+</code></pre><p>3.两个消费接口的accept和andThen组合操作字符</p>
+<pre><code>@Test
+public void test03() {
+    String[] names = {&quot;张山,男&quot;, &quot;李诗,女&quot;, &quot;王武,男&quot;, &quot;马柳,女&quot;};
+    testConsumer03(names, (str) -&gt; {
+                System.out.print(str.split(&quot;,&quot;)[0]+&quot;:&quot;);
+            }, (str) -&gt; {
+                System.out.println(str.split(&quot;,&quot;)[1]);
+            }
+    );
+}
+public void testConsumer03(String[] names, Consumer&lt;String&gt; consumer1, Consumer&lt;String&gt; consumer2) {
+    for (int i = 0; i &lt; names.length; i++) {
+        //第一个消费接口处理完，第二个消费接口接着处理
+        consumer1.andThen(consumer2).accept(names[i]);
+    }
+}
+</code></pre><h2 id="供给型接口Supplier"><a href="#供给型接口Supplier" class="headerlink" title="供给型接口Supplier"></a>供给型接口Supplier</h2><blockquote>
+<p>提供一个抽象方法get()，返回一个T</p>
+</blockquote>
+<pre><code>package java.util.function;
+/**
+ * Represents a supplier of results.
+ *
+ * &lt;p&gt;There is no requirement that a new or distinct result be returned each
+ * time the supplier is invoked.
+ *
+ * &lt;p&gt;This is a &lt;a href=&quot;package-summary.html&quot;&gt;functional interface&lt;/a&gt;
+ * whose functional method is {@link #get()}.
+ *
+ * @param &lt;T&gt; the type of results supplied by this supplier
+ *
+ * @since 1.8
+ */
+@FunctionalInterface
+public interface Supplier&lt;T&gt; {
+    /**
+     * Gets a result.
+     *
+     * @return a result
+     */
+    T get();
+}
+</code></pre><h2 id="供给型接口Supplier的例子"><a href="#供给型接口Supplier的例子" class="headerlink" title="供给型接口Supplier的例子"></a>供给型接口Supplier的例子</h2><blockquote>
+<p>利用供给型接口获取10个100内随机数，输出</p>
+</blockquote>
+<pre><code>@Test
+public void test04() {
+    ArrayList&lt;Integer&gt; arr = testSupplier02(10, () -&gt; (int) (Math.random()*100));
+    for (int i = 0; i &lt; arr.size(); i++) {
+        System.out.println(i + arr.get(i));
+    }
+}
+
+public ArrayList&lt;Integer&gt; testSupplier02(int size, Supplier&lt;Integer&gt; consumer) {
+    ArrayList&lt;Integer&gt; arr = new ArrayList&lt;&gt;();
+    for (int i = 0; i &lt; size; i++) {
+        int str = consumer.get();
+        arr.add(str);
+    }
+    return arr;
+}
+</code></pre><h2 id="函数型接口Function"><a href="#函数型接口Function" class="headerlink" title="函数型接口Function"></a>函数型接口Function</h2><blockquote>
+<p>提供一个抽象方法apply(T t)，返回一个R,Function&lt;T,V&gt; compose(Function function)在apply前执行，Function&lt;T,V&gt; andThen(Function function)在apply之后执行。</p>
+</blockquote>
+<pre><code>package java.util.function;
+import java.util.Objects;
+/**
+ * Represents a function that accepts one argument and produces a result.
+ *
+ * &lt;p&gt;This is a &lt;a href=&quot;package-summary.html&quot;&gt;functional interface&lt;/a&gt;
+ * whose functional method is {@link #apply(Object)}.
+ *
+ * @param &lt;T&gt; the type of the input to the function
+ * @param &lt;R&gt; the type of the result of the function
+ *
+ * @since 1.8
+ */
+@FunctionalInterface
+public interface Function&lt;T, R&gt; {
+    /**
+     * Applies this function to the given argument.
+     *
+     * @param t the function argument
+     * @return the function result
+     */
+    R apply(T t);
+    /**
+     * Returns a composed function that first applies the {@code before}
+     * function to its input, and then applies this function to the result.
+     * If evaluation of either function throws an exception, it is relayed to
+     * the caller of the composed function.
+     *
+     * @param &lt;V&gt; the type of input to the {@code before} function, and to the
+     *           composed function
+     * @param before the function to apply before this function is applied
+     * @return a composed function that first applies the {@code before}
+     * function and then applies this function
+     * @throws NullPointerException if before is null
+     *
+     * @see #andThen(Function)
+     */
+    default &lt;V&gt; Function&lt;V, R&gt; compose(Function&lt;? super V, ? extends T&gt; before) {
+        Objects.requireNonNull(before);
+        return (V v) -&gt; apply(before.apply(v));
+    }
+    /**
+     * Returns a composed function that first applies this function to
+     * its input, and then applies the {@code after} function to the result.
+     * If evaluation of either function throws an exception, it is relayed to
+     * the caller of the composed function.
+     *
+     * @param &lt;V&gt; the type of output of the {@code after} function, and of the
+     *           composed function
+     * @param after the function to apply after this function is applied
+     * @return a composed function that first applies this function and then
+     * applies the {@code after} function
+     * @throws NullPointerException if after is null
+     *
+     * @see #compose(Function)
+     */
+    default &lt;V&gt; Function&lt;T, V&gt; andThen(Function&lt;? super R, ? extends V&gt; after) {
+        Objects.requireNonNull(after);
+        return (T t) -&gt; after.apply(apply(t));
+    }
+    /**
+     * Returns a function that always returns its input argument.
+     *
+     * @param &lt;T&gt; the type of the input and output objects to the function
+     * @return a function that always returns its input argument
+     */
+    static &lt;T&gt; Function&lt;T, T&gt; identity() {
+        return t -&gt; t;
+    }
+}
+</code></pre><h2 id="函数型接口Function例子"><a href="#函数型接口Function例子" class="headerlink" title="函数型接口Function例子"></a>函数型接口Function例子</h2><blockquote>
+<p>把一个字符串，先转大写然后反转，最后转小写打印，采用三个函数型接口参数</p>
+</blockquote>
+<pre><code>@Test
+public void test3() {
+    String msg = textFunction(&quot;hello-LAmbda&quot;, (str1) -&gt; {
+        return  str1.toUpperCase();
+    },(str1)-&gt;{
+        return str1.toLowerCase();
+    },(str1)-&gt;{
+        return new StringBuilder(str1).reverse().toString();
+    });
+    System.out.println(msg);
+}
+
+public String textFunction(String str, Function&lt;String, String&gt; function, Function&lt;String, String&gt; function2, Function&lt;String, String&gt; function3) {
+    // function先执行然后是function2，但是function3在function2之前执行所以function2最后执行～～～
+    return function.andThen(function2.compose(function3)).apply(str);
+}
+</code></pre><h2 id="断言型接口-Predicate"><a href="#断言型接口-Predicate" class="headerlink" title="断言型接口 Predicate"></a>断言型接口 Predicate</h2><blockquote>
+<p>一个抽象方法test(Test t),默认方法 and(Predicate predicate)/or(Predicate predicate)/negate(Predicate predicate)静态方法isEqual(Object targetRef)</p>
+</blockquote>
+<pre><code>package java.util.function;
+import java.util.Objects;
+/**
+ * Represents a predicate (boolean-valued function) of one argument.
+ *
+ * &lt;p&gt;This is a &lt;a href=&quot;package-summary.html&quot;&gt;functional interface&lt;/a&gt;
+ * whose functional method is {@link #test(Object)}.
+ *
+ * @param &lt;T&gt; the type of the input to the predicate
+ *
+ * @since 1.8
+ */
+@FunctionalInterface
+public interface Predicate&lt;T&gt; {
+
+    /**
+     * Evaluates this predicate on the given argument.
+     *
+     * @param t the input argument
+     * @return {@code true} if the input argument matches the predicate,
+     * otherwise {@code false}
+     */
+    boolean test(T t);
+
+    /**
+     * Returns a composed predicate that represents a short-circuiting logical
+     * AND of this predicate and another.  When evaluating the composed
+     * predicate, if this predicate is {@code false}, then the {@code other}
+     * predicate is not evaluated.
+     *
+     * &lt;p&gt;Any exceptions thrown during evaluation of either predicate are relayed
+     * to the caller; if evaluation of this predicate throws an exception, the
+     * {@code other} predicate will not be evaluated.
+     *
+     * @param other a predicate that will be logically-ANDed with this
+     *              predicate
+     * @return a composed predicate that represents the short-circuiting logical
+     * AND of this predicate and the {@code other} predicate
+     * @throws NullPointerException if other is null
+     */
+    default Predicate&lt;T&gt; and(Predicate&lt;? super T&gt; other) {
+        Objects.requireNonNull(other);
+        return (t) -&gt; test(t) &amp;&amp; other.test(t);
+    }
+
+    /**
+     * Returns a predicate that represents the logical negation of this
+     * predicate.
+     *
+     * @return a predicate that represents the logical negation of this
+     * predicate
+     */
+    default Predicate&lt;T&gt; negate() {
+        return (t) -&gt; !test(t);
+    }
+
+    /**
+     * Returns a composed predicate that represents a short-circuiting logical
+     * OR of this predicate and another.  When evaluating the composed
+     * predicate, if this predicate is {@code true}, then the {@code other}
+     * predicate is not evaluated.
+     *
+     * &lt;p&gt;Any exceptions thrown during evaluation of either predicate are relayed
+     * to the caller; if evaluation of this predicate throws an exception, the
+     * {@code other} predicate will not be evaluated.
+     *
+     * @param other a predicate that will be logically-ORed with this
+     *              predicate
+     * @return a composed predicate that represents the short-circuiting logical
+     * OR of this predicate and the {@code other} predicate
+     * @throws NullPointerException if other is null
+     */
+    default Predicate&lt;T&gt; or(Predicate&lt;? super T&gt; other) {
+        Objects.requireNonNull(other);
+        return (t) -&gt; test(t) || other.test(t);
+    }
+
+    /**
+     * Returns a predicate that tests if two arguments are equal according
+     * to {@link Objects#equals(Object, Object)}.
+     *
+     * @param &lt;T&gt; the type of arguments to the predicate
+     * @param targetRef the object reference with which to compare for equality,
+     *               which may be {@code null}
+     * @return a predicate that tests if two arguments are equal according
+     * to {@link Objects#equals(Object, Object)}
+     */
+    static &lt;T&gt; Predicate&lt;T&gt; isEqual(Object targetRef) {
+        return (null == targetRef)
+                ? Objects::isNull
+                : object -&gt; targetRef.equals(object);
+    }
+}
+</code></pre><h2 id="断言型接口Predicate例子"><a href="#断言型接口Predicate例子" class="headerlink" title="断言型接口Predicate例子"></a>断言型接口Predicate例子</h2><blockquote>
+<p>判断一个字符串是否包含‘*’并且长度大于10 或者 字符串包含‘-’</p>
+</blockquote>
+<pre><code>public void test4() {
+    String str = &quot;hello-lambda&quot;;
+    boolean bool = textPredicate(str, (msg) -&gt; {
+        return msg.indexOf(&#39;*&#39;) &gt; -1;
+    }, (msg) -&gt; {
+        return msg.length() &gt; 10;
+    }, (msg) -&gt; {
+        return msg.indexOf(&quot;-&quot;) &gt; -1;
+    });
+    System.out.println(bool);
+}
+
+public boolean textPredicate(String str, Predicate&lt;String&gt; predicate, Predicate&lt;String&gt; predicate2, Predicate&lt;String&gt; predicate3) {
+    return predicate.and(predicate2).or(predicate3).test(str);
+}
+</code></pre><h2 id="其他接口"><a href="#其他接口" class="headerlink" title="其他接口"></a>其他接口</h2><blockquote>
+<p>根据上面的示例，每个接口结合源码可以写出自己想要的代码</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>函数式接口</th>
+<th>参数类型</th>
+<th>返回类型</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BiFunction&lt;T, U, R&gt;</td>
+<td>T, U</td>
+<td>R</td>
+<td>对类型为 T, U 参数应用 操作，返回 R 类型的结 果。包含方法为 R apply(T t, U u);</td>
+</tr>
+<tr>
+<td>UnaryOperator (Function子接口)</td>
+<td>T</td>
+<td>T</td>
+<td>对类型为T的对象进行一 元运算，并返回T类型的 结果。包含方法为 T apply(T t);</td>
+</tr>
+<tr>
+<td>BinaryOperator (BiFunction 子接口)</td>
+<td>T, T</td>
+<td>T</td>
+<td>对类型为T的对象进行二 元运算，并返回T类型的 结果。包含方法为 T apply(T t1, T t2);</td>
+</tr>
+<tr>
+<td>BiConsumer&lt;T, U&gt;</td>
+<td>T, U</td>
+<td>void</td>
+<td>对类型为T, U 参数应用 操作。包含方法为 void accept(T t, U u)</td>
+</tr>
+<tr>
+<td>ToIntFunction ToLongFunction ToDoubleFunction</td>
+<td>T</td>
+<td>int long double</td>
+<td>分别计算int、long、 double、值的函数</td>
+</tr>
+<tr>
+<td>IntFunction LongFunction DoubleFunction</td>
+<td>int long double</td>
+<td>R</td>
+<td>参数分别为int、long、 double 类型的函数</td>
+</tr>
+</tbody>
+</table>
+<h1 id="【Stream-API】"><a href="#【Stream-API】" class="headerlink" title="【Stream API】"></a>【Stream API】</h1><pre><code class="text">Stream是Java8中处理集合的关键抽象概念，它可以指定你希望对集合进行的操作，可以执行非常复杂的查找、过滤和映射数据等操作。
+使用Stream API 对集合数据进行操作，就类似于使用 SQL 执行的数 据库查询。
+也可以使用Stream API来并行执行操作。
+简而言之，Stream API 提供了一种高效且易于使用的处理数据的方式。
 </code></pre>
-<p><hr></p>
+<blockquote>
+<p>Stream流是数据渠道，用于操作数据源(集合、数组等)所生成的元素序列，以下三点注意。</p>
+</blockquote>
+<pre><code class="text">Stream 自己不会存储元素。
+Stream 不会改变源对象。相反，他们会返回一个持有结果的新Stream。
+Stream 操作是延迟执行的。这意味着他们会等到需要结果的时候才执行。
+</code></pre>
+<blockquote>
+<p>Stream流操作的三大步</p>
+</blockquote>
+<pre><code class="text">创建Stream流
+中间操作
+终止操作
+</code></pre>
+<h2 id="创建Stream流"><a href="#创建Stream流" class="headerlink" title="创建Stream流"></a>创建Stream流</h2><h3 id="集合创建Stream流"><a href="#集合创建Stream流" class="headerlink" title="集合创建Stream流"></a>集合创建Stream流</h3><pre><code>/****
+ * java8中的Collection接口方法
+ * stream() 顺序流
+ * parallelStream()  并行流(后面再说这个)
+ */
+@Test
+public void test01() {
+    //声明一个list
+    List&lt;String&gt; list = new ArrayList&lt;String&gt;();
+    //  default Stream&lt;E&gt; stream() 顺序流
+    //  default Stream&lt;E&gt; parallelStream()  并行流
+    //  创建一个顺序流
+    Stream stream1 = list.stream();
+    //  创建一个并行流
+    Stream stream2 = list.parallelStream();
+}
+</code></pre><h3 id="数组创建Stream流"><a href="#数组创建Stream流" class="headerlink" title="数组创建Stream流"></a>数组创建Stream流</h3><pre><code>/****
+ * 数组创建Stream流
+ * Java8 中的 Arrays 的静态方法 stream() 可以获取数组流
+ */
+@Test
+public void test02() {
+    //   Java8 中的 Arrays 的静态方法 stream() 可以获取数组流
+    //    public static &lt;T&gt; Stream&lt;T&gt; stream(T[] array)
+    String[] arr = new String[10];
+    Stream stream = Arrays.stream(arr);
+}
+</code></pre><h3 id="由值创建Stream流-Stream-of"><a href="#由值创建Stream流-Stream-of" class="headerlink" title="由值创建Stream流 Stream.of()"></a>由值创建Stream流 Stream.of()</h3><pre><code>/****
+ * 由值创建Stream流
+ * Stream.of()
+ */
+@Test
+public void test03() {
+    //  可以使用静态方法 Stream.of(), 通过显式值创建一个流。它可以接收任意数量的参数。
+    Stream stream = Stream.of(&quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;);
+}
+</code></pre><h3 id="Stream-iterate-和-Stream-generate"><a href="#Stream-iterate-和-Stream-generate" class="headerlink" title="Stream.iterate() 和 Stream.generate()"></a>Stream.iterate() 和 Stream.generate()</h3><pre><code>/****
+ * 由函数创建Stream无限流
+ *
+ * seed种子  f 一元运算接口
+ * Stream.iterate(T seed,UnaryOperator f)
+ *
+ * supplier 供给型型接口
+ * Stream.generate(Supplier supplier)
+ */
+@Test
+public void test04() {
+    // 可以使用静态方法 Stream.iterate() 和 Stream.generate(), 创建无限流。
+    //  args1 seed 开始种子， args2 一元函数式接口
+    //迭代  public static&lt;T&gt; Stream&lt;T&gt; iterate(final T seed, final UnaryOperator&lt;T&gt; f)
+    Stream stream1 = Stream.iterate(0, (x) -&gt; x + 1);
+
+    //args 一个供给型接口
+    // 生成   public static&lt;T&gt; Stream&lt;T&gt; generate(Supplier&lt;T&gt; s) :
+    Stream stream2 = Stream.generate(() -&gt; new Random().nextInt(100));
+
+}
+</code></pre><h2 id="中间操作"><a href="#中间操作" class="headerlink" title="中间操作"></a>中间操作</h2><p>多个中间操作可以连接起来形成一个流水线，除非流水线上触发终止操作，否则中间操作不会执行任何的处理,而在终止操作时一次性全部处理，称为“惰性求值”。看一下一些常用的API：</p>
+<h3 id="filter"><a href="#filter" class="headerlink" title="filter()"></a>filter()</h3><pre><code>/****
+    * filter(Predicate p)
+    * 接收一个断言式接口，从流中排除不符合条件的元素
+    */
+   @Test
+   public void test01() {
+       Integer[] nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
+       //使用Stream流的静态方法 of创建一个Stream流
+       Stream&lt;Integer&gt; stream = Stream.of(nums);
+       //过滤操作 接收一个断言式接口 排除不符合条件的元素 输出结果
+       stream.filter((x) -&gt; x &gt; 5).forEach(System.out::println);
+   }
+</code></pre><h3 id="distinct"><a href="#distinct" class="headerlink" title="distinct()"></a>distinct()</h3><pre><code>/***
+   * distinct()
+   * 筛选，通过流所生成元素的 hashCode() 和 equals() 去除重复元素
+   */
+  @Test
+  public void test02() {
+      Integer[] nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 0, 1};
+      //使用Stream流的静态方法 of创建一个Stream流
+      Stream&lt;Integer&gt; stream = Stream.of(nums);
+      //去除重复的元素
+      stream.distinct().forEach(System.out::println);
+  }
+</code></pre><h3 id="limit"><a href="#limit" class="headerlink" title="limit()"></a>limit()</h3><pre><code>/***
+ * limit(long maxSize)
+ * 接收一个long型数值流中的元素个数不操过maxSize个，
+ */
+@Test
+public void test03() {
+    //使用Stream流的静态方法 generate创建一个Stream无限流
+    Stream stream = Stream.generate(() -&gt; new Random().nextInt(100));
+    //截断流获取前n个元素 最大n个
+    stream.limit(10).forEach(System.out::println);
+}
+</code></pre><h3 id="skip"><a href="#skip" class="headerlink" title="skip()"></a>skip()</h3><pre><code>/***
+ * skip(long n)
+ * 接收一个long型数值 跳过流前n个元素获取后面的元素和 limit(n)相反
+ */
+@Test
+public void test04() {
+    Integer[] nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 0, 1};
+    //使用Stream流的静态方法 generate创建一个Stream无限流
+    Stream stream = Arrays.stream(nums);
+    stream.skip(3).forEach(System.out::println);
+}
+</code></pre><h3 id="map"><a href="#map" class="headerlink" title="map()"></a>map()</h3><pre><code>/****
+ * map(Function f)
+ * 接收一个函数作为参数，该函数会被应用到每个元素上，并将其映射成一个新的元素。
+ */
+@Test
+public void test05() {
+    Integer[] nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
+    //使用Stream流的静态方法 generate创建一个Stream无限流
+    Stream&lt;Integer&gt; stream = Arrays.stream(nums);
+    // 将每个元素*2
+    stream.map(x -&gt; x * 2).forEach(System.out::println);
+
+}
+</code></pre><h3 id="flatMap"><a href="#flatMap" class="headerlink" title="flatMap()"></a>flatMap()</h3><pre><code>/****
+ * flatMap(ToDoubleFunction f)
+ * 接收一个函数作为参数，将流中的每个值都换成另一个流，然后把所有流连接成一个流
+ */
+@Test
+public void test08() {
+    String[] strings = {&quot;hello lambda&quot;, &quot;hello&quot;, &quot;lambda&quot;};
+    //  Stream的静态方法 of获取流
+    Stream&lt;String&gt; testStream = Stream.of(strings);
+    //  流中的元素换成另一个流 分割处理 然后去重 打印
+    testStream.flatMap(str -&gt; Arrays.stream(str.split(&quot; &quot;))).distinct().forEach(System.out::println);
+}
+</code></pre><h3 id="sorted"><a href="#sorted" class="headerlink" title="sorted()"></a>sorted()</h3><pre><code>/**
+ * sorted()
+ * 产生一个新流，其中按自然顺序排序
+ */
+@Test
+public void test09() {
+    Integer[] nums = {1, 4, 2, 6, 3, 0, 9, 8, 7, 5};
+    Arrays.stream(nums).sorted().forEach(System.out::println);
+}
+</code></pre><pre><code>/**
+ * sorted(Comparator comparator)
+ * 产生一个新流，其中按比较器顺序排序
+ */
+@Test
+public void test10() {
+    Integer[] nums = {-1, 4, -2, 6, -3, 0, 9, -8, 7, -5};
+    //例如 按照绝对值排序
+    Arrays.stream(nums).sorted(Comparator.comparing(x -&gt; Math.abs(x))).forEach(System.out::println);
+}
+</code></pre><h2 id="终止操作"><a href="#终止操作" class="headerlink" title="终止操作"></a>终止操作</h2><p>终端操作会从流的流水线生成结果。 其结果可以是任何不是流的值，例如:List、Integer、boolean</p>
+<h3 id="allMatch"><a href="#allMatch" class="headerlink" title="allMatch()"></a>allMatch()</h3><pre><code>/****
+ * allMatch(Predicate predicate)
+ * 接收一个断言式接口 全匹配 返回boolean
+ */
+@Test
+public void test01() {
+    Integer[] nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
+    //使用Stream流的静态方法 of创建一个Stream流
+    Stream&lt;Integer&gt; stream = Stream.of(nums);
+    // 匹配数组元素是否全部大于等于0
+    System.out.println(stream.allMatch((x) -&gt; x &gt;= 0));
+
+}
+</code></pre><h3 id="anyMatch"><a href="#anyMatch" class="headerlink" title="anyMatch()"></a>anyMatch()</h3><pre><code>/****
+ * anyMatch(Predicate predicate)
+ * 接收一个断言式接口 至少匹配一个 返回boolean
+ */
+@Test
+public void test02() {
+    Integer[] nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
+    //使用Stream流的静态方法 of创建一个Stream流
+    Stream&lt;Integer&gt; stream = Stream.of(nums);
+    // 匹配数组元素是否有大于10的元素
+    System.out.println(stream.anyMatch((x) -&gt; x &gt; 10));
+}
+</code></pre><h3 id="noneMatch"><a href="#noneMatch" class="headerlink" title="noneMatch()"></a>noneMatch()</h3><pre><code>/****
+ * noneMatch(Predicate predicate)
+ * 接收一个断言式接口 是否没有匹配的元素 返回boolean
+ */
+@Test
+public void test03() {
+    Integer[] nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
+    //使用Stream流的静态方法 of创建一个Stream流
+    Stream&lt;Integer&gt; stream = Stream.of(nums);
+    // 匹配数组元素是否没有大于10的元素
+    System.out.println(stream.noneMatch((x) -&gt; x &gt; 10));
+}
+</code></pre><h3 id="findFirst"><a href="#findFirst" class="headerlink" title="findFirst()"></a>findFirst()</h3><pre><code>/****
+ * findFirst()
+ * 返回Optional
+ */
+@Test
+public void test04() {
+    Integer[] nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 0, 1};
+    //使用数组Arrays创建流
+    Stream stream = Arrays.stream(nums);
+    //返回流元素中的第一个元素
+    Optional optional = stream.findFirst();
+    System.out.println(optional.get());
+}
+</code></pre><h3 id="findAny"><a href="#findAny" class="headerlink" title="findAny()"></a>findAny()</h3><pre><code>/****
+ * findAny()
+ * 返回Optional
+ */
+@Test
+public void test05() {
+    Integer[] nums = {2, 3, 4, 5, 6, 7, 8, 9, 0, 0, 1};
+    //使用数组Arrays创建流
+    Stream stream = Arrays.stream(nums);
+    //返回流元素中的任意元素
+    Optional optional = stream.findAny();
+    System.out.println(optional.get());
+}
+</code></pre><h3 id="count"><a href="#count" class="headerlink" title="count()"></a>count()</h3><pre><code>/****
+ * count()
+ * 返回流元素总数 Long型
+ */
+@Test
+public void test06() {
+    Integer[] nums = {2, 3, 4, 5, 6, 7, 8, 9, 0, 0, 1};
+    //使用数组Arrays创建流
+    Stream stream = Arrays.stream(nums);
+    Long aLong = stream.count();
+    System.out.println(aLong);
+}
+</code></pre><h3 id="max"><a href="#max" class="headerlink" title="max()"></a>max()</h3><pre><code>/****
+ * max(Comparator comparator)
+ * 返回流元素最大值
+ * 接收一个比较器
+ */
+@Test
+public void test07() {
+    Integer[] nums = {2, 3, 4, 5, 6, 7, 8, 9, 0, 0, 1};
+    //使用数组Arrays创建流
+    Stream&lt;Integer&gt; stream = Arrays.stream(nums);
+    //返回流元素中的最大元素
+    Optional optional = stream.max(Integer::compare);
+    System.out.println(optional.get());
+
+}
+</code></pre><h3 id="min"><a href="#min" class="headerlink" title="min()"></a>min()</h3><pre><code>/****
+ * max(Comparator comparator)
+ * 返回流元素最小值
+ * 接收一个比较器
+ */
+@Test
+public void test08() {
+    Integer[] nums = {2, 3, 4, 5, 6, 7, 8, 9, 0, 0, 1};
+    //使用数组Arrays创建流
+    Stream&lt;Integer&gt; stream = Arrays.stream(nums);
+    //返回流元素中的最小元素
+    Optional optional = stream.min(Integer::compare);
+    System.out.println(optional.get());
+
+}
+</code></pre><h3 id="forEach"><a href="#forEach" class="headerlink" title="forEach()"></a>forEach()</h3><pre><code>/****
+ * forEach(Consumer consumer)
+ * 接收一个消费性接口
+ * 内部迭代(使用 Collection 接口需要用户去做迭代，称为外部迭代。
+ * 相反，Stream API 使用内部 迭代——它帮你把迭代做了)
+ */
+@Test
+public void test09() {
+    Integer[] nums = {2, 3, 4, 5, 6, 7, 8, 9, 0, 0, 1};
+    Arrays.stream(nums).forEach(System.out::println);
+}
+</code></pre><h3 id="reduce"><a href="#reduce" class="headerlink" title="reduce()"></a>reduce()</h3><pre><code>
+/***
+ * reduce（BinaryOperator&lt;T&gt; accumulator）
+ * 可以将流中元素反复结合起来，得到一个值。返回Optional
+ * 接收一个二元运算接口
+ */
+@Test
+public void test10() {
+    Integer[] nums = {2, 3, 4, 5, 6, 7, 8, 9, 0, 0, 1};
+    //  依次累加
+    Object object = Arrays.stream(nums).reduce((x, y) -&gt; x + y).get();
+    System.out.println(object);
+}
+</code></pre><pre><code>
+/***
+ * reduce（T iden, BinaryOperator&lt;T&gt; accumulator）
+ * 接收一个二元运算接口
+ * 可以将流中元素反复结合起来，得到一个值。返回 T
+ */
+@Test
+public void test11() {
+    Integer[] nums = {2, 3, 4, 5, 6, 7, 8, 9, 0, 0, 1};
+    //  iden 作为一个值先加入运算然后 依次累加
+    Object object = Arrays.stream(nums).reduce(10, (x, y) -&gt; x * y);
+    System.out.println(object);
+}
+</code></pre><h3 id="stream-collect-Collectors-toList"><a href="#stream-collect-Collectors-toList" class="headerlink" title="stream.collect(Collectors.toList())"></a>stream.collect(Collectors.toList())</h3><pre><code>/***
+ * collect（Collector collector）
+ * 将流转换为其他形式。
+ * 接收一个 Collector接口的实现，用于给Stream中元素做汇总的方法
+ * Collectors 实用类提供了很多静态方法，可以方便地创建常见收集器实例
+ * Collectors.toList()
+ * // 将数组变成了 list
+ */
+@Test
+public void test12() {
+    Integer[] nums = {2, 3, 4, 5, 6, 7, 8, 9, 0, 0, 1};
+
+    Stream&lt;Integer&gt; stream = Arrays.stream(nums);
+    List list = stream.collect(Collectors.toList());
+    // 将数组变成了 list
+    System.out.println(list.size());
+}
+</code></pre><h3 id="stream-collect-Collectors-toSet"><a href="#stream-collect-Collectors-toSet" class="headerlink" title="stream.collect(Collectors.toSet())"></a>stream.collect(Collectors.toSet())</h3><pre><code>/***
+ * Collectors.toSet()
+ * 将数组变成了 set
+ */
+@Test
+public void test13() {
+    Integer[] nums = {2, 3, 4, 5, 6, 7, 8, 9, 0, 0, 1};
+    Stream&lt;Integer&gt; stream = Arrays.stream(nums);
+    Set set = stream.collect(Collectors.toSet());
+    // 将数组变成了 set
+    System.out.println(set.size());
+}
+</code></pre><h3 id="stream-collect-Collectors-toSet-1"><a href="#stream-collect-Collectors-toSet-1" class="headerlink" title="stream.collect(Collectors.toSet())"></a>stream.collect(Collectors.toSet())</h3><pre><code>
+/***
+ * Collectors.toCollection(ArrayList::new)
+ * Collectors.toCollection(HashSet::new)
+ * 将数组变成了 Collection
+ */
+@Test
+public void test14() {
+    Integer[] nums = {2, 3, 4, 5, 6, 7, 8, 9, 0, 0, 1};
+    Stream&lt;Integer&gt; stream = Arrays.stream(nums);
+    Collection collection = stream.collect(Collectors.toCollection(HashSet::new));
+    // 将数组变成了 collection
+    System.out.println(collection.size());
+}
+</code></pre><h3 id="stream-collect-Collectors-counting"><a href="#stream-collect-Collectors-counting" class="headerlink" title="stream.collect(Collectors.counting())"></a>stream.collect(Collectors.counting())</h3><pre><code>
+/***
+ * Collectors.counting()
+ * 计算流中元素的个数
+ */
+@Test
+public void test15() {
+    Integer[] nums = {2, 3, 4, 5, 6, 7, 8, 9, 0, 0, 1};
+    Stream&lt;Integer&gt; stream = Arrays.stream(nums);
+    Long integer = stream.collect(Collectors.counting());
+    System.out.println(integer);
+}
+</code></pre><h3 id="stream-collect-Collectors-summingDouble"><a href="#stream-collect-Collectors-summingDouble" class="headerlink" title="stream.collect(Collectors.summingDouble())"></a>stream.collect(Collectors.summingDouble())</h3><pre><code>
+/***
+ * Collectors.summingDouble(ToDoubleFunction mapper)
+ * 计算流中元素的对象的某一个属性平均值
+ * 接收一个 计算int、long、 double、值的函数 接口
+ */
+@Test
+public void test16() {
+    List&lt;Employee&gt; employees = new ArrayList&lt;&gt;(3);
+    Employee employe1 = new Employee(1, &quot;A1&quot;, 5000);
+    Employee employe2 = new Employee(1, &quot;A2&quot;, 8000);
+    Employee employe3 = new Employee(1, &quot;A3&quot;, 10000);
+    employees.add(employe1);
+    employees.add(employe2);
+    employees.add(employe3);
+    Stream&lt;Employee&gt; stream = employees.stream();
+    Double sumSalary = stream.collect(Collectors.summingDouble(Employee::getSalary));
+    System.out.println(sumSalary);
+}
+</code></pre><h3 id="stream-collect-Collectors-averagingDouble"><a href="#stream-collect-Collectors-averagingDouble" class="headerlink" title="stream.collect(Collectors.averagingDouble())"></a>stream.collect(Collectors.averagingDouble())</h3><pre><code>
+/***
+ * Collectors.averagingDouble(ToDoubleFunction mapper)
+ * 计算流中元素的对象的某一个属性平均值
+ * 接收一个 计算int、long、 double、值的函数 接口
+ */
+@Test
+public void test17() {
+    List&lt;Employee&gt; employees = new ArrayList&lt;&gt;(3);
+    Employee employe1 = new Employee(1, &quot;A1&quot;, 5000);
+    Employee employe2 = new Employee(1, &quot;A2&quot;, 8000);
+    Employee employe3 = new Employee(1, &quot;A3&quot;, 10000);
+    employees.add(employe1);
+    employees.add(employe2);
+    employees.add(employe3);
+    Stream&lt;Employee&gt; stream = employees.stream();
+    Double avgSalary = stream.collect(Collectors.averagingDouble(Employee::getSalary));
+    System.out.println(avgSalary);
+}
+</code></pre><h3 id="stream-collect-Collectors-joining"><a href="#stream-collect-Collectors-joining" class="headerlink" title="stream.collect(Collectors.joining())"></a>stream.collect(Collectors.joining())</h3><pre><code>
+/***
+ * Collectors.joining()
+ * 连接流中元素的对象的某一个属性字符串
+ */
+@Test
+public void test18() {
+    List&lt;Employee&gt; employees = new ArrayList&lt;&gt;(3);
+    Employee employe1 = new Employee(1, &quot;A1&quot;, 5000);
+    Employee employe2 = new Employee(1, &quot;A2&quot;, 8000);
+    Employee employe3 = new Employee(1, &quot;A3&quot;, 10000);
+    employees.add(employe1);
+    employees.add(employe2);
+    employees.add(employe3);
+    Stream&lt;Employee&gt; stream = employees.stream();
+    String names = stream.map((x) -&gt; x.getName() + &quot;-&quot;).collect(Collectors.joining());
+    System.out.println(names);
+}
+</code></pre><h3 id="stream-collect-Collectors-minBy"><a href="#stream-collect-Collectors-minBy" class="headerlink" title="stream.collect(Collectors.minBy())"></a>stream.collect(Collectors.minBy())</h3><pre><code>
+/***
+ * Collectors.maxBy(Comparator comparator)
+ * 根据比较器选择最小值
+ * 接收一个比较器
+ */
+@Test
+public void test19() {
+    Integer[] nums = {1, 2, 3, 4, 5, 7, 8, 9, 3, 4, 56};
+    Stream&lt;Integer&gt; stream = Arrays.stream(nums);
+    Optional optional = stream.collect(Collectors.minBy(Integer::compareTo));
+    System.out.println(optional.get());
+}
+</code></pre><h3 id="stream-collect-Collectors-reducing"><a href="#stream-collect-Collectors-reducing" class="headerlink" title="stream.collect(Collectors.reducing())"></a>stream.collect(Collectors.reducing())</h3><pre><code>    /***
+     * Collectors.reducing(U identity,Function&lt;? super T, ? extends U&gt; mapper,BinaryOperator&lt;U&gt; op)
+     * 从一个作为累加器的初始值开始，利用BinaryOperator与流中元素逐个结合，从而归约成单个值
+     * 接收二元计算接口
+     */
+    @Test
+    public void test20() {
+        List&lt;Employee&gt; employees = new ArrayList&lt;&gt;(3);
+        Employee employe1 = new Employee(1, &quot;A1&quot;, 5000);
+        Employee employe2 = new Employee(1, &quot;A2&quot;, 8000);
+        Employee employe3 = new Employee(1, &quot;A3&quot;, 10000);
+        employees.add(employe1);
+        employees.add(employe2);
+        employees.add(employe3);
+
+        Stream&lt;Employee&gt; stream = employees.stream();
+//        identity ： 0d 类型和后面的元素类型 保持一致
+        Double aDouble = stream.collect(Collectors.reducing(0d, Employee::getSalary, Double::sum));
+        System.out.println(aDouble);
+    }
+</code></pre><h3 id="stream-collect-Collectors-collectingAndThen"><a href="#stream-collect-Collectors-collectingAndThen" class="headerlink" title="stream.collect(Collectors.collectingAndThen())"></a>stream.collect(Collectors.collectingAndThen())</h3><pre><code>    /***
+     *  Collectors.collectingAndThen(Collector&lt;T,A,R&gt; downstream,Function&lt;R,RR&gt; finisher)
+     *  转换函数返回的类型
+     *  包裹另一个收集器，对其结果转换函数
+     */
+    @Test
+    public void test21() {
+        List&lt;Employee&gt; employees = new ArrayList&lt;&gt;(3);
+        Employee employe1 = new Employee(1, &quot;A1&quot;, 5000);
+        Employee employe2 = new Employee(1, &quot;A2&quot;, 8000);
+        Employee employe3 = new Employee(1, &quot;A3&quot;, 10000);
+        employees.add(employe1);
+        employees.add(employe2);
+        employees.add(employe3);
+        Stream&lt;Employee&gt; stream = employees.stream();
+//        转换函数返回的类型 返回set
+//        包裹另一个收集器，对其结果 set 进行处理 判断时候为空
+        Boolean bool = stream.collect(Collectors.collectingAndThen(Collectors.toSet(), Set::isEmpty));
+        System.out.println(bool);
+    }
+</code></pre><h3 id="stream-collect-Collectors-groupingBy"><a href="#stream-collect-Collectors-groupingBy" class="headerlink" title="stream.collect(Collectors.groupingBy())"></a>stream.collect(Collectors.groupingBy())</h3><pre><code>/***
+ *  根据某属性值对流分组，属 性为K，结果为V
+ *  Collectors.groupingBy(Function&lt;? super T, ? extends K&gt; classifier)
+ *  传入一个 代表流元素的属性
+ *  返回 以属性为key value为 list的map
+ */
+@Test
+public void test22() {
+    List&lt;Employee&gt; employees = new ArrayList&lt;&gt;(3);
+    Employee employe1 = new Employee(1, &quot;A1&quot;, 5000);
+    Employee employe2 = new Employee(1, &quot;A2&quot;, 8000);
+    Employee employe3 = new Employee(1, &quot;A3&quot;, 10000);
+    employees.add(employe1);
+    employees.add(employe2);
+    employees.add(employe3);
+    Stream&lt;Employee&gt; stream = employees.stream();
+    Map map = stream.collect(Collectors.groupingBy(Employee::getName));
+    Set set=map.entrySet();
+    for (Object str:set) {
+        System.out.println(str);
+        System.out.println(map.get(str));
+    }
+
+}
+</code></pre><h3 id="stream-collect-Collectors-partitioningBy"><a href="#stream-collect-Collectors-partitioningBy" class="headerlink" title="stream.collect(Collectors.partitioningBy())"></a>stream.collect(Collectors.partitioningBy())</h3><pre><code>/***
+ *  根据true或false进行分区
+ *  Collectors.groupingBy(Function&lt;? super T, ? extends K&gt; classifier)
+ *  传入一个 代表流元素的属性
+ *  返回 以属性(flase/true)为key value为 list的map
+ */
+@Test
+public void test23() {
+    List&lt;Employee&gt; employees = new ArrayList&lt;&gt;(3);
+    Employee employe1 = new Employee(1, &quot;A1&quot;, 5000,false);
+    Employee employe2 = new Employee(1, &quot;A2&quot;, 8000,true);
+    Employee employe3 = new Employee(1, &quot;A3&quot;, 10000,false);
+    employees.add(employe1);
+    employees.add(employe2);
+    employees.add(employe3);
+    Stream&lt;Employee&gt; stream = employees.stream();
+    Map map = stream.collect(Collectors.partitioningBy(Employee::getFlag));
+    Set set=map.entrySet();
+    for (Object str:set) {
+        System.out.println(str);
+        System.out.println(map.get(str));
+    }
+
+}
+</code></pre><hr>
+
+
 <h1 id="【未完待续…-】"><a href="#【未完待续…-】" class="headerlink" title="【未完待续…..】"></a><center><font color="ff000">【未完待续…..】</font></center></h1>
 
 	  
@@ -666,15 +1698,15 @@ public abstract void run();
           
             <div class="post-nepre half previous">
           
-            <a href="/posts/4bb9769b/" rel="prev">
+            <a href="/posts/4decbe97/" rel="prev">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/009.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/009.jpg">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/024.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/024.jpg">
               </div>
               <span class="label">
               Previous Post</span>
               <div class="info">
                 <h3>
-                MySQL保存emoji表情</h3>
+                Java总结篇...</h3>
               </div>
             </a>
           </div>
@@ -683,15 +1715,15 @@ public abstract void run();
           
             <div class="post-nepre half next">
           
-            <a href="/posts/27ace9d5/" rel="next">
+            <a href="/posts/f0580ace/" rel="next">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/010.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/010.jpg">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/013.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/013.jpg">
               </div>
               <span class="label">
               Next Post</span>
               <div class="info">
                 <h3>
-                Spring Security</h3>
+                Spring Boot项目接入QQ登录教程</h3>
               </div>
             </a>
           </div>
