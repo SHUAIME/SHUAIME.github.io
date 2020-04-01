@@ -628,20 +628,20 @@
                 
                 
                 
-                <a href="/categories/前端/" title="前端: 1">
+                <a href="/categories/Hexo/" title="Hexo: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F9EBEA;">前端
-                        <span class="tag-length">1</span>
+                            style="background-color: #F9EBEA;">Hexo
+                        <span class="tag-length">2</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/Hexo/" title="Hexo: 2">
+                <a href="/categories/前端/" title="前端: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F5EEF8;">Hexo
-                        <span class="tag-length">2</span>
+                            style="background-color: #F5EEF8;">前端
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -664,29 +664,20 @@
                 </a>
                 
                 
-                <a href="/categories/Spring-Boot/" title="Spring Boot: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #FEF9E7;">Spring Boot
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/categories/Spring-Cloud/" title="Spring Cloud: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F8F9F9;">Spring Cloud
+                            style="background-color: #FEF9E7;">Spring Cloud
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/Docker/" title="Docker: 1">
+                <a href="/categories/Spring-Boot/" title="Spring Boot: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #82E0AA;">Docker
-                        <span class="tag-length">1</span>
+                            style="background-color: #F8F9F9;">Spring Boot
+                        <span class="tag-length">2</span>
                     </span>
                 </a>
                 
@@ -694,8 +685,17 @@
                 <a href="/categories/BLOG/" title="BLOG: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #D7BDE2;">BLOG
+                            style="background-color: #82E0AA;">BLOG
                         <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/Docker/" title="Docker: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #D7BDE2;">Docker
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -738,12 +738,12 @@
         <div id="category-radar" class="card-content"></div>
     </div>
 </div>
- <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN@2.4.5/js/jquery.min.js"></script>
+ 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/jqcloud-1.0.4.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/echarts.min.js"></script>
 <script type="text/javascript">
 
-    let radarChart = echarts.init(document.getElementById('category-radar'));
+    
  
     
  
@@ -763,7 +763,7 @@
                     color: '#3C4858'
                 }
             },
-            indicator: [{"name":"前端","max":10},{"name":"Hexo","max":10},{"name":"Java","max":10},{"name":"IDEA","max":10},{"name":"Spring Boot","max":10},{"name":"Spring Cloud","max":10},{"name":"Docker","max":10},{"name":"BLOG","max":10},{"name":"MySQL","max":10},{"name":"GitHub","max":10}],
+            indicator: [{"name":"Hexo","max":10},{"name":"前端","max":10},{"name":"Java","max":10},{"name":"IDEA","max":10},{"name":"Spring Cloud","max":10},{"name":"Spring Boot","max":10},{"name":"BLOG","max":10},{"name":"Docker","max":10},{"name":"MySQL","max":10},{"name":"GitHub","max":10}],
             nameGap: 5,
             center: ['50%','55%'],
             radius: '66%'
@@ -774,13 +774,13 @@
             itemStyle: {normal: {areaStyle: {type: 'default'}}},
             data : [
                 {
-                    value : [1,2,9,1,2,1,1,2,1,1],
+                    value : [2,1,9,1,1,2,2,1,1,1],
                     name : '文章分类数量'
                 }
             ]
         }]
     };
- 
+ let radarChart = echarts.init(document.getElementById('category-radar'));
     radarChart.setOption(option);
 </script>
 
