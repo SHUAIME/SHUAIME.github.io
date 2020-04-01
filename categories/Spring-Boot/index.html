@@ -48,7 +48,7 @@
   mashiro_option.qzone_autocomplete = false;
   mashiro_option.site_name = "紳  士帅me";
   mashiro_option.author_name = "帅me";
-  mashiro_option.site_url = "https://sakura.hojun.cn";
+  mashiro_option.site_url = "https://shuaime.top";
   mashiro_option.v_appId = "leKM5d4BTjwfxIlxxIAAr6Kx-gzGzoHsz";
   mashiro_option.v_appKey = "5Hgi9oGzFSSLedb5C46Bk3mM";
   mashiro_option.mathjax = "0";
@@ -89,7 +89,7 @@
   <figure id="centerbg" class="centerbg">
     <div class="focusinfo no-select">
       <div class="header-tou">
-        <a href="https://sakura.hojun.cn">
+        <a href="https://shuaime.top">
           <img src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN//images/background/avatar.jpg">
         </a>
       </div>
@@ -568,61 +568,75 @@
       </div>
       <p style="color: #666666;"></p>
     </div>
-    <div class="footer-device">
-		
-		<p style="font-family: 'Ubuntu', sans-serif;">
-			<span style="color: rgba(0,0,0,.4);font-size:16px">
-		<!-- 备案信息 -->
-				Copyright© 2019-2020 YANSHUAI 
-		</span></p>
-		<!-- 底部图标 -->
-		<a href="https://www.aliyun.com/" target="_blank" alt="ALiYun" rel="nofollow">
-		<img src="https://yremp.live/wp-content/uploads/2019/07/aliyun.png" alt="aliyun" style="height: 1.7em; max-height: 1.8em;padding-bottom: 0px;">
-		</a>&nbsp;&nbsp;&nbsp;
-
-		<a href="https://www.jsdelivr.com/" target="_blank" alt="Free CDN" rel="nofollow">
-		<img src="https://www.yremp.live/images/2019/08/17/JsDelivr_Logo0bd9a.png" alt="jsDelivr" style="height: 2em; max-height: 2em;padding-bottom: 0px;">
-		</a>&nbsp;&nbsp;
-
-		<a href="https://github.com/" target="_blank" alt="Github" rel="nofollow">
-		<img src="https://yremp.live/wp-content/uploads/2019/07/Github.png" alt="github" style="height: 2.2em; max-height: 2.5em;padding-bottom: 0px;">
-		</a>&nbsp;&nbsp;
-
-		<a href="https://2heng.xin" target="_blank" alt="Mashiro" rel="nofollow">
-		<img src="https://cdn.jsdelivr.net/gh/moezx/cdn@3.0.8/img/logo/mashiro-logo.png" alt="Mashiro" style="height: 2.5em; max-height: 2em;padding-bottom: 0px; margin-bottom:0.2em">
-		</a>
-	</div>
+    
+<br>
+    Copyright © 2019-2020
+    <a href="https://www.shuaime.top/" target="_blank"> YANSHUAI'S BLOG </a>丨
+    <img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.9/images/icp.png" style="width:18px;height:18px;margin-bottom:-2px" alt="ICP">
+    <a href="http://www.beian.miit.gov.cn/" target="_blank">赣ICP备20003950号</a>丨
+   
+    <!-- 网站运行时间 -->
+    <span id="timeDate">正在载入...</span><span id="times"><span><i class="fa fa-spinner fa-spin"> </i></span></span>
+    <script>
+    var now = new Date(); 
+    function createtime() {
+      var grt= new Date("10/01/2019 17:38:00");//建站时间2019-10-01
+      now.setTime(now.getTime()+250); 
+      days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+      if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+      mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+      document.getElementById("timeDate").innerHTML = "本站已运行 "
+      document.getElementById("times").innerHTML = dnum +" 天 " + hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+      /*document.getElementById("times").style.color="#0056FF";*/
+      }
+      setInterval("createtime()",250);
+    </script>丨
+    <a href="/sitemap.xml" target="_blank">站点地图</a>
+    <!--<a href="https://tongji.baidu.com/web/welcome/ico?s=df0bc7c6bdbd80356ba4db429724ccad" target="_blank">百度统计</a>丨
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1275909280'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/z_stat.php%3Fid%3D1275909280%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script><br><br>
+丨-->
   </div><!-- .site-info -->
 </footer>
 
 <div style="text-align:center;">
-      <div class="github-badge">
-        <a rel="license" href="https://hexo.io/" target="_blank" title="由Hexo强力驱动">
-        <span class="badge-subject">Powered</span><span class="badge-value bg-blue">Hexo</span></a>
-      </div>
-      <div class="github-badge">
-        <a rel="license" href="https://github.io/" target="_blank" title="静态网页托管于Github">
-        <span class="badge-subject">Hosted</span><span class="badge-value bg-brightgreen">Github</span></a>
-      </div>
-      <div class="github-badge">
-          <a rel="license" href="https://sm.ms/" target="_blank" title="SM.MS提供图床服务">
-          <span class="badge-subject">PictureBed</span><span class="badge-value bg-blueviolet">Github&SM</span></a>
-      </div>
-      <div class="github-badge">
+	<div class="github-badge">
+      <a style="color: #fff" rel="license" href="https://hexo.io/" target="_blank" title="由 Hexo 强力驱动">
+      <span class="badge-subject">Powered</span><span class="badge-value bg-blue">Hexo</span></a>
+    </div>
+    <div class="github-badge">
+      <a style="color: #fff" rel="license" href="https://github.com/" target="_blank" title="静态网页托管于 GitHub Pages 和 Coding Pages">
+      <span class="badge-subject">Hosted</span><span class="badge-value bg-brightgreen">GitHub & Coding</span></a>
+    </div>
+    <div class="github-badge">
+      <a style="color: #fff" rel="license" href="https://www.aliyun.com/" target="_blank" title="阿里云提供域名相关服务">
+      <span class="badge-subject">DNR</span><span class="badge-value bg-blueviolet">Aliyun</span></a>
+    </div>
+    <div class="github-badge">
+      <a style="color: #fff" rel="license" href="https://www.jsdelivr.com/" target="_blank" title="jsDelivr 提供 CDN 加速服务">
+      <span class="badge-subject">CDN</span><span class="badge-value bg-orange">jsDelivr</span></a>
+    </div>
+   <div class="github-badge">
           <a rel="license" href="https://github.com/honjun/hexo-theme-sakura/" target="_blank" title="站点使用 Sakura 主题，作者：Mashiro & Hojun">
           <span class="badge-subject">Theme</span><span class="badge-value bg-blue">Sakura</span></a>
       </div>
-      <div class="github-badge">
-          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="本站点采用知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议进行许可">
-          <span class="badge-subject"><i class="fa fa-copyright"></i></span><span class="badge-value bg-lightgrey">BY-NC-SA 4.0</span></a>
-      </div>
-      <div class="github-badge">
-        <span class="badge-subject">UV</span><span class="badge-value bg-orange" id="busuanzi_value_site_uv"></span>
-      </div>
-      <div class="github-badge">
-        <span class="badge-subject">PV</span><span class="badge-value bg-brightgreen" id="busuanzi_value_site_pv"></span>
-      </div><br><br>
+    
+    <div class="github-badge">
+      <a style="color: #fff" rel="license" href="https://996.icu/" target="_blank" title="支持 996.ICU">
+      <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
+    </div>
+    <div class="github-badge">
+      <span class="badge-subject">UV</span><span class="badge-value bg-orange" id="busuanzi_value_site_uv"></span>
+    </div>
+    <div class="github-badge">
+      <span class="badge-subject">PV</span><span class="badge-value bg-brightgreen" id="busuanzi_value_site_pv"></span>
+    </div>
 
+
+     
+</div>
 <!-- <script src="/js/tocbot.js"></script> -->
 <script type="text/javascript" src="/js/lib.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
