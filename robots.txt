@@ -10,5 +10,5 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: https://shuaime.top/sitemap.xml
-Sitemap: https://shuaime.top/baidusitemap.xml
+Sitemap: https://www.shuaime.top/sitemap.xml
+Sitemap: https://www.shuaime.top/baidusitemap.xml
