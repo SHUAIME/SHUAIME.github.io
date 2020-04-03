@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  
+  <title itemprop="name">DisignPatterns | YANSHUAI&#39;S BLOG</title>
+  
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/favicon/favicon.ico">
+  
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="stylesheet" id="saukra_css-css" href="/css/style.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/lib.min.css" media="all">
+  <link rel="stylesheet" href="/css/font.css" media="all">
+  <link rel="stylesheet" href="/css/insight.css" media="all">
+  <link rel="stylesheet" href="/css/jquery.fancybox.min.css" media="all">
+  <link rel="stylesheet" href="/css/zoom.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<!--   <link rel="stylesheet" id="saukra_css-css" href="https://2heng.xin/wp-content/cache/autoptimize/css/autoptimize_ad42a61f4c7d4bdd9f91afcff6b5dda5.css
+" type="text/css" media="all"> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yremp/yremp-css@1.3/gitalk.css">
+
+<style>
+  .emoji-coda {
+      display: inline-block !important;
+      position: relative;
+      width: 45px;
+      top: 2px;
+      margin: -3px 3px !important;
+      padding: 0;
+  }
+  </style>
+
+  <script>
+  /*Initial Variables*/
+  var mashiro_option = new Object();
+  var mashiro_global = new Object();
+  mashiro_option.NProgressON = true;
+  /* 
+   * 邮箱信息之类的东西可以填在这里，这些js变量基本都作用于sakura-app.js
+   * 这样的设置仅是为了方便在基于PHP开发的主题中设置js变量，既然移植到了Node上，我想或许可以精简这一逻辑吧
+   */
+  mashiro_option.email_domain = "";
+  mashiro_option.email_name = "";
+  mashiro_option.cookie_version_control = "";
+  mashiro_option.qzone_autocomplete = false;
+  mashiro_option.site_name = "紳  士帅me";
+  mashiro_option.author_name = "帅me";
+  mashiro_option.site_url = "https://shuaime.top";
+  mashiro_option.v_appId = "leKM5d4BTjwfxIlxxIAAr6Kx-gzGzoHsz";
+  mashiro_option.v_appKey = "5Hgi9oGzFSSLedb5C46Bk3mM";
+  mashiro_option.mathjax = "0";
+  mashiro_option.qq_api_url = "https://api.mashiro.top/qqinfo/"; 
+  mashiro_option.qq_avatar_api_url = "https://api.mashiro.top/qqinfo/";
+
+  // mashiro_option.jsdelivr_css_src = "https://cdn.jsdelivr.net/gh/moezx/cdn@3.4.5/css/lib.min.css";
+  // mashiro_option.float_player_on = true;
+
+  /*End of Initial Variables*/
+  </script>
+  <script type="text/javascript">
+  var bg = "https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN@2.0.2/images/background/021.webp".split(",");
+  var bgindex = Math.floor(Math.random()*bg.length);
+  if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+    alert('朋友，IE浏览器未适配哦~');
+  }
+  </script>
+  <style type="text/css">
+  .hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}
+  </style>
+  <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#3ca0ff}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#3ca0ff}::-webkit-scrollbar-thumb{background:#3ca0ff}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#3ca0ff}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#3ca0ff}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
+  </style>
+
+  <!-- 站长统计 -->
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?9288c25b619f4a71f1cabdcf794ff784";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+</html>
+<body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
+    <style type="text/css">
+    @import url("/code.css");
+  </style>
+
+  <div class="scrollbar" id="bar">
+  </div>
+  <a href="#" class="cd-top faa-float animated"></a>
+  <section id="main-container">
+    <div class="headertop filter-grid">
+  <div id="banner_wave_1"></div>
+  <div id="banner_wave_2"></div>
+  <figure id="centerbg" class="centerbg">
+    <div class="focusinfo no-select">
+      <div class="header-tou">
+        <a href="https://shuaime.top">
+          <img src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN//images/background/avatar.jpg">
+        </a>
+      </div>
+      <div class="header-info">
+        <!-- <p>起风了，我在等风也等你。</p> -->
+	<!-- 动态文字 -->
+	<div id="binft"></div>
+  <script>
+    var binft = function (r) {
+      function t() {
+        return b[Math.floor(Math.random() * b.length)]
+      }  
+      function e() {
+        return String.fromCharCode(94 * Math.random() + 33)
+      }
+      function n(r) {
+        for (var n = document.createDocumentFragment(), i = 0; r > i; i++) {
+          var l = document.createElement("span");
+          l.textContent = e(), l.style.color = t(), n.appendChild(l)
+        }
+        return n
+      }
+      function i() {
+        var t = o[c.skillI];
+        c.step ? c.step-- : (c.step = g, c.prefixP < l.length ? (c.prefixP >= 0 && (c.text += l[c.prefixP]), c.prefixP++) : "forward" === c.direction ? c.skillP < t.length ? (c.text += t[c.skillP], c.skillP++) : c.delay ? c.delay-- : (c.direction = "backward", c.delay = a) : c.skillP > 0 ? (c.text = c.text.slice(0, -1), c.skillP--) : (c.skillI = (c.skillI + 1) % o.length, c.direction = "forward")), r.textContent = c.text, r.appendChild(n(c.prefixP < l.length ? Math.min(s, s + c.prefixP) : Math.min(s, t.length - c.skillP))), setTimeout(i, d)
+      }
+      var l = "",
+      o = ["青青陵上柏，磊磊涧中石。", "人生天地间，忽如远行客。","斗酒相娱乐，聊厚不为薄。", "驱车策驽马，游戏宛与洛。","洛中何郁郁，冠带自相索。","长衢罗夹巷，王侯多第宅。","两宫遥相望，双阙百余尺。","极宴娱心意，戚戚何所迫？"].map(function (r) {
+      return r + ""
+      }),
+      a = 2,
+      g = 1,
+      s = 5,
+      d = 75,
+      b = ["rgb(110,64,170)", "rgb(150,61,179)", "rgb(191,60,175)", "rgb(228,65,157)", "rgb(254,75,131)", "rgb(255,94,99)", "rgb(255,120,71)", "rgb(251,150,51)", "rgb(226,183,47)", "rgb(198,214,60)", "rgb(175,240,91)", "rgb(127,246,88)", "rgb(82,246,103)", "rgb(48,239,130)", "rgb(29,223,163)", "rgb(26,199,194)", "rgb(35,171,216)", "rgb(54,140,225)", "rgb(76,110,219)", "rgb(96,84,200)"],
+      c = {
+        text: "",
+        prefixP: -s,
+        skillI: 0,
+        skillP: 0,
+        direction: "forward",
+        delay: a,
+        step: g
+      };
+      i()
+      };
+      binft(document.getElementById('binft'));
+  </script>
+
+        <div class="top-social_v2">
+          <li id="bg-pre">
+            <img class="flipx" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+          
+            
+              
+                <li>
+                  <a href="http://github.com/shuaime" target="_blank" class="social-github" title="github">
+                    <img src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN//img/social/github.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="https://space.bilibili.com/87604544" target="_blank" class="social-github" title="bilibili">
+                    <img src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN//img/social/bilibili.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=soOGgIWHh4KFgIfyw8Oc0d3f" target="_blank" class="social-github" title="email">
+                    <img src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN//img/social/email.svg">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="https://blog.csdn.net/shuaime" target="_blank" class="social-github" title="csdn">
+                    <img src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN//img/social/csdn.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li class="wechat">
+                  <a href="/#">
+                    <img src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN//img/social/wechat.png">
+                  </a>
+                  <div class="wechatInner">
+                    <img src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN//img/custom/wechat.jpg">
+                  </div>
+                </li>
+              
+            
+          
+          <li id="bg-next">
+            <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+        </div>
+      </div>
+    </div>
+  </figure>
+  <div id="video-container" style="">
+    <video style="object-fit: fill" id="bgvideo" class="video" video-name="" src="" width="auto" preload="auto">
+    </video>
+   <!-- <div id="video-btn" class="loadvideo videolive">
+    </div> -->
+    <div id="video-add">
+    </div>
+    <div class="video-stu">
+    </div>
+  </div>
+  <div class="headertop-down faa-float animated" onclick="headertop_down()">
+    <span>
+      <i class="fa fa-chevron-down" aria-hidden="true">
+      </i>
+    </span>
+  </div>
+</div>
+    <div id="page" class="site wrapper">
+      <header class="site-header no-select gizle sabit" role="banner">
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  <div class="site-top">
+    <div class="site-branding">
+      <span class="site-title">
+        <span class="logolink moe-mashiro">
+          <a href="/">
+            <ruby>
+	    <span class="sakuraso">紳  士</span>
+	    <span class="no">の</span>
+	    <span class="shironeko">帅me</span>
+	    <rp></rp><rt class="chinese-font">WAITING FOR YOU</rt><rp></rp></ruby>
+          </a>
+        </span>
+      </span>
+    </div>
+    <div class="searchbox search-form-submit">
+      <i class="iconfont js-toggle-search iconsearch icon-search">
+      </i>
+    </div>
+    <div id="show-nav" class="showNav mobile-fit">
+      <div class="line line1">
+      </div>
+      <div class="line line2">
+      </div>
+      <div class="line line3">
+      </div>
+    </div>
+    <div class="lower-cantiner">
+      <div class="lower">
+        <nav class="mobile-fit-control hide">
+          <ul id="menu-new" class="menu">
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+                    首页
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+                    归档
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/categories/技术/">
+                          <i class="fa fa-code" aria-hidden="true"></i>
+                          技术
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/生活/">
+                          <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                          生活
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/资源/">
+                          <i class="fa fa-cloud-download" aria-hidden="true"></i>
+                          资源
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/随想/">
+                          <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                          随想
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/转载/">
+                          <i class="fa fa-book" aria-hidden="true"></i>
+                          转载
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/tags/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-tag" aria-hidden="true"></i>
+                    标签
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/categories/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-bookmark" aria-hidden="true"></i>
+                    分类
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/comment/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+                    留言板
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/links/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-link faa-shake" aria-hidden="true"></i>
+                    友人帐
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="javascript:;">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+                    关于
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/about/">
+                          <i class="fa fa-meetup" aria-hidden="true"></i>
+                          我？
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/music/">
+                          <i class="fa fa-headphones" aria-hidden="true"></i>
+                          歌单
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/theme-sakura/">
+                          <i class="fa iconfont icon-sakura" aria-hidden="true"></i>
+                          主题
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/donate/">
+                          <i class="fa fa-heart faa-pulse" aria-hidden="true"></i>
+                          赞赏
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/box/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  far fa-wrench" aria-hidden="true"></i>
+                    百宝箱
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/atom.xml">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-rss faa-pulse" aria-hidden="true"></i>
+                    RSS
+                  </span>
+                </a>
+                
+              </li>
+            
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+
+<div class="pattern-center-blank"></div>
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/014.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/014.jpg">
+    </div>
+    <header class="pattern-header single-header" style="text-shadow: 0 0 7px #000,0 0 7px #000">
+      <h1 class="entry-title">
+      DisignPatterns</h1>
+      <p class="entry-census">
+        <span>
+          <a href="">
+            <img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/YAN-PIC/avatar.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="">帅me</a>
+        </span>
+        <span class="bull">·</span>
+	
+        <span class="post-time">
+          <span class="post-meta-item-icon">
+            <i class="fa fa-calendar"></i>
+            <span class="post-meta-item-text"></span>
+            <span class="post-count">2020-3-15</span>
+          </span>
+        </span>
+	<span class="bull">·</span>
+
+	    <span class="bull"></span>
+    
+      <span><i class="fa fa-archive"></i> 分类于  
+        <span class="article-category"><a href="/categories/Java/" > Java</a></span>
+      <span class="article-category"><a href="/categories/设计模式/" > 设计模式</a></span>
+      
+    </span>
+    
+
+<span class="bull">·</span>
+	<span class="post-time">
+          <span class="post-meta-item-icon">
+            <i class="fa fa-eye" aria-hidden="true"></i>
+            
+          </span>
+	  <span id="busuanzi_value_page_pv"></span> 次阅读
+        </span>
+      
+      <span class="bull">·</span>
+      <span class="post-time">
+          <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <span class="post-meta-item-text">  字数统计: </span>
+            <span class="post-count">4.8k字</span>
+          </span>
+        </span>
+	<!--<span class="bull">·</span>
+        <span class="post-time">
+          <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <span class="post-meta-item-text">  阅读时长≈ </span>
+            <span class="post-count">20</span>
+          </span>
+        </span>-->
+	</p>
+
+            
+      
+    <div>
+          <ul class="spfk-ul">
+            &nbsp<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<li class="spfk-li"><span class="triangle"></span><a href="/tags/Java/" class="butterfly-tags">Java</a></li><li class="spfk-li"><span class="triangle"></span><a href="/tags/设计模式/" class="butterfly-tags">设计模式</a></li>
+          </ul>
+        </div>
+        <script>
+            function colorInit(c,num){for(var i=1;i<=num;++i)c.push(i+'');}
+            function paintTags(){
+                var colorNumber=8,tagColors=[],tags=document.getElementsByClassName('spfk-li');
+                for(var i = 0 ; i < tags.length ; ++i){
+                    if(!tagColors.length)colorInit(tagColors,colorNumber);
+                    var j=Math.floor(Math.random()*tagColors.length);
+                    tags[i].classList.add("spfk-color"+tagColors[j]);
+                    tagColors.splice(j,1);
+        }
+            }
+            paintTags()
+        </script>
+    
+
+
+
+    </header>
+  </div>
+
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <h1 id="设计模式七大原则"><a href="#设计模式七大原则" class="headerlink" title="设计模式七大原则"></a>设计模式七大原则</h1><h2 id="设计模式的目的"><a href="#设计模式的目的" class="headerlink" title="设计模式的目的"></a>设计模式的目的</h2><p>编写软件过程中，程序员面临着来自耦合性，内聚性以及可维护性，可扩展性，重用性，灵活性等多方面的<br>挑战，设计模式是为了让程序(软件)，具有更好</p>
+<pre><code>1) 代码重用性 (即：相同功能的代码，不用多次编写)
+2) 可读性 (即：编程规范性, 便于其他程序员的阅读和理解)
+3) 可扩展性 (即：当需要增加新的功能时，非常的方便，称为可维护)
+4) 可靠性 (即：当我们增加新的功能后，对原来的功能没有影响)
+5) 使程序呈现高内聚，低耦合的特性
+分享金句：
+6) 设计模式包含了面向对象的精髓，“懂了设计模式，你就懂了面向对象分析和设计（OOA/D）的精要”
+7) Scott Mayers 在其巨著《Effective C++》就曾经说过：C++老手和 C++新手的区别就是前者手背上有很多伤疤
+</code></pre><h2 id="设计模式七大原则-1"><a href="#设计模式七大原则-1" class="headerlink" title="设计模式七大原则"></a>设计模式七大原则</h2><p>设计模式原则，其实就是程序员在编程时，应当遵守的原则，也是各种设计模式的基础(即：设计模式为什么<br>这样设计的依据)</p>
+<blockquote>
+<p>设计模式常用的七大原则有: </p>
+</blockquote>
+<pre><code>1) 单一职责原则
+2) 接口隔离原则
+3) 依赖倒转(倒置)原则
+4) 里氏替换原则
+5) 开闭原则
+6) 迪米特法则
+7) 合成复用原则
+</code></pre><h2 id="【单一职责原则】"><a href="#【单一职责原则】" class="headerlink" title="【单一职责原则】"></a>【单一职责原则】</h2><h3 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h3><p>对类来说的，即一个类应该只负责一项职责。如类A负责两个不同职责：职责 1，职责 2。当职责 1 需求变更<br>而改变A时，可能造成职责 2 执行错误，所以需要将类A的粒度分解为A1，A2</p>
+<h3 id="应用实例"><a href="#应用实例" class="headerlink" title="应用实例"></a>应用实例</h3><blockquote>
+<p>以交通工具案例讲解</p>
+</blockquote>
+<pre><code class="java">//方案 1 [分析说明]
+package com.yan.principle.singleresponsibility;
+public class SingleResponsibility1 {
+    public static void main(String[] args) {
+        Vehicle vehicle = new Vehicle();
+        vehicle.run(&quot;摩托车&quot;);
+        vehicle.run(&quot;汽车&quot;);
+        vehicle.run(&quot;飞机&quot;);
+    }
+}
+// 交通工具类
+// 方式 1
+// 1. 在方式 1 的 run 方法中，违反了单一职责原则
+// 2. 解决的方案非常的简单，根据交通工具运行方法不同，分解成不同类即可
+class Vehicle {
+    public void run(String vehicle) {
+        System.out.println(vehicle + &quot; 在公路上运行....&quot;);
+    }
+}
+</code></pre>
+<pre><code class="java">//方案 2 [分析说明]
+package com.yan.principle.singleresponsibility;
+public class SingleResponsibility3 {
+    public static void main(String[] args) {
+        Vehicle2 vehicle2 = new Vehicle2();
+        vehicle2.run(&quot;汽车&quot;);
+        vehicle2.runWater(&quot;轮船&quot;);
+        vehicle2.runAir(&quot;飞机&quot;);
+    }
+}
+//1. 这种修改方法没有对原来的类做大的修改，只是增加方法
+//2. 这里虽然没有在类这个级别上遵守单一职责原则，但是在方法级别上，仍然是遵守单一职责
+class Vehicle2 {
+    public void run(String vehicle) {
+        //处理
+        System.out.println(vehicle + &quot; 在公路上运行....&quot;);
+    }
+    public void runAir(String vehicle) {
+            System.out.println(vehicle + &quot; 在天空上运行....&quot;);
+    }
+    public void runWater(String vehicle) {
+        System.out.println(vehicle + &quot; 在水中行....&quot;);
+    }
+    ....
+}
+</code></pre>
+<h3 id="单一职责原则注意事项和细节"><a href="#单一职责原则注意事项和细节" class="headerlink" title="单一职责原则注意事项和细节"></a>单一职责原则注意事项和细节</h3><pre><code>1) 降低类的复杂度，一个类只负责一项职责。
+2) 提高类的可读性，可维护性
+3) 降低变更引起的风险
+4) 通常情况下，我们应当遵守单一职责原则，只有逻辑足够简单，才可以在代码级违反单一职责原则；只有类中
+方法数量足够少，可以在方法级别保持单一职责原则
+</code></pre><h2 id="【接口隔离原则】"><a href="#【接口隔离原则】" class="headerlink" title="【接口隔离原则】"></a>【接口隔离原则】</h2><h3 id="基本介绍-1"><a href="#基本介绍-1" class="headerlink" title="基本介绍"></a>基本介绍</h3><pre><code class="\">1) 客户端不应该依赖它不需要的接口，即一个类对另一个类的依赖应该建立在最小的接口上
+2) 类 A 通过接口 Interface1 依赖类 B，类 C 通过接口 Interface1 依赖类 D，如果接口 Interface1 对于类 A 和类 C
+来说不是最小接口，那么类 B 和类D必须去实现他们不需要的方法。
+3) 按隔离原则应当这样处理：
+将接口 Interface1 拆分为独立的几个接口(这里我们拆分成 3 个接口)，类A和类 C 分别与他们需要的接口建立
+依赖关系。也就是采用接口隔离原则
+</code></pre>
+<h3 id="应用实例-1"><a href="#应用实例-1" class="headerlink" title="应用实例"></a>应用实例</h3><blockquote>
+<p>类A通过接口 Interface1 依赖类 B，类 C 通过接口 Interface1 依赖类D</p>
+</blockquote>
+<pre><code class="java">package com.yan.principle.segregation;
+public class Segregation1 {
+public static void main(String[] args) {
+// TODOAuto-generated method stub
+}
+}
+//接口
+interface Interface1 {
+    void operation1();
+    void operation2();
+    void operation3();
+    void operation4();
+    void operation5();
+}
+class B implements Interface1 {
+    public void operation1() {
+        System.out.println(&quot;B 实现了 operation1&quot;);
+    }
+    public void operation2() {
+        System.out.println(&quot;B 实现了 operation2&quot;);
+    }
+    public void operation3() {
+        System.out.println(&quot;B 实现了 operation3&quot;);
+    }
+    public void operation4() {
+        System.out.println(&quot;B 实现了 operation4&quot;);
+    }
+    public void operation5() {
+        System.out.println(&quot;B 实现了 operation5&quot;);
+    }
+}
+class D implements Interface1 {
+    public void operation1() {
+        System.out.println(&quot;D 实现了 operation1&quot;);
+    }
+    public void operation2() {
+        System.out.println(&quot;D 实现了 operation2&quot;);
+    }
+    public void operation3() {
+        System.out.println(&quot;D 实现了 operation3&quot;);
+    }
+    public void operation4() {
+        System.out.println(&quot;D 实现了 operation4&quot;);
+    }
+    public void operation5() {
+        System.out.println(&quot;D 实现了 operation5&quot;);
+    }
+}
+class A { //A 类通过接口 Interface1 依赖(使用) B 类，但是只会用到 1,2,3 方法
+    public void depend1(Interface1 i) {
+        i.operation1();
+    }
+    public void depend2(Interface1 i) {
+        i.operation2();
+    }
+    public void depend3(Interface1 i) {
+        i.operation3();
+    }
+class C { //C 类通过接口 Interface1 依赖(使用) D类，但是只会用到 1,4,5 方法
+    public void depend1(Interface1 i) {
+        i.operation1();
+    }
+    public void depend4(Interface1 i) {
+        i.operation4();
+    }
+    public void depend5(Interface1 i) {
+        i.operation5();
+    }
+}
+</code></pre>
+<blockquote>
+<p>应传统方法的问题和使用接口隔离原则改进</p>
+</blockquote>
+<pre><code>1) 类 A 通过接口 Interface1 依赖类 B，类 C 通过接口 Interface1 依赖类 D，如果接口 Interface1 对于类 A 和类 C
+来说不是最小接口，那么类 B 和类D必须去实现他们不需要的方法
+2) 将接口 Interface1 拆分为独立的几个接口，类A和类 C 分别与他们需要的接口建立依赖关系。也就是采用接口
+隔离原则
+3) 接口 Interface1 中出现的方法，根据实际情况拆分为三个接口
+</code></pre><pre><code class="java">package com.yan.principle.segregation.improve;
+public class Segregation1 {
+    public static void main(String[] args) {
+        // TODOAuto-generated method stub
+        // 使用一把
+        A a = newA();
+        a.depend1(new B()); // A类通过接口去依赖 B 类
+        a.depend2(new B());
+        a.depend3(new B());
+        C c = new C();
+        c.depend1(new D()); // C 类通过接口去依赖(使用)D类
+        c.depend4(new D());
+        c.depend5(new D());
+    }
+}
+// 接口 1
+interface Interface1 {
+    void operation1();
+}
+// 接口 2
+interface Interface2 {
+    void operation2();
+    void operation3();
+}
+// 接口 3
+interface Interface3 {
+    void operation4();
+    void operation5();
+}
+class B implements Interface1, Interface2 {
+    public void operation1() {
+        System.out.println(&quot;B 实现了 operation1&quot;);
+    }
+    public void operation2() {
+        System.out.println(&quot;B 实现了 operation2&quot;);
+    }
+    public void operation3() {
+        System.out.println(&quot;B 实现了 operation3&quot;);
+}
+}
+class D implements Interface1, Interface3 {
+    public void operation1() {
+        System.out.println(&quot;D 实现了 operation1&quot;);
+    }
+    public void operation4() {
+        System.out.println(&quot;D 实现了 operation4&quot;);
+    }
+    public void operation5() {
+        System.out.println(&quot;D 实现了 operation5&quot;);
+}
+}
+class A { // A 类通过接口 Interface1,Interface2 依赖(使用) B 类，但是只会用到 1,2,3 方法
+    public void depend1(Interface1 i) {
+        i.operation1();
+    }
+    public void depend2(Interface2 i) {
+        i.operation2();
+    }
+    public void depend3(Interface2 i) {
+        i.operation3();
+}
+}
+class C { // C 类通过接口 Interface1,Interface3 依赖(使用) D类，但是只会用到 1,4,5 方法
+    public void depend1(Interface1 i) {
+        i.operation1();
+    }
+    public void depend4(Interface3 i) {
+        i.operation4();
+    }
+    public void depend5(Interface3 i) {
+        i.operation5();
+    }
+}
+</code></pre>
+<h2 id="【依赖倒转原则】"><a href="#【依赖倒转原则】" class="headerlink" title="【依赖倒转原则】"></a>【依赖倒转原则】</h2><h3 id="基本介绍-2"><a href="#基本介绍-2" class="headerlink" title="基本介绍"></a>基本介绍</h3><pre><code>1) 高层模块不应该依赖低层模块，二者都应该依赖其抽象
+2) 抽象不应该依赖细节，细节应该依赖抽象
+3) 依赖倒转(倒置)的中心思想是面向接口编程
+4) 依赖倒转原则是基于这样的设计理念：相对于细节的多变性，抽象的东西要稳定的多。以抽象为基础搭建的架
+构比以细节为基础的架构要稳定的多。在 java 中，抽象指的是接口或抽象类，细节就是具体的实现类
+5) 使用接口或抽象类的目的是制定好规范，而不涉及任何具体的操作，把展现细节的任务交给他们的实现类去完
+成
+</code></pre><h3 id="应用实例-2"><a href="#应用实例-2" class="headerlink" title="应用实例"></a>应用实例</h3><blockquote>
+<p>成 Person 接收消息 的功能</p>
+</blockquote>
+<pre><code class="java">//实现方案 1
+package com.yan.principle.inversion;
+public class DependecyInversion {
+}
+class Email {
+    public String getInfo() {
+        return &quot;电子邮件信息: hello,world&quot;;
+    }
+}
+//完成 Person 接收消息的功能
+//方式 1 分析
+//1. 简单，比较容易想到
+//2. 如果我们获取的对象是 微信，短信等等，则新增类，同时 Perons 也要增加相应的接收方法
+//3. 解决思路：引入一个抽象的接口 IReceiver, 表示接收者, 这样 Person 类与接口 IReceiver 发生依赖
+// 因为 Email, WeiXin 等等属于接收的范围，他们各自实现 IReceiver 接口就 ok, 这样我们就符号依赖倒转原则
+class Person {
+    public void receive(Email email ) {
+        System.out.println(email.getInfo());
+    }
+}
+</code></pre>
+<pre><code class="java">//实现方案 2(依赖倒转)
+package com.atguigu.principle.inversion.improve;
+public class DependecyInversion {
+    public static void main(String[] args) {
+        //客户端无需改变
+        Person person = new Person();
+        person.receive(new Email());
+        person.receive(newWeiXin());
+    }
+}
+//定义接口
+interface IReceiver {
+    public String getInfo();
+}
+class Email implements IReceiver {
+    public String getInfo() {
+        return &quot;电子邮件信息: hello,world&quot;;
+    }
+}
+//增加微信
+class WeiXin implements IReceiver {
+    public String getInfo() {
+        return &quot;微信信息: hello,ok&quot;;
+    }
+}
+//方式 2
+class Person {
+    //这里我们是对接口的依赖
+    public void receive(IReceiver receiver ) {
+        System.out.println(receiver.getInfo());
+    }
+}
+</code></pre>
+<h3 id="依赖倒转原则的注意事项和细节"><a href="#依赖倒转原则的注意事项和细节" class="headerlink" title="依赖倒转原则的注意事项和细节"></a>依赖倒转原则的注意事项和细节</h3><pre><code>1) 低层模块尽量都要有抽象类或接口，或者两者都有，程序稳定性更好.
+2) 变量的声明类型尽量是抽象类或接口, 这样我们的变量引用和实际对象间，就存在一个缓冲层，利于程序扩展
+和优化
+3) 继承时遵循里氏替换原则
+</code></pre><h2 id="【里氏替换原则】"><a href="#【里氏替换原则】" class="headerlink" title="【里氏替换原则】"></a>【里氏替换原则】</h2><h3 id="OO中的继承性的思考和说明"><a href="#OO中的继承性的思考和说明" class="headerlink" title="OO中的继承性的思考和说明"></a>OO中的继承性的思考和说明</h3><pre><code>1) 继承包含这样一层含义：父类中凡是已经实现好的方法，实际上是在设定规范和契约，虽然它不强制要求所有
+的子类必须遵循这些契约，但是如果子类对这些已经实现的方法任意修改，就会对整个继承体系造成破坏。
+2) 继承在给程序设计带来便利的同时，也带来了弊端。比如使用继承会给程序带来侵入性，程序的可移植性降低，
+增加对象间的耦合性，如果一个类被其他的类所继承，则当这个类需要修改时，必须考虑到所有的子类，并且
+父类修改后，所有涉及到子类的功能都有可能产生故障
+3) 问题提出：在编程中，如何正确的使用继承? =&gt; 里氏替换原则
+</code></pre><h3 id="基本介绍-3"><a href="#基本介绍-3" class="headerlink" title="基本介绍"></a>基本介绍</h3><pre><code>1) 里氏替换原则(Liskov Substitution Principle)在 1988 年，由麻省理工学院的以为姓里的女士提出的。
+2) 如果对每个类型为 T1 的对象 o1，都有类型为 T2 的对象 o2，使得以 T1 定义的所有程序 P 在所有的对象 o1 都
+代换成 o2 时，程序 P 的行为没有发生变化，那么类型T2 是类型 T1 的子类型。换句话说，所有引用基类的地
+方必须能透明地使用其子类的对象。
+3) 在使用继承时，遵循里氏替换原则，在子类中尽量不要重写父类的方法
+4) 里氏替换原则告诉我们，继承实际上让两个类耦合性增强了，在适当的情况下，可以通过聚合，组合，依赖 来
+解决问题。
+</code></pre><h2 id="【开闭原则】"><a href="#【开闭原则】" class="headerlink" title="【开闭原则】"></a>【开闭原则】</h2><h3 id="基本介绍-4"><a href="#基本介绍-4" class="headerlink" title="基本介绍"></a>基本介绍</h3><pre><code>1) 开闭原则（Open Closed Principle）是编程中最基础、最重要的设计原则
+2) 一个软件实体如类，模块和函数应该对扩展开放(对提供方)，对修改关闭(对使用方)。用抽象构建框架，用实
+现扩展细节。
+3) 当软件需要变化时，尽量通过扩展软件实体的行为来实现变化，而不是通过修改已有的代码来实现变化。
+4) 编程中遵循其它原则，以及使用设计模式的目的就是遵循开闭原则。
+</code></pre><h3 id="应用实例-3"><a href="#应用实例-3" class="headerlink" title="应用实例"></a>应用实例</h3><blockquote>
+<p>一个画图形的功能</p>
+</blockquote>
+<pre><code class="java">//方案 1
+package com.yan.principle.ocp;
+public class Ocp {
+    public static void main(String[] args) {
+        //使用看看存在的问题
+        GraphicEditor graphicEditor = new GraphicEditor();
+        graphicEditor.drawShape(new Rectangle());
+        graphicEditor.drawShape(new Circle());
+        graphicEditor.drawShape(new Triangle());
+    }
+}
+//这是一个用于绘图的类 [使用方]
+class GraphicEditor {
+    //接收 Shape 对象，然后根据 type，来绘制不同的图形
+    public void drawShape(Shape s) {
+        if (s.m_type == 1)
+            drawRectangle(s);
+        else if (s.m_type == 2)
+            drawCircle(s);
+        else if (s.m_type == 3)
+            drawTriangle(s);
+    }
+    //绘制矩形
+    public void drawRectangle(Shape r) {
+        System.out.println(&quot; 绘制矩形 &quot;);
+    }
+    //绘制圆形
+    public void drawCircle(Shape r) {
+    }
+    //绘制三角形
+    public void drawTriangle(Shape r) {
+        System.out.println(&quot; 绘制三角形 &quot;);
+    }
+}
+//Shape 类，基类
+class Shape {
+    int m_type;
+}
+class Rectangle extends Shape {
+    Rectangle() {
+        super.m_type = 1;
+    }
+}
+class Circle extends Shape {
+    Circle() {
+        super.m_type = 2;
+    }
+}
+//新增画三角形
+class Triangle extends Shape {
+    Triangle() {
+        super.m_type = 3;
+    }
+}
+</code></pre>
+<pre><code class="java">//方案 2
+package com.yan.principle.ocp.improve;
+public class Ocp {
+    public static void main(String[] args) {
+        //使用看看存在的问题
+        GraphicEditor graphicEditor = new GraphicEditor();
+        graphicEditor.drawShape(new Rectangle());
+        graphicEditor.drawShape(new Circle());
+        graphicEditor.drawShape(new Triangle());
+        graphicEditor.drawShape(new OtherGraphic());
+    }
+}
+//这是一个用于绘图的类 [使用方]
+class GraphicEditor {
+    //接收 Shape 对象，调用 draw方法
+    public void drawShape(Shape s) {
+        s.draw();
+    }
+}
+//Shape 类，基类
+abstract class Shape {
+    int m_type;
+}
+class Rectangle extends Shape {
+    Rectangle() {
+        super.m_type = 1;
+    }
+    @Override
+    public void draw() {
+        // TODOAuto-generated method stub
+        System.out.println(&quot; 绘制矩形 &quot;);
+    }
+}
+class Circle extends Shape {
+    Circle() {
+        super.m_type = 2;
+    }
+    @Override
+    public void draw() {
+        // TODOAuto-generated method stub
+        System.out.println(&quot; 绘制圆形 &quot;);
+    }
+}
+//新增画三角形
+class Triangle extends Shape {
+    Triangle() {
+        super.m_type = 3;
+    }
+    @Override
+    public void draw() {
+        // TODOAuto-generated method stub
+        System.out.println(&quot; 绘制三角形 &quot;);
+    }
+}
+//新增一个图形
+class OtherGraphic extends Shape {
+    OtherGraphic() {
+        super.m_type = 4;
+    }
+    @Override
+    public void draw() {
+        // TODOAuto-generated method stub
+        System.out.println(&quot; 绘制其它图形 &quot;);
+    }
+}
+</code></pre>
+<h2 id="【迪米特法则】"><a href="#【迪米特法则】" class="headerlink" title="【迪米特法则】"></a>【迪米特法则】</h2><h3 id="基本介绍-5"><a href="#基本介绍-5" class="headerlink" title="基本介绍"></a>基本介绍</h3><pre><code>1) 一个对象应该对其他对象保持最少的了解
+2) 类与类关系越密切，耦合度越大
+3) 迪米特法则(Demeter Principle)又叫最少知道原则，即一个类对自己依赖的类知道的越少越好。也就是说，对于
+被依赖的类不管多么复杂，都尽量将逻辑封装在类的内部。对外除了提供的 public 方法，不对外泄露任何信息
+4) 迪米特法则还有个更简单的定义：只与直接的朋友通信
+5) 直接的朋友：每个对象都会与其他对象有耦合关系，只要两个对象之间有耦合关系，我们就说这两个对象之间
+是朋友关系。耦合的方式很多，依赖，关联，组合，聚合等。其中，我们称出现成员变量，方法参数，方法返
+回值中的类为直接的朋友，而出现在局部变量中的类不是直接的朋友。也就是说，陌生的类最好不要以局部变
+量的形式出现在类的内部。
+</code></pre><h3 id="应用实例-4"><a href="#应用实例-4" class="headerlink" title="应用实例"></a>应用实例</h3><blockquote>
+<p>有一个学校，下属有各个学院和总部，现要求打印出学校总部员工 ID和学院员工的 id</p>
+</blockquote>
+<pre><code class="java">package com.yan.principle.demeter;
+import java.util.ArrayList;
+import java.util.List;
+//客户端
+public class Demeter1 {
+    public static void main(String[] args) {
+        //创建了一个 SchoolManager 对象
+        SchoolManager schoolManager = new SchoolManager();
+        //输出学院的员工 id 和 学校总部的员工信息
+        schoolManager.printAllEmployee(new CollegeManager());
+    }
+}
+//学校总部员工类
+class Employee {
+    private String id;
+    public void setId(String id) {
+        this.id = id;
+    }
+    public String getId() {
+        return id;
+    }
+}
+//学院的员工类
+class CollegeEmployee {
+    private String id;
+    public void setId(String id) {
+        this.id = id;
+    }
+    public String getId() {
+        return id;
+    }
+}
+//管理学院员工的管理类
+class CollegeManager {
+    //返回学院的所有员工
+    public List&lt;CollegeEmployee&gt; getAllEmployee() {
+        List&lt;CollegeEmployee&gt; list = newArrayList&lt;CollegeEmployee&gt;();
+        for (int i = 0; i &lt; 10; i++) { //这里我们增加了 10 个员工到 list
+            CollegeEmployee emp = new CollegeEmployee();
+            emp.setId(&quot;学院员工 id= &quot; + i);
+            list.add(emp);
+        }
+        return list;
+    }
+}
+//学校管理类
+//分析 SchoolManager 类的直接朋友类有哪些 Employee、CollegeManager
+//CollegeEmployee 不是 直接朋友 而是一个陌生类，这样违背了 迪米特法则
+class SchoolManager {
+    //返回学校总部的员工
+    public List&lt;Employee&gt; getAllEmployee() {
+        List&lt;Employee&gt; list = newArrayList&lt;Employee&gt;();
+        for (int i = 0; i &lt; 5; i++) { //这里我们增加了 5 个员工到 list
+            Employee emp = new Employee();
+            emp.setId(&quot;学校总部员工 id= &quot; + i);
+            list.add(emp);
+        }
+        return list;
+    }
+    //该方法完成输出学校总部和学院员工信息(id)
+    void printAllEmployee(CollegeManager sub) {
+        //分析问题
+        //1. 这里的 CollegeEmployee 不是 SchoolManager 的直接朋友
+        //2. CollegeEmployee 是以局部变量方式出现在 SchoolManager
+        //3. 违反了 迪米特法则
+        //获取到学院员工
+        List&lt;CollegeEmployee&gt; list1 = sub.getAllEmployee();
+        System.out.println(&quot;------------学院员工------------&quot;);
+        for (CollegeEmployee e : list1) {
+            System.out.println(e.getId());
+        }
+        //获取到学校总部员工
+        List&lt;Employee&gt; list2 = this.getAllEmployee();
+        System.out.println(&quot;------------学校总部员工------------&quot;);
+        for (Employee e : list2) {
+            System.out.println(e.getId());
+        }
+    }
+}
+</code></pre>
+<pre><code class="java">//前面设计的问题在于 SchoolManager 中，CollegeEmployee 类并不是 SchoolManager 类的直接朋友 (分析)
+//按照迪米特法则，应该避免类中出现这样非直接朋友关系的耦合
+package com.yan.principle.demeter.improve;
+import java.util.ArrayList;
+import java.util.List;
+//客户端
+public class Demeter1 {
+    public static void main(String[] args) {
+        System.out.println(&quot;~~~使用迪米特法则的改进~~~&quot;);
+        //创建了一个 SchoolManager 对象
+        SchoolManager schoolManager = new SchoolManager();
+        //输出学院的员工 id 和 学校总部的员工信息
+        schoolManager.printAllEmployee(new CollegeManager());
+    }
+}
+//学校总部员工类
+class Employee {
+    private String id;
+    public void setId(String id) {
+        this.id = id;
+    }
+    public String getId() {
+        return id;
+    }
+}
+//学院的员工类
+class CollegeEmployee {
+    private String id;
+    public void setId(String id) {
+        this.id = id;
+    }
+    public String getId() {
+        return id;
+    }
+}
+//管理学院员工的管理类
+class CollegeManager {
+    //返回学院的所有员工
+    public List&lt;CollegeEmployee&gt; getAllEmployee() {
+        List&lt;CollegeEmployee&gt; list = newArrayList&lt;CollegeEmployee&gt;();
+        for (int i = 0; i &lt; 10; i++) { //这里我们增加了 10 个员工到 list
+            CollegeEmployee emp = new CollegeEmployee();
+            emp.setId(&quot;学院员工 id= &quot; + i);
+            list.add(emp);
+        }
+        return list;
+    }
+    //输出学院员工的信息
+    public void printEmployee() {
+        //获取到学院员工
+        List&lt;CollegeEmployee&gt; list1 = getAllEmployee();
+        System.out.println(&quot;------------学院员工------------&quot;);
+        for (CollegeEmployee e : list1) {
+            System.out.println(e.getId());
+        }
+    }
+}
+//学校管理类
+//分析 SchoolManager 类的直接朋友类有哪些 Employee、CollegeManager
+//CollegeEmployee 不是 直接朋友 而是一个陌生类，这样违背了 迪米特法则
+class SchoolManager {
+    //返回学校总部的员工
+    public List&lt;Employee&gt; getAllEmployee() {
+    }
+    //该方法完成输出学校总部和学院员工信息(id)
+    void printAllEmployee(CollegeManager sub) {
+        //分析问题
+        //1. 将输出学院的员工方法，封装到 CollegeManager
+        sub.printEmployee();
+        //获取到学校总部员工
+        List&lt;Employee&gt; list2 = this.getAllEmployee();
+        System.out.println(&quot;------------学校总部员工------------&quot;);
+        for (Employee e : list2) {
+            System.out.println(e.getId());
+        }
+    }
+}
+</code></pre>
+<h3 id="迪米特法则注意事项和细节"><a href="#迪米特法则注意事项和细节" class="headerlink" title="迪米特法则注意事项和细节"></a>迪米特法则注意事项和细节</h3><pre><code>1) 迪米特法则的核心是降低类之间的耦合
+2) 但是注意：由于每个类都减少了不必要的依赖，因此迪米特法则只是要求降低类间(对象间)耦合关系， 并不是
+要求完全没有依赖关系
+</code></pre><h2 id="【合成复用原则】"><a href="#【合成复用原则】" class="headerlink" title="【合成复用原则】"></a>【合成复用原则】</h2><h3 id="基本介绍-6"><a href="#基本介绍-6" class="headerlink" title="基本介绍"></a>基本介绍</h3><blockquote>
+<p>合成复用原则是尽量使用合成/聚合的方式，而不是使用继承</p>
+</blockquote>
+<pre><code>1) 找出应用中可能需要变化之处，把它们独立出来，不要和那些不需要变化的代码混在一起。
+2) 针对接口编程，而不是针对实现编程。
+3) 为了交互对象之间的松耦合设计而努力
+</code></pre>
+
+	  
+
+        </div>
+        <!-- .entry-content -->
+        <!--<div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN//img/custom/donate/AliPayQR.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN//img/custom/donate/WeChanQR.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>-->
+
+	<!-- 写后感言与打赏 -->	
+	<div id="reward">
+  
+  <div>您的喜欢是作者写作最大的动力！❤️</div>
+  
+  <div class="reward">
+    <a href="https://github.com/SHUAIME" target="_blank" class=" tr3" title="Github"><span
+        id="github"></span></a>
+    <ul id="RewardBox" class="list pos-f tr3">
+      
+      <li id="PayPal" title="PayPal打赏"><a href="https://paypal.me/SHUAIME" target="_blank">PayPal</a></li>
+      
+      
+      <li id="AliPayOR" title="支付宝打赏">AliPay</li>
+      
+      
+      <li id="WeChatPayOR" title="微信打赏">WeChatPay</li>
+      
+      
+      <li id="QQPayOR" title="QQ打赏">QQPay</li>
+      
+    </ul>
+    <div id="RewardText" class="tr3">YAN</div>
+    <div id="QRBox" class="pos-f left-100">
+      <div id="MainBox"></div>
+    </div>
+  </div>
+</div>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+<script>
+  jQuery(document).ready(function () {
+    var QRBox = $('#QRBox');
+    var MainBox = $('#MainBox');
+    var AliPayOR = 'https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/YAN-PIC/AliPayQR.png';
+    var WeChatPayOR = 'https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/YAN-PIC/WeChatQR.png';
+    var QQPayOR = 'https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/YAN-PIC/QQPayQR.png';
+
+    function showQR(QR) {
+      if (QR) {
+        MainBox.css('background-image', 'url(' + QR + ')');
+      }
+      $('#RewardText,#RewardBox,#github').addClass('blur');
+      QRBox.fadeIn(300, function (argument) {
+        MainBox.addClass('showQR');
+      });
+    }
+
+    $('#RewardBox>li').click(function (event) {
+      var thisID = $(this).attr('id');
+      if (thisID === 'AliPayOR') {
+        showQR(AliPayOR);
+      } else if (thisID === 'WeChatPayOR') {
+        showQR(WeChatPayOR);
+      } else if (thisID === 'QQPayOR') {
+        showQR(QQPayOR);
+      }
+    });
+
+    MainBox.click(function (event) {
+      MainBox.removeClass('showQR').addClass('hideQR');
+      setTimeout(function (a) {
+        QRBox.fadeOut(300, function (argument) {
+          MainBox.removeClass('hideQR');
+        });
+        $('#RewardText,#RewardBox,#github').removeClass('blur');
+      }, 600);
+
+    });
+  });
+</script>
+
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+        
+          
+            <div class="post-nepre full next">
+          
+            <a href="/posts/bcab918b/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/007.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/007.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                JDK8新特性</h3>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+
+  <script src="https://cdn.jsdelivr.net/gh/yremp/yremp-js@1.1/gitalk.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yremp/yremp-css@1.3/gitalk.css">
+  <div id="gitalk-container"></div>
+  
+  <script type="text/javascript">
+      var gitalk = new Gitalk({
+          clientID: 'a0b1fd1a8f289cb82280',
+          clientSecret: 'e740e2de5477da76dafea57903a04fd58f672398',
+          id: window.location.pathname,
+          repo: 'Comment',
+          owner: 'SHUAIME',
+          admin: 'SHUAIME'
+      })
+      gitalk.render('gitalk-container')
+    </script>
+
+      <!-- <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+          <a href="" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/YAN-PIC/avatar.jpg" itemprop="image" alt="帅me" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="" itemprop="url" rel="author">帅me</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i></p>
+      </section> -->
+    </main><!-- #main -->
+  </div><!-- #primary -->
+</div>
+
+
+
+
+
+    </div>    
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            // PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+    <div id="gitalk-container"></div>
+<script src="https://cdn.jsdelivr.net/gh/yremp/yremp-js@1.1/gitalk.js"></script>
+<footer id="colophon" class="site-footer" role="contentinfo">
+  <div class="site-info">
+    <div class="footertext">
+      <div class="img-preload">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/wordpress-rotating-ball-o.svg">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/disqus-preloader.svg">
+      </div>
+      <p style="color: #666666;"></p>
+    </div>
+    
+<br>
+    Copyright © 2019-2020
+    <a href="https://www.shuaime.top/" target="_blank"> YANSHUAI </a>丨
+    <img src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.9/images/icp.png" style="width:18px;height:18px;margin-bottom:-2px" alt="ICP">
+    <a href="http://www.beian.miit.gov.cn/" target="_blank">赣ICP备20003950号</a>丨
+   
+    <!-- 网站运行时间 -->
+    <span id="timeDate">正在载入...</span><span id="times"><span><i class="fa fa-spinner fa-spin"> </i></span></span>
+    <script>
+    var now = new Date(); 
+    function createtime() {
+      var grt= new Date("10/01/2019 17:38:00");//建站时间2019-10-01
+      now.setTime(now.getTime()+250); 
+      days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+      if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+      mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+      document.getElementById("timeDate").innerHTML = "本站已运行 "
+      document.getElementById("times").innerHTML = dnum +" 天 " + hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+      /*document.getElementById("times").style.color="#0056FF";*/
+      }
+      setInterval("createtime()",250);
+    </script>丨
+    <a href="/sitemap.xml" target="_blank">站点地图</a>
+    <!--<a href="https://tongji.baidu.com/web/welcome/ico?s=df0bc7c6bdbd80356ba4db429724ccad" target="_blank">百度统计</a>丨
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1275909280'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/z_stat.php%3Fid%3D1275909280%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script><br><br>
+丨-->
+  </div><!-- .site-info -->
+</footer>
+
+<div style="text-align:center;margin-bottom: 50px;">
+	<div class="github-badge">
+      <a style="color: #fff" rel="license" href="https://hexo.io/" target="_blank" title="由 Hexo 强力驱动">
+      <span class="badge-subject">Powered</span><span class="badge-value bg-blue">Hexo</span></a>
+    </div>
+    <div class="github-badge">
+      <a style="color: #fff" rel="license" href="https://github.com/" target="_blank" title="静态网页托管于 GitHub Pages 和 Coding Pages">
+      <span class="badge-subject">Hosted</span><span class="badge-value bg-brightgreen">GitHub & Coding</span></a>
+    </div>
+    <div class="github-badge">
+      <a style="color: #fff" rel="license" href="https://www.aliyun.com/" target="_blank" title="阿里云提供域名相关服务">
+      <span class="badge-subject">DNR</span><span class="badge-value bg-blueviolet">Aliyun</span></a>
+    </div>
+    <div class="github-badge">
+      <a style="color: #fff" rel="license" href="https://www.jsdelivr.com/" target="_blank" title="jsDelivr 提供 CDN 加速服务">
+      <span class="badge-subject">CDN</span><span class="badge-value bg-orange">jsDelivr</span></a>
+    </div>
+   <div class="github-badge">
+          <a rel="license" href="https://github.com/honjun/hexo-theme-sakura/" target="_blank" title="站点使用 Sakura 主题，作者：Mashiro & Hojun">
+          <span class="badge-subject">Theme</span><span class="badge-value bg-blue">Sakura</span></a>
+      </div>
+    
+    <div class="github-badge">
+      <a style="color: #fff" rel="license" href="https://996.icu/" target="_blank" title="支持 996.ICU">
+      <span class="badge-subject">Link</span><span class="badge-value bg-red">996.ICU</span></a>
+    </div>
+    <div class="github-badge">
+      <span class="badge-subject">UV</span><span class="badge-value bg-orange" id="busuanzi_value_site_uv"></span>
+    </div>
+    <div class="github-badge">
+      <span class="badge-subject">PV</span><span class="badge-value bg-brightgreen" id="busuanzi_value_site_pv"></span>
+    </div>
+   <div class="github-badge">
+      <span class="badge-subject">WordCount</span><span class="badge-value bg-blueviolet">100.4k</span>
+    </div>
+     
+</div>
+<!-- <script src="/js/tocbot.js"></script> -->
+<script type="text/javascript" src="/js/lib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/InsightSearch.js"></script>
+<script type="text/javascript" src="/js/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="/js/zoom.min.js"></script>
+<script type="text/javascript" src="/js/sakura-app.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine@1.3.4/dist/Valine.min.js'></script>
+<script src="/js/botui.js"></script>
+<!-- 不蒜子 网页计数器 -->
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script> -->
+<script type="text/javascript">
+/* <![CDATA[ */
+if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"close"},"windowheight":"fixed","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+} else {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"open"},"windowheight":"auto","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+}
+/* ]]> */
+
+</script>
+<script>
+$(document).ready(function() {
+  if ($(".toc").length > 0 && document.body.clientWidth > 1200) {
+    if ($(".pattern-center").length > 0) { //有图的情况
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -400,
+          scrollSmoothOffset: -85
+      });
+    } else {
+      tocbot.init({
+          // Where to render the table of contents.
+          tocSelector: '.toc', // 放置目录的容器
+          // Where to grab the headings to build the table of contents.
+          contentSelector: '.entry-content', // 正文内容所在
+          // Which headings to grab inside of the contentSelector element.
+          scrollSmooth: true,
+          headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+          headingsOffset: -85,
+          scrollSmoothOffset: -85
+      });
+    }
+    var offsetTop = $('.toc').offset().top - 95;
+    window.onscroll = function() {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+      if (scrollTop >= offsetTop) {
+        $('.toc').addClass('toc-fixed');
+      } else {
+        $('.toc').removeClass('toc-fixed');
+      }
+    }
+  }
+});
+</script>
+<script src="https://cdn.jsdelivr.net/gh/wallleap/cdn@latest/js/hititle.js"></script>
+
+    <div class="openNav no-select" style="height: 50px;">
+      <div class="iconflat no-select" style="width: 50px; height: 50px;">
+        <div class="icon"></div>
+      </div>
+      <div class="site-branding search-form-submit">
+        <i class="iconfont js-toggle-search iconsearch icon-search"></i>
+      </div>
+    </div>
+  </section>
+  <!-- 实现换肤功能 -->
+   <div class="skin-menu no-select" id="mainskin" style="position: fixed"> 
+    <div class="theme-controls row-container">
+          <p style="text-align:center;font-family:'Monaco';font-weight:bold;color:#444"><i style="color:grey" class="fa fa-chevron-left"></i> background <i style="color:grey" class="fa fa-chevron-right"></i></p>
+        <ul class="menu-list"> <li id="white-bg"> 
+            <i class="fa fa-television" aria-hidden="true">
+            </i>
+            </li> 
+            <li id="sakura-bg"> 
+                <i class="iconfont icon-sakura">
+                </i>
+            </li>
+            <li id="gribs-bg">
+                <i class="fa fa-slack" aria-hidden="true">
+                </i>
+            </li>
+            <li id="KAdots-bg">
+                <i class="iconfont icon-dots">
+                </i>
+            </li>
+            <li id="totem-bg">
+                <i class="fa fa-optin-monster" aria-hidden="true">
+                </i>
+            </li>
+            <li id="pixiv-bg">
+                <i class="iconfont icon-pixiv">
+                </i>
+            </li>
+            <li id="bing-bg">
+                <i class="iconfont icon-bing">
+                </i>
+            </li>
+            <li id="dark-bg">
+                <i class="fa fa-moon-o" aria-hidden="true">
+                </i>
+            </li>
+        </ul>
+    </div>
+      <hr>
+  <p style="text-align:center;font-family:'Monaco';font-weight:bold;color:#444"><i style="color:grey" class="fa fa-chevron-left"></i> font <i style="color:grey" class="fa fa-chevron-right"></i></p>
+  <div class="font-family-controls row-container">
+    <button type="button" class="control-btn-serif " data-mode="serif" onclick="mashiro_global.font_control.change_font()">Serif</button>
+    <button type="button" class="control-btn-sans-serif" data-mode="sans-serif" onclick="mashiro_global.font_control.change_font()">Sans Serif</button>
+  </div>
+  <hr>
+  <p style="text-align:center;font-family:'Monaco';font-weight:bold;color:#444"><i style="color:grey" class="fa fa-chevron-left"></i> script <i style="color:grey" class="fa fa-chevron-right"></i></p>
+  <div class="theme-controls row-container">
+  <ul class="menu-list">
+    <li id="empty-effect">
+      <i class="fa fa-ban">
+      </i>
+    </li>
+    <li id="sakura-rain-effect">
+      <i class="iconfont icon-sakura">
+      </i>
+    </li>
+    <li id="snowy-effect">
+      <i class="fa fa-snowflake-o">
+      </i>
+    </li>
+    <li id="lines-effect">
+      <i class="fa fa-chevron-left">
+      </i>
+    </li>
+    <li id="colorful-belts-effect">
+      <i class="fa fa-map"></i>
+      </i>
+    </li>
+    <li id="words-rain-effect">
+      <i class="fa fa-font"></i>
+    </li>
+    <li id="point-rain-effect">
+      <i class="iconfont icon-dots"></i>
+    </li>
+    <li id="rain-drop-effect">
+      <i class="fa fa-tint"></i>
+    </li>
+  </ul>
+  </div>
+
+    <canvas id="night-mode-cover">
+    </canvas>
+</div>
+ 
+ <div class="changeSkin-gear no-select" style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; visibility: visible; bottom: 0px;"> 
+  <div class="keys" id="setbtn"> 
+    <button id="open-skinMenu">
+        <style>
+        button#open-skinMenu{
+            transition: all 0.2s linear 0s;
+            outline:none;
+            font-size:16px;
+            background-color: rgba(255,255,255,.95);
+            border-radius: 20px;
+            box-shadow: 0 3px 8px 0 rgba(0,0,0,0.1), 0 3px 8px 0 rgba(0,0,0,0.1);
+        }
+        button#open-skinMenu:hover{
+            transition: all 0.2s linear 0s;
+            background-color: #3ca0ff;
+            color: rgba(255,255,255);
+        }
+        </style>
+        <i class="iconfont icon-gear inline-block rotating">
+      </i> 
+        主题工具 | SCHEME TOOL 
+    </button>
+  </div> 
+</div>
+
+
+
+
+<!-- 樱花特效
+<script src="https://cdn.jsdelivr.net/gh/wallleap/cdn/js/sakura.js"></script>-->
+<!--单击显示文字-->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/js/click_show_text.js"></script>
+<!--爆炸效果-->
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/js/fireworks.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"> <!-- 这条在sakura中已有，可不添加 --><script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+<script src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+</body>
+</html>
