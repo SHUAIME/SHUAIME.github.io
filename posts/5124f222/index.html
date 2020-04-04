@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">archive_a: 2020/3 | YANSHUAI&#39;S BLOG</title>
+  <title itemprop="name">排序算法 | YANSHUAI&#39;S BLOG</title>
   
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/favicon/favicon.ico">
   
@@ -442,415 +442,430 @@ var _hmt = _hmt || [];
   </div>
 </header>
 
-      <!-- <div class="blank" style="padding-top: 75px;">
-</div> -->
-<div class="pattern-center-blank" style="padding-top: 75px;">
-</div>
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 
-    <div class="pattern-center-sakura">
-      <div class="pattern-attachment-img">
-        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/006.jpg" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
-      </div>
-      <header class="pattern-header ">
-        <h1 class="entry-title">
-        归档</h1>
-      </header>
+<div class="pattern-center-blank"></div>
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/017.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/017.jpg">
     </div>
-  
+    <header class="pattern-header single-header" style="text-shadow: 0 0 7px #000,0 0 7px #000">
+      <h1 class="entry-title">
+      排序算法</h1>
+      <p class="entry-census">
+        <span>
+          <a href="">
+            <img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/YAN-PIC/avatar.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="">帅me</a>
+        </span>
+        <span class="bull">·</span>
+	
+        <span class="post-time">
+          <span class="post-meta-item-icon">
+            <i class="fa fa-calendar"></i>
+            <span class="post-meta-item-text"></span>
+            <span class="post-count">2020-4-4</span>
+          </span>
+        </span>
+	<span class="bull">·</span>
+
+	    <span class="bull"></span>
+    
+      <span><i class="fa fa-archive"></i> 分类于  
+        <span class="article-category"><a href="/categories/Java/" > Java</a></span>
+      <span class="article-category"><a href="/categories/数据结构和算法/" > 数据结构和算法</a></span>
+      
+    </span>
+    
+
+<span class="bull">·</span>
+	<span class="post-time">
+          <span class="post-meta-item-icon">
+            <i class="fa fa-eye" aria-hidden="true"></i>
+            
+          </span>
+	  <span id="busuanzi_value_page_pv"></span> 次阅读
+        </span>
+      
+      <span class="bull">·</span>
+      <span class="post-time">
+          <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <span class="post-meta-item-text">  字数统计: </span>
+            <span class="post-count">1k字</span>
+          </span>
+        </span>
+	<!--<span class="bull">·</span>
+        <span class="post-time">
+          <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <span class="post-meta-item-text">  阅读时长≈ </span>
+            <span class="post-count">4</span>
+          </span>
+        </span>-->
+	</p>
+
+            
+      
+    <div>
+          <ul class="spfk-ul">
+            &nbsp<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<li class="spfk-li"><span class="triangle"></span><a href="/tags/Java/" class="butterfly-tags">Java</a></li><li class="spfk-li"><span class="triangle"></span><a href="/tags/排序算法/" class="butterfly-tags">排序算法</a></li>
+          </ul>
+        </div>
+        <script>
+            function colorInit(c,num){for(var i=1;i<=num;++i)c.push(i+'');}
+            function paintTags(){
+                var colorNumber=8,tagColors=[],tags=document.getElementsByClassName('spfk-li');
+                for(var i = 0 ; i < tags.length ; ++i){
+                    if(!tagColors.length)colorInit(tagColors,colorNumber);
+                    var j=Math.floor(Math.random()*tagColors.length);
+                    tags[i].classList.add("spfk-color"+tagColors[j]);
+                    tagColors.splice(j,1);
+        }
+            }
+            paintTags()
+        </script>
+    
+
+
+
+    </header>
+  </div>
 
 <div id="content" class="site-content">
-  <div id="main">
-   <!-- <header class="page-header">
-      <h1 class="cat-title">
-      归档</h1>
-      <span class="cat-des">
-        <p>
-        Archives</p>
-      </span>
-    </header>-->
-    <div id="main-part">
-      <article class="art">
-        <div class="art-main">
-          <div class="art-content">
-            <div id="archives">
-              <p style="text-align:left;">
-  <button id="al_expand_collapse">
-    <style>
-    button#al_expand_collapse {
-        color: white;
-        border-radius: 16px;
-        font-weight: bold;
-        font-size: 15px;
-        background-color: #ff9100;
-        transition-duration: 0.3s;
-        box-shadow: 0 3px 8px 0 rgba(0,0,0,0.11), 0 3px 8px 0 rgba(0,0,0,0.11);
-        outline: none;
-    }
-    button#al_expand_collapse:hover {
-        transition: all 0.2s linear 0s;
-        background-color: #ff5900; 
-    }
-    </style>
-    <i class="fa fa-bars" aria-hidden="true"></i> 全部展开/收缩
-</button>
-</p>
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <p><strong>数据结构和算法</strong>之排序算法<img class="emoji-coda" src="https://cdn.jsdelivr.net/gh/TomoriCoda/hexo-tag-emojis-bycoda/emojis/2233/heshui.png"></p>
+<a id="more"></a>
+<h1 id="【冒泡排序】"><a href="#【冒泡排序】" class="headerlink" title="【冒泡排序】"></a><font color="#ff000">【冒泡排序】</font></h1><h2 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h2><blockquote>
+<p>冒泡排序（Bubble Sorting）的基本思想是：通过对待排序序列从前向后（从下标较小的元素开始）,依次比较<br>相邻元素的值，若发现逆序则交换，使值较大的元素逐渐从前移向后部，就象水底下的气泡一样逐渐向上冒。</p>
+</blockquote>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><pre><code class="java">package com.yan.sort;
 
-              
-              
-              
-              
-              
-                
-                <h3 class="al_year">2020年</h3>
-              
-              
-                
-                <ul class="al_mon_list">
-                  <li class="al_li">
-                    <span class="al_mon" style="cursor: s-resize;">
-                      04月(<span id="post-num">
-                      3</span>
-                    篇文章)</span>
-                    <ul class="al_post_list" style="">
-              
-                      <li>
-                        <a href="/posts/5124f222/">
-                          <span style="color:#0bf;">
-                          04日17:13:09</span>
-                          排序算法
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/2362a8ea/">
-                          <span style="color:#0bf;">
-                          02日21:35:15</span>
-                          链表
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/6d016bf8/">
-                          <span style="color:#0bf;">
-                          01日20:43:35</span>
-                          稀疏数组和队列
-                        </a>
-                      </li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              
-              
-              
-              
-              
-              
-                
-                <ul class="al_mon_list">
-                  <li class="al_li">
-                    <span class="al_mon" style="cursor: s-resize;">
-                      03月(<span id="post-num">
-                      3</span>
-                    篇文章)</span>
-                    <ul class="al_post_list" style="">
-              
-                      <li>
-                        <a href="/posts/52e60ff2/">
-                          <span style="color:#0bf;">
-                          15日20:13:24</span>
-                          设计模式七大原则
-                        </a>
-                      </li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              
-              
-              
-              
-              
-                
-                <h3 class="al_year">2019年</h3>
-              
-              
-                
-                <ul class="al_mon_list">
-                  <li class="al_li">
-                    <span class="al_mon" style="cursor: s-resize;">
-                      12月(<span id="post-num">
-                      3</span>
-                    篇文章)</span>
-                    <ul class="al_post_list" style="">
-              
-                      <li>
-                        <a href="/posts/bcab918b/">
-                          <span style="color:#0bf;">
-                          28日10:00:10</span>
-                          JDK8新特性
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/4decbe97/">
-                          <span style="color:#0bf;">
-                          01日15:47:28</span>
-                          Java总结篇...
-                        </a>
-                      </li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              
-              
-              
-              
-              
-              
-                
-                <ul class="al_mon_list">
-                  <li class="al_li">
-                    <span class="al_mon" style="cursor: s-resize;">
-                      11月(<span id="post-num">
-                      3</span>
-                    篇文章)</span>
-                    <ul class="al_post_list" style="">
-              
-                      <li>
-                        <a href="/posts/f0580ace/">
-                          <span style="color:#0bf;">
-                          17日22:05:21</span>
-                          Spring Boot项目接入QQ登录教程
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/33f411d/">
-                          <span style="color:#0bf;">
-                          15日14:00:15</span>
-                          Spring Cloud Netflix
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/accb903d/">
-                          <span style="color:#0bf;">
-                          06日14:17:09</span>
-                          Spring Data JPA
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/db30a45/">
-                          <span style="color:#0bf;">
-                          01日12:56:14</span>
-                          Intellij IDEA破解
-                        </a>
-                      </li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              
-              
-              
-              
-              
-              
-                
-                <ul class="al_mon_list">
-                  <li class="al_li">
-                    <span class="al_mon" style="cursor: s-resize;">
-                      10月(<span id="post-num">
-                      3</span>
-                    篇文章)</span>
-                    <ul class="al_post_list" style="">
-              
-                      <li>
-                        <a href="/posts/4bb9769b/">
-                          <span style="color:#0bf;">
-                          30日09:38:18</span>
-                          MySQL保存emoji表情
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/27ace9d5/">
-                          <span style="color:#0bf;">
-                          25日20:14:39</span>
-                          Spring Security
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/8fa64eaf/">
-                          <span style="color:#0bf;">
-                          23日17:40:56</span>
-                          AngularJS
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/3d6301c1/">
-                          <span style="color:#0bf;">
-                          20日18:38:36</span>
-                          Docker容器化
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/531cd44d/">
-                          <span style="color:#0bf;">
-                          19日17:00:00</span>
-                          使用 Github Pages 和 Hexo 搭建自己的独立博客
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/ac21c0cc/">
-                          <span style="color:#0bf;">
-                          12日14:47:09</span>
-                          Java学习篇之IO流
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/4ad2c499/">
-                          <span style="color:#0bf;">
-                          11日14:46:52</span>
-                          Java学习篇之多线程
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/e937c3c0/">
-                          <span style="color:#0bf;">
-                          10日14:40:07</span>
-                          Java学习篇之集合篇
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/4a17b156/">
-                          <span style="color:#0bf;">
-                          01日12:40:07</span>
-                          Hello World
-                        </a>
-                      </li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              
-              
-              
-              
-              
-                
-                <h3 class="al_year">2018年</h3>
-              
-              
-                
-                <ul class="al_mon_list">
-                  <li class="al_li">
-                    <span class="al_mon" style="cursor: s-resize;">
-                      12月(<span id="post-num">
-                      3</span>
-                    篇文章)</span>
-                    <ul class="al_post_list" style="">
-              
-                      <li>
-                        <a href="/posts/186f70d4/">
-                          <span style="color:#0bf;">
-                          12日22:16:01</span>
-                          Hexo-Theme-Sakura
-                        </a>
-                      </li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              
-              
+public class BubbleSort {
+
+    @Test//测试排序功能
+    public void fun1(){
+        int arr[] = {3, 9, -1, 10, -2};
+
+        System.out.println(&quot;排序前&quot;);
+        System.out.println(Arrays.toString(arr));
+
+        //测试冒泡排序
+        bubbleSort(arr);
+
+        System.out.println(&quot;排序后&quot;);
+        System.out.println(Arrays.toString(arr));
+    }
+    public static void bubbleSort(int[] arr){
+        int temp = 0;
+        boolean flag = false;
+        for(int i = 0;i &lt; arr.length - 1;i++){
+            for(int j = 0;j &lt; arr.length - 1 - i;j++){
+                if(arr[j] &gt; arr[j+1]){
+                    temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                    flag = true;
+                }
+            }
+            if(!flag){
+                break;
+            }else{
+                flag = false;
+            }
+        }
+    }
+}
+</code></pre>
+<h1 id="【选择排序】"><a href="#【选择排序】" class="headerlink" title="【选择排序】"></a><font color="#ff000">【选择排序】</font></h1><h2 id="基本介绍-1"><a href="#基本介绍-1" class="headerlink" title="基本介绍"></a>基本介绍</h2><blockquote>
+<p>选择排序（select sorting）也是一种简单的排序方法。它的基本思想是：第一次从 arr[0]~arr[n-1]中选取最小值，<br>与 arr[0]交换，第二次从 arr[1]~arr[n-1]中选取最小值，与 arr[1]交换，第三次从 arr[2]~arr[n-1]中选取最小值，与 arr[2]<br>交换，…，第 i 次从 arr[i-1]~arr[n-1]中选取最小值，与 arr[i-1]交换，…, 第 n-1 次从 arr[n-2]~arr[n-1]中选取最小值，<br>与 arr[n-2]交换，总共通过 n-1 次，得到一个按排序码从小到大排列的有序序列。</p>
+</blockquote>
+<h2 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h2><pre><code class="java">package com.yan.sort;
+
+public class SelectSort {
+
+    @Test//测试排序功能
+    public void fun1(){
+        int arr[] = {3, 9, -1, 10, -2};
+
+        System.out.println(&quot;排序前&quot;);
+        System.out.println(Arrays.toString(arr));
+
+        //测试选择排序
+        selectSort(arr);
+
+        System.out.println(&quot;排序后&quot;);
+        System.out.println(Arrays.toString(arr));
+    }
+    public static void selectSort(int[] arr){
+
+        for(int i = 0;i &lt; arr.length - 1;i++){
+            int minIndex = i;
+            int min = arr[i];
+            for(j = i + 1;j &lt; arr.length;j++){
+                if(min &gt; arr[j]){
+                    min = arr[j];
+                    minIndex = j;
+                }
+            }
+            if(minIndex != i){
+                arr[minIndex] = arr[i];
+                arr[i] = min;
+            }
+        }
+    }
+}
+</code></pre>
+<h1 id="【插入排序】"><a href="#【插入排序】" class="headerlink" title="【插入排序】"></a><font color="#ff000">【插入排序】</font></h1><h2 id="基本介绍-2"><a href="#基本介绍-2" class="headerlink" title="基本介绍"></a>基本介绍</h2><blockquote>
+<p>插入排序（Insertion Sorting）的基本思想是：把 n 个待排序的元素看成为一个有序表和一个无序表，开始时有<br>序表中只包含一个元素，无序表中包含有 n-1 个元素，排序过程中每次从无序表中取出第一个元素，把它的排<br>序码依次与有序表元素的排序码进行比较，将它插入到有序表中的适当位置，使之成为新的有序表。</p>
+</blockquote>
+<h2 id="代码实现-2"><a href="#代码实现-2" class="headerlink" title="代码实现"></a>代码实现</h2><pre><code class="java">package com.yan.sort;
+
+public class InsertSort {
+
+    @Test//测试排序功能
+    public void fun1(){
+        int arr[] = {3, 9, -1, 10, -2};
+
+        System.out.println(&quot;排序前&quot;);
+        System.out.println(Arrays.toString(arr));
+
+        //测试选择排序
+        insertSort(arr);
+
+        System.out.println(&quot;排序后&quot;);
+        System.out.println(Arrays.toString(arr));
+    }
+    public static void insertSort(int[] arr){
+
+        for(int i = 1;i &lt; arr.length;i++){
+            int insertValue = arr[i];
+            int insertIndex = i - 1;
+            if(arr[i] &lt; arr[insertIndex]){
+                while(insertIndex &gt;= 0 &amp;&amp; insertValue &lt; arr[insertIndex]){
+                    arr[insertIndext+1] = arr[insertIndex];
+                    insertIndext--;
+                }
+                arr[insertIndext+1] = insertValue;
+            }
+
+        }
+    }
+}
+</code></pre>
+<h1 id="【希尔排序】"><a href="#【希尔排序】" class="headerlink" title="【希尔排序】"></a><font color="#ff000">【希尔排序】</font></h1><h2 id="基本介绍-3"><a href="#基本介绍-3" class="headerlink" title="基本介绍"></a>基本介绍</h2><blockquote>
+<p>希尔排序是希尔（Donald Shell）于 1959 年提出的一种排序算法。希尔排序也是一种插入排序，它是简单插入排序经过改进之后的一个更高效的版本，也称为缩小增量排序。</p>
+<p>希尔排序是把记录按下标的一定增量分组，对每组使用直接插入排序算法排序；随着增量逐渐减少，每组包含的关键词越来越多，当增量减至 1 时，整个文件恰被分成一组，算法便终止</p>
+</blockquote>
+<h2 id="代码实现-3"><a href="#代码实现-3" class="headerlink" title="代码实现"></a>代码实现</h2><pre><code class="java">package com.yan.sort;
+
+public class ShellSort {
+
+    @Test//测试排序功能
+    public void fun1(){
+        int arr[] = {3, 9, -1, 10, -2};
+
+        System.out.println(&quot;排序前&quot;);
+        System.out.println(Arrays.toString(arr));
+
+        //测试选择排序
+        shellSort(arr);
+
+        System.out.println(&quot;排序后&quot;);
+        System.out.println(Arrays.toString(arr));
+    }
+    public static void shellSort(int[] arr){
+
+        for(int gap = arr.length/2;gap &gt; 0;gap /= 2){
+            for(int i = gap;i &lt; arr.length;i++){
+                int j = i;
+                int temp = arr[j];
+                if(arr[j] &lt; arr[j-gap]){
+                    while(j - gap &gt;= 0 &amp;&amp; temp &lt; arr[j-gap]){
+                        arr[j] = arr[j-gap];
+                        j -= gap;
+                    }
+                    arr[j] = temp;
+                }
+            }
+        }
+    }
+}
+</code></pre>
+<h1 id="【快速排序】"><a href="#【快速排序】" class="headerlink" title="【快速排序】"></a><font color="#ff000">【快速排序】</font></h1><h1 id="【归并排序】"><a href="#【归并排序】" class="headerlink" title="【归并排序】"></a><font color="#ff000">【归并排序】</font></h1><h1 id="【基数排序】"><a href="#【基数排序】" class="headerlink" title="【基数排序】"></a><font color="#ff000">【基数排序】</font></h1>
+
+	  
+<hr>
+<center><img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/ctz45562/cdn@1.7.9/lazyload.gif" data-src="https://cdn.jsdelivr.net/gh/ctz45562/cdn@2.0.3/emojis/gif/23.gif"></center>
+<p style="font-size:32px;text-align:center;margin-top:-2px">施工中...</p>
+
+
+        </div>
+        <!-- .entry-content -->
+        <!--<div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN//img/custom/donate/AliPayQR.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN//img/custom/donate/WeChanQR.jpg"></li>
+              </ul>
             </div>
           </div>
-        </div>
-      </article>
+        </div>-->
+
+	<!-- 写后感言与打赏 -->	
+	<div id="reward">
+  
+  <div>您的喜欢是作者写作最大的动力！❤️</div>
+  
+  <div class="reward">
+    <a href="https://github.com/SHUAIME" target="_blank" class=" tr3" title="Github"><span
+        id="github"></span></a>
+    <ul id="RewardBox" class="list pos-f tr3">
+      
+      <li id="PayPal" title="PayPal打赏"><a href="https://paypal.me/SHUAIME" target="_blank">PayPal</a></li>
+      
+      
+      <li id="AliPayOR" title="支付宝打赏">AliPay</li>
+      
+      
+      <li id="WeChatPayOR" title="微信打赏">WeChatPay</li>
+      
+      
+      <li id="QQPayOR" title="QQ打赏">QQPay</li>
+      
+    </ul>
+    <div id="RewardText" class="tr3">YAN</div>
+    <div id="QRBox" class="pos-f left-100">
+      <div id="MainBox"></div>
     </div>
   </div>
 </div>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+<script>
+  jQuery(document).ready(function () {
+    var QRBox = $('#QRBox');
+    var MainBox = $('#MainBox');
+    var AliPayOR = 'https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/YAN-PIC/AliPayQR.png';
+    var WeChatPayOR = 'https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/YAN-PIC/WeChatQR.png';
+    var QQPayOR = 'https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/YAN-PIC/QQPayQR.png';
+
+    function showQR(QR) {
+      if (QR) {
+        MainBox.css('background-image', 'url(' + QR + ')');
+      }
+      $('#RewardText,#RewardBox,#github').addClass('blur');
+      QRBox.fadeIn(300, function (argument) {
+        MainBox.addClass('showQR');
+      });
+    }
+
+    $('#RewardBox>li').click(function (event) {
+      var thisID = $(this).attr('id');
+      if (thisID === 'AliPayOR') {
+        showQR(AliPayOR);
+      } else if (thisID === 'WeChatPayOR') {
+        showQR(WeChatPayOR);
+      } else if (thisID === 'QQPayOR') {
+        showQR(QQPayOR);
+      }
+    });
+
+    MainBox.click(function (event) {
+      MainBox.removeClass('showQR').addClass('hideQR');
+      setTimeout(function (a) {
+        QRBox.fadeOut(300, function (argument) {
+          MainBox.removeClass('hideQR');
+        });
+        $('#RewardText,#RewardBox,#github').removeClass('blur');
+      }, 600);
+
+    });
+  });
+</script>
+
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+        
+          
+            <div class="post-nepre full next">
+          
+            <a href="/posts/2362a8ea/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/006.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/006.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                链表</h3>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+
+  <script src="https://cdn.jsdelivr.net/gh/yremp/yremp-js@1.1/gitalk.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yremp/yremp-css@1.3/gitalk.css">
+  <div id="gitalk-container"></div>
+  
+  <script type="text/javascript">
+      var gitalk = new Gitalk({
+          clientID: 'a0b1fd1a8f289cb82280',
+          clientSecret: 'e740e2de5477da76dafea57903a04fd58f672398',
+          id: window.location.pathname,
+          repo: 'Comment',
+          owner: 'SHUAIME',
+          admin: 'SHUAIME'
+      })
+      gitalk.render('gitalk-container')
+    </script>
+
+      <!-- <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+          <a href="" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/YAN-PIC/avatar.jpg" itemprop="image" alt="帅me" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="" itemprop="url" rel="author">帅me</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i></p>
+      </section> -->
+    </main><!-- #main -->
+  </div><!-- #primary -->
+</div>
+
+
+
+
 
     </div>    
     <div class="ins-search">
