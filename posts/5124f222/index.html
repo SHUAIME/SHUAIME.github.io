@@ -497,7 +497,7 @@ var _hmt = _hmt || [];
           <span class="post-meta-item-icon">
             <i class="fa fa-keyboard-o"></i>
             <span class="post-meta-item-text">  字数统计: </span>
-            <span class="post-count">1k字</span>
+            <span class="post-count">1.3k字</span>
           </span>
         </span>
 	<!--<span class="bull">·</span>
@@ -505,7 +505,7 @@ var _hmt = _hmt || [];
           <span class="post-meta-item-icon">
             <i class="fa fa-hourglass-half"></i>
             <span class="post-meta-item-text">  阅读时长≈ </span>
-            <span class="post-count">4</span>
+            <span class="post-count">6</span>
           </span>
         </span>-->
 	</p>
@@ -679,7 +679,7 @@ public class ShellSort {
         System.out.println(&quot;排序前&quot;);
         System.out.println(Arrays.toString(arr));
 
-        //测希尔择排序
+        //测试希尔择排序
         shellSort(arr);
 
         System.out.println(&quot;排序后&quot;);
@@ -703,7 +703,60 @@ public class ShellSort {
     }
 }
 </code></pre>
-<h1 id="【快速排序】"><a href="#【快速排序】" class="headerlink" title="【快速排序】"></a><font color="#ff000">【快速排序】</font></h1><h1 id="【归并排序】"><a href="#【归并排序】" class="headerlink" title="【归并排序】"></a><font color="#ff000">【归并排序】</font></h1><h1 id="【基数排序】"><a href="#【基数排序】" class="headerlink" title="【基数排序】"></a><font color="#ff000">【基数排序】</font></h1>
+<h1 id="【快速排序】"><a href="#【快速排序】" class="headerlink" title="【快速排序】"></a><font color="#ff000">【快速排序】</font></h1><h2 id="基本介绍-4"><a href="#基本介绍-4" class="headerlink" title="基本介绍"></a>基本介绍</h2><blockquote>
+<p>快速排序（Quicksort）是对冒泡排序的一种改进。基本思想是：通过一趟排序将要排序的数据分割成独立的两<br>部分，其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排<br>序，整个排序过程可以递归进行，以此达到整个数据变成有序序列</p>
+</blockquote>
+<h2 id="代码实现-4"><a href="#代码实现-4" class="headerlink" title="代码实现"></a>代码实现</h2><pre><code class="java">package com.yan.sort;
+
+public class QuickSort {
+
+    @Test//测试排序功能
+    public void fun1(){
+        int arr[] = {3, 9, -1, 10, -2};
+
+        System.out.println(&quot;排序前&quot;);
+        System.out.println(Arrays.toString(arr));
+
+        //测试快速择排序
+        quickSort(arr,0,arr.length-1);
+
+        System.out.println(&quot;排序后&quot;);
+        System.out.println(Arrays.toString(arr));
+    }
+    public static void quickSort(int[] arr,int left,int right){
+
+        int t;
+        if(left &gt; right){
+            return;
+        }
+        int l = left;
+        int r = right;
+        int temp = arr[left];//基准数\
+        while(l&lt;r){
+            //先看右边
+            while(l &lt; r &amp;&amp; temp &lt;= arr[r]){
+                r--;
+            }
+            //在看左边
+            while(l &lt; r &amp;&amp; temp &gt;= arr[l]){
+                l++;
+            }
+            if(l&lt;r){
+                t = arr[l];
+                arr[l] = arr[r];
+                arr[r] = t;
+            }
+        }
+
+        arr[left] = arr[l];
+        arr[l] = temp;
+        //左右递归
+        quickSort(arr,left,r-1);
+        quickSort(arr,l+1,right);
+    }
+}
+</code></pre>
+<h1 id="【归并排序】"><a href="#【归并排序】" class="headerlink" title="【归并排序】"></a><font color="#ff000">【归并排序】</font></h1><h1 id="【基数排序】"><a href="#【基数排序】" class="headerlink" title="【基数排序】"></a><font color="#ff000">【基数排序】</font></h1>
 
 	  
 <hr>
