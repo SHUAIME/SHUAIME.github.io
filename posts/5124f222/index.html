@@ -497,7 +497,7 @@ var _hmt = _hmt || [];
           <span class="post-meta-item-icon">
             <i class="fa fa-keyboard-o"></i>
             <span class="post-meta-item-text">  字数统计: </span>
-            <span class="post-count">1.3k字</span>
+            <span class="post-count">2.2k字</span>
           </span>
         </span>
 	<!--<span class="bull">·</span>
@@ -505,7 +505,7 @@ var _hmt = _hmt || [];
           <span class="post-meta-item-icon">
             <i class="fa fa-hourglass-half"></i>
             <span class="post-meta-item-text">  阅读时长≈ </span>
-            <span class="post-count">6</span>
+            <span class="post-count">10</span>
           </span>
         </span>-->
 	</p>
@@ -756,7 +756,160 @@ public class QuickSort {
     }
 }
 </code></pre>
-<h1 id="【归并排序】"><a href="#【归并排序】" class="headerlink" title="【归并排序】"></a><font color="#ff000">【归并排序】</font></h1><h1 id="【基数排序】"><a href="#【基数排序】" class="headerlink" title="【基数排序】"></a><font color="#ff000">【基数排序】</font></h1>
+<h1 id="【归并排序】"><a href="#【归并排序】" class="headerlink" title="【归并排序】"></a><font color="#ff000">【归并排序】</font></h1><h2 id="基本介绍-5"><a href="#基本介绍-5" class="headerlink" title="基本介绍"></a>基本介绍</h2><blockquote>
+<p>归并排序（MERGE-SORT）是利用归并的思想实现的排序方法，该算法采用经典的分治（divide-and-conquer）策略（分治法将问题分(divide)成一些小的问题然后递归求解，而治(conquer)的阶段则将分的阶段得到的各答案”修补”在一起，即分而治之)。</p>
+</blockquote>
+<h2 id="代码实现-5"><a href="#代码实现-5" class="headerlink" title="代码实现"></a>代码实现</h2><pre><code class="java">package com.yan.sort;
+
+public class MergeSort {
+
+    @Test//测试排序功能
+    public void fun1(){
+        int arr[] = {3, 9, -1, 10, -2};
+
+        System.out.println(&quot;排序前&quot;);
+        System.out.println(Arrays.toString(arr));
+
+        //测试归并排序
+        mergeSort(arr,0,arr.length-1,new int[arr.length]);
+
+        System.out.println(&quot;排序后&quot;);
+        System.out.println(Arrays.toString(arr));
+    }
+    //分+合方法
+    public static void mergetSort(int[] arr,int left,int right,int[] temp){
+        if(left &lt; right){
+            int mid = (left + right) / 2;
+            //向左递归进行分解
+            mergeSort(arr, left, mid, temp);
+            //向右递归进行分解
+            mergeSort(arr, mid + 1, right, temp);
+            //合并
+            merge(arr, left, mid, right, temp);
+        }
+
+    }
+    //合并的方法
+    /**
+     * 
+     * @param arr 排序的原始数组
+     * @param left 左边有序序列的初始索引
+     * @param mid 中间索引
+     * @param right 右边索引
+     * @param temp 做中转的数组
+     */
+    public static void merget(int[] arr,int left,int mid,int right,int[] temp){
+        int i = left;
+        int j = mid + 1;
+        int t = 0;
+
+        while(i &lt;= mid &amp;&amp; j &lt;= right){
+            if(arr[i] &lt;= arr[j]){
+                temp[t] = arr[i];
+                i++;
+                t++;
+            }else{
+                temp[t] = arr[j];
+                j++;
+                t++;
+            }
+        }
+
+        while(i &lt;= mid){
+            temp[t] = arr[i];
+            t++;
+            i++;
+        }
+        while(j &lt;= right){
+            temp[t] = arr[j];
+            t++;
+            j++;
+        }
+        t = 0;
+        int l = left;
+        while(l &lt; right){
+            arr[l] = temp[t];
+            l++;
+            t++;
+        }
+
+    }
+}
+</code></pre>
+<h1 id="【基数排序】"><a href="#【基数排序】" class="headerlink" title="【基数排序】"></a><font color="#ff000">【基数排序】</font></h1><h2 id="基本介绍-6"><a href="#基本介绍-6" class="headerlink" title="基本介绍"></a>基本介绍</h2><blockquote>
+<p>1) 基数排序（radix sort）属于“分配式排序”（distribution sort），又称“桶子法”（bucket sort）或 bin sort，顾名思义，它是通过键值的各个位的值，将要排序的元素分配至某些“桶”中，达到排序的作用<br>2) 基数排序法是属于稳定性的排序，基数排序法的是效率高的稳定性排序法<br>3) 基数排序(Radix Sort)是桶排序的扩展<br>4) 基数排序是 1887 年赫尔曼·何乐礼发明的。它是这样实现的：将整数按位数切割成不同的数字，然后按每个位数分别比较。</p>
+</blockquote>
+<h2 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h2><blockquote>
+<p>将所有待比较数值统一为同样的数位长度，数位较短的数前面补零。然后，从最低位开始，依次进行一次排序。这样从最低位排序一直到最高位排序完成以后, 数列就变成一个有序序列。</p>
+</blockquote>
+<h2 id="代码实现-6"><a href="#代码实现-6" class="headerlink" title="代码实现"></a>代码实现</h2><pre><code class="java">package com.yan.sort;
+
+public class RedixSort {
+
+    @Test//测试排序功能
+    public void fun1(){
+        int arr[] = {3, 9, -1, 10, -2};
+
+        System.out.println(&quot;排序前&quot;);
+        System.out.println(Arrays.toString(arr));
+
+        //测试基数排序
+        redixSort(arr);
+
+        System.out.println(&quot;排序后&quot;);
+        System.out.println(Arrays.toString(arr));
+    }
+
+
+    public static void redixSort(int[] arr) {
+        int[][] bucket = new int[10][arr.length];
+        int[] element = new int[10];
+
+        //添加负数支持
+        int min = 0;
+        for (int i = 0; i &lt; arr.length; i++) {
+            if (arr[i] &lt; 0 &amp;&amp; arr[i] &lt; min) {
+                min = arr[i];
+            }
+        }
+        if (min &lt; 0){
+            for(int i = 0;i &lt; arr.length;i++) {
+                arr[i] -= min;
+            }
+        }
+        int max = arr[0];
+        for (int i = 0; i &lt; arr.length; i++) {
+            if (arr[i] &gt; max) {
+                max = arr[i];
+            }
+        }
+        int maxlength = (max + &quot;&quot;).length();
+        for (int i = 0,n = 1;i &lt; maxlength;i++,n *= 10){
+            for (int j = 0; j &lt; arr.length; j++) {
+                int a = arr[j] / n % 10;
+                bucket[a][element[a]] = arr[j];
+                element[a]++;
+            }
+
+            int index = 0;
+            for (int j = 0; j &lt; bucket.length; j++) {
+               if (element[j] != 0){
+                   for (int k = 0; k &lt; element[j]; k++) {
+                       arr[index++] = bucket[j][k];
+                   }
+               }
+               element[j] = 0;
+            }
+        }
+        if (min &lt; 0) {
+            for (int i = 0; i &lt; arr.length; i++) {
+                arr[i] += min;
+            }
+        }
+    }
+}
+</code></pre>
+
 
 	  
 <hr>
