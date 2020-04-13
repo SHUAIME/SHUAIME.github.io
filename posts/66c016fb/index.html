@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">archive_a: 2019/12 | YANSHUAI&#39;S BLOG</title>
+  <title itemprop="name">深入理解JVM | YANSHUAI&#39;S BLOG</title>
   
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/favicon/favicon.ico">
   
@@ -442,441 +442,459 @@ var _hmt = _hmt || [];
   </div>
 </header>
 
-      <!-- <div class="blank" style="padding-top: 75px;">
-</div> -->
-<div class="pattern-center-blank" style="padding-top: 75px;">
-</div>
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 
-    <div class="pattern-center-sakura">
-      <div class="pattern-attachment-img">
-        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/006.jpg" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
-      </div>
-      <header class="pattern-header ">
-        <h1 class="entry-title">
-        归档</h1>
-      </header>
+<div class="pattern-center-blank"></div>
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/019.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/019.jpg">
     </div>
-  
+    <header class="pattern-header single-header" style="text-shadow: 0 0 7px #000,0 0 7px #000">
+      <h1 class="entry-title">
+      深入理解JVM</h1>
+      <p class="entry-census">
+        <span>
+          <a href="">
+            <img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/YAN-PIC/avatar.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="">帅me</a>
+        </span>
+        <span class="bull">·</span>
+	
+        <span class="post-time">
+          <span class="post-meta-item-icon">
+            <i class="fa fa-calendar"></i>
+            <span class="post-meta-item-text"></span>
+            <span class="post-count">2020-1-30</span>
+          </span>
+        </span>
+	<span class="bull">·</span>
+
+	    <span class="bull"></span>
+    
+      <span><i class="fa fa-archive"></i> 分类于  
+        <span class="article-category"><a href="/categories/Java/" > Java</a></span>
+      
+    </span>
+    
+
+<span class="bull">·</span>
+	<span class="post-time">
+          <span class="post-meta-item-icon">
+            <i class="fa fa-eye" aria-hidden="true"></i>
+            
+          </span>
+	  <span id="busuanzi_value_page_pv"></span> 次阅读
+        </span>
+      
+      <span class="bull">·</span>
+      <span class="post-time">
+          <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <span class="post-meta-item-text">  字数统计: </span>
+            <span class="post-count">3.6k字</span>
+          </span>
+        </span>
+	<!--<span class="bull">·</span>
+        <span class="post-time">
+          <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <span class="post-meta-item-text">  阅读时长≈ </span>
+            <span class="post-count">12</span>
+          </span>
+        </span>-->
+	</p>
+
+            
+      
+    <div>
+          <ul class="spfk-ul">
+            &nbsp<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<li class="spfk-li"><span class="triangle"></span><a href="/tags/Java/" class="butterfly-tags">Java</a></li><li class="spfk-li"><span class="triangle"></span><a href="/tags/JVM/" class="butterfly-tags">JVM</a></li>
+          </ul>
+        </div>
+        <script>
+            function colorInit(c,num){for(var i=1;i<=num;++i)c.push(i+'');}
+            function paintTags(){
+                var colorNumber=8,tagColors=[],tags=document.getElementsByClassName('spfk-li');
+                for(var i = 0 ; i < tags.length ; ++i){
+                    if(!tagColors.length)colorInit(tagColors,colorNumber);
+                    var j=Math.floor(Math.random()*tagColors.length);
+                    tags[i].classList.add("spfk-color"+tagColors[j]);
+                    tagColors.splice(j,1);
+        }
+            }
+            paintTags()
+        </script>
+    
+
+
+
+    </header>
+  </div>
 
 <div id="content" class="site-content">
-  <div id="main">
-   <!-- <header class="page-header">
-      <h1 class="cat-title">
-      归档</h1>
-      <span class="cat-des">
-        <p>
-        Archives</p>
-      </span>
-    </header>-->
-    <div id="main-part">
-      <article class="art">
-        <div class="art-main">
-          <div class="art-content">
-            <div id="archives">
-              <p style="text-align:left;">
-  <button id="al_expand_collapse">
-    <style>
-    button#al_expand_collapse {
-        color: white;
-        border-radius: 16px;
-        font-weight: bold;
-        font-size: 15px;
-        background-color: #ff9100;
-        transition-duration: 0.3s;
-        box-shadow: 0 3px 8px 0 rgba(0,0,0,0.11), 0 3px 8px 0 rgba(0,0,0,0.11);
-        outline: none;
-    }
-    button#al_expand_collapse:hover {
-        transition: all 0.2s linear 0s;
-        background-color: #ff5900; 
-    }
-    </style>
-    <i class="fa fa-bars" aria-hidden="true"></i> 全部展开/收缩
-</button>
-</p>
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <blockquote>
+<p>写作时间：2019-10-10<img class="emoji-coda" src="https://cdn.jsdelivr.net/gh/TomoriCoda/hexo-tag-emojis-bycoda/emojis/2233/heshui.png"><br>实现目标：JVM解析与总结<br>涉及知识：JVM</p>
+</blockquote>
+<a id="more"></a>
+<p><img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/11/20200413085900.png" alt></p>
+<h1 id="JVM体系结构"><a href="#JVM体系结构" class="headerlink" title="JVM体系结构"></a>JVM体系结构</h1><h2 id="类装载器ClassLoader"><a href="#类装载器ClassLoader" class="headerlink" title="类装载器ClassLoader"></a>类装载器ClassLoader</h2><blockquote>
+<p>负责加载class文件，class文件在文件开头有特定的文件标示，将class文件字节码内容加载到内存中，并将这些内容转换成方法区中的运行时数据结构并且ClassLoader只负责class文件的加载，至于它是否可以运行，则由执行引擎(Execution Engine)决定 </p>
+</blockquote>
+<pre><code class="java">虚拟机自带的加载器
+    启动类加载器（Bootstrap）C++
+    扩展类加载器（Extension）Java
+    应用程序类加载器（AppClassLoader）Java也叫系统类加载器，加载当前应用的classpath的所有类
+    用户自定义加载器  Java.lang.ClassLoader的子类，用户可以定制类的加载方式
 
-              
-              
-              
-              
-              
-                
-                <h3 class="al_year">2020年</h3>
-              
-              
-                
-                <ul class="al_mon_list">
-                  <li class="al_li">
-                    <span class="al_mon" style="cursor: s-resize;">
-                      04月(<span id="post-num">
-                      3</span>
-                    篇文章)</span>
-                    <ul class="al_post_list" style="">
-              
-                      <li>
-                        <a href="/posts/5124f222/">
-                          <span style="color:#0bf;">
-                          04日17:13:09</span>
-                          排序算法
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/2362a8ea/">
-                          <span style="color:#0bf;">
-                          02日21:35:15</span>
-                          链表
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/6d016bf8/">
-                          <span style="color:#0bf;">
-                          01日20:43:35</span>
-                          稀疏数组和队列
-                        </a>
-                      </li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              
-              
-              
-              
-              
-              
-                
-                <ul class="al_mon_list">
-                  <li class="al_li">
-                    <span class="al_mon" style="cursor: s-resize;">
-                      03月(<span id="post-num">
-                      3</span>
-                    篇文章)</span>
-                    <ul class="al_post_list" style="">
-              
-                      <li>
-                        <a href="/posts/52e60ff2/">
-                          <span style="color:#0bf;">
-                          15日20:13:24</span>
-                          设计模式七大原则
-                        </a>
-                      </li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              
-              
-              
-              
-              
-              
-                
-                <ul class="al_mon_list">
-                  <li class="al_li">
-                    <span class="al_mon" style="cursor: s-resize;">
-                      01月(<span id="post-num">
-                      3</span>
-                    篇文章)</span>
-                    <ul class="al_post_list" style="">
-              
-                      <li>
-                        <a href="/posts/66c016fb/">
-                          <span style="color:#0bf;">
-                          30日11:41:02</span>
-                          深入理解JVM
-                        </a>
-                      </li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              
-              
-              
-              
-              
-                
-                <h3 class="al_year">2019年</h3>
-              
-              
-                
-                <ul class="al_mon_list">
-                  <li class="al_li">
-                    <span class="al_mon" style="cursor: s-resize;">
-                      12月(<span id="post-num">
-                      3</span>
-                    篇文章)</span>
-                    <ul class="al_post_list" style="">
-              
-                      <li>
-                        <a href="/posts/bcab918b/">
-                          <span style="color:#0bf;">
-                          28日10:00:10</span>
-                          JDK8新特性
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/4decbe97/">
-                          <span style="color:#0bf;">
-                          01日15:47:28</span>
-                          Java总结篇...
-                        </a>
-                      </li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              
-              
-              
-              
-              
-              
-                
-                <ul class="al_mon_list">
-                  <li class="al_li">
-                    <span class="al_mon" style="cursor: s-resize;">
-                      11月(<span id="post-num">
-                      3</span>
-                    篇文章)</span>
-                    <ul class="al_post_list" style="">
-              
-                      <li>
-                        <a href="/posts/f0580ace/">
-                          <span style="color:#0bf;">
-                          17日22:05:21</span>
-                          Spring Boot项目接入QQ登录教程
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/33f411d/">
-                          <span style="color:#0bf;">
-                          15日14:00:15</span>
-                          Spring Cloud Netflix
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/accb903d/">
-                          <span style="color:#0bf;">
-                          06日14:17:09</span>
-                          Spring Data JPA
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/db30a45/">
-                          <span style="color:#0bf;">
-                          01日12:56:14</span>
-                          Intellij IDEA破解
-                        </a>
-                      </li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              
-              
-              
-              
-              
-              
-                
-                <ul class="al_mon_list">
-                  <li class="al_li">
-                    <span class="al_mon" style="cursor: s-resize;">
-                      10月(<span id="post-num">
-                      3</span>
-                    篇文章)</span>
-                    <ul class="al_post_list" style="">
-              
-                      <li>
-                        <a href="/posts/4bb9769b/">
-                          <span style="color:#0bf;">
-                          30日09:38:18</span>
-                          MySQL保存emoji表情
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/27ace9d5/">
-                          <span style="color:#0bf;">
-                          25日20:14:39</span>
-                          Spring Security
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/8fa64eaf/">
-                          <span style="color:#0bf;">
-                          23日17:40:56</span>
-                          AngularJS
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/3d6301c1/">
-                          <span style="color:#0bf;">
-                          20日18:38:36</span>
-                          Docker容器化
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/531cd44d/">
-                          <span style="color:#0bf;">
-                          19日17:00:00</span>
-                          使用 Github Pages 和 Hexo 搭建自己的独立博客
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/ac21c0cc/">
-                          <span style="color:#0bf;">
-                          12日14:47:09</span>
-                          Java学习篇之IO流
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/4ad2c499/">
-                          <span style="color:#0bf;">
-                          11日14:46:52</span>
-                          Java学习篇之多线程
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/e937c3c0/">
-                          <span style="color:#0bf;">
-                          10日14:40:07</span>
-                          Java学习篇之集合篇
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/4a17b156/">
-                          <span style="color:#0bf;">
-                          01日12:40:07</span>
-                          Hello World
-                        </a>
-                      </li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              
-              
-              
-              
-              
-                
-                <h3 class="al_year">2018年</h3>
-              
-              
-                
-                <ul class="al_mon_list">
-                  <li class="al_li">
-                    <span class="al_mon" style="cursor: s-resize;">
-                      12月(<span id="post-num">
-                      3</span>
-                    篇文章)</span>
-                    <ul class="al_post_list" style="">
-              
-                      <li>
-                        <a href="/posts/186f70d4/">
-                          <span style="color:#0bf;">
-                          12日22:16:01</span>
-                          Hexo-Theme-Sakura
-                        </a>
-                      </li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              
-              
+</code></pre>
+<h3 id="双亲委派"><a href="#双亲委派" class="headerlink" title="双亲委派"></a>双亲委派</h3><blockquote>
+<p>当一个类收到了类加载请求，他首先不会尝试自己去加载这个类，而是把这个请求委派给父类去完成，每一个层次类加载器都是如此，因此所有的加载请求都应该传送到启动类加载其中，只有当父类加载器反馈自己无法完成这个请求的时，子类加载器才会尝试自己去加载。</p>
+<p>采用双亲委派的一个好处是比如加载位于 rt.jar 包中的类 java.lang.Object，不管是哪个加载器加载这个类，最终都是委托给顶层的启动类加载器进行加载，这样就保证了使用不同的类加载器最终得到的都是同样一个 Object对象。</p>
+</blockquote>
+<h2 id="执行引擎Execution-Engine"><a href="#执行引擎Execution-Engine" class="headerlink" title="执行引擎Execution Engine"></a>执行引擎Execution Engine</h2><blockquote>
+<p>负责解释命令，提交操作系统执行。</p>
+</blockquote>
+<h2 id="本地接口Native-Interface"><a href="#本地接口Native-Interface" class="headerlink" title="本地接口Native Interface"></a>本地接口Native Interface</h2><blockquote>
+<p>本地接口的作用是融合不同的编程语言为 Java 所用，初衷是为了融合 C/C++程序，Java 诞生时是 C/C++横行的时候，要想立足，必须有调用 C/C++程序，于是就在内存中专门开辟了一块区域处理标记为native的代码，它的具体做法是 Native Method Stack中登记 native方法，在Execution Engine 执行时加载native libraies。</p>
+</blockquote>
+<h2 id="PC寄存器PC-Register"><a href="#PC寄存器PC-Register" class="headerlink" title="PC寄存器PC Register"></a>PC寄存器PC Register</h2><blockquote>
+<p>每个线程启动的时候，都会创建一个PC(Program Counter ,程序计数器)寄存器。PC寄存器里保存有当前正在执行的JVM指令的地址。<br>程序计数器是一块较小的内存空间，它的作用可以看作是当前线程所执行的字节码的行号指示器。</p>
+</blockquote>
+<h2 id="本地方法栈Native-Method-Stack"><a href="#本地方法栈Native-Method-Stack" class="headerlink" title="本地方法栈Native Method Stack"></a>本地方法栈Native Method Stack</h2><blockquote>
+<p>具体做法是Native Method Stack中登记native方法，在Execution Engine 执行时加载本地方法库</p>
+</blockquote>
+<h2 id="方法区Method-Area"><a href="#方法区Method-Area" class="headerlink" title="方法区Method Area"></a>方法区Method Area</h2><blockquote>
+<p>方法区也是所有线程共享区，用于存储已被虚拟机加载的类信息、常量、静态变量、即时编译后的代码等数据。</p>
+</blockquote>
+<pre><code class="java">存储内容
+    类型信息 这个类型的全限定名 这个类型的直接超类的全限定名 这个类型是类类型还是接口类型 这个类型的访问修饰              符 任何直接超接口的全限定名的有序列表
+    字段信息 字段名 字段类型 字段的修饰符
+    方法信息 方法名 方法返回类型 方法参数的数量和类型（按照顺序） 方法的修饰符
+    方法列表（Method Tables ）
+    常量池
+</code></pre>
+<h2 id="栈Stack"><a href="#栈Stack" class="headerlink" title="栈Stack"></a>栈Stack</h2><blockquote>
+<p>栈也叫栈内存，主管Java程序的运行，是在线程创建时创建，它的生命期是跟随线程的生命期，线程结束栈内存也就释放，<strong>对于栈来说不存在垃圾回收问题</strong>，只要线程一结束该栈就Over，生命周期和线程一致，是线程私有的。8种基本类型的变量+对象的引用变量+实例方法都是在函数的栈内存中分配。</p>
+<p>遵循“先进后出”/“后进先出”原则</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/11/20200413104300.png" alt></p>
+<blockquote>
+<p>每个方法执行的同时都会创建一个栈帧，用于存储局部变量表、操作数栈、动态链接、方法出口等信息，每一个方法从调用直至执行完毕的过程，就对应着一个栈帧在虚拟机中入栈到出栈的过程。</p>
+</blockquote>
+<h2 id="堆Heap"><a href="#堆Heap" class="headerlink" title="堆Heap"></a>堆Heap</h2><blockquote>
+<p>Java堆是被所有线程共享的一块内存区域，在虚拟机启动时创建。此内存区域的唯一目的就是存放对象实例，几乎所有的对象实例都在这里分配内存</p>
+</blockquote>
+<pre><code class="java">堆内存逻辑上分为三部分:
+    1) 新生代Young Generation:
+        Eden:
+            大部分新生的对象创建区
+            超过一定内存空间会转移到 Survivor区
+        form to:
+            Space(S0) Space(S1)
+    2) 年老代:  年轻代的对象如果能够挺过数次收集，就会进入年老代
+    3) 永久代元空间
+</code></pre>
+<h1 id="垃圾回收GC"><a href="#垃圾回收GC" class="headerlink" title="垃圾回收GC"></a>垃圾回收GC</h1><blockquote>
+<p>简单的说就是内存中已经不再被使用到的空间就是垃圾</p>
+</blockquote>
+<h2 id="判断对象的存活"><a href="#判断对象的存活" class="headerlink" title="判断对象的存活"></a>判断对象的存活</h2><h3 id="引用计数"><a href="#引用计数" class="headerlink" title="引用计数"></a>引用计数</h3><blockquote>
+<p>给每个对象设置一个计数器，当有地方引用这个对象的时候，计数器+1，当引用失效的时候，计数器-1，当计数器为0的时候，JVM就认为对象不再被使用，是“垃圾”了。</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/11/20200413113036.png" alt></p>
+<h3 id="可达性分析"><a href="#可达性分析" class="headerlink" title="可达性分析"></a>可达性分析</h3><pre><code class="java">来判定对象是否存活的。这个算法的基本思路就是通过一系列的称为“GC Roots”的对象作为起始点，从这些节点开始向下搜索，搜索所走过的路径称为引用链（Reference Chain），当一个对象到GC Roots没有任何引用链相连时，则证明此对象是不可用的。
+作为GC Roots的对象包括下面几种：
+    1. 虚拟机栈（栈帧中的本地变量表）中引用的对象。
+    2. 方法区中类静态属性引用的对象。
+    3. 方法区中常量引用的对象。
+    4. 本地方法栈中JNI（即一般说的Native方法）引用的对象。
+</code></pre>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><pre><code class="java">强引用
+    一般的Object obj = new Object() ，就属于强引用。
+
+软引用 SoftReference
+    一些有用但是并非必需，用软引用关联的对象，系统将要发生OOM之前，这些对象就会被回收。
+
+弱引用 WeakReference
+    一些有用（程度比软引用更低）但是并非必需，用弱引用关联的对象，只能生存到下一次垃圾回收之前，GC发生时，不管内存够不够，都会被回收。
+
+虚引用 PhantomReference
+    幽灵引用，最弱，被垃圾回收的时候收到一个通知
+</code></pre>
+<h2 id="GC算法"><a href="#GC算法" class="headerlink" title="GC算法"></a>GC算法</h2><h3 id="复制算法"><a href="#复制算法" class="headerlink" title="复制算法"></a>复制算法</h3><blockquote>
+<p>复制算法是把内存分成大小相等的两块，每次使用其中一块，当垃圾回收的时候，把存活的对象复制到另一块上，然后把这块内存整个清理掉</p>
+</blockquote>
+<p><code>年轻代中使用的是Minor GC，这种GC算法采用的是复制算法(Copying)</code></p>
+<blockquote>
+<p>在GC开始的时候，对象只会存在于Eden区和名为“From”的Survivor区，Survivor区“To”是空的。紧接着进行GC，Eden区中所有存活的对象都会被复制到“To”，而在“From”区中，仍存活的对象会根据他们的年龄值来决定去向。年龄达到一定值(年龄阈值，可以通过-XX:MaxTenuringThreshold来设置,默认值是 15)的对象会被移动到年老代中，没有达到阈值的对象会被复制到“To”区域。经过这次GC后，Eden区和From区已经被清空。这个时候，“From”和“To”会交换他们的角色，也就是新的“To”就是上次GC前的“From”，新的“From”就是上次GC前的“To”。</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/11/20200413122608.png" alt></p>
+<p><code>优点</code>:运行效率高,没有内存碎片。 <code>缺点</code>：需要双倍空间，造成内存的利用率不高</p>
+<h3 id="标记清除"><a href="#标记清除" class="headerlink" title="标记清除"></a>标记清除</h3><blockquote>
+<p>标记清除算法，就是当程序运行期间，若可以使用的内存被耗尽的时候，GC线程就会被触发并将程序暂停，随后将要回收的对象标记一遍，最终统一回收这些对象，完成标记清理工作接下来便让应用程序恢复运行。缺点：此算法需要暂停整个应用，会产生内存碎片</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/11/20200413124716.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/11/20200413124811.png" alt></p>
+<p><code>优点</code>:不需要额外空间。 <code>缺点</code>：此算法需要暂停整个应用，会产生内存碎片 </p>
+<h3 id="标记整理"><a href="#标记整理" class="headerlink" title="标记整理"></a>标记整理</h3><blockquote>
+<p>在标记阶段，确定所有要回收的对象，并做标记。存活对象往内存的一端移动，然后直接回收边界以外的内存。</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/22/20200413125213.png" alt></p>
+<p><code>优点</code>:不需要额外空间。 <code>缺点</code>：实现复杂，开销大</p>
+<h3 id="分代回收算法"><a href="#分代回收算法" class="headerlink" title="分代回收算法"></a>分代回收算法</h3><blockquote>
+<p>根据对象的存活周期的不同将内存划分为几块。一般把java堆分为新生代和老年代，这样就可以根据各个年代的特点采用最适当的收集算法。在新生代，选用复制算法，只需要付出少量存活对象的复制成本就可以完成收集。而老年代中因为对象存活率高、没有额外空间对他进行分配担保，就必须使用“标记-整理”算法进行回收。</p>
+</blockquote>
+<h1 id="GC垃圾回收器"><a href="#GC垃圾回收器" class="headerlink" title="GC垃圾回收器"></a>GC垃圾回收器</h1><blockquote>
+<p>GC算法（引用计数/复制/标清/标整）是内存回收的方法论，垃圾收集器就是算法落地实现</p>
+</blockquote>
+<p><code>分类</code></p>
+<p><code>串行垃圾回收器（Serial）</code>:    它为单线程环境设计并且只使用一个线程进行垃圾回收，会暂停所有的用户线程。所以不适合服务器环境</p>
+<p><code>并行垃圾回收器（Parallel）</code>:    多个垃圾回收线程并行工作，此时用户线程是暂停的，适用于科学计算/大数据处理等弱交互场景</p>
+<p><code>并发垃圾回收器（CMS）</code>:    用户线程和垃圾收集线程同时执行（不一定是并行，可能交替执行），不需要停顿用户线程互联网公司多用它，适用于对响应时间有要求的场景</p>
+<p><code>G1垃圾回收器</code>:    G1垃圾回收器将堆内存分割成不同的区域然后并发的对其进行垃圾回收</p>
+<p><code>查看默认的垃圾回收器</code>:</p>
+<p><code>java -XX:+PrintCommandLineFlags -version</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/22/171722f00d05e592.jpg" alt></p>
+<p>`垃圾收集器底层配置代码</p>
+<p><img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/22/171728b6963a4620.jpg" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/22/171726c31fcef8a9.jpg" alt></p>
+<h2 id="G1垃圾回收器"><a href="#G1垃圾回收器" class="headerlink" title="G1垃圾回收器"></a>G1垃圾回收器</h2><p><code>以前收集器特点</code>:    年轻代和老年代是各自独立且连续的内存块、年轻代收集使用单eden+S0 +S1进行复制算法、老年代收集必须扫描整个老年代区域、都是以尽可能少而快速地执行GC为设计原则</p>
+<blockquote>
+<p>G1能充分利用多CPU、多核环境硬件优势，尽量缩短STW(Stop The World)。</p>
+<p>G1整体上采用标记-整理算法，局部是通过复制算法，不会产生内存碎片。</p>
+<p>宏观上看G1之中不再区分年轻代和老年代。把内存划分成多个独立的子区域(Region)， 可以近似理解为一个围棋的棋盘。</p>
+<p>G1收集器里面讲整个的内存区都混合在一起了，但其本身依然在小范围内要进行年轻代和老年代的区分，保留了新生代和老年代，但它们不再是物理隔离的，而是-I部分Region的集合且不需要Region是连续的，也就是说依然会采用不同的GC方式来处理不同的区域。</p>
+<p>G1虽然也是分代收集器，但整个内存分区不存在物理上的年轻代与老年代的区别，也不需要完全独立的 survivor(tospace)堆做复制准备。G1只有逻辑上的分代概念，或者说每个分区都可能随G1的运行在不同代之间前后切换;</p>
+</blockquote>
+<p><code>G1回收过程</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/22/1717288ce302624c.jpg" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/22/171728a33d22fc8c.jpg" alt></p>
+<h1 id="JVM的参数"><a href="#JVM的参数" class="headerlink" title="JVM的参数"></a>JVM的参数</h1><h2 id="参数类型"><a href="#参数类型" class="headerlink" title="参数类型"></a>参数类型</h2><pre><code class="java">标配参数:
+    - version
+    - help
+
+X参数:
+    -Xint    解释执行    
+    -Xcomp    第一次使用就编译成本地代码
+    -Xmixed    混合模式
+
+XX参数:
+    Boolean类型: 公式  ==&gt; -XX: +或者- 某一个值(+表示开启 -表示关闭)
+        -XX:+printGCDetails 是否打印GC收集细节
+        -XX：-UseSerialGC   是否使用串行垃圾收集器
+    KV设值类型:  公式   ==&gt;  -XX：属性key=属性值value
+        -XX:MetaspaceSize=128m
+        -XX:MaxTenuringThreshold=15
+    jinfo查看当前运行程序的配置:  jinfo -flag 配置项 进程编号
+</code></pre>
+<h2 id="常用配置"><a href="#常用配置" class="headerlink" title="常用配置"></a>常用配置</h2><p><code>-Xms</code>:    初始大小内存，默认为物理内存1/64(等价于-XX:InitialHeapSize)</p>
+<p><code>-Xmx</code>:    最大分配内存，默认为物理内存1/4(等价于-XX:MaxHeapSize)</p>
+<p><code>-Xss</code>:    设置单个线程的大小，一般默认为512K~1024K(等价于-XX:ThreadStackSize)</p>
+<p><code>-Xmn</code>:    设置年轻代大小，一般都不用设置，一般都是用默认的即可</p>
+<p><code>-XX:MetaspaceSize</code>:    设置元空间大小</p>
+<p><code>-XX:+PrintGCDetails</code>:    输出详细GC收集日志信息</p>
+<p><code>-XX:SurvivoRatio</code>:    设置新生代中eden和s0/s1空间比</p>
+<p><code>-XX:NewRatio</code>:    配置年轻代与老年代在堆中的比例</p>
+<p><code>-XX:MaxTenuringThreshold</code>:    设置垃圾最大年龄</p>
+<h1 id="OOM"><a href="#OOM" class="headerlink" title="OOM"></a>OOM</h1><blockquote>
+<p>全称“Out Of Memory”，翻译成中文就是“内存用完了”，来源于java.lang.OutOfMemoryError。 当JVM因为没有足够的内存来为对象分配空间并且垃圾回收器也已经没有空间可回收时，就会抛出这个error</p>
+</blockquote>
+<p><code>Java.lang.StackOverflowError</code>:    栈溢出错误 </p>
+<p><code>Java.lang.OutOfMemoryError:Java heap space</code>:    堆内存不够用</p>
+<p><code>Java.lang.OutOfMemeoryError:GC overhead limit exceeded</code>:    程序在垃圾回收上花费了98%的时间，却收集不回2%的空间，通常这样的异常伴随着CPU的冲高</p>
+<p><code>Java.lang.OutOfMemeoryError:Direct buffer memory</code>:    导致原因:写NIO程序经常使那ByteBuffer来读取或者写入数据, 这是一 种基于通道(Channel)与缓冲区(Buffer)的I/0方式,它可以使用Native函数库直接分配堆外内存，然后通过一个存储在Java堆里面的DirectByteBuffer对象作为这块内存的引用进行操作。这样能在一 些场景中显著提高性能， 因为避免了在Java堆和Native堆中来回复制数据。</p>
+<p><code>Java.lang.OutOfMemeoryError:unable to create new native thread</code>:    导致原因:你的应用创建了太多线程了,一个应用进程创建多 个线程,超过系统承戴极限你的服务器并不允许你的应用程序创建这么多线程, linux.系统默认允许单个进程可l以创建的线程数是1024个,你的应用创建超过这个数量,就会报java. lang. OutOfMemoryError: unable to create new native thread</p>
+<p><code>Java.lang.OutOfMemeoryError:Metaspace</code>:    元空间溢出</p>
+
+
+	  
+<hr>
+<center><img class="lazyload" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/ctz45562/cdn@1.7.9/lazyload.gif" data-src="https://cdn.jsdelivr.net/gh/ctz45562/cdn@2.0.3/emojis/gif/23.gif"></center>
+<p style="font-size:32px;text-align:center;margin-top:-2px">施工中...</p>
+
+
+        </div>
+        <!-- .entry-content -->
+        <!--<div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN//img/custom/donate/AliPayQR.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN//img/custom/donate/WeChanQR.jpg"></li>
+              </ul>
             </div>
           </div>
-        </div>
-      </article>
+        </div>-->
+
+	<!-- 写后感言与打赏 -->	
+	<div id="reward">
+  
+  <div>您的喜欢是作者写作最大的动力！❤️</div>
+  
+  <div class="reward">
+    <a href="https://github.com/SHUAIME" target="_blank" class=" tr3" title="Github"><span
+        id="github"></span></a>
+    <ul id="RewardBox" class="list pos-f tr3">
+      
+      <li id="PayPal" title="PayPal打赏"><a href="https://paypal.me/SHUAIME" target="_blank">PayPal</a></li>
+      
+      
+      <li id="AliPayOR" title="支付宝打赏">AliPay</li>
+      
+      
+      <li id="WeChatPayOR" title="微信打赏">WeChatPay</li>
+      
+      
+      <li id="QQPayOR" title="QQ打赏">QQPay</li>
+      
+    </ul>
+    <div id="RewardText" class="tr3">YAN</div>
+    <div id="QRBox" class="pos-f left-100">
+      <div id="MainBox"></div>
     </div>
   </div>
 </div>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+<script>
+  jQuery(document).ready(function () {
+    var QRBox = $('#QRBox');
+    var MainBox = $('#MainBox');
+    var AliPayOR = 'https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/YAN-PIC/AliPayQR.png';
+    var WeChatPayOR = 'https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/YAN-PIC/WeChatQR.png';
+    var QQPayOR = 'https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/YAN-PIC/QQPayQR.png';
+
+    function showQR(QR) {
+      if (QR) {
+        MainBox.css('background-image', 'url(' + QR + ')');
+      }
+      $('#RewardText,#RewardBox,#github').addClass('blur');
+      QRBox.fadeIn(300, function (argument) {
+        MainBox.addClass('showQR');
+      });
+    }
+
+    $('#RewardBox>li').click(function (event) {
+      var thisID = $(this).attr('id');
+      if (thisID === 'AliPayOR') {
+        showQR(AliPayOR);
+      } else if (thisID === 'WeChatPayOR') {
+        showQR(WeChatPayOR);
+      } else if (thisID === 'QQPayOR') {
+        showQR(QQPayOR);
+      }
+    });
+
+    MainBox.click(function (event) {
+      MainBox.removeClass('showQR').addClass('hideQR');
+      setTimeout(function (a) {
+        QRBox.fadeOut(300, function (argument) {
+          MainBox.removeClass('hideQR');
+        });
+        $('#RewardText,#RewardBox,#github').removeClass('blur');
+      }, 600);
+
+    });
+  });
+</script>
+
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/posts/52e60ff2/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/014.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/014.jpg">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                设计模式七大原则</h3>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/posts/bcab918b/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/007.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/007.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                JDK8新特性</h3>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+
+  <script src="https://cdn.jsdelivr.net/gh/yremp/yremp-js@1.1/gitalk.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yremp/yremp-css@1.3/gitalk.css">
+  <div id="gitalk-container"></div>
+  
+  <script type="text/javascript">
+      var gitalk = new Gitalk({
+          clientID: 'a0b1fd1a8f289cb82280',
+          clientSecret: 'e740e2de5477da76dafea57903a04fd58f672398',
+          id: window.location.pathname,
+          repo: 'Comment',
+          owner: 'SHUAIME',
+          admin: 'SHUAIME'
+      })
+      gitalk.render('gitalk-container')
+    </script>
+
+      <!-- <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+          <a href="" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/YAN-PIC/avatar.jpg" itemprop="image" alt="帅me" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="" itemprop="url" rel="author">帅me</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i></p>
+      </section> -->
+    </main><!-- #main -->
+  </div><!-- #primary -->
+</div>
+
+
+
+
 
     </div>    
     <div class="ins-search">
