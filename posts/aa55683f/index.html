@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">设计模式七大原则 | YANSHUAI&#39;S BLOG</title>
+  <title itemprop="name">JUC | YANSHUAI&#39;S BLOG</title>
   
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/favicon/favicon.ico">
   
@@ -449,11 +449,11 @@ var _hmt = _hmt || [];
 
   <div class="pattern-center single-center">
     <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/014.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/014.jpg">
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/020.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/020.jpg">
     </div>
     <header class="pattern-header single-header" style="text-shadow: 0 0 7px #000,0 0 7px #000">
       <h1 class="entry-title">
-      设计模式七大原则</h1>
+      JUC</h1>
       <p class="entry-census">
         <span>
           <a href="">
@@ -469,7 +469,7 @@ var _hmt = _hmt || [];
           <span class="post-meta-item-icon">
             <i class="fa fa-calendar"></i>
             <span class="post-meta-item-text"></span>
-            <span class="post-count">2020-3-15</span>
+            <span class="post-count">2020-2-14</span>
           </span>
         </span>
 	<span class="bull">·</span>
@@ -478,7 +478,6 @@ var _hmt = _hmt || [];
     
       <span><i class="fa fa-archive"></i> 分类于  
         <span class="article-category"><a href="/categories/Java/" > Java</a></span>
-      <span class="article-category"><a href="/categories/设计模式/" > 设计模式</a></span>
       
     </span>
     
@@ -497,7 +496,7 @@ var _hmt = _hmt || [];
           <span class="post-meta-item-icon">
             <i class="fa fa-keyboard-o"></i>
             <span class="post-meta-item-text">  字数统计: </span>
-            <span class="post-count">4.8k字</span>
+            <span class="post-count">4.9k字</span>
           </span>
         </span>
 	<!--<span class="bull">·</span>
@@ -505,7 +504,7 @@ var _hmt = _hmt || [];
           <span class="post-meta-item-icon">
             <i class="fa fa-hourglass-half"></i>
             <span class="post-meta-item-text">  阅读时长≈ </span>
-            <span class="post-count">20</span>
+            <span class="post-count">23</span>
           </span>
         </span>-->
 	</p>
@@ -514,7 +513,7 @@ var _hmt = _hmt || [];
       
     <div>
           <ul class="spfk-ul">
-            &nbsp<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<li class="spfk-li"><span class="triangle"></span><a href="/tags/Java/" class="butterfly-tags">Java</a></li><li class="spfk-li"><span class="triangle"></span><a href="/tags/设计模式/" class="butterfly-tags">设计模式</a></li>
+            &nbsp<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<li class="spfk-li"><span class="triangle"></span><a href="/tags/Java/" class="butterfly-tags">Java</a></li><li class="spfk-li"><span class="triangle"></span><a href="/tags/JUC/" class="butterfly-tags">JUC</a></li>
           </ul>
         </div>
         <script>
@@ -545,634 +544,887 @@ var _hmt = _hmt || [];
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <p>编写软件过程中，程序员面临着来自耦合性，内聚性以及可维护性，可扩展性，重用性，灵活性等多方面的<br>挑战，设计模式是为了让程序(软件)<img class="emoji-coda" src="https://cdn.jsdelivr.net/gh/TomoriCoda/hexo-tag-emojis-bycoda/emojis/luotianyi/可以.png"></p>
+          <blockquote>
+<p>写作时间：2020-02-14<img class="emoji-coda" src="https://cdn.jsdelivr.net/gh/TomoriCoda/hexo-tag-emojis-bycoda/emojis/2233/heshui.png"><br>实现目标：JUC解析与总结<br>涉及知识：JUC</p>
+</blockquote>
 <a id="more"></a>
-<h2 id="设计模式的目的"><a href="#设计模式的目的" class="headerlink" title="设计模式的目的"></a>设计模式的目的</h2><pre><code>1) 代码重用性 (即：相同功能的代码，不用多次编写)
-2) 可读性 (即：编程规范性, 便于其他程序员的阅读和理解)
-3) 可扩展性 (即：当需要增加新的功能时，非常的方便，称为可维护)
-4) 可靠性 (即：当我们增加新的功能后，对原来的功能没有影响)
-5) 使程序呈现高内聚，低耦合的特性
-分享金句：
-6) 设计模式包含了面向对象的精髓，“懂了设计模式，你就懂了面向对象分析和设计（OOA/D）的精要”
-7) Scott Mayers 在其巨著《Effective C++》就曾经说过：C++老手和 C++新手的区别就是前者手背上有很多伤疤
-</code></pre><h2 id="设计模式七大原则"><a href="#设计模式七大原则" class="headerlink" title="设计模式七大原则"></a>设计模式七大原则</h2><p>设计模式原则，其实就是程序员在编程时，应当遵守的原则，也是各种设计模式的基础(即：设计模式为什么<br>这样设计的依据)</p>
-<blockquote>
-<p>设计模式常用的七大原则有: </p>
+<h1 id="什么是JUC"><a href="#什么是JUC" class="headerlink" title="什么是JUC"></a>什么是JUC</h1><p><img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/22/juc.png" alt></p>
+<h1 id="进程和线程"><a href="#进程和线程" class="headerlink" title="进程和线程"></a>进程和线程</h1><blockquote>
+<p>进程：进程是一个具有一定独立功能的程序关于某个数据集合的一次运行活动。它是操作系统动态执行的基本单元，在传统的操作系统中，进程既是基本的分配单元，也是基本的执行单元。</p>
+<p>线程：通常在一个进程中可以包含若干个线程，当然一个进程中至少有一个线程，不然没有存在的意义。线程可以利用进程所拥有的资源，在引入线程的操作系统中，通常都是把进程作为分配资源的基本单位，而把线程作为独立运行和独立调度的基本单位，由于线程比进程更小，基本上不拥有系统资源，故对它的调度所付出的开销就会小得多，能更高效的提高系统多个程序间并发执行的程度。</p>
 </blockquote>
-<pre><code>1) 单一职责原则
-2) 接口隔离原则
-3) 依赖倒转(倒置)原则
-4) 里氏替换原则
-5) 开闭原则
-6) 迪米特法则
-7) 合成复用原则
-</code></pre><h2 id="【单一职责原则】"><a href="#【单一职责原则】" class="headerlink" title="【单一职责原则】"></a>【单一职责原则】</h2><h3 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h3><p>对类来说的，即一个类应该只负责一项职责。如类A负责两个不同职责：职责 1，职责 2。当职责 1 需求变更<br>而改变A时，可能造成职责 2 执行错误，所以需要将类A的粒度分解为A1，A2</p>
-<h3 id="应用实例"><a href="#应用实例" class="headerlink" title="应用实例"></a>应用实例</h3><blockquote>
-<p>以交通工具案例讲解</p>
+<h2 id="线程状态"><a href="#线程状态" class="headerlink" title="线程状态"></a>线程状态</h2><pre><code class="java">public enum State {
+    // 新生
+    NEW,
+    // 运行
+    RUNNABLE,
+    // 阻塞
+    BLOCKED,
+    // 等待，死死地等
+    WAITING,
+    // 超时等待
+    TIMED_WAITING,
+    // 终止
+    TERMINATED;
+}
+</code></pre>
+<h2 id="并发和并行"><a href="#并发和并行" class="headerlink" title="并发和并行"></a>并发和并行</h2><blockquote>
+<p>并发：同一时刻多个线程在访问同一个资源，多个线程对一个点</p>
+<p>并行：多项工作一起执行，之后再汇总</p>
 </blockquote>
-<pre><code class="java">//方案 1 [分析说明]
-package com.yan.principle.singleresponsibility;
-public class SingleResponsibility1 {
+<h1 id="Lock锁"><a href="#Lock锁" class="headerlink" title="Lock锁"></a>Lock锁</h1><p><code>Synchronized 版</code></p>
+<pre><code class="java">package com.yan;
+
+public class SaleTicket {
     public static void main(String[] args) {
-        Vehicle vehicle = new Vehicle();
-        vehicle.run(&quot;摩托车&quot;);
-        vehicle.run(&quot;汽车&quot;);
-        vehicle.run(&quot;飞机&quot;);
+        // 线程   操作  资源类
+        Ticket ticket = new Ticket();
+
+        new Thread(() -&gt; {
+            for (int i = 1; i &lt; 30; i++) {
+                ticket.sale();
+            }
+        }, &quot;A&quot;).start();
+        new Thread(() -&gt; {
+            for (int i = 1; i &lt; 30; i++) {
+                ticket.sale();
+            }
+        }, &quot;B&quot;).start();
+        new Thread(() -&gt; {
+            for (int i = 1; i &lt; 30; i++) {
+                ticket.sale();
+            }
+        }, &quot;C&quot;).start();
     }
-}
-// 交通工具类
-// 方式 1
-// 1. 在方式 1 的 run 方法中，违反了单一职责原则
-// 2. 解决的方案非常的简单，根据交通工具运行方法不同，分解成不同类即可
-class Vehicle {
-    public void run(String vehicle) {
-        System.out.println(vehicle + &quot; 在公路上运行....&quot;);
+} //资源类
+class Ticket {
+
+    private int number = 30;
+
+    // 卖票的方式
+    public synchronized void sale() {
+        if (number &gt; 0) {
+            System.out.println(Thread.currentThread().getName() + &quot;卖出第&quot; + (number --) + &quot;张票,  剩余：&quot; + number);
+        }
     }
 }
 </code></pre>
-<pre><code class="java">//方案 2 [分析说明]
-package com.yan.principle.singleresponsibility;
-public class SingleResponsibility3 {
+<p><code>Lock版</code></p>
+<pre><code class="java">package com.yan;
+
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
+public class SaleTicket {
     public static void main(String[] args) {
-        Vehicle2 vehicle2 = new Vehicle2();
-        vehicle2.run(&quot;汽车&quot;);
-        vehicle2.runWater(&quot;轮船&quot;);
-        vehicle2.runAir(&quot;飞机&quot;);
+// 并发：多线程操作同一个资源类, 把资源类丢入线程
+        Ticket ticket = new Ticket();
+// @FunctionalInterface 函数式接口，jdk1.8 lambda表达式 (参数)-&gt;{ 代码 }
+        new Thread(()-&gt;{for (int i = 1; i &lt; 40 ; i++)
+            ticket.sale();},&quot;A&quot;).start();
+        new Thread(()-&gt;{for (int i = 1; i &lt; 40 ; i++)
+            ticket.sale();},&quot;B&quot;).start();
+        new Thread(()-&gt;{for (int i = 1; i &lt; 40 ; i++)
+            ticket.sale();},&quot;C&quot;).start();
     }
 }
-//1. 这种修改方法没有对原来的类做大的修改，只是增加方法
-//2. 这里虽然没有在类这个级别上遵守单一职责原则，但是在方法级别上，仍然是遵守单一职责
-class Vehicle2 {
-    public void run(String vehicle) {
-        //处理
-        System.out.println(vehicle + &quot; 在公路上运行....&quot;);
-    }
-    public void runAir(String vehicle) {
-            System.out.println(vehicle + &quot; 在天空上运行....&quot;);
-    }
-    public void runWater(String vehicle) {
-        System.out.println(vehicle + &quot; 在水中行....&quot;);
-    }
-    ....
-}
-</code></pre>
-<h3 id="单一职责原则注意事项和细节"><a href="#单一职责原则注意事项和细节" class="headerlink" title="单一职责原则注意事项和细节"></a>单一职责原则注意事项和细节</h3><pre><code>1) 降低类的复杂度，一个类只负责一项职责。
-2) 提高类的可读性，可维护性
-3) 降低变更引起的风险
-4) 通常情况下，我们应当遵守单一职责原则，只有逻辑足够简单，才可以在代码级违反单一职责原则；只有类中
-方法数量足够少，可以在方法级别保持单一职责原则
-</code></pre><h2 id="【接口隔离原则】"><a href="#【接口隔离原则】" class="headerlink" title="【接口隔离原则】"></a>【接口隔离原则】</h2><h3 id="基本介绍-1"><a href="#基本介绍-1" class="headerlink" title="基本介绍"></a>基本介绍</h3><pre><code class="\">1) 客户端不应该依赖它不需要的接口，即一个类对另一个类的依赖应该建立在最小的接口上
-2) 类 A 通过接口 Interface1 依赖类 B，类 C 通过接口 Interface1 依赖类 D，如果接口 Interface1 对于类 A 和类 C
-来说不是最小接口，那么类 B 和类D必须去实现他们不需要的方法。
-3) 按隔离原则应当这样处理：
-将接口 Interface1 拆分为独立的几个接口(这里我们拆分成 3 个接口)，类A和类 C 分别与他们需要的接口建立
-依赖关系。也就是采用接口隔离原则
-</code></pre>
-<h3 id="应用实例-1"><a href="#应用实例-1" class="headerlink" title="应用实例"></a>应用实例</h3><blockquote>
-<p>类A通过接口 Interface1 依赖类 B，类 C 通过接口 Interface1 依赖类D</p>
-</blockquote>
-<pre><code class="java">package com.yan.principle.segregation;
-public class Segregation1 {
-public static void main(String[] args) {
-// TODOAuto-generated method stub
-}
-}
-//接口
-interface Interface1 {
-    void operation1();
-    void operation2();
-    void operation3();
-    void operation4();
-    void operation5();
-}
-class B implements Interface1 {
-    public void operation1() {
-        System.out.println(&quot;B 实现了 operation1&quot;);
-    }
-    public void operation2() {
-        System.out.println(&quot;B 实现了 operation2&quot;);
-    }
-    public void operation3() {
-        System.out.println(&quot;B 实现了 operation3&quot;);
-    }
-    public void operation4() {
-        System.out.println(&quot;B 实现了 operation4&quot;);
-    }
-    public void operation5() {
-        System.out.println(&quot;B 实现了 operation5&quot;);
-    }
-}
-class D implements Interface1 {
-    public void operation1() {
-        System.out.println(&quot;D 实现了 operation1&quot;);
-    }
-    public void operation2() {
-        System.out.println(&quot;D 实现了 operation2&quot;);
-    }
-    public void operation3() {
-        System.out.println(&quot;D 实现了 operation3&quot;);
-    }
-    public void operation4() {
-        System.out.println(&quot;D 实现了 operation4&quot;);
-    }
-    public void operation5() {
-        System.out.println(&quot;D 实现了 operation5&quot;);
-    }
-}
-class A { //A 类通过接口 Interface1 依赖(使用) B 类，但是只会用到 1,2,3 方法
-    public void depend1(Interface1 i) {
-        i.operation1();
-    }
-    public void depend2(Interface1 i) {
-        i.operation2();
-    }
-    public void depend3(Interface1 i) {
-        i.operation3();
-    }
-class C { //C 类通过接口 Interface1 依赖(使用) D类，但是只会用到 1,4,5 方法
-    public void depend1(Interface1 i) {
-        i.operation1();
-    }
-    public void depend4(Interface1 i) {
-        i.operation4();
-    }
-    public void depend5(Interface1 i) {
-        i.operation5();
+// 1、 new ReentrantLock();
+// 2、 lock.lock(); // 加锁
+// 3、 finally=&gt; lock.unlock(); // 解锁
+class Ticket {
+    // 属性、方法
+    private int number = 30;
+    Lock lock = new ReentrantLock();
+    public void sale(){
+        lock.lock(); // 加锁
+        try {
+            // 业务代码
+            if (number&gt;0){
+                System.out.println(Thread.currentThread().getName()+&quot;卖出第&quot;+
+                        (number--)+&quot;张票,剩余：&quot;+number);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            lock.unlock(); // 解锁
+        }
     }
 }
 </code></pre>
 <blockquote>
-<p>应传统方法的问题和使用接口隔离原则改进</p>
+<p> Synchronized 和 Lock 区别  </p>
 </blockquote>
-<pre><code>1) 类 A 通过接口 Interface1 依赖类 B，类 C 通过接口 Interface1 依赖类 D，如果接口 Interface1 对于类 A 和类 C
-来说不是最小接口，那么类 B 和类D必须去实现他们不需要的方法
-2) 将接口 Interface1 拆分为独立的几个接口，类A和类 C 分别与他们需要的接口建立依赖关系。也就是采用接口
-隔离原则
-3) 接口 Interface1 中出现的方法，根据实际情况拆分为三个接口
-</code></pre><pre><code class="java">package com.yan.principle.segregation.improve;
-public class Segregation1 {
+<p><code>1、Synchronized 内置的Java关键字， Lock 是一个Java接口</code><br><code>2、Synchronized 无法判断获取锁的状态，Lock 可以判断是否获取到了锁</code><br><code>3、Synchronized 会自动释放锁，lock 必须要手动释放锁！如果不释放锁，死锁</code><br><code>4、Synchronized 可重入锁，不可以中断的，非公平；Lock ，可重入锁，可以 判断锁，非公平（可以自己设置）；</code><br><code>5、Synchronized 适合锁少量的代码同步问题，Lock 适合锁大量的同步代码！</code>  </p>
+<h1 id="生产者消费者问题"><a href="#生产者消费者问题" class="headerlink" title="生产者消费者问题"></a>生产者消费者问题</h1><p><code>Synchronized 版</code></p>
+<pre><code class="java">package com.yan.pc;
+
+public class SynchronizedPC {
+
     public static void main(String[] args) {
-        // TODOAuto-generated method stub
-        // 使用一把
-        A a = newA();
-        a.depend1(new B()); // A类通过接口去依赖 B 类
-        a.depend2(new B());
-        a.depend3(new B());
-        C c = new C();
-        c.depend1(new D()); // C 类通过接口去依赖(使用)D类
-        c.depend4(new D());
-        c.depend5(new D());
+        Data data = new Data();
+        new Thread(() -&gt; {
+            for (int i = 0; i &lt; 10; i++) {
+                try {
+                    data.increment();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, &quot;A&quot;).start();
+        new Thread(() -&gt; {
+            for (int i = 0; i &lt; 10; i++) {
+                try {
+                    data.decrement();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, &quot;B&quot;).start();
     }
 }
-// 接口 1
-interface Interface1 {
-    void operation1();
-}
-// 接口 2
-interface Interface2 {
-    void operation2();
-    void operation3();
-}
-// 接口 3
-interface Interface3 {
-    void operation4();
-    void operation5();
-}
-class B implements Interface1, Interface2 {
-    public void operation1() {
-        System.out.println(&quot;B 实现了 operation1&quot;);
+//判断等待，业务，通知
+class Data { // 数字 资源类
+    private int number = 0;
+
+    //+1
+    public synchronized void increment() throws InterruptedException {
+        if (number != 0) { //0
+            // 等待
+            this.wait();
+        }
+        number++;
+        System.out.println(Thread.currentThread().getName() + &quot;=&gt;&quot; + number);
+        // 通知
+        this.notifyAll();
     }
-    public void operation2() {
-        System.out.println(&quot;B 实现了 operation2&quot;);
-    }
-    public void operation3() {
-        System.out.println(&quot;B 实现了 operation3&quot;);
-}
-}
-class D implements Interface1, Interface3 {
-    public void operation1() {
-        System.out.println(&quot;D 实现了 operation1&quot;);
-    }
-    public void operation4() {
-        System.out.println(&quot;D 实现了 operation4&quot;);
-    }
-    public void operation5() {
-        System.out.println(&quot;D 实现了 operation5&quot;);
-}
-}
-class A { // A 类通过接口 Interface1,Interface2 依赖(使用) B 类，但是只会用到 1,2,3 方法
-    public void depend1(Interface1 i) {
-        i.operation1();
-    }
-    public void depend2(Interface2 i) {
-        i.operation2();
-    }
-    public void depend3(Interface2 i) {
-        i.operation3();
-}
-}
-class C { // C 类通过接口 Interface1,Interface3 依赖(使用) D类，但是只会用到 1,4,5 方法
-    public void depend1(Interface1 i) {
-        i.operation1();
-    }
-    public void depend4(Interface3 i) {
-        i.operation4();
-    }
-    public void depend5(Interface3 i) {
-        i.operation5();
+    //-1
+    public synchronized void decrement() throws InterruptedException {
+//        if (number == 0) { // 存在虚假唤醒if 改为 while 判断
+        while (number == 0) {
+            // 等待
+            this.wait();
+        } number--;
+        System.out.println(Thread.currentThread().getName() + &quot;=&gt;&quot; + number);
+        // 通知
+        this.notifyAll();
     }
 }
 </code></pre>
-<h2 id="【依赖倒转原则】"><a href="#【依赖倒转原则】" class="headerlink" title="【依赖倒转原则】"></a>【依赖倒转原则】</h2><h3 id="基本介绍-2"><a href="#基本介绍-2" class="headerlink" title="基本介绍"></a>基本介绍</h3><pre><code>1) 高层模块不应该依赖低层模块，二者都应该依赖其抽象
-2) 抽象不应该依赖细节，细节应该依赖抽象
-3) 依赖倒转(倒置)的中心思想是面向接口编程
-4) 依赖倒转原则是基于这样的设计理念：相对于细节的多变性，抽象的东西要稳定的多。以抽象为基础搭建的架
-构比以细节为基础的架构要稳定的多。在 java 中，抽象指的是接口或抽象类，细节就是具体的实现类
-5) 使用接口或抽象类的目的是制定好规范，而不涉及任何具体的操作，把展现细节的任务交给他们的实现类去完
-成
-</code></pre><h3 id="应用实例-2"><a href="#应用实例-2" class="headerlink" title="应用实例"></a>应用实例</h3><blockquote>
-<p>成 Person 接收消息 的功能</p>
-</blockquote>
-<pre><code class="java">//实现方案 1
-package com.yan.principle.inversion;
-public class DependecyInversion {
-}
-class Email {
-    public String getInfo() {
-        return &quot;电子邮件信息: hello,world&quot;;
-    }
-}
-//完成 Person 接收消息的功能
-//方式 1 分析
-//1. 简单，比较容易想到
-//2. 如果我们获取的对象是 微信，短信等等，则新增类，同时 Perons 也要增加相应的接收方法
-//3. 解决思路：引入一个抽象的接口 IReceiver, 表示接收者, 这样 Person 类与接口 IReceiver 发生依赖
-// 因为 Email, WeiXin 等等属于接收的范围，他们各自实现 IReceiver 接口就 ok, 这样我们就符号依赖倒转原则
-class Person {
-    public void receive(Email email ) {
-        System.out.println(email.getInfo());
-    }
-}
-</code></pre>
-<pre><code class="java">//实现方案 2(依赖倒转)
-package com.atguigu.principle.inversion.improve;
-public class DependecyInversion {
+<p><img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/22/20200419181338.png" alt></p>
+<p><code>Lock版</code></p>
+<pre><code class="java">package com.yan.pc;
+
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
+public class LockPC {
+
     public static void main(String[] args) {
-        //客户端无需改变
-        Person person = new Person();
-        person.receive(new Email());
-        person.receive(newWeiXin());
+        Data data = new Data();
+
+        new Thread(() -&gt; {
+            for (int i = 0; i &lt; 10; i++) {
+                data.printA();
+            }
+        },&quot;A&quot;).start();
+        new Thread(() -&gt; {
+            for (int i = 0; i &lt; 10; i++) {
+                data.printB();
+            }
+        },&quot;B&quot;).start();
+        new Thread(() -&gt; {
+            for (int i = 0; i &lt; 10; i++) {
+                data.printC();
+            }
+        },&quot;C&quot;).start();
+
     }
 }
-//定义接口
-interface IReceiver {
-    public String getInfo();
-}
-class Email implements IReceiver {
-    public String getInfo() {
-        return &quot;电子邮件信息: hello,world&quot;;
+
+//资源类
+class Data{
+    //Condition 精准的通知和唤醒线程
+    private int num = 1;
+    private Lock lock = new ReentrantLock();
+    private Condition A = lock.newCondition();
+    private Condition B = lock.newCondition();
+    private Condition C = lock.newCondition();
+
+    public void printA(){
+
+        lock.lock();
+        try {
+            while (num != 1){
+                //等待
+                A.await();
+            }
+            System.out.println(Thread.currentThread().getName()+&quot; =&gt; AAAAAAAAA&quot;);
+            num = 2;
+            //唤醒
+            B.signal();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            lock.unlock();
+        }
+
     }
-}
-//增加微信
-class WeiXin implements IReceiver {
-    public String getInfo() {
-        return &quot;微信信息: hello,ok&quot;;
+    public void printB(){
+
+        lock.lock();
+        try {
+            while (num != 2){
+                //等待
+                B.await();
+            }
+            System.out.println(Thread.currentThread().getName()+&quot; =&gt; BBBBBBBBB&quot;);
+            num = 3;
+            //唤醒
+            C.signal();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            lock.unlock();
+        }
+
     }
-}
-//方式 2
-class Person {
-    //这里我们是对接口的依赖
-    public void receive(IReceiver receiver ) {
-        System.out.println(receiver.getInfo());
+    public void printC(){
+
+        lock.lock();
+        try {
+            while (num != 3){
+                //等待
+                C.await();
+            }
+            System.out.println(Thread.currentThread().getName()+&quot; =&gt; CCCCCCCCC&quot;);
+            num = 1;
+            //唤醒
+            A.signal();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            lock.unlock();
+        }
+
     }
-}
-</code></pre>
-<h3 id="依赖倒转原则的注意事项和细节"><a href="#依赖倒转原则的注意事项和细节" class="headerlink" title="依赖倒转原则的注意事项和细节"></a>依赖倒转原则的注意事项和细节</h3><pre><code>1) 低层模块尽量都要有抽象类或接口，或者两者都有，程序稳定性更好.
-2) 变量的声明类型尽量是抽象类或接口, 这样我们的变量引用和实际对象间，就存在一个缓冲层，利于程序扩展
-和优化
-3) 继承时遵循里氏替换原则
-</code></pre><h2 id="【里氏替换原则】"><a href="#【里氏替换原则】" class="headerlink" title="【里氏替换原则】"></a>【里氏替换原则】</h2><h3 id="OO中的继承性的思考和说明"><a href="#OO中的继承性的思考和说明" class="headerlink" title="OO中的继承性的思考和说明"></a>OO中的继承性的思考和说明</h3><pre><code>1) 继承包含这样一层含义：父类中凡是已经实现好的方法，实际上是在设定规范和契约，虽然它不强制要求所有
-的子类必须遵循这些契约，但是如果子类对这些已经实现的方法任意修改，就会对整个继承体系造成破坏。
-2) 继承在给程序设计带来便利的同时，也带来了弊端。比如使用继承会给程序带来侵入性，程序的可移植性降低，
-增加对象间的耦合性，如果一个类被其他的类所继承，则当这个类需要修改时，必须考虑到所有的子类，并且
-父类修改后，所有涉及到子类的功能都有可能产生故障
-3) 问题提出：在编程中，如何正确的使用继承? =&gt; 里氏替换原则
-</code></pre><h3 id="基本介绍-3"><a href="#基本介绍-3" class="headerlink" title="基本介绍"></a>基本介绍</h3><pre><code>1) 里氏替换原则(Liskov Substitution Principle)在 1988 年，由麻省理工学院的以为姓里的女士提出的。
-2) 如果对每个类型为 T1 的对象 o1，都有类型为 T2 的对象 o2，使得以 T1 定义的所有程序 P 在所有的对象 o1 都
-代换成 o2 时，程序 P 的行为没有发生变化，那么类型T2 是类型 T1 的子类型。换句话说，所有引用基类的地
-方必须能透明地使用其子类的对象。
-3) 在使用继承时，遵循里氏替换原则，在子类中尽量不要重写父类的方法
-4) 里氏替换原则告诉我们，继承实际上让两个类耦合性增强了，在适当的情况下，可以通过聚合，组合，依赖 来
-解决问题。
-</code></pre><h2 id="【开闭原则】"><a href="#【开闭原则】" class="headerlink" title="【开闭原则】"></a>【开闭原则】</h2><h3 id="基本介绍-4"><a href="#基本介绍-4" class="headerlink" title="基本介绍"></a>基本介绍</h3><pre><code>1) 开闭原则（Open Closed Principle）是编程中最基础、最重要的设计原则
-2) 一个软件实体如类，模块和函数应该对扩展开放(对提供方)，对修改关闭(对使用方)。用抽象构建框架，用实
-现扩展细节。
-3) 当软件需要变化时，尽量通过扩展软件实体的行为来实现变化，而不是通过修改已有的代码来实现变化。
-4) 编程中遵循其它原则，以及使用设计模式的目的就是遵循开闭原则。
-</code></pre><h3 id="应用实例-3"><a href="#应用实例-3" class="headerlink" title="应用实例"></a>应用实例</h3><blockquote>
-<p>一个画图形的功能</p>
-</blockquote>
-<pre><code class="java">//方案 1
-package com.yan.principle.ocp;
-public class Ocp {
-    public static void main(String[] args) {
-        //使用看看存在的问题
-        GraphicEditor graphicEditor = new GraphicEditor();
-        graphicEditor.drawShape(new Rectangle());
-        graphicEditor.drawShape(new Circle());
-        graphicEditor.drawShape(new Triangle());
-    }
-}
-//这是一个用于绘图的类 [使用方]
-class GraphicEditor {
-    //接收 Shape 对象，然后根据 type，来绘制不同的图形
-    public void drawShape(Shape s) {
-        if (s.m_type == 1)
-            drawRectangle(s);
-        else if (s.m_type == 2)
-            drawCircle(s);
-        else if (s.m_type == 3)
-            drawTriangle(s);
-    }
-    //绘制矩形
-    public void drawRectangle(Shape r) {
-        System.out.println(&quot; 绘制矩形 &quot;);
-    }
-    //绘制圆形
-    public void drawCircle(Shape r) {
-    }
-    //绘制三角形
-    public void drawTriangle(Shape r) {
-        System.out.println(&quot; 绘制三角形 &quot;);
-    }
-}
-//Shape 类，基类
-class Shape {
-    int m_type;
-}
-class Rectangle extends Shape {
-    Rectangle() {
-        super.m_type = 1;
-    }
-}
-class Circle extends Shape {
-    Circle() {
-        super.m_type = 2;
-    }
-}
-//新增画三角形
-class Triangle extends Shape {
-    Triangle() {
-        super.m_type = 3;
-    }
+
 }
 </code></pre>
-<pre><code class="java">//方案 2
-package com.yan.principle.ocp.improve;
-public class Ocp {
-    public static void main(String[] args) {
-        //使用看看存在的问题
-        GraphicEditor graphicEditor = new GraphicEditor();
-        graphicEditor.drawShape(new Rectangle());
-        graphicEditor.drawShape(new Circle());
-        graphicEditor.drawShape(new Triangle());
-        graphicEditor.drawShape(new OtherGraphic());
-    }
-}
-//这是一个用于绘图的类 [使用方]
-class GraphicEditor {
-    //接收 Shape 对象，调用 draw方法
-    public void drawShape(Shape s) {
-        s.draw();
-    }
-}
-//Shape 类，基类
-abstract class Shape {
-    int m_type;
-}
-class Rectangle extends Shape {
-    Rectangle() {
-        super.m_type = 1;
-    }
-    @Override
-    public void draw() {
-        // TODOAuto-generated method stub
-        System.out.println(&quot; 绘制矩形 &quot;);
-    }
-}
-class Circle extends Shape {
-    Circle() {
-        super.m_type = 2;
-    }
-    @Override
-    public void draw() {
-        // TODOAuto-generated method stub
-        System.out.println(&quot; 绘制圆形 &quot;);
-    }
-}
-//新增画三角形
-class Triangle extends Shape {
-    Triangle() {
-        super.m_type = 3;
-    }
-    @Override
-    public void draw() {
-        // TODOAuto-generated method stub
-        System.out.println(&quot; 绘制三角形 &quot;);
-    }
-}
-//新增一个图形
-class OtherGraphic extends Shape {
-    OtherGraphic() {
-        super.m_type = 4;
-    }
-    @Override
-    public void draw() {
-        // TODOAuto-generated method stub
-        System.out.println(&quot; 绘制其它图形 &quot;);
-    }
-}
-</code></pre>
-<h2 id="【迪米特法则】"><a href="#【迪米特法则】" class="headerlink" title="【迪米特法则】"></a>【迪米特法则】</h2><h3 id="基本介绍-5"><a href="#基本介绍-5" class="headerlink" title="基本介绍"></a>基本介绍</h3><pre><code>1) 一个对象应该对其他对象保持最少的了解
-2) 类与类关系越密切，耦合度越大
-3) 迪米特法则(Demeter Principle)又叫最少知道原则，即一个类对自己依赖的类知道的越少越好。也就是说，对于
-被依赖的类不管多么复杂，都尽量将逻辑封装在类的内部。对外除了提供的 public 方法，不对外泄露任何信息
-4) 迪米特法则还有个更简单的定义：只与直接的朋友通信
-5) 直接的朋友：每个对象都会与其他对象有耦合关系，只要两个对象之间有耦合关系，我们就说这两个对象之间
-是朋友关系。耦合的方式很多，依赖，关联，组合，聚合等。其中，我们称出现成员变量，方法参数，方法返
-回值中的类为直接的朋友，而出现在局部变量中的类不是直接的朋友。也就是说，陌生的类最好不要以局部变
-量的形式出现在类的内部。
-</code></pre><h3 id="应用实例-4"><a href="#应用实例-4" class="headerlink" title="应用实例"></a>应用实例</h3><blockquote>
-<p>有一个学校，下属有各个学院和总部，现要求打印出学校总部员工 ID和学院员工的 id</p>
-</blockquote>
-<pre><code class="java">package com.yan.principle.demeter;
+<h1 id="集合类不安全"><a href="#集合类不安全" class="headerlink" title="集合类不安全"></a>集合类不安全</h1><p><code>List不安全</code></p>
+<pre><code class="java">package com.yan.unsafe;
+
 import java.util.ArrayList;
 import java.util.List;
-//客户端
-public class Demeter1 {
+import java.util.UUID;
+
+// java.util.ConcurrentModificationException 并发修改异常！
+public class ListUnsafe {
     public static void main(String[] args) {
-        //创建了一个 SchoolManager 对象
-        SchoolManager schoolManager = new SchoolManager();
-        //输出学院的员工 id 和 学校总部的员工信息
-        schoolManager.printAllEmployee(new CollegeManager());
-    }
-}
-//学校总部员工类
-class Employee {
-    private String id;
-    public void setId(String id) {
-        this.id = id;
-    }
-    public String getId() {
-        return id;
-    }
-}
-//学院的员工类
-class CollegeEmployee {
-    private String id;
-    public void setId(String id) {
-        this.id = id;
-    }
-    public String getId() {
-        return id;
-    }
-}
-//管理学院员工的管理类
-class CollegeManager {
-    //返回学院的所有员工
-    public List&lt;CollegeEmployee&gt; getAllEmployee() {
-        List&lt;CollegeEmployee&gt; list = newArrayList&lt;CollegeEmployee&gt;();
-        for (int i = 0; i &lt; 10; i++) { //这里我们增加了 10 个员工到 list
-            CollegeEmployee emp = new CollegeEmployee();
-            emp.setId(&quot;学院员工 id= &quot; + i);
-            list.add(emp);
-        }
-        return list;
-    }
-}
-//学校管理类
-//分析 SchoolManager 类的直接朋友类有哪些 Employee、CollegeManager
-//CollegeEmployee 不是 直接朋友 而是一个陌生类，这样违背了 迪米特法则
-class SchoolManager {
-    //返回学校总部的员工
-    public List&lt;Employee&gt; getAllEmployee() {
-        List&lt;Employee&gt; list = newArrayList&lt;Employee&gt;();
-        for (int i = 0; i &lt; 5; i++) { //这里我们增加了 5 个员工到 list
-            Employee emp = new Employee();
-            emp.setId(&quot;学校总部员工 id= &quot; + i);
-            list.add(emp);
-        }
-        return list;
-    }
-    //该方法完成输出学校总部和学院员工信息(id)
-    void printAllEmployee(CollegeManager sub) {
-        //分析问题
-        //1. 这里的 CollegeEmployee 不是 SchoolManager 的直接朋友
-        //2. CollegeEmployee 是以局部变量方式出现在 SchoolManager
-        //3. 违反了 迪米特法则
-        //获取到学院员工
-        List&lt;CollegeEmployee&gt; list1 = sub.getAllEmployee();
-        System.out.println(&quot;------------学院员工------------&quot;);
-        for (CollegeEmployee e : list1) {
-            System.out.println(e.getId());
-        }
-        //获取到学校总部员工
-        List&lt;Employee&gt; list2 = this.getAllEmployee();
-        System.out.println(&quot;------------学校总部员工------------&quot;);
-        for (Employee e : list2) {
-            System.out.println(e.getId());
+        // 并发下 ArrayList 不安全
+        /**
+         * 解决方案；
+         * 1、List&lt;String&gt; list = new Vector&lt;&gt;();
+         * 2、List&lt;String&gt; list = Collections.synchronizedList(new ArrayList&lt;&gt;());
+         * 3、List&lt;String&gt; list = new CopyOnWriteArrayList&lt;&gt;()；
+         */
+        // CopyOnWrite 写入时复制 COW 计算机程序设计领域的一种优化策略；
+        // 多个线程调用的时候，list，读取的时候，固定的，写入（覆盖）
+        // 在写入的时候避免覆盖，造成数据问题！
+        List&lt;String&gt; list = new ArrayList&lt;&gt;();
+        for (int i = 1; i &lt;= 30; i++) {
+            new Thread(() -&gt; {
+                list.add(UUID.randomUUID().toString().substring(0, 5));
+                System.out.println(list);
+            }, String.valueOf(i)).start();
         }
     }
 }
 </code></pre>
-<pre><code class="java">//前面设计的问题在于 SchoolManager 中，CollegeEmployee 类并不是 SchoolManager 类的直接朋友 (分析)
-//按照迪米特法则，应该避免类中出现这样非直接朋友关系的耦合
-package com.yan.principle.demeter.improve;
-import java.util.ArrayList;
-import java.util.List;
-//客户端
-public class Demeter1 {
+<p><code>set不安全</code></p>
+<pre><code class="java">package com.yan.unsafe;
+
+import java.util.Set;
+import java.util.UUID;
+import java.util.concurrent.CopyOnWriteArraySet;
+
+public class SetUnsafe {
     public static void main(String[] args) {
-        System.out.println(&quot;~~~使用迪米特法则的改进~~~&quot;);
-        //创建了一个 SchoolManager 对象
-        SchoolManager schoolManager = new SchoolManager();
-        //输出学院的员工 id 和 学校总部的员工信息
-        schoolManager.printAllEmployee(new CollegeManager());
-    }
-}
-//学校总部员工类
-class Employee {
-    private String id;
-    public void setId(String id) {
-        this.id = id;
-    }
-    public String getId() {
-        return id;
-    }
-}
-//学院的员工类
-class CollegeEmployee {
-    private String id;
-    public void setId(String id) {
-        this.id = id;
-    }
-    public String getId() {
-        return id;
-    }
-}
-//管理学院员工的管理类
-class CollegeManager {
-    //返回学院的所有员工
-    public List&lt;CollegeEmployee&gt; getAllEmployee() {
-        List&lt;CollegeEmployee&gt; list = newArrayList&lt;CollegeEmployee&gt;();
-        for (int i = 0; i &lt; 10; i++) { //这里我们增加了 10 个员工到 list
-            CollegeEmployee emp = new CollegeEmployee();
-            emp.setId(&quot;学院员工 id= &quot; + i);
-            list.add(emp);
-        }
-        return list;
-    }
-    //输出学院员工的信息
-    public void printEmployee() {
-        //获取到学院员工
-        List&lt;CollegeEmployee&gt; list1 = getAllEmployee();
-        System.out.println(&quot;------------学院员工------------&quot;);
-        for (CollegeEmployee e : list1) {
-            System.out.println(e.getId());
-        }
-    }
-}
-//学校管理类
-//分析 SchoolManager 类的直接朋友类有哪些 Employee、CollegeManager
-//CollegeEmployee 不是 直接朋友 而是一个陌生类，这样违背了 迪米特法则
-class SchoolManager {
-    //返回学校总部的员工
-    public List&lt;Employee&gt; getAllEmployee() {
-    }
-    //该方法完成输出学校总部和学院员工信息(id)
-    void printAllEmployee(CollegeManager sub) {
-        //分析问题
-        //1. 将输出学院的员工方法，封装到 CollegeManager
-        sub.printEmployee();
-        //获取到学校总部员工
-        List&lt;Employee&gt; list2 = this.getAllEmployee();
-        System.out.println(&quot;------------学校总部员工------------&quot;);
-        for (Employee e : list2) {
-            System.out.println(e.getId());
+        // Set&lt;String&gt; set = new HashSet&lt;&gt;();
+        // Set&lt;String&gt; set = Collections.synchronizedSet(new HashSet&lt;&gt;());
+        Set&lt;String&gt; set = new CopyOnWriteArraySet&lt;&gt;();
+        for (int i = 1; i &lt;= 30; i++) {
+            new Thread(() -&gt; {
+                set.add(UUID.randomUUID().toString().substring(0, 5));
+                System.out.println(set);
+            }, String.valueOf(i)).start();
         }
     }
 }
 </code></pre>
-<h3 id="迪米特法则注意事项和细节"><a href="#迪米特法则注意事项和细节" class="headerlink" title="迪米特法则注意事项和细节"></a>迪米特法则注意事项和细节</h3><pre><code>1) 迪米特法则的核心是降低类之间的耦合
-2) 但是注意：由于每个类都减少了不必要的依赖，因此迪米特法则只是要求降低类间(对象间)耦合关系， 并不是
-要求完全没有依赖关系
-</code></pre><h2 id="【合成复用原则】"><a href="#【合成复用原则】" class="headerlink" title="【合成复用原则】"></a>【合成复用原则】</h2><h3 id="基本介绍-6"><a href="#基本介绍-6" class="headerlink" title="基本介绍"></a>基本介绍</h3><blockquote>
-<p>合成复用原则是尽量使用合成/聚合的方式，而不是使用继承</p>
+<p><code>map不安全</code></p>
+<pre><code class="java">package com.yan.unsafe;
+
+import java.util.Map;
+import java.util.UUID;
+import java.util.concurrent.ConcurrentHashMap;
+
+public class MapUnsafe {
+    public static void main(String[] args) {
+        // Map&lt;String, String&gt; map = new HashMap&lt;&gt;();
+        Map&lt;String, String&gt; map = new ConcurrentHashMap&lt;&gt;();
+        for (int i = 1; i &lt;= 30; i++) {
+            new Thread(() -&gt; {
+                map.put(Thread.currentThread().getName(), UUID.randomUUID().toString().substring(
+                        0, 5));
+                System.out.println(map);
+            }, String.valueOf(i)).start();
+        }
+    }
+}
+</code></pre>
+<h1 id="Callable"><a href="#Callable" class="headerlink" title="Callable"></a>Callable</h1><pre><code class="java">package com.yan.callable;
+
+import java.util.concurrent.FutureTask;
+import java.util.concurrent.TimeUnit;
+
+public class CallableDemo {
+
+    /**
+     *
+     在主线程中需要执行比较耗时的操作时，但又不想阻塞主线程时，可以把这些作业交给Future对象在后台完成，
+     当主线程将来需要时，就可以通过Future对象获得后台作业的计算结果或者执行状态。
+
+     一般FutureTask多用于耗时的计算，主线程可以在完成自己的任务后，再去获取结果。
+
+     仅在计算完成时才能检索结果；如果计算尚未完成，则阻塞 get 方法。一旦计算完成，
+     就不能再重新开始或取消计算。get方法而获取结果只有在计算完成时获取，否则会一直阻塞直到任务转入完成状态，
+     然后会返回结果或者抛出异常。
+
+     只计算一次get方法放到最后
+     */
+    public static void main(String[] args) throws Exception {
+
+        FutureTask&lt;Integer&gt; futureTask = new FutureTask(()-&gt;{
+            System.out.println(Thread.currentThread().getName()+&quot;  come in callable&quot;);
+            TimeUnit.SECONDS.sleep(4);
+            return 1024;
+        });
+        FutureTask&lt;Integer&gt; futureTask2 = new FutureTask(()-&gt;{
+            System.out.println(Thread.currentThread().getName()+&quot;  come in callable&quot;);
+            TimeUnit.SECONDS.sleep(4);
+            return 2048;
+        });
+
+        new Thread(futureTask,&quot;zhangsan&quot;).start();
+        new Thread(futureTask2,&quot;lisi&quot;).start();
+
+        //System.out.println(futureTask.get());
+        //System.out.println(futureTask2.get());
+        //1、一般放在程序后面，直接获取结果
+        //2、只会计算结果一次
+
+        while(!futureTask.isDone()){
+            System.out.println(&quot;wait&quot;);
+        }
+        System.out.println(futureTask.get());
+        System.out.println(Thread.currentThread().getName()+&quot; come over&quot;);
+    }
+}
+</code></pre>
+<h1 id="常用辅助工具类"><a href="#常用辅助工具类" class="headerlink" title="常用辅助工具类"></a>常用辅助工具类</h1><h2 id="CountDownLatch"><a href="#CountDownLatch" class="headerlink" title="CountDownLatch"></a>CountDownLatch</h2><pre><code class="java">package com.yan.util;
+
+import java.util.concurrent.CountDownLatch;
+
+public class CountDonwLatchDemo {
+
+    public static void main(String[] args) throws InterruptedException {
+        CountDownLatch countDownLatch = new CountDownLatch(6);
+        // 总数是6，必须要执行任务的时候，再使用！
+        for (int i = 1; i &lt;= 6 ; i++) {
+            new Thread(() -&gt; {
+                System.out.println(Thread.currentThread().getName()+&quot;=&gt; go out&quot;);
+                countDownLatch.countDown();
+            },String.valueOf(i)).start();
+        }
+
+        countDownLatch.await();
+
+        System.out.println(&quot;close door&quot;);
+    }
+}
+</code></pre>
+<h2 id="CyclicBarrier"><a href="#CyclicBarrier" class="headerlink" title="CyclicBarrier"></a>CyclicBarrier</h2><pre><code class="java">package com.yan.util;
+
+import java.util.concurrent.BrokenBarrierException;
+import java.util.concurrent.CyclicBarrier;
+
+public class CyclicBarrierDemo {
+    public static void main(String[] args) {
+        CyclicBarrier cyclicBarrier = new CyclicBarrier(7,() -&gt; System.out.println(&quot;召唤神龙!!!&quot;));
+
+        for (int i = 1; i &lt;= 7 ; i++) {
+            final int t = i;
+            new Thread(() -&gt; {
+                System.out.println(Thread.currentThread().getName()+&quot;收集&quot;+t+&quot;颗龙珠&quot;);
+                try {
+                    cyclicBarrier.await();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (BrokenBarrierException e) {
+                    e.printStackTrace();
+                }
+            },String.valueOf(i)).start();
+        }
+    }
+}
+</code></pre>
+<h2 id="Semaphore"><a href="#Semaphore" class="headerlink" title="Semaphore"></a>Semaphore</h2><pre><code class="java">package com.yan.util;
+
+import java.util.concurrent.Semaphore;
+import java.util.concurrent.TimeUnit;
+
+public class SemaphoreDemo {
+
+    public static void main(String[] args) {
+
+        //共有三个车位
+        Semaphore semaphore = new Semaphore(3);
+
+        for (int i = 1; i &lt;= 6 ; i++) {
+            new Thread(() -&gt; {
+                try {
+                    semaphore.acquire();
+                    System.out.println(Thread.currentThread().getName()+&quot;=&gt; 进车库&quot;);
+                    TimeUnit.SECONDS.sleep(1);
+                    System.out.println(Thread.currentThread().getName()+&quot;=&gt; 出车库&quot;);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }finally {
+                    semaphore.release();
+                }
+            },String.valueOf(i)).start();
+        }
+    }
+}
+</code></pre>
+<h1 id="ReadWriteLock"><a href="#ReadWriteLock" class="headerlink" title="ReadWriteLock"></a>ReadWriteLock</h1><pre><code class="java">package com.yan.readwrite;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.locks.ReadWriteLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
+
+public class ReadWriteLockDemo {
+
+    public static void main(String[] args) {
+        MyCache myCache = new MyCache();
+
+        for (int i = 1; i &lt;= 6; i++) {
+            final int t = i;
+            new Thread(() -&gt; {
+                myCache.put(t+&quot;&quot;,t+&quot;&quot;);
+            },String.valueOf(i)).start();
+        }
+
+        while (Thread.activeCount() &gt; 2){
+            Thread.yield();
+        }
+
+        for (int i = 1; i &lt;= 6; i++) {
+            final int t = i;
+            new Thread(() -&gt; {
+                myCache.get(t+&quot;&quot;);
+            },String.valueOf(i)).start();
+        }
+    }
+}
+
+class MyCache {
+
+    private volatile Map&lt;String, Object&gt; map = new HashMap&lt;&gt;();
+
+    private ReadWriteLock reentrantReadWriteLock = new ReentrantReadWriteLock();
+
+    public void put(String key, String value) {
+
+        // 写入的时候，只希望同时只有一个线程写
+        reentrantReadWriteLock.writeLock().lock();
+        try {
+            System.out.println(Thread.currentThread().getName() + &quot;写入&quot; + key);
+            map.put(key, value);
+            System.out.println(Thread.currentThread().getName() + &quot;写入ok&quot;);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            reentrantReadWriteLock.writeLock().unlock();
+        }
+    }
+
+    public void get(String key) {
+
+        // 取，读，所有人都可以读！
+        reentrantReadWriteLock.readLock().lock();
+        try {
+            System.out.println(Thread.currentThread().getName() + &quot;读取&quot;);
+            Object o = map.get(key);
+            System.out.println(Thread.currentThread().getName() + &quot;读取ok&quot;+o);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            reentrantReadWriteLock.readLock().unlock();
+        }
+    }
+}
+</code></pre>
+<h1 id="阻塞队列"><a href="#阻塞队列" class="headerlink" title="阻塞队列"></a>阻塞队列</h1><p><img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/22/20200419190016.png" alt></p>
+<p><code>四组API</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/22/api.png" alt></p>
+<pre><code class="java">package com.yan.blockingqueue;
+
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.TimeUnit;
+
+/**
+ * 阻塞队列
+ */
+public class BlockingQueueDemo {
+
+    public static void main(String[] args) throws InterruptedException {
+
+
+        BlockingQueue&lt;String&gt; blockingQueue = new ArrayBlockingQueue&lt;&gt;(3);
+        //第一组
+//      System.out.println(blockingQueue.add(&quot;a&quot;));
+//      System.out.println(blockingQueue.add(&quot;b&quot;));
+//      System.out.println(blockingQueue.add(&quot;c&quot;));
+//      System.out.println(blockingQueue.element());
+
+//        System.out.println(blockingQueue.add(&quot;x&quot;));
+//      System.out.println(blockingQueue.remove());
+//      System.out.println(blockingQueue.remove());
+//      System.out.println(blockingQueue.remove());
+//      System.out.println(blockingQueue.remove());
+        //第二组
+//      System.out.println(blockingQueue.offer(&quot;a&quot;));
+//      System.out.println(blockingQueue.offer(&quot;b&quot;));
+//      System.out.println(blockingQueue.offer(&quot;c&quot;));
+//      System.out.println(blockingQueue.offer(&quot;x&quot;));
+//      System.out.println(blockingQueue.poll());
+//      System.out.println(blockingQueue.poll());
+//      System.out.println(blockingQueue.poll());
+//      System.out.println(blockingQueue.poll());
+        //第三组        
+//      blockingQueue.put(&quot;a&quot;);
+//      blockingQueue.put(&quot;b&quot;);
+//      blockingQueue.put(&quot;c&quot;);
+//      blockingQueue.put(&quot;x&quot;);
+//      System.out.println(blockingQueue.take());
+//      System.out.println(blockingQueue.take());
+//      System.out.println(blockingQueue.take());
+//      System.out.println(blockingQueue.take());
+
+        //第四组        
+        System.out.println(blockingQueue.offer(&quot;a&quot;));
+        System.out.println(blockingQueue.offer(&quot;b&quot;));
+        System.out.println(blockingQueue.offer(&quot;c&quot;));
+        System.out.println(blockingQueue.offer(&quot;a&quot;,3L, TimeUnit.SECONDS));
+
+    }
+}
+</code></pre>
+<h1 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h1><blockquote>
+<p>主要特点为：线程复用;控制最大并发数;管理线程。</p>
+<p>第一：降低资源消耗。通过重复利用已创建的线程降低线程创建和销毁造成的销耗。<br>第二：提高响应速度。当任务到达时，任务可以不需要等待线程创建就能立即执行。<br>第三：提高线程的可管理性。线程是稀缺资源，如果无限制的创建，不仅会销耗系统资源，还会降低系统的稳定性，使用线程池可以进行统一的分配，调优和监控。</p>
 </blockquote>
-<pre><code>1) 找出应用中可能需要变化之处，把它们独立出来，不要和那些不需要变化的代码混在一起。
-2) 针对接口编程，而不是针对实现编程。
-3) 为了交互对象之间的松耦合设计而努力
+<h2 id="三大方法"><a href="#三大方法" class="headerlink" title="三大方法"></a>三大方法</h2><pre><code class="java">package com.yan.executor;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+// Executors 工具类、3大方法
+public class ThreadPool {
+    public static void main(String[] args) {
+        ExecutorService threadPool = Executors.newSingleThreadExecutor();// 单个线程
+        // ExecutorService threadPool = Executors.newFixedThreadPool(5); // 创建一个固定的线程池的大小
+        // ExecutorService threadPool = Executors.newCachedThreadPool(); // 可伸缩的
+        try {
+            for (int i = 0; i &lt; 100; i++) {
+                // 使用线程池来创建线程
+                threadPool.execute(() -&gt; {
+                    System.out.println(Thread.currentThread().getName() + &quot; ok&quot;);
+                });
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            // 线程池用完，程序结束，关闭线程池
+            threadPool.shutdown();
+        }
+    }
+}
 </code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/22/20200419192529.png" alt></p>
+<h2 id="七大参数"><a href="#七大参数" class="headerlink" title="七大参数"></a>七大参数</h2><p><img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/22/20200419193737.png" alt></p>
+<p><code>手动创建一个线程池</code></p>
+<pre><code class="java">package com.yan.executor;
+
+import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+
+/**
+ * @Author: yan
+ * @Date: 2020/4/19 15:36
+ * @Description: com.yan.executor
+ * @version: 1.0
+ */
+public class ThreadPoolExecutorDemo {
+
+    public static void main(String[] args) {
+
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(
+                2,// 核心线程池大小
+                5,// 最大核心线程池大小
+                3,// 超时释放时间
+                TimeUnit.SECONDS,//超时单位
+                new LinkedBlockingDeque&lt;&gt;(3),// 阻塞队列
+                Executors.defaultThreadFactory(),// 线程工厂：创建线程的，一般不用动
+                new ThreadPoolExecutor.AbortPolicy()// 拒绝策略
+        );
+
+        for (int i = 1; i &lt;= 5; i++) {
+            threadPoolExecutor.execute(() -&gt; {
+                System.out.println(Thread.currentThread().getName()+&quot;=&gt; O(∩_∩)O哈哈~&quot;);
+            });
+        }
+
+        threadPoolExecutor.shutdown();
+    }
+}
+</code></pre>
+<h2 id="四种拒绝策略"><a href="#四种拒绝策略" class="headerlink" title="四种拒绝策略"></a>四种拒绝策略</h2><blockquote>
+<p>new ThreadPoolExecutor.AbortPolicy() // 满了，还有人进来，不处理这个人的，抛出异常</p>
+<p>new ThreadPoolExecutor.CallerRunsPolicy() // 哪来的去哪里！</p>
+<p>new ThreadPoolExecutor.DiscardPolicy() //队列满了，丢掉任务，不会抛出异常！</p>
+<p>new ThreadPoolExecutor.DiscardOldestPolicy() //队列满了尝试去和最早的竞争，也不会抛出异常！</p>
+</blockquote>
+<h1 id="JMM"><a href="#JMM" class="headerlink" title="JMM"></a>JMM</h1><blockquote>
+<p>JMM(Java内存模型Java Memory Model,简称JMM)本身是一种抽象的概念 并不真实存在,它描述的是一组规则或规范通过规范定制了程序中各个变量(包括实例字段,静态字段和构成数组对象的元素)的访问方式.<br>JMM关于同步规定:<br>1.线程解锁前,必须把共享变量的值刷新回主内存<br>2.线程加锁前,必须读取主内存的最新值到自己的工作内存<br>3.加锁解锁是同一把锁</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/22/20200419195021.png" alt></p>
+<p><strong><code>Java内存模型中定义了8种操作来完成，虚拟机保证了每种操作都是原子的。</code></strong></p>
+<ul>
+<li>lock（锁定）：作用于主存的变量，把一个变量标识为一条线程独占状态。</li>
+<li>unlock（解锁）：作用于主存变量，把一个处于锁定状态的变量释放出来，释放后的变量才可以被其他线程锁定。</li>
+<li>read（读取）：作用于主存变量，把一个变量的值从主存传输到工作内存。</li>
+<li>load（载入）：作用于工作内存变量，把 read 来的值放入工作内存的变量副本中。</li>
+<li>use（使用）：作用于工作内存变量，把工作内存中一个变量的值传递给执行引擎，每当虚拟机遇到一个给变量赋值的字节码指令时执行这个操作。</li>
+<li>assign（赋值）：作用于工作内存中的变量，它把一个从执行引擎中接受到的值放入工作内存的变量副本中</li>
+<li>store（存储）：作用于工作内存变量，把工作内存中一个变量的值传送到主存。</li>
+<li>write（写入）：作用于主存变量，把 store 操作从工作内存中得到的变量的值放入主存的变量中。</li>
+</ul>
+<p><strong><code>JMM对这八种指令的使用，制定了如下规则：</code></strong></p>
+<ul>
+<li>不允许read和load、store和write操作之一单独出现。即使用了read必须load，使用了store必须write</li>
+<li>不允许线程丢弃他最近的assign操作，即工作变量的数据改变了之后，必须告知主存 （可见）</li>
+<li>不允许一个线程将没有assign的数据从工作内存同步回主内存</li>
+<li>一个新的变量必须在主内存中诞生，不允许工作内存直接使用一个未被初始化的变量。就是怼变量实施use、store操作之前，必须经过assign和load操作</li>
+<li>一个变量同一时间只有一个线程能对其进行lock。多次lock后，必须执行相同次数的unlock才能解锁</li>
+<li>如果对一个变量进行lock操作，会清空所有工作内存中此变量的值，在执行引擎使用这个变量前，必须重新load或assign操作初始化变量的值</li>
+<li>如果一个变量没有被lock，就不能对其进行unlock操作。也不能unlock一个被其他线程锁住的变量</li>
+<li>对一个变量进行unlock操作之前，必须把此变量同步回主内存</li>
+</ul>
+<h1 id="Volatile"><a href="#Volatile" class="headerlink" title="Volatile"></a>Volatile</h1><blockquote>
+<p>volatile是Java虚拟机提供的轻量级的同步机制，是基本上遵守了JMM的规范，主要是保证可见性和禁止指令重排，但是它并不保证原子性</p>
+</blockquote>
+<p><code>保证可见性</code></p>
+<pre><code class="java">package com.yan.jmm;
+
+import java.util.concurrent.TimeUnit;
+
+public class VolatileDemo {
+    // 不加 volatile 程序就会死循环！
+    // 加 volatile 可以保证可见性
+    private volatile static int num = 0;
+
+    public static void main(String[] args) { // main
+        new Thread(() -&gt; {
+            while (num == 0) {
+            }
+        }).start();
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        num = 1;
+        System.out.println(num);
+    }
+}
+</code></pre>
+<p><code>不保证原子性</code></p>
+<pre><code class="java">package com.yan.jmm;
+
+// volatile 不保证原子性
+public class VolatileDemo02 {
+    // volatile 不保证原子性
+    private volatile static int num = 0;
+
+    public static void add() {
+        num++;
+    }
+
+    public static void main(String[] args) {
+        //理论上num结果应该为 2 万
+        for (int i = 1; i &lt;= 20; i++) {
+            new Thread(() -&gt; {
+                for (int j = 0; j &lt; 1000; j++) {
+                    add();
+                }
+            }).start();
+        }
+        while(Thread.activeCount() &gt; 2) {
+            Thread.yield();
+        }
+        System.out.println(Thread.currentThread().getName() + &quot; &quot; + num);
+    }
+}
+</code></pre>
+<blockquote>
+<p>解决方案 :     AtomicInteger  </p>
+</blockquote>
+<pre><code class="java">package com.yan.jmm;
+
+// volatile 不保证原子性
+public class VolatileDemo02 {
+
+    private volatile static AtomicInteger num = new AtomicInteger();
+
+    public static void add() {
+        num.getAndIncrement(); // AtomicInteger + 1 方法， CAS
+    }
+
+    public static void main(String[] args) {
+        //理论上num结果应该为 2 万
+        for (int i = 1; i &lt;= 20; i++) {
+            new Thread(() -&gt; {
+                for (int j = 0; j &lt; 1000; j++) {
+                    add();
+                }
+            }).start();
+        }
+        while(Thread.activeCount() &gt; 2) {
+            Thread.yield();
+        }
+        System.out.println(Thread.currentThread().getName() + &quot; &quot; + num);
+    }
+}
+</code></pre>
+<p><code>禁止指令重排</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/22/20200419201015.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/22/20200419201326.png" alt></p>
+<h1 id="CAS"><a href="#CAS" class="headerlink" title="CAS"></a>CAS</h1><h2 id="什么是CAS"><a href="#什么是CAS" class="headerlink" title="什么是CAS"></a>什么是CAS</h2><pre><code class="java">package com.yan.cas;
+
+import java.util.concurrent.atomic.AtomicInteger;
+
+public class CASDemo {
+    // CAS compareAndSet : 比较并交换！
+    public static void main(String[] args) {
+        AtomicInteger atomicInteger = new AtomicInteger(2020);
+        // 期望、更新
+        // public final boolean compareAndSet(int expect, int update)
+        // 如果我期望的值达到了，那么就更新，否则，就不更新, CAS 是CPU的并发原语！
+        System.out.println(atomicInteger.compareAndSet(5, 2020)+&quot;\t current&quot;+atomicInteger.get());
+        System.out.println(atomicInteger.compareAndSet(5, 2022)+&quot;\t current&quot;+atomicInteger.get());
+    }
+}
+</code></pre>
+<h2 id="Unsafe类"><a href="#Unsafe类" class="headerlink" title="Unsafe类"></a>Unsafe类</h2><p><img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/22/20200419202353.png" alt></p>
+<ul>
+<li>UnSafe是CAS的核心类 由于Java 方法无法直接访问底层 ,需要通过本地(native)方法来访问,UnSafe相当于一个后面,基于该类可以直接操作特额定的内存数据.UnSafe类在于sun.misc包中,其内部方法操作可以向C的指针一样直接操作内存,因为Java中CAS操作的助兴依赖于UnSafe类的方法.<br>注意UnSafe类中所有的方法都是native修饰的,也就是说UnSafe类中的方法都是直接调用操作底层资源执行响应的任务</li>
+<li>变量ValueOffset,便是该变量在内存中的偏移地址,因为UnSafe就是根据内存偏移地址获取数据的</li>
+<li>变量value和volatile修饰,保证了多线程之间的可见性.</li>
+</ul>
+<p><code>比较当前工作内存中的值和主内存中的值，如果这个值是期望的，那么则执行操作！如果不是就一直循环！</code></p>
+<p><code>自旋锁</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/22/20200419202712.png" alt></p>
+<p><code>缺点</code></p>
+<ul>
+<li>循环会耗时  </li>
+<li>一次性只能保证一个共享变量的原子性  </li>
+<li>ABA问题</li>
+</ul>
+<h2 id="ABA问题"><a href="#ABA问题" class="headerlink" title="ABA问题"></a>ABA问题</h2><pre><code class="java">package com.yan.cas;
+
+import java.util.concurrent.atomic.AtomicInteger;
+
+public class CASDemo {
+
+    public static void main(String[] args) {
+        AtomicInteger atomicInteger = new AtomicInteger(2020);
+
+        // ============== 捣乱的线程 ==================
+        System.out.println(atomicInteger.compareAndSet(2020, 2021));
+        System.out.println(atomicInteger.get());
+        System.out.println(atomicInteger.compareAndSet(2021, 2020));
+        System.out.println(atomicInteger.get());
+        // ============== 期望的线程 ==================
+        System.out.println(atomicInteger.compareAndSet(2020, 6666));
+        System.out.println(atomicInteger.get());
+    }
+}
+</code></pre>
+<h1 id="原子引用"><a href="#原子引用" class="headerlink" title="原子引用"></a>原子引用</h1><p><code>解决ABA问题 =&gt; 原子引用</code></p>
+<pre><code class="java">package com.yan.cas;
+
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicStampedReference;
+
+public class CASDemo {
+
+    //AtomicStampedReference 注意，如果泛型是一个包装类，注意对象的引用问题
+    // 正常在业务操作，这里面比较的都是一个个对象
+    static AtomicStampedReference&lt;String&gt; atomicStampedReference = new
+            AtomicStampedReference&lt;&gt;(&quot;1&quot;,1);
+
+    public static void main(String[] args) {
+        new Thread(()-&gt;{
+            int stamp = atomicStampedReference.getStamp(); // 获得版本号
+            System.out.println(&quot;a1=&gt;&quot;+stamp);
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            atomicStampedReference.compareAndSet(&quot;1&quot;, &quot;2&quot;,
+                    atomicStampedReference.getStamp(),
+                    atomicStampedReference.getStamp() + 1);
+            System.out.println(&quot;a2=&gt;&quot;+atomicStampedReference.getStamp());
+            System.out.println(atomicStampedReference.compareAndSet(&quot;2&quot;, &quot;1&quot;,
+                    atomicStampedReference.getStamp(),
+                    atomicStampedReference.getStamp() + 1));
+            System.out.println(&quot;a3=&gt;&quot;+atomicStampedReference.getStamp());
+        },&quot;a&quot;).start();
+
+        new Thread(()-&gt;{
+            int stamp = atomicStampedReference.getStamp(); // 获得版本号
+            System.out.println(&quot;b1=&gt;&quot;+stamp);
+            try {
+                TimeUnit.SECONDS.sleep(2);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println(atomicStampedReference.compareAndSet(&quot;1&quot;, &quot;6&quot;,
+                    stamp, stamp + 1));
+            System.out.println(&quot;b2=&gt;&quot;+atomicStampedReference.getStamp());
+        },&quot;b&quot;).start();
+    }
+}
+</code></pre>
+
 
 	  
 <hr>
@@ -1282,15 +1534,15 @@ class SchoolManager {
           
             <div class="post-nepre half previous">
           
-            <a href="/posts/6d016bf8/" rel="prev">
+            <a href="/posts/52e60ff2/" rel="prev">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/015.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/015.jpg">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/014.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/014.jpg">
               </div>
               <span class="label">
               Previous Post</span>
               <div class="info">
                 <h3>
-                稀疏数组和队列</h3>
+                设计模式七大原则</h3>
               </div>
             </a>
           </div>
@@ -1299,15 +1551,15 @@ class SchoolManager {
           
             <div class="post-nepre half next">
           
-            <a href="/posts/aa55683f/" rel="next">
+            <a href="/posts/66c016fb/" rel="next">
               <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/020.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/020.jpg">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/019.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/019.jpg">
               </div>
               <span class="label">
               Next Post</span>
               <div class="info">
                 <h3>
-                JUC</h3>
+                深入理解JVM</h3>
               </div>
             </a>
           </div>
