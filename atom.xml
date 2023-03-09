@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://shuaime.github.io/"/>
-  <updated>2023-03-08T15:32:17.838Z</updated>
+  <updated>2023-03-09T13:16:06.429Z</updated>
   <id>https://shuaime.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JVM类加载机制</title>
+    <link href="https://shuaime.github.io/posts/de06556f/"/>
+    <id>https://shuaime.github.io/posts/de06556f/</id>
+    <published>2023-03-09T11:25:58.000Z</published>
+    <updated>2023-03-09T13:16:06.429Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;JVM类加载机制&lt;/strong&gt;&lt;img class=&quot;emoji-coda&quot; src=&quot;https://cdn.jsdelivr.net/gh/TomoriCoda/hexo-tag-emojis-bycoda/emojis/2233/heshui.png&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="https://shuaime.github.io/categories/Java/"/>
+    
+      <category term="JVM" scheme="https://shuaime.github.io/categories/Java/JVM/"/>
+    
+    
+      <category term="Java" scheme="https://shuaime.github.io/tags/Java/"/>
+    
+      <category term="JVM" scheme="https://shuaime.github.io/tags/JVM/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux</title>
@@ -165,7 +189,7 @@
     <link href="https://shuaime.github.io/posts/66c016fb/"/>
     <id>https://shuaime.github.io/posts/66c016fb/</id>
     <published>2020-01-30T03:41:02.000Z</published>
-    <updated>2020-04-19T09:25:17.359Z</updated>
+    <updated>2023-03-09T11:30:09.579Z</updated>
     
     <summary type="html">
     
@@ -468,30 +492,6 @@
       <category term="Java" scheme="https://shuaime.github.io/tags/Java/"/>
     
       <category term="IO流" scheme="https://shuaime.github.io/tags/IO%E6%B5%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java学习篇之多线程</title>
-    <link href="https://shuaime.github.io/posts/4ad2c499/"/>
-    <id>https://shuaime.github.io/posts/4ad2c499/</id>
-    <published>2019-10-11T06:46:52.000Z</published>
-    <updated>2020-03-30T13:09:51.850Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;写作时间：2019-10-11 &lt;img class=&quot;emoji-coda&quot; src=&quot;https://cdn.jsdelivr.net/gh/TomoriCoda/hexo-tag-emojis-bycoda/emojis/2233/weiqu.png&quot;&gt;&lt;br&gt;实现目标：总结Java线程概念，线程并发情况与解决方案&lt;br&gt;涉及知识：Java多线程&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Java" scheme="https://shuaime.github.io/categories/Java/"/>
-    
-    
-      <category term="Java" scheme="https://shuaime.github.io/tags/Java/"/>
-    
-      <category term="多线程" scheme="https://shuaime.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     
   </entry>
   

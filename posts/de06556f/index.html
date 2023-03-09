@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">archive_a: 2020/3 | YANSHUAI&#39;S BLOG</title>
+  <title itemprop="name">JVM类加载机制 | YANSHUAI&#39;S BLOG</title>
   
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/favicon/favicon.ico">
   
@@ -457,509 +457,430 @@ var _hmt = _hmt || [];
   </div>
 </header>
 
-      <!-- <div class="blank" style="padding-top: 75px;">
-</div> -->
-<div class="pattern-center-blank" style="padding-top: 75px;">
-</div>
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 
-    <div class="pattern-center-sakura">
-      <div class="pattern-attachment-img">
-        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/006.jpg" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
-      </div>
-      <header class="pattern-header ">
-        <h1 class="entry-title">
-        归档</h1>
-      </header>
+<div class="pattern-center-blank"></div>
+
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/010.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/010.jpg">
     </div>
-  
+    <header class="pattern-header single-header" style="text-shadow: 0 0 7px #000,0 0 7px #000">
+      <h1 class="entry-title">
+      JVM类加载机制</h1>
+      <p class="entry-census">
+        <span>
+          <a href="">
+            <img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/YAN-PIC/avatar.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="">帅me</a>
+        </span>
+        <span class="bull">·</span>
+	
+        <span class="post-time">
+          <span class="post-meta-item-icon">
+            <i class="fa fa-calendar"></i>
+            <span class="post-meta-item-text"></span>
+            <span class="post-count">2023-3-9</span>
+          </span>
+        </span>
+	<span class="bull">·</span>
+
+	    <span class="bull"></span>
+    
+      <span><i class="fa fa-archive"></i> 分类于  
+        <span class="article-category"><a href="/categories/Java/" > Java</a></span>
+      <span class="article-category"><a href="/categories/Java/JVM/" > JVM</a></span>
+      
+    </span>
+    
+
+<span class="bull">·</span>
+	<span class="post-time">
+          <span class="post-meta-item-icon">
+            <i class="fa fa-eye" aria-hidden="true"></i>
+            
+          </span>
+	  <span id="busuanzi_value_page_pv"></span> 次阅读
+        </span>
+      
+      <span class="bull">·</span>
+      <span class="post-time">
+          <span class="post-meta-item-icon">
+            <i class="fa fa-keyboard-o"></i>
+            <span class="post-meta-item-text">  字数统计: </span>
+            <span class="post-count">920字</span>
+          </span>
+        </span>
+	<!--<span class="bull">·</span>
+        <span class="post-time">
+          <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass-half"></i>
+            <span class="post-meta-item-text">  阅读时长≈ </span>
+            <span class="post-count">4</span>
+          </span>
+        </span>-->
+	</p>
+
+            
+      
+    <div>
+          <ul class="spfk-ul">
+            &nbsp<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<li class="spfk-li"><span class="triangle"></span><a href="/tags/Java/" class="butterfly-tags">Java</a></li><li class="spfk-li"><span class="triangle"></span><a href="/tags/JVM/" class="butterfly-tags">JVM</a></li>
+          </ul>
+        </div>
+        <script>
+            function colorInit(c,num){for(var i=1;i<=num;++i)c.push(i+'');}
+            function paintTags(){
+                var colorNumber=8,tagColors=[],tags=document.getElementsByClassName('spfk-li');
+                for(var i = 0 ; i < tags.length ; ++i){
+                    if(!tagColors.length)colorInit(tagColors,colorNumber);
+                    var j=Math.floor(Math.random()*tagColors.length);
+                    tags[i].classList.add("spfk-color"+tagColors[j]);
+                    tagColors.splice(j,1);
+        }
+            }
+            paintTags()
+        </script>
+    
+
+
+
+    </header>
+  </div>
 
 <div id="content" class="site-content">
-  <div id="main">
-   <!-- <header class="page-header">
-      <h1 class="cat-title">
-      归档</h1>
-      <span class="cat-des">
-        <p>
-        Archives</p>
-      </span>
-    </header>-->
-    <div id="main-part">
-      <article class="art">
-        <div class="art-main">
-          <div class="art-content">
-            <div id="archives">
-              <p style="text-align:left;">
-  <button id="al_expand_collapse">
-    <style>
-    button#al_expand_collapse {
-        color: white;
-        border-radius: 16px;
-        font-weight: bold;
-        font-size: 15px;
-        background-color: #ff9100;
-        transition-duration: 0.3s;
-        box-shadow: 0 3px 8px 0 rgba(0,0,0,0.11), 0 3px 8px 0 rgba(0,0,0,0.11);
-        outline: none;
-    }
-    button#al_expand_collapse:hover {
-        transition: all 0.2s linear 0s;
-        background-color: #ff5900; 
-    }
-    </style>
-    <i class="fa fa-bars" aria-hidden="true"></i> 全部展开/收缩
-</button>
-</p>
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <p><strong>JVM类加载机制</strong><img class="emoji-coda" src="https://cdn.jsdelivr.net/gh/TomoriCoda/hexo-tag-emojis-bycoda/emojis/2233/heshui.png"></p>
+<a id="more"></a>
+<p><img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/11/20200413085900.png" alt></p>
+<h1 id="类加载运行全过程"><a href="#类加载运行全过程" class="headerlink" title="类加载运行全过程"></a>类加载运行全过程</h1><p><img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome//YAN/ljz.png" alt></p>
+<p><code>其中loadClass的类加载过程有如下几步</code></p>
+<blockquote>
+<p>加载 ==&gt; 验证 ==&gt; 准备 ==&gt; 解析 ==&gt; 初始化 ==&gt; 使用 ==&gt; 卸载</p>
+<p>1) 加载: 通过IO读入其字节码 使用到该类是才会加载在堆中生成Class对象 作为方法区入口</p>
+<p>2) 验证: 校验字节码文件的准确性</p>
+<p>3) 准备: 给类的静态变量分配内存 并赋初值</p>
+<p>4) 解析: 将符号引用转为直接引用 (静态链接)</p>
+<p>5) 初始化: 对类的静态变量初始化为指定值 执行静态代码块</p>
+<p>注:    类被加载到方法区中包含 运行是常量池、类型信息、字段信息、方法信息、类加载器的引用、对应class实例引用等信息</p>
+</blockquote>
+<h1 id="双亲委派机制"><a href="#双亲委派机制" class="headerlink" title="双亲委派机制"></a>双亲委派机制</h1><pre><code class="java">引导类加载器（Bootstrap）用于加载jre/lib/下的核心jar
+扩展类加载器（Extension）用于加载jre/lib/ext/下的jar
+应用程序类加载器（AppClassLoader）Java也叫系统类加载器，加载当前应用的classpath的所有类
+用户自定义加载器  Java.lang.ClassLoader的子类，用户可以定制类的加载方式
 
-              
-              
-              
-              
-              
-                
-                <h3 class="al_year">2023年</h3>
-              
-              
-                
-                <ul class="al_mon_list">
-                  <li class="al_li">
-                    <span class="al_mon" style="cursor: s-resize;">
-                      03月(<span id="post-num">
-                      3</span>
-                    篇文章)</span>
-                    <ul class="al_post_list" style="">
-              
-                      <li>
-                        <a href="/posts/de06556f/">
-                          <span style="color:#0bf;">
-                          09日19:25:58</span>
-                          JVM类加载机制
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/53d0684b/">
-                          <span style="color:#0bf;">
-                          08日21:06:04</span>
-                          Linux
-                        </a>
-                      </li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              
-              
-              
-              
-              
-                
-                <h3 class="al_year">2020年</h3>
-              
-              
-                
-                <ul class="al_mon_list">
-                  <li class="al_li">
-                    <span class="al_mon" style="cursor: s-resize;">
-                      04月(<span id="post-num">
-                      3</span>
-                    篇文章)</span>
-                    <ul class="al_post_list" style="">
-              
-                      <li>
-                        <a href="/posts/5124f222/">
-                          <span style="color:#0bf;">
-                          04日17:13:09</span>
-                          排序算法
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/2362a8ea/">
-                          <span style="color:#0bf;">
-                          02日21:35:15</span>
-                          链表
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/6d016bf8/">
-                          <span style="color:#0bf;">
-                          01日20:43:35</span>
-                          稀疏数组和队列
-                        </a>
-                      </li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              
-              
-              
-              
-              
-              
-                
-                <ul class="al_mon_list">
-                  <li class="al_li">
-                    <span class="al_mon" style="cursor: s-resize;">
-                      03月(<span id="post-num">
-                      3</span>
-                    篇文章)</span>
-                    <ul class="al_post_list" style="">
-              
-                      <li>
-                        <a href="/posts/52e60ff2/">
-                          <span style="color:#0bf;">
-                          15日20:13:24</span>
-                          设计模式七大原则
-                        </a>
-                      </li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              
-              
-              
-              
-              
-              
-                
-                <ul class="al_mon_list">
-                  <li class="al_li">
-                    <span class="al_mon" style="cursor: s-resize;">
-                      02月(<span id="post-num">
-                      3</span>
-                    篇文章)</span>
-                    <ul class="al_post_list" style="">
-              
-                      <li>
-                        <a href="/posts/aa55683f/">
-                          <span style="color:#0bf;">
-                          14日17:24:57</span>
-                          JUC
-                        </a>
-                      </li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              
-              
-              
-              
-              
-              
-                
-                <ul class="al_mon_list">
-                  <li class="al_li">
-                    <span class="al_mon" style="cursor: s-resize;">
-                      01月(<span id="post-num">
-                      3</span>
-                    篇文章)</span>
-                    <ul class="al_post_list" style="">
-              
-                      <li>
-                        <a href="/posts/66c016fb/">
-                          <span style="color:#0bf;">
-                          30日11:41:02</span>
-                          深入理解JVM
-                        </a>
-                      </li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              
-              
-              
-              
-              
-                
-                <h3 class="al_year">2019年</h3>
-              
-              
-                
-                <ul class="al_mon_list">
-                  <li class="al_li">
-                    <span class="al_mon" style="cursor: s-resize;">
-                      12月(<span id="post-num">
-                      3</span>
-                    篇文章)</span>
-                    <ul class="al_post_list" style="">
-              
-                      <li>
-                        <a href="/posts/bcab918b/">
-                          <span style="color:#0bf;">
-                          28日10:00:10</span>
-                          JDK8新特性
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/4decbe97/">
-                          <span style="color:#0bf;">
-                          01日15:47:28</span>
-                          Java总结篇...
-                        </a>
-                      </li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              
-              
-              
-              
-              
-              
-                
-                <ul class="al_mon_list">
-                  <li class="al_li">
-                    <span class="al_mon" style="cursor: s-resize;">
-                      11月(<span id="post-num">
-                      3</span>
-                    篇文章)</span>
-                    <ul class="al_post_list" style="">
-              
-                      <li>
-                        <a href="/posts/f0580ace/">
-                          <span style="color:#0bf;">
-                          17日22:05:21</span>
-                          Spring Boot项目接入QQ登录教程
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/33f411d/">
-                          <span style="color:#0bf;">
-                          15日14:00:15</span>
-                          Spring Cloud Netflix
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/accb903d/">
-                          <span style="color:#0bf;">
-                          06日14:17:09</span>
-                          Spring Data JPA
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/db30a45/">
-                          <span style="color:#0bf;">
-                          01日12:56:14</span>
-                          Intellij IDEA破解
-                        </a>
-                      </li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              
-              
-              
-              
-              
-              
-                
-                <ul class="al_mon_list">
-                  <li class="al_li">
-                    <span class="al_mon" style="cursor: s-resize;">
-                      10月(<span id="post-num">
-                      3</span>
-                    篇文章)</span>
-                    <ul class="al_post_list" style="">
-              
-                      <li>
-                        <a href="/posts/4bb9769b/">
-                          <span style="color:#0bf;">
-                          30日09:38:18</span>
-                          MySQL保存emoji表情
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/27ace9d5/">
-                          <span style="color:#0bf;">
-                          25日20:14:39</span>
-                          Spring Security
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/8fa64eaf/">
-                          <span style="color:#0bf;">
-                          23日17:40:56</span>
-                          AngularJS
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/3d6301c1/">
-                          <span style="color:#0bf;">
-                          20日18:38:36</span>
-                          Docker容器化
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/531cd44d/">
-                          <span style="color:#0bf;">
-                          19日17:00:00</span>
-                          使用 Github Pages 和 Hexo 搭建自己的独立博客
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/ac21c0cc/">
-                          <span style="color:#0bf;">
-                          12日14:47:09</span>
-                          Java学习篇之IO流
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/4ad2c499/">
-                          <span style="color:#0bf;">
-                          11日14:46:52</span>
-                          Java学习篇之多线程
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/e937c3c0/">
-                          <span style="color:#0bf;">
-                          10日14:40:07</span>
-                          Java学习篇之集合篇
-                        </a>
-                      </li>
-                      
-              
-              
-              
-              
-              
-                      <li>
-                        <a href="/posts/4a17b156/">
-                          <span style="color:#0bf;">
-                          01日12:40:07</span>
-                          Hello World
-                        </a>
-                      </li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              
-              
-              
-              
-              
-                
-                <h3 class="al_year">2018年</h3>
-              
-              
-                
-                <ul class="al_mon_list">
-                  <li class="al_li">
-                    <span class="al_mon" style="cursor: s-resize;">
-                      12月(<span id="post-num">
-                      3</span>
-                    篇文章)</span>
-                    <ul class="al_post_list" style="">
-              
-                      <li>
-                        <a href="/posts/186f70d4/">
-                          <span style="color:#0bf;">
-                          12日22:16:01</span>
-                          Hexo-Theme-Sakura
-                        </a>
-                      </li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              
-              
+</code></pre>
+<p><code>JVM默认使用Launcher.getClassLoader()方法返回的加载器AppClassLoader实例加载我们的应用程序</code></p>
+<pre><code class="java">public class Launcher {
+    private static URLStreamHandlerFactory factory = new Factory();
+    private static Launcher launcher = new Launcher();
+    private static String bootClassPath = System.getProperty(&quot;sun.boot.class.path&quot;);
+    private ClassLoader loader;
+    private static URLStreamHandler fileHandler;
+    public static Launcher getLauncher() {
+        return launcher;
+    }
+    public Launcher() {
+        ExtClassLoader var1;
+        try {
+            //扩展类加载器 构造过程中将其父加载器设为null
+            var1 = Launcher.ExtClassLoader.getExtClassLoader();
+        } catch (IOException var10) {
+            throw new InternalError(&quot;Could not create extension class loader&quot;, var10);
+        }
+        try {
+            //应用类加载器 构造过程中将其父加载器设为ExtClassLoader
+            //并且loader为AppClassLoader 默认使用AppClassLoader加载应用程序
+            this.loader = Launcher.AppClassLoader.getAppClassLoader(var1);
+        } catch (IOException var9) {
+            throw new InternalError(&quot;Could not create application class loader&quot;, var9);
+        }
+        Thread.currentThread().setContextClassLoader(this.loader);
+        String var2 = System.getProperty(&quot;java.security.manager&quot;);
+        if (var2 != null) {
+            SecurityManager var3 = null;
+            if (!&quot;&quot;.equals(var2) &amp;&amp; !&quot;default&quot;.equals(var2)) {
+                try {
+                    var3 = (SecurityManager)this.loader.loadClass(var2).newInstance();
+                } catch (IllegalAccessException var5) {
+                } catch (InstantiationException var6) {
+                } catch (ClassNotFoundException var7) {
+                } catch (ClassCastException var8) {
+                }
+            } else {
+                var3 = new SecurityManager();
+            }
+            if (var3 == null) {
+                throw new InternalError(&quot;Could not create SecurityManager: &quot; + var2);
+            }
+            System.setSecurityManager(var3);
+        }
+
+    }
+}
+</code></pre>
+<p><code>ClassLoader.loadClass()方法实现了双亲委派机制</code></p>
+<pre><code class="java">protected Class&lt;?&gt; loadClass(String name, boolean resolve)
+    throws ClassNotFoundException
+{
+    synchronized (getClassLoadingLock(name)) {
+        // 检查当前类加载器是否已经加载了该类
+        Class&lt;?&gt; c = findLoadedClass(name);
+        if (c == null) {
+            long t0 = System.nanoTime();
+            try {
+                if (parent != null) {
+                    //如果当前类加载器父加载器!=null则委托父加载器加载该类
+                    c = parent.loadClass(name, false);
+                } else {
+                    //如果当前类加载器父加载器==null则委托引导类加载器加载该类
+                    c = findBootstrapClassOrNull(name);
+                }
+            } catch (ClassNotFoundException e) {
+            }
+            if (c == null) {
+                long t1 = System.nanoTime();
+                //调用URLClassLoader.findClass()在加载器的类路径里查找并加载该类
+                c = findClass(name);
+                sun.misc.PerfCounter.getParentDelegationTime().addTime(t1 - t0);
+                sun.misc.PerfCounter.getFindClassTime().addElapsedTimeFrom(t1);
+                sun.misc.PerfCounter.getFindClasses().increment();
+            }
+        }
+        if (resolve) {
+            resolveClass(c);
+        }
+        return c;
+    }
+}
+</code></pre>
+<p><code>自定义类加载器</code></p>
+<pre><code class="java">public class YanClassLoader extends ClassLoader{
+
+    private String classPath;
+
+    public YanClassLoader(String classPath) {
+        this.classPath = classPath;
+    }
+    private byte[] loadByte(String name) throws Exception {
+        name = name.replaceAll(&quot;\\.&quot;, &quot;/&quot;);
+        FileInputStream fis = new FileInputStream(classPath + &quot;/&quot; + name
+                + &quot;.class&quot;);
+        int len = fis.available();
+        byte[] data = new byte[len];
+        fis.read(data);
+        fis.close();
+        return data;
+
+    }
+    protected Class&lt;?&gt; findClass(String name) throws ClassNotFoundException {
+        try {
+            byte[] data = loadByte(name);
+            return defineClass(name, data, 0, data.length);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new ClassNotFoundException();
+        }
+    }
+    /**
+     * 重写类加载方法，实现自己的加载逻辑，不委派给双亲加载
+     * @param name
+     * @param resolve
+     * @return
+     * @throws ClassNotFoundException
+     */
+    protected Class&lt;?&gt; loadClass(String name, boolean resolve)
+            throws ClassNotFoundException {
+        synchronized (getClassLoadingLock(name)) {
+            Class&lt;?&gt; c = findLoadedClass(name);
+            if (c == null) {
+                long t1 = System.nanoTime();
+                //非自定义的类还是走双亲委派加载
+                if (!name.startsWith(&quot;com.yan.jvm&quot;)){
+                    c = this.getParent().loadClass(name);
+                }else{
+                    c = findClass(name);
+                }
+                sun.misc.PerfCounter.getFindClassTime().addElapsedTimeFrom(t1);
+                sun.misc.PerfCounter.getFindClasses().increment();
+            }
+            if (resolve) {
+                resolveClass(c);
+            }
+            return c;
+        }
+    }
+}
+</code></pre>
+
+
+	  
+
+        </div>
+        <!-- .entry-content -->
+        <!--<div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN//img/custom/donate/AliPayQR.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN//img/custom/donate/WeChanQR.jpg"></li>
+              </ul>
             </div>
           </div>
-        </div>
-      </article>
+        </div>-->
+
+	<!-- 写后感言与打赏 -->	
+	<div id="reward">
+  
+  <div>您的喜欢是作者写作最大的动力！❤️</div>
+  
+  <div class="reward">
+    <a href="https://github.com/SHUAIME" target="_blank" class=" tr3" title="Github"><span
+        id="github"></span></a>
+    <ul id="RewardBox" class="list pos-f tr3">
+      
+      <li id="PayPal" title="PayPal打赏"><a href="https://paypal.me/SHUAIME" target="_blank">PayPal</a></li>
+      
+      
+      <li id="AliPayOR" title="支付宝打赏">AliPay</li>
+      
+      
+      <li id="WeChatPayOR" title="微信打赏">WeChatPay</li>
+      
+      
+      <li id="QQPayOR" title="QQ打赏">QQPay</li>
+      
+    </ul>
+    <div id="RewardText" class="tr3">YAN</div>
+    <div id="QRBox" class="pos-f left-100">
+      <div id="MainBox"></div>
     </div>
   </div>
 </div>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+<script>
+  jQuery(document).ready(function () {
+    var QRBox = $('#QRBox');
+    var MainBox = $('#MainBox');
+    var AliPayOR = 'https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/YAN-PIC/AliPayQR.png';
+    var WeChatPayOR = 'https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/YAN-PIC/WeChatQR.png';
+    var QQPayOR = 'https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/YAN-PIC/QQPayQR.png';
+
+    function showQR(QR) {
+      if (QR) {
+        MainBox.css('background-image', 'url(' + QR + ')');
+      }
+      $('#RewardText,#RewardBox,#github').addClass('blur');
+      QRBox.fadeIn(300, function (argument) {
+        MainBox.addClass('showQR');
+      });
+    }
+
+    $('#RewardBox>li').click(function (event) {
+      var thisID = $(this).attr('id');
+      if (thisID === 'AliPayOR') {
+        showQR(AliPayOR);
+      } else if (thisID === 'WeChatPayOR') {
+        showQR(WeChatPayOR);
+      } else if (thisID === 'QQPayOR') {
+        showQR(QQPayOR);
+      }
+    });
+
+    MainBox.click(function (event) {
+      MainBox.removeClass('showQR').addClass('hideQR');
+      setTimeout(function (a) {
+        QRBox.fadeOut(300, function (argument) {
+          MainBox.removeClass('hideQR');
+        });
+        $('#RewardText,#RewardBox,#github').removeClass('blur');
+      }, 600);
+
+    });
+  });
+</script>
+
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+        
+          
+            <div class="post-nepre full next">
+          
+            <a href="/posts/53d0684b/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/013.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/013.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                Linux</h3>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+
+  <script src="https://cdn.jsdelivr.net/gh/yremp/yremp-js@1.1/gitalk.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yremp/yremp-css@1.3/gitalk.css">
+  <div id="gitalk-container"></div>
+  
+  <script type="text/javascript">
+      var gitalk = new Gitalk({
+          clientID: 'a0b1fd1a8f289cb82280',
+          clientSecret: 'e740e2de5477da76dafea57903a04fd58f672398',
+          id: window.location.pathname,
+          repo: 'Comment',
+          owner: 'SHUAIME',
+          admin: 'SHUAIME'
+      })
+      gitalk.render('gitalk-container')
+    </script>
+
+      <!-- <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+          <a href="" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome/YAN-PIC/avatar.jpg" itemprop="image" alt="帅me" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href="" itemprop="url" rel="author">帅me</a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i></p>
+      </section> -->
+    </main><!-- #main -->
+  </div><!-- #primary -->
+</div>
+
+
+
+
 
     </div>    
     <div class="ins-search">
