@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://shuaime.github.io/"/>
-  <updated>2023-03-09T13:16:06.429Z</updated>
+  <updated>2023-03-12T09:46:30.974Z</updated>
   <id>https://shuaime.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JVM内存模型与内存分配机制</title>
+    <link href="https://shuaime.github.io/posts/e0e55718/"/>
+    <id>https://shuaime.github.io/posts/e0e55718/</id>
+    <published>2023-03-12T08:44:46.000Z</published>
+    <updated>2023-03-12T09:46:30.974Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;JVM内存模型&quot;&gt;&lt;a href=&quot;#JVM内存模型&quot; class=&quot;headerlink&quot; title=&quot;JVM内存模型&quot;&gt;&lt;/a&gt;JVM内存模型&lt;/h1&gt;&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="https://shuaime.github.io/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="https://shuaime.github.io/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>JVM类加载机制</title>
@@ -435,9 +461,9 @@
       <category term="Docker" scheme="https://shuaime.github.io/categories/Docker/"/>
     
     
-      <category term="Linux" scheme="https://shuaime.github.io/tags/Linux/"/>
-    
       <category term="Docker" scheme="https://shuaime.github.io/tags/Docker/"/>
+    
+      <category term="Linux" scheme="https://shuaime.github.io/tags/Linux/"/>
     
   </entry>
   
@@ -468,30 +494,6 @@
       <category term="GitHub" scheme="https://shuaime.github.io/tags/GitHub/"/>
     
       <category term="Node" scheme="https://shuaime.github.io/tags/Node/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java学习篇之IO流</title>
-    <link href="https://shuaime.github.io/posts/ac21c0cc/"/>
-    <id>https://shuaime.github.io/posts/ac21c0cc/</id>
-    <published>2019-10-12T06:47:09.000Z</published>
-    <updated>2020-03-30T13:05:06.953Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;写作时间：2019-10-12&lt;img class=&quot;emoji-coda&quot; src=&quot;https://cdn.jsdelivr.net/gh/TomoriCoda/hexo-tag-emojis-bycoda/emojis/2233/han.png&quot;&gt;&lt;br&gt;实现目标：总结Java IO流知识点&lt;br&gt;涉及知识：Java IO流&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Java" scheme="https://shuaime.github.io/categories/Java/"/>
-    
-    
-      <category term="Java" scheme="https://shuaime.github.io/tags/Java/"/>
-    
-      <category term="IO流" scheme="https://shuaime.github.io/tags/IO%E6%B5%81/"/>
     
   </entry>
   
