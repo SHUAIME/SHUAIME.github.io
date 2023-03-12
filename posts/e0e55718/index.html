@@ -464,7 +464,7 @@ var _hmt = _hmt || [];
 
   <div class="pattern-center single-center">
     <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/013.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/013.jpg">
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/004.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/SHUAIME/CDN-FOR-YAN/images/blog/004.jpg">
     </div>
     <header class="pattern-header single-header" style="text-shadow: 0 0 7px #000,0 0 7px #000">
       <h1 class="entry-title">
@@ -493,6 +493,7 @@ var _hmt = _hmt || [];
     
       <span><i class="fa fa-archive"></i> 分类于  
         <span class="article-category"><a href="/categories/Java/" > Java</a></span>
+      <span class="article-category"><a href="/categories/Java/JVM/" > JVM</a></span>
       
     </span>
     
@@ -511,7 +512,7 @@ var _hmt = _hmt || [];
           <span class="post-meta-item-icon">
             <i class="fa fa-keyboard-o"></i>
             <span class="post-meta-item-text">  字数统计: </span>
-            <span class="post-count">1.8k字</span>
+            <span class="post-count">1.9k字</span>
           </span>
         </span>
 	<!--<span class="bull">·</span>
@@ -528,7 +529,7 @@ var _hmt = _hmt || [];
       
     <div>
           <ul class="spfk-ul">
-            &nbsp<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<li class="spfk-li"><span class="triangle"></span><a href="/tags/Java/" class="butterfly-tags">Java</a></li>
+            &nbsp<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<li class="spfk-li"><span class="triangle"></span><a href="/tags/Java/" class="butterfly-tags">Java</a></li><li class="spfk-li"><span class="triangle"></span><a href="/tags/JVM/" class="butterfly-tags">JVM</a></li>
           </ul>
         </div>
         <script>
@@ -559,7 +560,8 @@ var _hmt = _hmt || [];
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
         
         <div class="entry-content">
-          <h1 id="JVM内存模型"><a href="#JVM内存模型" class="headerlink" title="JVM内存模型"></a>JVM内存模型</h1><p><img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome//YAN/jvmncmx.png" alt></p>
+          <p><strong>JVM内存模型与内存分配机制</strong><img class="emoji-coda" src="https://cdn.jsdelivr.net/gh/TomoriCoda/hexo-tag-emojis-bycoda/emojis/2233/heshui.png"></p>
+<h1 id="JVM内存模型"><a href="#JVM内存模型" class="headerlink" title="JVM内存模型"></a>JVM内存模型</h1><p><img src="https://cdn.jsdelivr.net/gh/SHUAIME/imgHome//YAN/jvmncmx.png" alt></p>
 <h1 id="对象创建"><a href="#对象创建" class="headerlink" title="对象创建"></a>对象创建</h1><h2 id="类加载检查"><a href="#类加载检查" class="headerlink" title="类加载检查"></a>类加载检查</h2><blockquote>
 <p>虚拟机遇到一条new指令时，首先将去检查这个指令的参数是否能在常量池中定位到一个类的符号引用，并且检查这个符号引用代表的类是否已被加载、解析和初始化过。如果没有，那必须先执行相应的类加载过程。 new指令对应到语言层面上讲是，new关键词、对象克隆、对象序列化等。</p>
 </blockquote>
